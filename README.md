@@ -75,3 +75,4 @@ Suggested next pages:
 - `deepseek tui provider cost`
 - `deepseek tui mcp troubleshooting`
 - `deepseek tui docs overview improvements`
+# deepseek-tui-web
