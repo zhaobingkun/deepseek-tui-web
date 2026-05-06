@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeepSeek TUI 排错指南</title>
+  <meta name="description" content="修复 DeepSeek TUI 常见问题，包括安装失败、认证问题、配置错误和运行时异常。">
+  <link rel="canonical" href="https://deepseek-tui.app/zh/troubleshooting/index.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="DeepSeek TUI 排错指南">
+  <meta property="og:description" content="修复 DeepSeek TUI 常见问题，包括安装失败、认证问题、配置错误和运行时异常。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://deepseek-tui.app/zh/troubleshooting/index.html">
+  <meta property="og:site_name" content="DeepSeek TUI 中文指南">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/troubleshooting/index.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/troubleshooting/index.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header>
+  <div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><span>排错</span></div></div>
+  <main>
+    <section class="page-hero">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">排错总览</span>
+          <h1>DeepSeek TUI 的常见问题，大多还是安装、路径和配置基础问题</h1>
+          <p>很多“工具坏了”的直觉，其实最后都落在命令没进 path、provider 没选对、API Key 没生效这些基础点上。</p>
+        </div>
+        <aside class="answer-card"><span class="panel-kicker">优先级建议</span><h2>先查命令能不能调用，再查配置和 provider，最后再怀疑更复杂的问题。</h2><p>大多数排错都不需要从最复杂的方向开始。</p></aside>
+      </div>
+    </section>
+    <section class="section"><div class="container">
+<div class="card-grid card-grid-2">
+<article class="content-card"><span class="tag">Command Not Found</span><h3>command not found 修复</h3><p>安装后最常见的第一类错误，通常和 shell path 或安装路径有关。</p><a href="/zh/troubleshooting/command-not-found/index.html">打开修复页</a></article>
+<article class="content-card"><span class="tag">Homebrew</span><h3>Homebrew command not found</h3><p>如果 brew 说装好了，但终端还是找不到命令，这页更对应。</p><a href="/zh/troubleshooting/homebrew-command-not-found/index.html">打开 Homebrew 修复</a></article>
+<article class="content-card"><span class="tag">Provider</span><h3>Provider 排错</h3><p>命令存在但行为不对时，provider 线通常比安装线更重要。</p><a href="/zh/troubleshooting/provider-troubleshooting/index.html">打开 provider 排错</a></article>
+<article class="content-card"><span class="tag">Binaries</span><h3>Release binaries</h3><p>如果包管理器本身就是阻力，二进制安装这条线更值得单独看。</p><a href="/zh/troubleshooting/release-binaries/index.html">打开 release binaries</a></article>
+<article class="content-card"><span class="tag">API Key</span><h3>API Key 与 provider</h3><p>如果命令存在但无法使用，配置线通常比安装线更关键。</p><a href="/zh/config/api-key/index.html">打开 API Key 页</a></article>
+</div></div></section>
+  <footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a></div><div class="footer-links"><a href="/zh/comparisons/index.html">对比</a><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer>
+  <script src="/assets/js/site.js"></script>
+</body></html>

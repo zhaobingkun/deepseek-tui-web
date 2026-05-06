@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeepSeek TUI 中文指南：安装、配置与使用说明</title>
+  <meta name="description" content="DeepSeek TUI 中文指南覆盖安装、配置、MCP、技能、模式、对比和排错，帮助你更快上手终端里的 DeepSeek TUI。">
+  <link rel="canonical" href="https://deepseek-tui.app/zh/index.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="DeepSeek TUI 中文指南：安装、配置与使用说明">
+  <meta property="og:description" content="DeepSeek TUI 中文指南覆盖安装、配置、MCP、技能、模式、对比和排错，帮助你更快上手终端里的 DeepSeek TUI。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://deepseek-tui.app/zh/index.html">
+  <meta property="og:site_name" content="DeepSeek TUI 中文指南">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/index.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/index.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">中文版本</span>
+          <h1>DeepSeek TUI 中文上手站：安装、配置、MCP、技能与终端工作流</h1>
+          <p>这个中文版本围绕 DeepSeek TUI 最常见的搜索意图来写：怎么安装、怎么配置、怎么接 MCP、plan mode 和 yolo mode 有什么区别，以及它和 Claude Code 的差异。</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="/zh/install/index.html">先看安装</a><a class="btn btn-secondary" href="/zh/guides/index.html">浏览全部中文页</a></div>
+          <div class="hero-points"><span>npm 与 cargo 安装</span><span>MCP 与技能</span><span>DeepSeek TUI vs Claude Code</span></div>
+        </div>
+        <div class="terminal-frame"><div class="terminal-top"><span class="dot"></span><span class="dot gold"></span><span class="dot green"></span></div><div class="terminal-body"><div>$ deepseek</div><div>> DeepSeek V4 终端编码代理</div><div>> 安装 · 配置 · MCP · 模式 · 技能</div><div>> 快速入口：</div><div>  - cargo install deepseek-tui-cli --locked</div><div>  - npm install -g deepseek-tui</div><div>  - 配置 API Key 与 provider</div><div>  - 选择 plan mode 或 yolo mode</div></div></div>
+      </div>
+    </section>
+    <section class="section"><div class="container">
+<div class="section-head"><h2>最值得先看的页面</h2><p>如果你是第一次接触 DeepSeek TUI，先看这几页，比直接读完整仓库更省时间。</p></div>
+<div class="card-grid card-grid-3">
+<article class="content-card"><span class="tag">安装</span><h3>如何安装 DeepSeek TUI</h3><p>先看安装总页，再决定走 npm、cargo、Homebrew 还是二进制包。</p><a href="/zh/install/index.html">打开安装页</a></article>
+<article class="content-card"><span class="tag">文档</span><h3>DeepSeek TUI 文档索引</h3><p>如果你想集中看上游配置、MCP、运行时 API、快捷键和架构主题，这个文档入口最直接。</p><a href="/zh/docs/index.html">打开文档总页</a></article><article class="content-card"><span class="tag">配置</span><h3>DeepSeek TUI 配置基础</h3><p>API Key、provider 和运行时配置，通常是安装后第一个真正的阻塞点。</p><a href="/zh/config/index.html">打开配置页</a></article>
+<article class="content-card"><span class="tag">对比</span><h3>DeepSeek TUI vs Claude Code</h3><p>如果你在比较不同终端代理工具，这页能帮你快速建立判断框架。</p><a href="/zh/comparisons/vs-claude-code/index.html">打开对比页</a></article>
+<article class="content-card"><span class="tag">模式</span><h3>Plan mode 与 yolo mode</h3><p>模式选择会直接影响代理行为、风险边界和工作节奏。</p><a href="/zh/modes/index.html">打开模式页</a></article>
+<article class="content-card"><span class="tag">MCP</span><h3>DeepSeek TUI 的 MCP 使用</h3><p>很多高级玩法都和 MCP 有关，这条线值得单独看。</p><a href="/zh/mcp/index.html">打开 MCP 页</a></article>
+<article class="content-card"><span class="tag">技能</span><h3>技能与复用工作流</h3><p>如果你关心的是可复用的终端工作流，而不是一次性 prompt，这页最相关。</p><a href="/zh/skills/index.html">打开技能页</a></article>
+</div></div></section>
+    <section class="section section-alt"><div class="container">
+<div class="section-head"><h2>主题分组</h2><p>这个站不做泛 AI 目录，只围绕 DeepSeek TUI 的高意图中文搜索词来组织内容。</p></div>
+<div class="topic-grid">
+<article class="topic-card"><span class="tag">安装</span><h3>npm、cargo 与首轮安装</h3><p>安装线先解决命令怎么跑起来，再进入 provider 与 config 的问题。</p><a href="/zh/install/index.html">查看安装主题</a></article>
+<article class="topic-card"><span class="tag">指南</span><h3>概览、入门与术语</h3><p>适合还在了解 DeepSeek TUI 是什么、为什么最近被大量搜索的人。</p><a href="/zh/guides/index.html">查看指南主题</a></article>
+<article class="topic-card"><span class="tag">配置</span><h3>Provider、API Key 与运行参数</h3><p>大多数“装好了但还不能用”的问题，本质都落在这一组。</p><a href="/zh/config/index.html">查看配置主题</a></article>
+<article class="topic-card"><span class="tag">模式</span><h3>Plan mode 与 yolo mode</h3><p>把 README 里的模式说明，拆成更容易理解和比较的页面。</p><a href="/zh/modes/index.html">查看模式主题</a></article>
+<article class="topic-card"><span class="tag">排错</span><h3>安装失败与命令不可用</h3><p>新工具往往会带来安装、认证和 shell 路径相关的排错需求。</p><a href="/zh/troubleshooting/index.html">查看排错主题</a></article>
+<article class="topic-card"><span class="tag">新闻</span><h3>项目背景与搜索原因</h3><p>新闻页负责解释为什么这个工具现在被持续搜索，以及生态线索是什么。</p><a href="/zh/news/index.html">查看新闻主题</a></article>
+</div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a></div><div class="footer-links"><a href="/zh/comparisons/index.html">对比</a><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer>
+  <script src="/assets/js/site.js"></script>
+</body></html>
