@@ -1,11 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DeepSeek TUI Guide icon">
   <defs>
-    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#49b86c"/>
-      <stop offset="100%" stop-color="#6be28d"/>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#121c31"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#44d07a"/>
+      <stop offset="100%" stop-color="#80f7b0"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="#0a130e"/>
-  <rect x="8" y="8" width="48" height="48" rx="12" fill="url(#g)"/>
-  <path d="M20 21h9c9 0 15 4 15 11s-6 11-15 11h-4v8h-5V21Zm5 4v14h4c6 0 10-2 10-7s-4-7-10-7h-4Z" fill="#08120d"/>
+  <rect width="64" height="64" rx="16" fill="url(#bg)"/>
+  <rect x="10" y="12" width="44" height="40" rx="10" fill="#07101d" stroke="#21304d" stroke-width="2"/>
+  <circle cx="18" cy="20" r="2" fill="#ff6b6b"/>
+  <circle cx="24" cy="20" r="2" fill="#ffd166"/>
+  <circle cx="30" cy="20" r="2" fill="#44d07a"/>
+  <path d="M22 31l8 6-8 6" fill="none" stroke="url(#accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <rect x="34" y="40" width="10" height="4" rx="2" fill="#d9fbe7"/>
 </svg>
