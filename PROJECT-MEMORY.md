@@ -22,7 +22,7 @@
 
 ## Page Count
 
-- `112` HTML pages including English and Chinese mirrors
+- `122` HTML pages including English and Chinese mirrors
 
 ## Main Hubs
 
@@ -91,13 +91,22 @@
 - Added `/docs/` and `/zh/docs/` hubs
 - Added page mirrors for the upstream docs topics including configuration, install, MCP, runtime API, keybindings, architecture, runbooks, and related historical docs
 
-## Recommended Next Batch
+## Latest Batch Added
 
 - `windows install`
 - `update or upgrade`
 - `config reset`
 - `provider cost`
 - `mcp troubleshooting`
+- Docs hub quick-routes section and Docs nav cleanup
+
+## Recommended Next Batch
+
+- `windows install command not found`
+- `brew upgrade`
+- `config backup`
+- `provider limits`
+- `mcp timeout troubleshooting`
 
 ## Deployment Note
 

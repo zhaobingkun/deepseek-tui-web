@@ -51,28 +51,22 @@ Chinese mirror now available under `/zh/` with translated hub and core guide pag
 
 Current page count:
 
-- `112` HTML pages including English and Chinese mirrors
+- `122` HTML pages including English and Chinese mirrors
 
 Latest added pages:
 
-- `docs hub and zh docs hub`
-- `accessibility docs page`
-- `architecture docs page`
-- `configuration docs page`
-- `docker docs page`
-- `install docs page`
-- `keybindings docs page`
-- `mcp docs page`
-- `runtime api docs page`
-- `tool surface docs page`
-- plus the rest of the upstream docs topics with Chinese mirrors
-
-Suggested next pages:
-
+- `docs hub quick routes and docs nav cleanup`
 - `deepseek tui windows install`
 - `deepseek tui update or upgrade`
 - `deepseek tui config reset`
 - `deepseek tui provider cost`
 - `deepseek tui mcp troubleshooting`
-- `deepseek tui docs overview improvements`
-# deepseek-tui-web
+- all five English pages with Chinese mirrors
+
+Suggested next pages:
+
+- `deepseek tui windows install command not found`
+- `deepseek tui brew upgrade`
+- `deepseek tui config backup`
+- `deepseek tui provider limits`
+- `deepseek tui mcp timeout`
