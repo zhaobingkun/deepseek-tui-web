@@ -1,8 +1,54 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>如何在 Windows 上安装 DeepSeek TUI</title><meta name="description" content="在 Windows 上安装 DeepSeek TUI，并判断 npm、cargo 或其他路径哪条更适合你的终端环境。"><link rel="canonical" href="https://deepseek-tui.app/zh/install/windows/index.html"><meta name="robots" content="index, follow">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/install/windows/index.html">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>如何在 Windows 上安装 DeepSeek TUI</title><meta name="description" content="在 Windows 上安装 DeepSeek TUI，并判断 npm、cargo 或其他路径哪条更适合你的终端环境。"><link rel="canonical" href="https://deepseek-tui.app/zh/install/windows/index.html"><meta name="robots" content="index, follow">
+  <meta property="og:title" content="如何在 Windows 上安装 DeepSeek TUI">
+  <meta property="og:description" content="在 Windows 上安装 DeepSeek TUI，并判断 npm、cargo 或其他路径哪条更适合你的终端环境。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://deepseek-tui.app/zh/install/windows/index.html">
+  <meta property="og:site_name" content="DeepSeek TUI Guide">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="如何在 Windows 上安装 DeepSeek TUI">
+  <meta name="twitter:description" content="在 Windows 上安装 DeepSeek TUI，并判断 npm、cargo 或其他路径哪条更适合你的终端环境。">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/install/windows/index.html">
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/install/windows/index.html">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css"></head>
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "如何在 Windows 上安装 DeepSeek TUI",
+      "name": "如何在 Windows 上安装 DeepSeek TUI",
+      "description": "在 Windows 上安装 DeepSeek TUI，并判断 npm、cargo 或其他路径哪条更适合你的终端环境。",
+      "url": "https://deepseek-tui.app/zh/install/windows/index.html",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://deepseek-tui.app/zh/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "安装",
+          "item": "https://deepseek-tui.app/zh/install/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "如何在 Windows 上安装 DeepSeek TUI",
+          "item": "https://deepseek-tui.app/zh/install/windows/index.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
 <body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/install/index.html">安装</a><span>/</span><span>Windows 安装</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Windows 安装</span><h1>在 Windows 上安装 DeepSeek TUI，先匹配你的 shell 和终端环境，再选命令</h1><p>Windows 用户的终端默认环境和 macOS、Linux 不一样，所以最适合的安装方式，取决于你当前更依赖 Node、Rust、WSL，还是混合 shell 组合。</p></div><aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>优先选择和你现在 Windows 终端环境最一致的安装路径，而不是只看 README 里最短的命令。</h2><p>如果你的 CLI 工具本来就走 Node，全局 npm 往往最顺手；如果你长期用 Rust 工具链，cargo 也可能更稳。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>为什么 Windows 安装感受会不一样</h2><p>很多 Windows 安装问题其实不是 DeepSeek TUI 独有，而是 shell、PATH 和终端差异带来的。</p><h2>先确认什么</h2><ul><li>你实际在用的是 PowerShell、命令提示符、Git Bash 还是 WSL？</li><li>你的 CLI 工具平时是更依赖 Node 还是 Rust？</li><li>重启终端后，安装路径还能不能被识别？</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/install/index.html">返回安装总页</a><a href="/zh/install/npm/index.html">npm 安装</a><a href="/zh/troubleshooting/command-not-found/index.html">command not found 修复</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a></div><div class="footer-links"><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
 <script>

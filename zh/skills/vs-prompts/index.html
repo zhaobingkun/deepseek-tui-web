@@ -1,6 +1,52 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DeepSeek TUI skills vs prompts</title><meta name="description" content="对比 DeepSeek TUI 的 skills 和 prompts，理解什么时候更该用可复用工作流，而不是一次性提示词。"><link rel="canonical" href="https://deepseek-tui.app/zh/skills/vs-prompts/index.html"><meta name="robots" content="index, follow"><link rel="alternate" hreflang="en" href="https://deepseek-tui.app/skills/vs-prompts/index.html"><link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/skills/vs-prompts/index.html"><link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css"></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DeepSeek TUI skills vs prompts</title><meta name="description" content="对比 DeepSeek TUI 的 skills 和 prompts，理解什么时候更该用可复用工作流，而不是一次性提示词。"><link rel="canonical" href="https://deepseek-tui.app/zh/skills/vs-prompts/index.html"><meta name="robots" content="index, follow">
+  <meta property="og:title" content="DeepSeek TUI skills vs prompts">
+  <meta property="og:description" content="对比 DeepSeek TUI 的 skills 和 prompts，理解什么时候更该用可复用工作流，而不是一次性提示词。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://deepseek-tui.app/zh/skills/vs-prompts/index.html">
+  <meta property="og:site_name" content="DeepSeek TUI Guide">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DeepSeek TUI skills vs prompts">
+  <meta name="twitter:description" content="对比 DeepSeek TUI 的 skills 和 prompts，理解什么时候更该用可复用工作流，而不是一次性提示词。"><link rel="alternate" hreflang="en" href="https://deepseek-tui.app/skills/vs-prompts/index.html"><link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/skills/vs-prompts/index.html"><link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "DeepSeek TUI skills vs prompts",
+      "name": "DeepSeek TUI skills vs prompts",
+      "description": "对比 DeepSeek TUI 的 skills 和 prompts，理解什么时候更该用可复用工作流，而不是一次性提示词。",
+      "url": "https://deepseek-tui.app/zh/skills/vs-prompts/index.html",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://deepseek-tui.app/zh/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Skills",
+          "item": "https://deepseek-tui.app/zh/skills/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DeepSeek TUI skills vs prompts",
+          "item": "https://deepseek-tui.app/zh/skills/vs-prompts/index.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
 <body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/skills/index.html">技能</a><span>/</span><span>skills vs prompts</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Skills vs Prompts</span><h1>DeepSeek TUI 里的 skills vs prompts，本质上是在比较“可复用工作流”和值不值得每次重新写提示词</h1><p>用户搜这个词，通常不是不知道 prompt 是什么，而是已经感受到重复工作，想知道 skills 是否真的解决了另一类问题。</p></div><aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>一次性任务更适合 prompts，重复出现的工作流更适合 skills。</h2><p>差别不是文案风格，而是复用、约束和长期维护成本。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>为什么这组对比值得单独写</h2><p>很多人会把 skill 当成“更长的 prompt”。但实际差异在于：skill 更适合稳定复用同一类流程，而 prompt 更适合一次性描述眼前任务。</p><h2>该比什么</h2><ul><li>这个工作流会不会重复出现？</li><li>你需要稳定结构，还是只需要当次表达？</li><li>下次再做同类任务时，还想不想沿用同一套边界？</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/skills/examples/index.html">Skills examples</a><a href="/zh/skills/index.html">Skills 总页</a><a href="/zh/mcp/index.html">MCP 总页</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a></div><div class="footer-links"><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
 <script>

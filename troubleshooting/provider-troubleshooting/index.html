@@ -1,8 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DeepSeek TUI Provider Troubleshooting</title><meta name="description" content="Troubleshoot DeepSeek TUI provider issues by separating API key problems, endpoint mismatches, and backend path confusion."><link rel="canonical" href="https://deepseek-tui.app/troubleshooting/provider-troubleshooting/index.html"><meta name="robots" content="index, follow">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/troubleshooting/provider-troubleshooting/index.html">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DeepSeek TUI Provider Troubleshooting</title><meta name="description" content="Troubleshoot DeepSeek TUI provider issues by separating API key problems, endpoint mismatches, and backend path confusion."><link rel="canonical" href="https://deepseek-tui.app/troubleshooting/provider-troubleshooting/index.html"><meta name="robots" content="index, follow">
+  <meta property="og:title" content="DeepSeek TUI Provider Troubleshooting">
+  <meta property="og:description" content="Troubleshoot DeepSeek TUI provider issues by separating API key problems, endpoint mismatches, and backend path confusion.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://deepseek-tui.app/troubleshooting/provider-troubleshooting/index.html">
+  <meta property="og:site_name" content="DeepSeek TUI Guide">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DeepSeek TUI Provider Troubleshooting">
+  <meta name="twitter:description" content="Troubleshoot DeepSeek TUI provider issues by separating API key problems, endpoint mismatches, and backend path confusion.">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/troubleshooting/provider-troubleshooting/index.html">
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/troubleshooting/provider-troubleshooting/index.html">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css"></head><body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI Guide</strong><small>Terminal setup and usage hub</small></span></a><nav class="nav-links" data-nav-links><a href="/index.html">Home</a><a href="/guides/index.html">Guides</a><a href="/docs/index.html">Docs</a><a href="/install/index.html">Install</a><a href="/config/index.html">Config</a><a href="/modes/index.html">Modes</a><a href="/comparisons/index.html">Comparisons</a><a href="/troubleshooting/index.html">Troubleshooting</a><a href="/zh/index.html">中文</a></nav><button class="nav-toggle" type="button" data-nav-toggle>Menu</button></div></header><div class="page-path"><div class="container"><a href="/index.html">Home</a><span>/</span><a href="/troubleshooting/index.html">Troubleshooting</a><span>/</span><span>Provider Troubleshooting</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Provider Troubleshooting</span><h1>Provider troubleshooting gets easier once you separate credentials, endpoints, and backend assumptions</h1><p>Many provider issues look like a single error, but the real cause is often one of three categories: wrong key, wrong endpoint, or wrong mental model about which backend path is active.</p></div><aside class="answer-card"><span class="panel-kicker">Direct Answer</span><h2>Do not treat all provider failures as bad API key problems.</h2><p>Sometimes the key is fine and the actual mismatch sits in provider selection or endpoint assumptions.</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>What to isolate first</h2><p>Start by isolating whether the provider itself is wrong, the credentials belong to a different backend path, or the endpoint behavior no longer matches your config assumptions. That is usually faster than trial-and-error editing.</p><h2>Most common failure buckets</h2><ul><li>Correct tool, wrong provider path</li><li>Correct provider idea, wrong credentials</li><li>Correct credentials, wrong endpoint or runtime assumptions</li></ul></article><aside class="panel-card"><span class="panel-kicker">Next pages</span><div class="link-stack"><a href="/config/provider-setup/index.html">Provider setup</a><a href="/config/api-key/index.html">API key setup</a><a href="/troubleshooting/index.html">Troubleshooting hub</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI Guide</h3><p>Independent guide site for troubleshooting and setup help.</p><p>&copy; <span data-year></span> DeepSeek TUI Guide</p></div><div class="footer-links"><a href="/install/index.html">Install</a><a href="/config/index.html">Config</a></div><div class="footer-links"><a href="/about/index.html">About</a><a href="/contact/index.html">Contact</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "DeepSeek TUI Provider Troubleshooting",
+      "name": "DeepSeek TUI Provider Troubleshooting",
+      "description": "Troubleshoot DeepSeek TUI provider issues by separating API key problems, endpoint mismatches, and backend path confusion.",
+      "url": "https://deepseek-tui.app/troubleshooting/provider-troubleshooting/index.html",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://deepseek-tui.app/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Troubleshooting",
+          "item": "https://deepseek-tui.app/troubleshooting/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DeepSeek TUI Provider Troubleshooting",
+          "item": "https://deepseek-tui.app/troubleshooting/provider-troubleshooting/index.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head><body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI Guide</strong><small>Terminal setup and usage hub</small></span></a><nav class="nav-links" data-nav-links><a href="/index.html">Home</a><a href="/guides/index.html">Guides</a><a href="/docs/index.html">Docs</a><a href="/install/index.html">Install</a><a href="/config/index.html">Config</a><a href="/modes/index.html">Modes</a><a href="/comparisons/index.html">Comparisons</a><a href="/troubleshooting/index.html">Troubleshooting</a><a href="/zh/index.html">中文</a></nav><button class="nav-toggle" type="button" data-nav-toggle>Menu</button></div></header><div class="page-path"><div class="container"><a href="/index.html">Home</a><span>/</span><a href="/troubleshooting/index.html">Troubleshooting</a><span>/</span><span>Provider Troubleshooting</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Provider Troubleshooting</span><h1>Provider troubleshooting gets easier once you separate credentials, endpoints, and backend assumptions</h1><p>Many provider issues look like a single error, but the real cause is often one of three categories: wrong key, wrong endpoint, or wrong mental model about which backend path is active.</p></div><aside class="answer-card"><span class="panel-kicker">Direct Answer</span><h2>Do not treat all provider failures as bad API key problems.</h2><p>Sometimes the key is fine and the actual mismatch sits in provider selection or endpoint assumptions.</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>What to isolate first</h2><p>Start by isolating whether the provider itself is wrong, the credentials belong to a different backend path, or the endpoint behavior no longer matches your config assumptions. That is usually faster than trial-and-error editing.</p><h2>Most common failure buckets</h2><ul><li>Correct tool, wrong provider path</li><li>Correct provider idea, wrong credentials</li><li>Correct credentials, wrong endpoint or runtime assumptions</li></ul></article><aside class="panel-card"><span class="panel-kicker">Next pages</span><div class="link-stack"><a href="/config/provider-setup/index.html">Provider setup</a><a href="/config/api-key/index.html">API key setup</a><a href="/troubleshooting/index.html">Troubleshooting hub</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI Guide</h3><p>Independent guide site for troubleshooting and setup help.</p><p>&copy; <span data-year></span> DeepSeek TUI Guide</p></div><div class="footer-links"><a href="/install/index.html">Install</a><a href="/config/index.html">Config</a></div><div class="footer-links"><a href="/about/index.html">About</a><a href="/contact/index.html">Contact</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

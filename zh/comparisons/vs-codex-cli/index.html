@@ -1,8 +1,54 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DeepSeek TUI vs Codex CLI</title><meta name="description" content="从安装路径、工作流风格、护栏和终端代理使用方式上，对比 DeepSeek TUI 与 Codex CLI。"><link rel="canonical" href="https://deepseek-tui.app/zh/comparisons/vs-codex-cli/index.html"><meta name="robots" content="index, follow">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/comparisons/vs-codex-cli/index.html">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DeepSeek TUI vs Codex CLI</title><meta name="description" content="从安装路径、工作流风格、护栏和终端代理使用方式上，对比 DeepSeek TUI 与 Codex CLI。"><link rel="canonical" href="https://deepseek-tui.app/zh/comparisons/vs-codex-cli/index.html"><meta name="robots" content="index, follow">
+  <meta property="og:title" content="DeepSeek TUI vs Codex CLI">
+  <meta property="og:description" content="从安装路径、工作流风格、护栏和终端代理使用方式上，对比 DeepSeek TUI 与 Codex CLI。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://deepseek-tui.app/zh/comparisons/vs-codex-cli/index.html">
+  <meta property="og:site_name" content="DeepSeek TUI Guide">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DeepSeek TUI vs Codex CLI">
+  <meta name="twitter:description" content="从安装路径、工作流风格、护栏和终端代理使用方式上，对比 DeepSeek TUI 与 Codex CLI。">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/comparisons/vs-codex-cli/index.html">
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/comparisons/vs-codex-cli/index.html">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css"></head>
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "DeepSeek TUI vs Codex CLI",
+      "name": "DeepSeek TUI vs Codex CLI",
+      "description": "从安装路径、工作流风格、护栏和终端代理使用方式上，对比 DeepSeek TUI 与 Codex CLI。",
+      "url": "https://deepseek-tui.app/zh/comparisons/vs-codex-cli/index.html",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://deepseek-tui.app/zh/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "对比",
+          "item": "https://deepseek-tui.app/zh/comparisons/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DeepSeek TUI vs Codex CLI",
+          "item": "https://deepseek-tui.app/zh/comparisons/vs-codex-cli/index.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
 <body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/comparisons/index.html">对比</a><span>/</span><span>vs Codex CLI</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">对比</span><h1>DeepSeek TUI 和 Codex CLI 的差异，本质上是工作流模型差异，而不只是功能项对照</h1><p>搜索这组词的人，通常已经确定自己想用终端编码代理，剩下的问题是：哪个更适合当前环境、节奏和操作边界。</p></div><aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>如果你更看重 DeepSeek 生态里的终端工作流，DeepSeek TUI 更值得优先看；如果你在比较代理行为和护栏设计，就要更仔细地对照工作方式。</h2><p>真正的差异，往往先体现在工作流风格，再体现在功能清单。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这组对比什么时候最有价值</h2><p>当你已经知道自己需要终端编码代理，而不是还在问“这是什么工具”时，这组对比最有价值。你真正要判断的是工作方式、生态匹配和执行风格，而不是抽象的“谁更强”。</p><h2>先比较什么</h2><ul><li>安装和初次配置的摩擦成本</li><li>计划优先还是直接执行的工作方式</li><li>对特定生态和默认假设的依赖程度</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/comparisons/index.html">返回对比总页</a><a href="/zh/modes/index.html">模式总页</a><a href="/zh/config/index.html">配置总页</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a></div><div class="footer-links"><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
 <script>
