@@ -85,6 +85,22 @@ img { display: block; max-width: 100%; }
   color: var(--green);
 }
 
+.nav-links a.is-active {
+  color: var(--text);
+  position: relative;
+}
+
+.nav-links a.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--green-strong), var(--green));
+}
+
 .nav-toggle {
   display: none;
   border: 1px solid var(--line);
@@ -406,6 +422,76 @@ img { display: block; max-width: 100%; }
   font-weight: 800;
 }
 
+.main-with-sidebar {
+  padding-bottom: 20px;
+}
+
+.doc-layout {
+  width: min(1320px, calc(100% - 40px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.doc-content {
+  min-width: 0;
+}
+
+.section-sidebar {
+  position: sticky;
+  top: 92px;
+}
+
+.section-sidebar-card {
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: var(--panel-strong);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.section-sidebar-card h2 {
+  margin: 12px 0 8px;
+  font-family: "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: 28px;
+}
+
+.section-sidebar-card p {
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+
+.sidebar-links {
+  display: grid;
+  gap: 10px;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 11px 13px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  font-weight: 700;
+  transition: border-color 120ms ease, color 120ms ease, background 120ms ease;
+}
+
+.sidebar-link:hover,
+.sidebar-link:focus-visible {
+  color: var(--text);
+  border-color: rgba(107, 226, 141, 0.32);
+  background: rgba(107, 226, 141, 0.08);
+}
+
+.sidebar-link.is-current {
+  color: #07110c;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--green-strong), var(--green));
+}
+
 .site-footer {
   margin-top: 24px;
   padding: 32px 0 52px;
@@ -422,6 +508,7 @@ img { display: block; max-width: 100%; }
   .hero-grid,
   .two-col,
   .split-grid,
+  .doc-layout,
   .footer-grid,
   .faq-grid,
   .card-grid-2,
@@ -447,5 +534,13 @@ img { display: block; max-width: 100%; }
 
   .nav-toggle {
     display: inline-flex;
+  }
+
+  .section-sidebar {
+    position: static;
+  }
+
+  .nav-links a.is-active::after {
+    display: none;
   }
 }
