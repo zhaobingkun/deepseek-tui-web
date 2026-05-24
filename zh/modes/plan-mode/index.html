@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DeepSeek TUI Plan Mode</title>
-  <meta name="description" content="理解 DeepSeek TUI 的 plan mode，以及什么时候更谨慎的终端代理工作流更合适。">
+  <title>DeepSeek TUI 的 Plan Mode</title>
+  <meta name="description" content="把 DeepSeek TUI 的 plan mode 理解成更偏审查优先的工作流，适合高风险任务、较慢执行和更清楚的操作者控制。">
   <link rel="canonical" href="https://deepseek-tui.app/zh/modes/plan-mode/index.html">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="DeepSeek TUI Plan Mode">
-  <meta property="og:description" content="理解 DeepSeek TUI 的 plan mode，以及什么时候更谨慎的终端代理工作流更合适。">
+  <meta property="og:title" content="DeepSeek TUI 的 Plan Mode">
+  <meta property="og:description" content="把 DeepSeek TUI 的 plan mode 理解成更偏审查优先的工作流，适合高风险任务、较慢执行和更清楚的操作者控制。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://deepseek-tui.app/zh/modes/plan-mode/index.html">
   <meta property="og:site_name" content="DeepSeek TUI 中文指南">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DeepSeek TUI Plan Mode">
-  <meta name="twitter:description" content="理解 DeepSeek TUI 的 plan mode，以及什么时候更谨慎的终端代理工作流更合适。">
+  <meta name="twitter:title" content="DeepSeek TUI 的 Plan Mode">
+  <meta name="twitter:description" content="把 DeepSeek TUI 的 plan mode 理解成更偏审查优先的工作流，适合高风险任务、较慢执行和更清楚的操作者控制。">
   <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/modes/plan-mode/index.html">
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/modes/plan-mode/index.html">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
@@ -61,22 +61,7 @@
 <body>
   <header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header>
   <div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/modes/index.html">模式</a><span>/</span><span>Plan Mode</span></div></div>
-  <main>
-    <section class="page-hero">
-      <div class="container two-col">
-        <div>
-          <span class="eyebrow">Plan Mode</span>
-          <h1>Plan mode 适合先想清楚步骤，再逐步推进的终端代理工作流</h1>
-          <p>如果你更在意可控性、步骤感和减少误操作，plan mode 往往会比更激进的工作方式更适合。</p>
-        </div>
-        <aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>plan mode 更适合高风险命令、复杂改动和需要先理顺步骤的任务。</h2><p>它通常更慢一点，但换来的是更清晰的执行路径。</p></aside>
-      </div>
-    </section>
-    <section class="section"><div class="container two-col">
-<article class="prose"><h2>为什么这一页值得单独做成中文</h2><p>这个主题本身已经开始从英文 README 搜索，转向更具体的中文安装、配置、模式和排错问题，所以单独保留一个中文入口是有价值的。</p></article>
-<aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/guides/index.html">返回中文指南</a><a href="/zh/install/index.html">安装总页</a><a href="/zh/config/index.html">配置总页</a></div></aside>
-</div></section>
-  </main>
+  <main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Plan Mode</span><h1>当审查纪律比推进速度更重要时，DeepSeek TUI 的 plan mode 才最有价值</h1><p>plan mode 会主动把代理节奏放慢，让工作流更可检查。当文件修改、命令执行或任务边界足够敏感时，这种在行动前先看清结构和顺序的方式，往往更值得。</p><div class="hero-points"><span>本页是站内详情页</span><span>DeepSeek TUI 的 Plan Mode</span><span>modes</span></div></div><aside class="answer-card"><span class="panel-kicker">适合什么</span><h2>当一次错误动作的代价，比多花一点审查时间的代价更高时，就优先选 plan mode。</h2><p>它不是最快的模式，但它能让意图、顺序和审查点在行动前更清楚。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页能直接回答的问题</h2><ul><li>哪类任务最适合用 plan mode？</li><li>你在控制力上获得了什么，又在速度上失去了什么？</li><li>进入 plan mode 后，审查习惯应该怎样跟着调整？</li></ul><h2>做完后该核对什么</h2><ul><li>高风险命令、大改动、范围不清或陌生代码库时，更适合先开它。</li><li>观察额外的审查步骤到底是在减少错误，还是只是在拖慢简单任务。</li><li>如果任务已经变得直接，可以和 yolo mode 做对比，不要只是习惯性保持保守。</li></ul><h2>最常见的误区</h2><ul><li>所有小任务都用 plan mode，最后嫌工具太慢。</li><li>以为开了 plan mode 就不需要自己再审查。</li><li>任务都已经稳定了，却从不重新判断模式是否应该切换。</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/modes/index.html">模式总页</a><a href="/zh/modes/plan-vs-yolo/index.html">plan vs yolo</a><a href="/zh/modes/yolo-mode/index.html">Yolo mode</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按当前问题走，再决定要不要切去相邻详情页或 hub。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>先看任务风险，不是先看个人偏好</h3><p>选 plan mode 的理由应该是任务错不起，而不是单纯因为“慢一点看起来更安全”。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>利用它把任务形状看清楚</h3><p>plan mode 最大的价值，是让你在代理走远之前先看到工作的结构和顺序。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>信心起来后再决定要不要继续</h3><p>当任务已经变得稳定清楚时，再判断当前模式是否仍然最合适。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/modes/index.html">模式总页</a><a href="/zh/modes/plan-vs-yolo/index.html">plan vs yolo</a><a href="/zh/modes/yolo-mode/index.html">Yolo mode</a></div></aside></div></section></main>
   <footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a></div><div class="footer-links"><a href="/zh/comparisons/index.html">对比</a><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer>
   <script src="/assets/js/site.js"></script>
 <!-- Google tag (gtag.js) -->

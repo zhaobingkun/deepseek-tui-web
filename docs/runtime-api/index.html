@@ -47,7 +47,154 @@
 }
   </script>
 </head>
-<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI Guide</strong><small>Terminal setup and usage hub</small></span></a><nav class="nav-links" data-nav-links><a href="/index.html">Home</a><a href="/guides/index.html">Guides</a><a href="/docs/index.html">Docs</a><a href="/install/index.html">Install</a><a href="/config/index.html">Config</a><a href="/modes/index.html">Modes</a><a href="/comparisons/index.html">Comparisons</a><a href="/troubleshooting/index.html">Troubleshooting</a><a href="/zh/index.html">中文</a></nav><button class="nav-toggle" type="button" data-nav-toggle>Menu</button></div></header><div class="page-path"><div class="container"><a href="/index.html">Home</a><span>/</span><a href="/docs/index.html">Docs</a><span>/</span><span>Runtime API</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Docs Detail</span><h1>DeepSeek TUI Runtime API Docs Guide</h1><p>Runtime API docs explain how deeper programmatic control or integration hooks fit around the normal interactive CLI flow.</p><div class="hero-points"><span>Upstream source: RUNTIME_API.md</span><span>Best read by intent</span><span>Routes back into site hubs</span></div></div><aside class="answer-card"><span class="panel-kicker">Best Use</span><h2>Treat this page as the reading map for Runtime API Docs, not as a raw repo mirror.</h2><p>Read this when you are moving from direct terminal usage into automation, embedding, or integration-aware workflows.</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>What this document actually covers</h2><p>Runtime API docs explain how deeper programmatic control or integration hooks fit around the normal interactive CLI flow.</p><h2>Questions this page should answer fast</h2><ul><li>What can be controlled programmatically that is not obvious from the terminal UI alone?</li><li>Where does the runtime API sit relative to config, prompts, tools, and modes?</li><li>How should integration behavior be validated so it matches the interactive experience closely enough?</li></ul><h2>What to focus on inside the upstream doc</h2><ul><li>Lifecycle boundaries between setup, live runtime state, and external callers.</li><li>What the runtime API should expose versus what should remain internal implementation detail.</li><li>Integration expectations around errors, retries, and tool invocation side effects.</li><li>How runtime API docs should connect back to tool surface and modes docs.</li></ul><h2>Common mistakes</h2><ul><li>Assuming interactive UI behavior automatically translates into API guarantees.</li><li>Skipping error-model reading and focusing only on the success path.</li><li>Embedding runtime control without checking tool or permission implications.</li></ul></article><aside class="panel-card"><span class="panel-kicker">Read next</span><div class="link-stack"><a href="/docs/index.html">Docs hub</a><a href="/config/index.html">Config hub</a><a href="/guides/index.html">Guides hub</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>Recommended reading order</h2><p>Read by problem type first, then branch back into install, config, modes, MCP, or troubleshooting only when the next step is clear.</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">Step 1</span><h3>Anchor the workflow question</h3><p>Decide whether your blocker is navigation, modes, memory, tools, or operator review speed.</p></article><article class="content-card"><span class="tag">Step 2</span><h3>Read the behavior, not only the labels</h3><p>Focus on how the feature changes day-to-day flow instead of memorizing names alone.</p></article><article class="content-card"><span class="tag">Step 3</span><h3>Return to the right hub next</h3><p>After the upstream topic is clear, jump back into guides, modes, or config to keep the workflow coherent.</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>Where this page sits in the site</h2><p>These docs detail pages are not just repo mirrors. Their job is to tell you why a topic matters, which parts deserve attention first, and which branch of the site should take over once the document boundary is clear. For a project that spans install, configuration, modes, tools, and operator workflows, that route-first structure is more useful than a flat Markdown mirror.</p><h2>When to leave this page</h2><p>Once you know whether the next action belongs in install, config, modes, MCP, troubleshooting, or hands-on guides, move there quickly. The detail page is most useful when it gives you a sharper reading order and a better mental boundary for the topic, not when it tries to absorb every downstream action page.</p></article><aside class="panel-card"><span class="panel-kicker">Next pages</span><div class="link-stack"><a href="/docs/index.html">Docs hub</a><a href="/config/index.html">Config hub</a><a href="/guides/index.html">Guides hub</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI Guide</h3><p>Independent guide site for docs, setup, modes, MCP, and troubleshooting.</p><p>&copy; <span data-year></span> DeepSeek TUI Guide</p></div><div class="footer-links"><a href="/docs/index.html">Docs</a><a href="/install/index.html">Install</a><a href="/config/index.html">Config</a></div><div class="footer-links"><a href="/about/index.html">About</a><a href="/contact/index.html">Contact</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
+<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI Guide</strong><small>Terminal setup and usage hub</small></span></a><nav class="nav-links" data-nav-links><a href="/index.html">Home</a><a href="/guides/index.html">Guides</a><a href="/docs/index.html">Docs</a><a href="/install/index.html">Install</a><a href="/config/index.html">Config</a><a href="/modes/index.html">Modes</a><a href="/comparisons/index.html">Comparisons</a><a href="/troubleshooting/index.html">Troubleshooting</a><a href="/zh/index.html">中文</a></nav><button class="nav-toggle" type="button" data-nav-toggle>Menu</button></div></header><div class="page-path"><div class="container"><a href="/index.html">Home</a><span>/</span><a href="/docs/index.html">Docs</a><span>/</span><span>Runtime API</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Full Docs Article</span><h1>DeepSeek TUI Runtime API Docs Guide</h1><p>Runtime API docs explain how deeper programmatic control or integration hooks fit around the normal interactive CLI flow.</p><div class="hero-points"><span>Upstream source: RUNTIME_API.md</span><span>Readable on-site</span><span>Full article embedded below</span></div></div><aside class="answer-card"><span class="panel-kicker">What changed</span><h2>This page now carries the upstream doc body directly instead of acting as a lightweight reading map only.</h2><p>Read this when you are moving from direct terminal usage into automation, embedding, or integration-aware workflows.</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>What this document actually covers</h2><p>Runtime API docs explain how deeper programmatic control or integration hooks fit around the normal interactive CLI flow.</p><h2>How to use this page</h2><ul><li>Use the section list on the right to jump into the exact upstream section you need.</li><li>If you came here for one problem only, read the relevant heading first and return to the matching hub afterward.</li><li>If you need source verification, open the GitHub page or raw Markdown directly.</li></ul></article><aside class="panel-card"><span class="panel-kicker">Quick links</span><div class="link-stack"><a href="https://github.com/zhaobingkun/DeepSeek-TUI/blob/main/docs/RUNTIME_API.md">GitHub doc page</a><a href="https://raw.githubusercontent.com/zhaobingkun/DeepSeek-TUI/main/docs/RUNTIME_API.md">Raw Markdown</a><a href="/docs/index.html">Docs hub</a><a href="/config/index.html">Config hub</a><a href="/guides/index.html">Guides hub</a></div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose doc-article"><h2>Full upstream document</h2><h1 id="runtime-api-integration-contract">Runtime API &amp; Integration Contract</h1>
+<p>DeepSeek TUI exposes a local runtime API through <code>deepseek serve --http</code> and machine-readable health via <code>deepseek doctor --json</code>. It also exposes <code>deepseek serve --acp</code> for editor clients that speak the Agent Client Protocol over stdio. This document is the stable integration contract for native macOS workbench applications (and other local supervisors) that embed the DeepSeek engine without screen-scraping terminal output.</p>
+<h2 id="architecture">Architecture</h2>
+<pre><code>macOS workbench (or any local supervisor)
+        │
+        ├─ deepseek doctor --json   → machine-readable health &amp; capability
+        ├─ deepseek serve --http    → HTTP/SSE runtime API
+        ├─ deepseek serve --acp     → ACP stdio agent for editors such as Zed
+        ├─ deepseek serve --mcp     → MCP stdio server
+        └─ deepseek [args]          → interactive TUI session</code></pre>
+<p>The engine runs as a local-only process. All APIs bind to <code>localhost</code> by default. No hosted relay, no provider-token custody, no secret leakage.</p>
+<h2 id="acp-stdio-adapter-deepseek-serve-acp">ACP stdio adapter: <code>deepseek serve --acp</code></h2>
+<p><code>deepseek serve --acp</code> speaks JSON-RPC 2.0 over newline-delimited stdio for ACP-compatible editor clients. The initial adapter implements the ACP baseline:</p>
+<ul><li><code>initialize</code></li><li><code>session/new</code></li><li><code>session/prompt</code></li><li><code>session/cancel</code></li></ul>
+<p>Prompt requests are routed through the configured DeepSeek client and current default model. Responses are emitted as <code>session/update</code> agent message chunks followed by a <code>session/prompt</code> response with <code>stopReason: &quot;end_turn&quot;</code>.</p>
+<p>The adapter is intentionally conservative: it does not yet expose shell tools, file-write tools, checkpoint replay, or session loading through ACP. Use <code>deepseek serve --http</code> for the full local runtime API and <code>deepseek serve --mcp</code> when another client needs DeepSeek's tools as MCP tools.</p>
+<h2 id="capability-endpoint-deepseek-doctor-json">Capability endpoint: <code>deepseek doctor --json</code></h2>
+<p>Returns a JSON object describing the current installation's readiness state. Suitable for health-check polling from a macOS workbench.</p>
+<pre><code class="language-bash">deepseek doctor --json</code></pre>
+<h3 id="response-schema-key-fields">Response schema (key fields)</h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>version</code></td><td>string</td><td>Installed version (e.g. <code>&quot;0.8.9&quot;</code>)</td></tr><tr><td><code>config_path</code></td><td>string</td><td>Resolved config file path</td></tr><tr><td><code>config_present</code></td><td>bool</td><td>Whether the config file exists</td></tr><tr><td><code>workspace</code></td><td>string</td><td>Default workspace directory</td></tr><tr><td><code>api_key.source</code></td><td>string</td><td><code>env</code>, <code>config</code>, or <code>missing</code></td></tr><tr><td><code>base_url</code></td><td>string</td><td>API base URL</td></tr><tr><td><code>default_text_model</code></td><td>string</td><td>Default model</td></tr><tr><td><code>memory.enabled</code></td><td>bool</td><td>Whether the memory feature is on</td></tr><tr><td><code>memory.path</code></td><td>string</td><td>Path to memory file</td></tr><tr><td><code>memory.file_present</code></td><td>bool</td><td>Whether memory file exists</td></tr><tr><td><code>mcp.config_path</code></td><td>string</td><td>MCP config file path</td></tr><tr><td><code>mcp.present</code></td><td>bool</td><td>Whether MCP config exists</td></tr><tr><td><code>mcp.servers</code></td><td>array</td><td>Per-server health: <code>{name, enabled, status, detail}</code></td></tr><tr><td><code>skills.selected</code></td><td>string</td><td>Resolved skills directory</td></tr><tr><td><code>skills.global.path</code> / <code>.present</code> / <code>.count</code></td><td>—</td><td>DeepSeek global skills dir (<code>~/.deepseek/skills</code>)</td></tr><tr><td><code>skills.agents.path</code> / <code>.present</code> / <code>.count</code></td><td>—</td><td>Workspace <code>.agents/skills/</code> dir</td></tr><tr><td><code>skills.agents_global.path</code> / <code>.present</code> / <code>.count</code></td><td>—</td><td>agentskills.io global skills dir (<code>~/.agents/skills</code>)</td></tr><tr><td><code>skills.local.path</code> / <code>.present</code> / <code>.count</code></td><td>—</td><td><code>skills/</code> dir</td></tr><tr><td><code>skills.opencode.path</code> / <code>.present</code> / <code>.count</code></td><td>—</td><td><code>.opencode/skills/</code> dir</td></tr><tr><td><code>skills.claude.path</code> / <code>.present</code> / <code>.count</code></td><td>—</td><td><code>.claude/skills/</code> dir</td></tr><tr><td><code>tools.path</code> / <code>.present</code> / <code>.count</code></td><td>—</td><td>Global tools directory</td></tr><tr><td><code>plugins.path</code> / <code>.present</code> / <code>.count</code></td><td>—</td><td>Global plugins directory</td></tr><tr><td><code>sandbox.available</code></td><td>bool</td><td>Whether sandbox is supported on this OS</td></tr><tr><td><code>sandbox.kind</code></td><td>string or null</td><td>Sandbox kind (e.g. <code>&quot;macos_seatbelt&quot;</code>)</td></tr><tr><td><code>storage.spillover.path</code> / <code>.present</code> / <code>.count</code></td><td>—</td><td>Tool output spillover dir</td></tr><tr><td><code>storage.stash.path</code> / <code>.present</code> / <code>.count</code></td><td>—</td><td>Composer stash</td></tr></tbody></table>
+<h3 id="example">Example</h3>
+<pre><code class="language-json">{
+  &quot;version&quot;: &quot;0.8.9&quot;,
+  &quot;config_path&quot;: &quot;/Users/you/.deepseek/config.toml&quot;,
+  &quot;config_present&quot;: true,
+  &quot;workspace&quot;: &quot;/Users/you/projects/deepseek-tui&quot;,
+  &quot;api_key&quot;: {
+    &quot;source&quot;: &quot;env&quot;
+  },
+  &quot;base_url&quot;: &quot;https://api.deepseek.com&quot;,
+  &quot;default_text_model&quot;: &quot;deepseek-v4-pro&quot;,
+  &quot;memory&quot;: {
+    &quot;enabled&quot;: false,
+    &quot;path&quot;: &quot;/Users/you/.deepseek/memory.md&quot;,
+    &quot;file_present&quot;: true
+  },
+  &quot;mcp&quot;: {
+    &quot;config_path&quot;: &quot;/Users/you/.deepseek/mcp.json&quot;,
+    &quot;present&quot;: true,
+    &quot;servers&quot;: [
+      {&quot;name&quot;: &quot;filesystem&quot;, &quot;enabled&quot;: true, &quot;status&quot;: &quot;ok&quot;, &quot;detail&quot;: &quot;ready&quot;}
+    ]
+  },
+  &quot;sandbox&quot;: {
+    &quot;available&quot;: true,
+    &quot;kind&quot;: &quot;macos_seatbelt&quot;
+  }
+}</code></pre>
+<h2 id="http-sse-runtime-api-deepseek-serve-http">HTTP/SSE runtime API: <code>deepseek serve --http</code></h2>
+<pre><code class="language-bash">deepseek serve --http [--host 127.0.0.1] [--port 7878] [--workers 2]</code></pre>
+<p>Defaults: host <code>127.0.0.1</code>, port <code>7878</code>, 2 workers (clamped 1–8).</p>
+<p>The server binds to <code>localhost</code> by default. Configuration is via CLI flags — there is no <code>[app_server]</code> config section.</p>
+<h3 id="endpoints">Endpoints</h3>
+<p><strong>Health</strong></p>
+<ul><li><code>GET /health</code></li></ul>
+<p><strong>Sessions</strong> (legacy session manager)</p>
+<ul><li><code>GET /v1/sessions?limit=50&amp;search=&lt;substring&gt;</code></li><li><code>GET /v1/sessions/{id}</code></li><li><code>DELETE /v1/sessions/{id}</code></li><li><code>POST /v1/sessions/{id}/resume-thread</code></li></ul>
+<p><strong>Threads</strong> (durable runtime data model)</p>
+<ul><li><code>GET /v1/threads?limit=50&amp;include_archived=false&amp;archived_only=false</code></li><li><code>GET /v1/threads/summary?limit=50&amp;search=&lt;optional&gt;&amp;include_archived=false&amp;archived_only=false</code></li><li><code>POST /v1/threads</code></li><li><code>GET /v1/threads/{id}</code></li><li><code>PATCH /v1/threads/{id}</code> (see body shape below)</li><li><code>POST /v1/threads/{id}/resume</code></li><li><code>POST /v1/threads/{id}/fork</code></li></ul>
+<p><code>archived_only=true</code> returns archived threads only (mutually overrides <code>include_archived</code>). Default behavior is unchanged: <code>include_archived=false</code> and <code>archived_only=false</code> returns active threads. Added in v0.8.10 (#563).</p>
+<p><code>PATCH /v1/threads/{id}</code> body — every field is optional, missing means "no change". At least one field must be present. <code>title</code> and <code>system_prompt</code> accept an empty string to clear a previously-set value. Added in v0.8.10 (#562):</p>
+<pre><code class="language-json">{
+  &quot;archived&quot;: true,
+  &quot;allow_shell&quot;: false,
+  &quot;trust_mode&quot;: false,
+  &quot;auto_approve&quot;: false,
+  &quot;model&quot;: &quot;deepseek-v4-pro&quot;,
+  &quot;mode&quot;: &quot;agent&quot;,
+  &quot;title&quot;: &quot;User-set thread title&quot;,
+  &quot;system_prompt&quot;: &quot;You are a useful assistant.&quot;
+}</code></pre>
+<p><strong>Turns</strong> (within a thread)</p>
+<ul><li><code>POST /v1/threads/{id}/turns</code></li><li><code>POST /v1/threads/{id}/turns/{turn_id}/steer</code></li><li><code>POST /v1/threads/{id}/turns/{turn_id}/interrupt</code></li><li><code>POST /v1/threads/{id}/compact</code> (manual compaction)</li></ul>
+<p><strong>Events</strong> (SSE replay + live stream)</p>
+<ul><li><code>GET /v1/threads/{id}/events?since_seq=&lt;u64&gt;</code></li></ul>
+<p><strong>Compatibility stream</strong> (one-shot, backwards-compatible)</p>
+<ul><li><code>POST /v1/stream</code></li></ul>
+<p><strong>Tasks</strong> (durable background work)</p>
+<ul><li><code>GET /v1/tasks</code></li><li><code>POST /v1/tasks</code></li><li><code>GET /v1/tasks/{id}</code></li><li><code>POST /v1/tasks/{id}/cancel</code></li></ul>
+<p><strong>Automations</strong> (scheduled recurring work)</p>
+<ul><li><code>GET /v1/automations</code></li><li><code>POST /v1/automations</code></li><li><code>GET /v1/automations/{id}</code></li><li><code>PATCH /v1/automations/{id}</code></li><li><code>DELETE /v1/automations/{id}</code></li><li><code>POST /v1/automations/{id}/run</code></li><li><code>POST /v1/automations/{id}/pause</code></li><li><code>POST /v1/automations/{id}/resume</code></li><li><code>GET /v1/automations/{id}/runs?limit=20</code></li></ul>
+<p><strong>Introspection</strong></p>
+<ul><li><code>GET /v1/workspace/status</code></li><li><code>GET /v1/skills</code></li><li><code>GET /v1/apps/mcp/servers</code></li><li><code>GET /v1/apps/mcp/tools?server=&lt;optional&gt;</code></li></ul>
+<p><strong>Usage</strong> (token/cost aggregation across threads)</p>
+<ul><li><code>GET /v1/usage?since=&lt;rfc3339&gt;&amp;until=&lt;rfc3339&gt;&amp;group_by=&lt;day|model|provider|thread&gt;</code></li></ul>
+<p><code>since</code> / <code>until</code> are inclusive RFC 3339 timestamps and may be omitted (no bound). <code>group_by</code> defaults to <code>day</code>. Buckets are sorted by ascending key. Empty time ranges produce empty <code>buckets</code> (never a 404). Cost is computed via the model→pricing map; turns whose model has no pricing entry contribute tokens but <code>0.0</code> cost. Added in v0.8.10 (#564).</p>
+<pre><code class="language-json">{
+  &quot;since&quot;: &quot;2026-04-01T00:00:00Z&quot;,
+  &quot;until&quot;: &quot;2026-04-30T23:59:59Z&quot;,
+  &quot;group_by&quot;: &quot;day&quot;,
+  &quot;totals&quot;: {
+    &quot;input_tokens&quot;: 12345,
+    &quot;output_tokens&quot;: 6789,
+    &quot;cached_tokens&quot;: 0,
+    &quot;reasoning_tokens&quot;: 0,
+    &quot;cost_usd&quot;: 0.012,
+    &quot;turns&quot;: 42
+  },
+  &quot;buckets&quot;: [
+    {
+      &quot;key&quot;: &quot;2026-04-30&quot;,
+      &quot;input_tokens&quot;: 1234,
+      &quot;output_tokens&quot;: 678,
+      &quot;cached_tokens&quot;: 0,
+      &quot;reasoning_tokens&quot;: 0,
+      &quot;cost_usd&quot;: 0.001,
+      &quot;turns&quot;: 3
+    }
+  ]
+}</code></pre>
+<h2 id="runtime-data-model">Runtime data model</h2>
+<p>The runtime uses a durable Thread/Turn/Item lifecycle.</p>
+<ul><li><strong>ThreadRecord</strong> — <code>id</code>, <code>created_at</code>, <code>updated_at</code>, <code>model</code>, <code>workspace</code>, <code>mode</code>, <code>task_id</code>, <code>coherence_state</code>, <code>system_prompt</code>, <code>latest_turn_id</code>, <code>latest_response_bookmark</code>, <code>archived</code></li><li><strong>TurnRecord</strong> — <code>id</code>, <code>thread_id</code>, <code>status</code> (<code>queued|in_progress|completed| failed|interrupted|canceled</code>), timestamps, duration, usage, error summary</li><li><strong>TurnItemRecord</strong> — <code>id</code>, <code>turn_id</code>, <code>kind</code> (<code>user_message|agent_message| tool_call|file_change|command_execution|context_compaction|status|error</code>), lifecycle <code>status</code>, <code>metadata</code></li></ul>
+<p>Events are append-only with a global monotonic <code>seq</code> for replay/resume.</p>
+<h3 id="restart-semantics">Restart semantics</h3>
+<ul><li>If the process restarts while a turn or item is <code>queued</code> or <code>in_progress</code>, the recovered record is marked <code>interrupted</code> with an <code>&quot;Interrupted by process restart&quot;</code> error.</li><li>Task execution performs its own recovery on top of the same persisted thread/turn store.</li></ul>
+<h3 id="approval-model">Approval model</h3>
+<ul><li>The <code>auto_approve</code> flag applies to the runtime approval bridge and engine tool context. When enabled for a thread/turn/task, approval-required tools are auto-approved in the non-interactive runtime path, shell safety checks run in auto-approved mode, and spawned sub-agents inherit that setting.</li><li>When omitted, <code>auto_approve</code> defaults to <code>false</code>.</li></ul>
+<h3 id="sse-event-stream">SSE event stream</h3>
+<p>The SSE event payload shape:</p>
+<pre><code class="language-json">{
+  &quot;seq&quot;: 42,
+  &quot;timestamp&quot;: &quot;2026-02-11T20:18:49.123Z&quot;,
+  &quot;thread_id&quot;: &quot;thr_1234abcd&quot;,
+  &quot;turn_id&quot;: &quot;turn_5678efgh&quot;,
+  &quot;item_id&quot;: &quot;item_90ab12cd&quot;,
+  &quot;event&quot;: &quot;item.delta&quot;,
+  &quot;payload&quot;: {
+    &quot;delta&quot;: &quot;partial output&quot;,
+    &quot;kind&quot;: &quot;agent_message&quot;
+  }
+}</code></pre>
+<p>Common event names: <code>thread.started</code>, <code>thread.forked</code>, <code>turn.started</code>, <code>turn.lifecycle</code>, <code>turn.steered</code>, <code>turn.interrupt_requested</code>, <code>turn.completed</code>, <code>item.started</code>, <code>item.delta</code>, <code>item.completed</code>, <code>item.failed</code>, <code>item.interrupted</code>, <code>approval.required</code>, <code>sandbox.denied</code>, <code>coherence.state</code>.</p>
+<h2 id="security-boundary">Security boundary</h2>
+<ul><li><strong>Localhost only</strong>. The server binds to <code>127.0.0.1</code> by default. Set <code>--host 0.0.0.0</code> only when you have a reverse-proxy / VPN that authenticates — there is no built-in auth, user isolation, or TLS.</li><li><strong>No provider-token custody</strong>. The server never returns the API key. The <code>api_key.source</code> capability field reports <code>env</code>, <code>config</code>, or <code>missing</code> — never the key itself.</li><li><strong>No hosted relay</strong>. The app-server is a local process under the user's control. There is no cloud component.</li><li><strong>Capability responses</strong> never leak secrets, file contents, or session message bodies. They report <em>metadata</em>: presence, counts, status flags.</li></ul>
+<h3 id="cors-allow-list">CORS allow-list</h3>
+<p>The runtime API ships with a built-in dev-origin allow-list: <code>http://localhost:3000</code>, <code>http://127.0.0.1:3000</code>, <code>http://localhost:1420</code>, <code>http://127.0.0.1:1420</code>, <code>tauri://localhost</code>. To add additional origins (e.g. when developing a UI on Vite's default <code>:5173</code>), use any of:</p>
+<ul><li>CLI flag (repeatable): <code>deepseek serve --http --cors-origin http://localhost:5173</code></li><li>Env var (comma-separated): <code>DEEPSEEK_CORS_ORIGINS=&quot;http://localhost:5173,http://localhost:8080&quot;</code></li><li>Config (<code>~/.deepseek/config.toml</code>):</li></ul>
+<pre><code class="language-toml">  [runtime_api]
+  cors_origins = [&quot;http://localhost:5173&quot;]</code></pre>
+<p>User-supplied origins <strong>stack on top of</strong> the built-in defaults; they do not replace them. Wildcard origins are not supported — the explicit allow-list model is preserved. Added in v0.8.10 (#561).</p>
+<h2 id="session-lifecycle-native-ui-supervision">Session lifecycle (native UI supervision)</h2>
+<table><thead><tr><th>Operation</th><th>Endpoint</th></tr></thead><tbody><tr><td>List sessions</td><td><code>GET /v1/sessions</code></td></tr><tr><td>Get session</td><td><code>GET /v1/sessions/{id}</code></td></tr><tr><td>Delete session</td><td><code>DELETE /v1/sessions/{id}</code></td></tr><tr><td>Resume into thread</td><td><code>POST /v1/sessions/{id}/resume-thread</code></td></tr><tr><td>Create thread</td><td><code>POST /v1/threads</code></td></tr><tr><td>List threads</td><td><code>GET /v1/threads</code></td></tr><tr><td>Attach to events</td><td><code>GET /v1/threads/{id}/events?since_seq=0</code></td></tr><tr><td>Send message</td><td><code>POST /v1/threads/{id}/turns</code></td></tr><tr><td>Steer</td><td><code>POST /v1/threads/{id}/turns/{turn_id}/steer</code></td></tr><tr><td>Interrupt</td><td><code>POST /v1/threads/{id}/turns/{turn_id}/interrupt</code></td></tr><tr><td>Compact</td><td><code>POST /v1/threads/{id}/compact</code></td></tr></tbody></table>
+<h2 id="compatibility-tests">Compatibility tests</h2>
+<p>Contract snapshots live in <code>crates/protocol/tests/</code>. Run:</p>
+<pre><code class="language-bash">cargo test -p deepseek-protocol --test parity_protocol --locked</code></pre>
+<p>This validates that the app-server's event schema hasn't drifted from the documented contract. CI runs this on every push to <code>main</code> and on release tags.</p></article><aside class="panel-card toc-card"><span class="panel-kicker">Contents</span><ul><li class="toc-level-1"><a href="#runtime-api-integration-contract">Runtime API &amp; Integration Contract</a></li><li class="toc-level-2"><a href="#architecture">Architecture</a></li><li class="toc-level-2"><a href="#acp-stdio-adapter-deepseek-serve-acp">ACP stdio adapter: `deepseek serve --acp`</a></li><li class="toc-level-2"><a href="#capability-endpoint-deepseek-doctor-json">Capability endpoint: `deepseek doctor --json`</a></li><li class="toc-level-3"><a href="#response-schema-key-fields">Response schema (key fields)</a></li><li class="toc-level-3"><a href="#example">Example</a></li><li class="toc-level-2"><a href="#http-sse-runtime-api-deepseek-serve-http">HTTP/SSE runtime API: `deepseek serve --http`</a></li><li class="toc-level-3"><a href="#endpoints">Endpoints</a></li><li class="toc-level-2"><a href="#runtime-data-model">Runtime data model</a></li><li class="toc-level-3"><a href="#restart-semantics">Restart semantics</a></li><li class="toc-level-3"><a href="#approval-model">Approval model</a></li><li class="toc-level-3"><a href="#sse-event-stream">SSE event stream</a></li><li class="toc-level-2"><a href="#security-boundary">Security boundary</a></li><li class="toc-level-3"><a href="#cors-allow-list">CORS allow-list</a></li><li class="toc-level-2"><a href="#session-lifecycle-native-ui-supervision">Session lifecycle (native UI supervision)</a></li><li class="toc-level-2"><a href="#compatibility-tests">Compatibility tests</a></li></ul></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI Guide</h3><p>Independent guide site for docs, setup, modes, MCP, and troubleshooting.</p><p>&copy; <span data-year></span> DeepSeek TUI Guide</p></div><div class="footer-links"><a href="/docs/index.html">Docs</a><a href="/install/index.html">Install</a><a href="/config/index.html">Config</a></div><div class="footer-links"><a href="/about/index.html">About</a><a href="/contact/index.html">Contact</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

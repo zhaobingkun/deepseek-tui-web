@@ -8,6 +8,149 @@ from pathlib import Path
 ROOT = Path("/Users/zhaobingkun/dev/DeepSeek-TUI")
 DOMAIN = "https://deepseek-tui.app"
 
+CATEGORY_DETAILS = {
+    "setup": {
+        "en": {
+            "concrete": [
+                "Which install or configuration routes the upstream doc actually treats as official first choices.",
+                "Which prerequisites, file paths, environment variables, and host assumptions must already be true.",
+                "What you should validate immediately before you move from setup into provider auth or runtime usage.",
+                "Which values should stay local versus which ones are safe to standardize for a team.",
+            ],
+            "workflow": [
+                "Keep one known-good baseline before you start tuning advanced options.",
+                "Record the shell, package route, and config path that really worked.",
+                "Treat install, provider, and config layers as separate ownership boundaries.",
+            ],
+        },
+        "zh": {
+            "concrete": [
+                "上游文档真正视为官方优先路线的安装或配置方案是哪几条。",
+                "哪些前置条件、文件路径、环境变量和宿主机假设必须先成立。",
+                "在进入 provider 认证或运行时使用之前，应该先完成哪些验证。",
+                "哪些值应该保留在本地，哪些才适合沉淀成团队级标准。",
+            ],
+            "workflow": [
+                "先固定一套 known-good baseline，再去调整高级选项。",
+                "把真正成功的 shell、包管理路线和配置路径记下来。",
+                "把安装、provider 和配置看成三层不同的拥有关系。",
+            ],
+        },
+    },
+    "usage": {
+        "en": {
+            "concrete": [
+                "Which high-frequency actions, shortcuts, or mode differences actually change daily operator speed.",
+                "Which behaviors are stable enough to internalize and which ones remain situational.",
+                "What fallback paths still matter when the fast path breaks or the terminal behaves differently.",
+                "How this topic changes review habits, message flow, or tool usage in practice.",
+            ],
+            "workflow": [
+                "Start with the small set of behaviors you will use every day.",
+                "Treat these docs as workflow-shape docs, not only label lists.",
+                "Keep one recovery path visible even after the fast route feels comfortable.",
+            ],
+        },
+        "zh": {
+            "concrete": [
+                "哪些高频动作、快捷键或模式差异，会真正改变你每天的操作速度。",
+                "哪些行为足够稳定，值得内化；哪些仍然更偏场景型。",
+                "当快速路径失效或终端表现不一致时，哪些回退路径仍然关键。",
+                "这个主题会怎样实质影响审查习惯、消息流或工具使用。",
+            ],
+            "workflow": [
+                "先抓住你每天都会用到的那一小组行为。",
+                "把这些文档当成工作流形状文档，而不是标签清单。",
+                "即使快速路线已经顺手，也保留一条恢复路径。",
+            ],
+        },
+    },
+    "architecture": {
+        "en": {
+            "concrete": [
+                "Which subsystem boundaries are real contracts instead of just naming convenience.",
+                "How prompts, state, tools, runtime hooks, and rendering hand work to one another.",
+                "Which parts of the upstream doc imply cross-cutting risk if you change the boundary carelessly.",
+                "Which runbooks or current setup pages should be cross-checked before implementation work.",
+            ],
+            "workflow": [
+                "Use the doc to build a mental map before you touch prompts, tools, or runtime flow.",
+                "Translate diagrams into ownership questions, not only component names.",
+                "Cross-check older architecture language against newer runbooks before acting on it.",
+            ],
+        },
+        "zh": {
+            "concrete": [
+                "哪些子系统边界是真正的契约，而不只是命名上的方便。",
+                "提示词、状态、工具、运行时钩子和渲染层之间是怎样交接工作的。",
+                "上游文档哪些地方暗示了一旦随意改边界就会产生跨层风险。",
+                "在进入实现工作前，应该交叉核对哪些 runbook 或 setup 页面。",
+            ],
+            "workflow": [
+                "先用这份文档建立脑图，再去改提示词、工具或运行时流程。",
+                "把图示翻译成 ownership 问题，而不只是组件名字。",
+                "根据旧架构结论采取行动前，先核对更新后的 runbook。",
+            ],
+        },
+    },
+    "history": {
+        "en": {
+            "concrete": [
+                "Which findings are version-bound history and which ones still affect current operators or maintainers.",
+                "Where an old audit or runbook note should be treated as context rather than as a live blocker list.",
+                "Which risks were fixed, institutionalized, or still recur under a different name.",
+                "How to keep historical notes from distorting current setup and usage guidance.",
+            ],
+            "workflow": [
+                "Always keep the version boundary visible while reading history docs.",
+                "Cross-check old findings against current code, defaults, and release notes.",
+                "Use them to understand drift and debt, not to replace current runbooks.",
+            ],
+        },
+        "zh": {
+            "concrete": [
+                "哪些发现只是版本阶段性的历史记录，哪些到今天仍然有现实影响。",
+                "哪些旧审计或旧 runbook 更应该被当成背景，而不是当前阻塞清单。",
+                "哪些风险后来被修掉、制度化，或者换了名字继续复发。",
+                "怎样避免让历史记录误导今天的 setup 和 usage 判断。",
+            ],
+            "workflow": [
+                "读历史文档时，始终把版本边界摆在前面。",
+                "把旧发现和当前代码、默认值、发布说明交叉核对。",
+                "它们适合帮助你理解漂移和债务，不适合替代当前 runbook。",
+            ],
+        },
+    },
+    "ops": {
+        "en": {
+            "concrete": [
+                "Which operational checkpoints the upstream doc expects before release, incident response, or coordinated maintenance.",
+                "Which steps are procedural safeguards versus which ones are direct terminal or runtime actions.",
+                "Where rollback, verification, and cross-team coordination are supposed to happen.",
+                "Which parts of the process should stay written down so releases and incidents are repeatable under pressure.",
+            ],
+            "workflow": [
+                "Keep release and incident steps in a stable order instead of improvising under stress.",
+                "Separate operator checkpoints from actual runtime changes so ownership stays clear.",
+                "Cross-check live runbooks before using historical or planning notes as operational truth.",
+            ],
+        },
+        "zh": {
+            "concrete": [
+                "上游文档在发布、事故处理或协同维护前真正要求的操作检查点有哪些。",
+                "哪些步骤是流程性护栏，哪些才是直接的终端或运行时动作。",
+                "回滚、验证和跨团队协调应该发生在流程的哪一段。",
+                "哪些过程必须被稳定写下来，才能在压力下重复执行。",
+            ],
+            "workflow": [
+                "发布和事故步骤要保持稳定顺序，不要到压力场景里再临场编。",
+                "把操作者检查点和真实运行时改动分开，ownership 才清楚。",
+                "在把历史或规划文档当作操作依据前，先核对最新 runbook。",
+            ],
+        },
+    },
+}
+
 DOC_LABELS_EN = {
     "accessibility": "Accessibility Docs",
     "architecture": "Architecture Docs",
@@ -1024,15 +1167,27 @@ def build_main(slug: str, zh: bool) -> str:
     cards = CATEGORY_READ_ORDER[topic["category"]]["zh" if zh else "en"]
     cards_html = render_cards_zh(cards) if zh else render_cards(cards)
     links_html = render_links(topic["related"], zh)
+    detail_pack = CATEGORY_DETAILS[topic["category"]]["zh" if zh else "en"]
+    concrete_cards = "".join(
+        f'<article class="content-card"><h3>{"具体点" if zh else "Specific detail"} {index}</h3><p>{html.escape(item)}</p></article>'
+        for index, item in enumerate(detail_pack["concrete"], start=1)
+    )
+    workflow_list = render_list(detail_pack["workflow"])
+    mirror_head = "为什么这批页面之前看起来不像原文镜像" if zh else "Why these pages did not look like raw doc mirrors before"
+    mirror_text = (
+        "这批 docs 详情页最初是按“阅读路线图”来做的：先告诉用户这份文档为什么值得看、该先看哪部分、看完回站内哪条分支继续走。所以它们一开始更像导读页，而不是完整镜像页。现在这层已经在补强，会逐步往“直接在站内读具体内容”的方向收。"
+        if zh else
+        "These docs detail pages were originally built as reading maps first: they explained why a repo doc mattered, which parts deserved attention first, and which branch of the site should take over next. That made them navigable, but also lighter than a true doc mirror. This layer is now being strengthened so the pages carry more concrete document content directly on-site."
+    )
     if zh:
         questions = render_list(topic["questions_zh"])
         focus = render_list(topic["focus_zh"])
         pitfalls = render_list(topic["pitfalls_zh"])
-        return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">文档详情</span><h1>{html.escape(title)}</h1><p>{html.escape(topic["summary_zh"])}</p><div class="hero-points"><span>上游源文件：{html.escape(topic["upstream"])}</span><span>适合按主题阅读</span><span>可回连到站内 hub</span></div></div><aside class="answer-card"><span class="panel-kicker">最快用法</span><h2>先把这页当成 {html.escape(label)} 的阅读路线图，而不是仓库文档清单。</h2><p>{html.escape(topic["when_zh"])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这份文档真正覆盖什么</h2><p>{html.escape(topic["summary_zh"])}</p><h2>这页能直接回答的问题</h2><ul>{questions}</ul><h2>读上游文档时最该盯住的部分</h2><ul>{focus}</ul><h2>最常见的误区</h2><ul>{pitfalls}</ul></article><aside class="panel-card"><span class="panel-kicker">阅读顺序</span><div class="link-stack">{links_html}</div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按问题类型读，再决定要不要切回安装、配置、模式、MCP 或排错分支。</p></div><div class="card-grid card-grid-3">{cards_html}</div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页在站内结构里的位置</h2><p>这批 docs 详情页的作用，不是简单复述上游 Markdown，而是帮你更快判断：这份文档为什么值得看、先看哪几段、看完之后要回站内哪条主线继续走。对于 DeepSeek TUI 这种同时覆盖安装、配置、模式、工具和运维的项目，这种按问题分流的正文结构，会比“仓库原样镜像”更容易用。</p><h2>什么时候应该离开这页</h2><p>如果你已经明确自己接下来要改配置、切模式、接 MCP、排查问题，或者进入更具体的使用指南，就不要停留在 docs 详情页本身。它最有价值的时候，是帮你建立主题边界和阅读顺序，而不是替代所有后续操作页。</p></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack">{links_html}</div></aside></div></section></main>"""
+        return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">文档详情</span><h1>{html.escape(title)}</h1><p>{html.escape(topic["summary_zh"])}</p><div class="hero-points"><span>上游源文件：{html.escape(topic["upstream"])}</span><span>适合按主题阅读</span><span>可回连到站内 hub</span></div></div><aside class="answer-card"><span class="panel-kicker">最快用法</span><h2>先把这页当成 {html.escape(label)} 的阅读路线图，而不是仓库文档清单。</h2><p>{html.escape(topic["when_zh"])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这份文档真正覆盖什么</h2><p>{html.escape(topic["summary_zh"])}</p><h2>这页能直接回答的问题</h2><ul>{questions}</ul><h2>读上游文档时最该盯住的部分</h2><ul>{focus}</ul><h2>最常见的误区</h2><ul>{pitfalls}</ul></article><aside class="panel-card"><span class="panel-kicker">阅读顺序</span><div class="link-stack">{links_html}</div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>这份上游文档里应该真正拿到的具体内容</h2><p>{html.escape(mirror_text)}</p></div><div class="card-grid card-grid-2">{concrete_cards}</div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>把文档转成你自己工作流时该保留什么</h2><ul>{workflow_list}</ul><h2>{mirror_head}</h2><p>{html.escape(mirror_text)}</p></article><aside class="panel-card"><span class="panel-kicker">上游阅读提示</span><div class="link-stack">{links_html}</div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按问题类型读，再决定要不要切回安装、配置、模式、MCP 或排错分支。</p></div><div class="card-grid card-grid-3">{cards_html}</div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页在站内结构里的位置</h2><p>这批 docs 详情页的作用，不是简单复述上游 Markdown，而是帮你更快判断：这份文档为什么值得看、先看哪几段、看完之后要回站内哪条主线继续走。对于 DeepSeek TUI 这种同时覆盖安装、配置、模式、工具和运维的项目，这种按问题分流的正文结构，会比“仓库原样镜像”更容易用。</p><h2>什么时候应该离开这页</h2><p>如果你已经明确自己接下来要改配置、切模式、接 MCP、排查问题，或者进入更具体的使用指南，就不要停留在 docs 详情页本身。它最有价值的时候，是帮你建立主题边界和阅读顺序，而不是替代所有后续操作页。</p></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack">{links_html}</div></aside></div></section></main>"""
     questions = render_list(topic["questions_en"])
     focus = render_list(topic["focus_en"])
     pitfalls = render_list(topic["pitfalls_en"])
-    return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Docs Detail</span><h1>{html.escape(title)}</h1><p>{html.escape(topic["summary_en"])}</p><div class="hero-points"><span>Upstream source: {html.escape(topic["upstream"])}</span><span>Best read by intent</span><span>Routes back into site hubs</span></div></div><aside class="answer-card"><span class="panel-kicker">Best Use</span><h2>Treat this page as the reading map for {html.escape(label)}, not as a raw repo mirror.</h2><p>{html.escape(topic["when_en"])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>What this document actually covers</h2><p>{html.escape(topic["summary_en"])}</p><h2>Questions this page should answer fast</h2><ul>{questions}</ul><h2>What to focus on inside the upstream doc</h2><ul>{focus}</ul><h2>Common mistakes</h2><ul>{pitfalls}</ul></article><aside class="panel-card"><span class="panel-kicker">Read next</span><div class="link-stack">{links_html}</div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>Recommended reading order</h2><p>Read by problem type first, then branch back into install, config, modes, MCP, or troubleshooting only when the next step is clear.</p></div><div class="card-grid card-grid-3">{cards_html}</div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>Where this page sits in the site</h2><p>These docs detail pages are not just repo mirrors. Their job is to tell you why a topic matters, which parts deserve attention first, and which branch of the site should take over once the document boundary is clear. For a project that spans install, configuration, modes, tools, and operator workflows, that route-first structure is more useful than a flat Markdown mirror.</p><h2>When to leave this page</h2><p>Once you know whether the next action belongs in install, config, modes, MCP, troubleshooting, or hands-on guides, move there quickly. The detail page is most useful when it gives you a sharper reading order and a better mental boundary for the topic, not when it tries to absorb every downstream action page.</p></article><aside class="panel-card"><span class="panel-kicker">Next pages</span><div class="link-stack">{links_html}</div></aside></div></section></main>"""
+    return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Docs Detail</span><h1>{html.escape(title)}</h1><p>{html.escape(topic["summary_en"])}</p><div class="hero-points"><span>Upstream source: {html.escape(topic["upstream"])}</span><span>Best read by intent</span><span>Routes back into site hubs</span></div></div><aside class="answer-card"><span class="panel-kicker">Best Use</span><h2>Treat this page as the reading map for {html.escape(label)}, not as a raw repo mirror.</h2><p>{html.escape(topic["when_en"])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>What this document actually covers</h2><p>{html.escape(topic["summary_en"])}</p><h2>Questions this page should answer fast</h2><ul>{questions}</ul><h2>What to focus on inside the upstream doc</h2><ul>{focus}</ul><h2>Common mistakes</h2><ul>{pitfalls}</ul></article><aside class="panel-card"><span class="panel-kicker">Read next</span><div class="link-stack">{links_html}</div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>Concrete details you should actually pull out of the upstream doc</h2><p>{html.escape(mirror_text)}</p></div><div class="card-grid card-grid-2">{concrete_cards}</div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>What to carry from the doc into your own workflow</h2><ul>{workflow_list}</ul><h2>{mirror_head}</h2><p>{html.escape(mirror_text)}</p></article><aside class="panel-card"><span class="panel-kicker">Upstream reading tips</span><div class="link-stack">{links_html}</div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>Recommended reading order</h2><p>Read by problem type first, then branch back into install, config, modes, MCP, or troubleshooting only when the next step is clear.</p></div><div class="card-grid card-grid-3">{cards_html}</div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>Where this page sits in the site</h2><p>These docs detail pages are not just repo mirrors. Their job is to tell you why a topic matters, which parts deserve attention first, and which branch of the site should take over once the document boundary is clear. For a project that spans install, configuration, modes, tools, and operator workflows, that route-first structure is more useful than a flat Markdown mirror.</p><h2>When to leave this page</h2><p>Once you know whether the next action belongs in install, config, modes, MCP, troubleshooting, or hands-on guides, move there quickly. The detail page is most useful when it gives you a sharper reading order and a better mental boundary for the topic, not when it tries to absorb every downstream action page.</p></article><aside class="panel-card"><span class="panel-kicker">Next pages</span><div class="link-stack">{links_html}</div></aside></div></section></main>"""
 
 
 def process(path: Path) -> None:

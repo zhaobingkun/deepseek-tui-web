@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DeepSeek TUI MCP 设置</title>
-  <meta name="description" content="设置 DeepSeek TUI 的 MCP，并理解 MCP 什么时候在真实终端工作流里最有价值。">
+  <title>给 DeepSeek TUI 设置 MCP</title>
+  <meta name="description" content="按正确顺序为 DeepSeek TUI 设置 MCP：先让基础安装和 provider 配置稳定，再进入 server 级问题。">
   <link rel="canonical" href="https://deepseek-tui.app/zh/mcp/setup/index.html">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="DeepSeek TUI MCP 设置">
-  <meta property="og:description" content="设置 DeepSeek TUI 的 MCP，并理解 MCP 什么时候在真实终端工作流里最有价值。">
+  <meta property="og:title" content="给 DeepSeek TUI 设置 MCP">
+  <meta property="og:description" content="按正确顺序为 DeepSeek TUI 设置 MCP：先让基础安装和 provider 配置稳定，再进入 server 级问题。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://deepseek-tui.app/zh/mcp/setup/index.html">
   <meta property="og:site_name" content="DeepSeek TUI 中文指南">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DeepSeek TUI MCP 设置">
-  <meta name="twitter:description" content="设置 DeepSeek TUI 的 MCP，并理解 MCP 什么时候在真实终端工作流里最有价值。">
+  <meta name="twitter:title" content="给 DeepSeek TUI 设置 MCP">
+  <meta name="twitter:description" content="按正确顺序为 DeepSeek TUI 设置 MCP：先让基础安装和 provider 配置稳定，再进入 server 级问题。">
   <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/mcp/setup/index.html">
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/mcp/setup/index.html">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
@@ -61,22 +61,7 @@
 <body>
   <header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header>
   <div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/mcp/index.html">MCP</a><span>/</span><span>设置</span></div></div>
-  <main>
-    <section class="page-hero">
-      <div class="container two-col">
-        <div>
-          <span class="eyebrow">MCP 设置</span>
-          <h1>MCP 设置页：先把接入路径理顺，再讨论更复杂的高级玩法</h1>
-          <p>MCP 真正有价值的前提，是你已经知道自己要接什么工具、为什么要接，以及接入后准备解决什么问题。</p>
-        </div>
-        <aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>先搞清楚 MCP 的目标场景，再开始配置，效率会比盲目照抄更高。</h2><p>MCP 适合为终端代理增加外部工具和上下文，而不是替代基础配置。</p></aside>
-      </div>
-    </section>
-    <section class="section"><div class="container two-col">
-<article class="prose"><h2>为什么这一页值得单独做成中文</h2><p>这个主题本身已经开始从英文 README 搜索，转向更具体的中文安装、配置、模式和排错问题，所以单独保留一个中文入口是有价值的。</p></article>
-<aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/guides/index.html">返回中文指南</a><a href="/zh/install/index.html">安装总页</a><a href="/zh/config/index.html">配置总页</a></div></aside>
-</div></section>
-  </main>
+  <main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">MCP 设置</span><h1>只有把 MCP 当成建立在稳定基础之上的高级层，DeepSeek TUI 的 MCP 设置才会变清楚</h1><p>如果在 DeepSeek TUI 的安装、provider 认证和配置路径都还没稳时，就直接跳进 MCP server，整个设置过程会非常混乱。干净路径一定是先把底层跑通，再上 MCP。</p><div class="hero-points"><span>本页是站内详情页</span><span>给 DeepSeek TUI 设置 MCP</span><span>mcp</span></div></div><aside class="answer-card"><span class="panel-kicker">最快判断</span><h2>只有在基础 app、provider 认证和普通请求路径都已经正常时，才开始设置 MCP。</h2><p>顺序很重要，因为只有底层已知没问题时，MCP 失败才更容易被隔离出来。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页能直接回答的问题</h2><ul><li>动 MCP 之前，哪些东西必须已经正常工作？</li><li>server 定义、信任模型和配置位置之间是什么关系？</li><li>哪些问题应该让你先退回基础配置，而不是继续深挖 MCP？</li></ul><h2>做完后该核对什么</h2><ul><li>确认不带 MCP 时，provider 认证和配置已经稳定。</li><li>仔细检查 server 定义路径和它声称提供的能力。</li><li>如果 MCP 一开始就失败，先拿同一任务的非 MCP 路径做对比。</li></ul><h2>最常见的误区</h2><ul><li>把 MCP 设置当成首次安装的一部分，而不是第二阶段高级层。</li><li>一开始就同时加多个 server。</li><li>没排掉基础配置错误，就先去深挖 server 本身。</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/docs/mcp/index.html">MCP 文档</a><a href="/zh/mcp/servers/index.html">MCP servers</a><a href="/zh/troubleshooting/mcp-troubleshooting/index.html">MCP 排错</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按当前问题走，再决定要不要切去相邻详情页或 hub。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>先验证基础工作流</h3><p>在加 MCP 之前，先保证普通的 DeepSeek TUI 会话已经能跑通。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>先定义一条清晰的 server 路线</h3><p>先从一条 server 定义和一套信任模型开始，不要一上来塞多个示例。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>用最窄动作验证</h3><p>先用一个简单 MCP 动作测试，而不是直接假设整套 server 工具链都已经可用。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/docs/mcp/index.html">MCP 文档</a><a href="/zh/mcp/servers/index.html">MCP servers</a><a href="/zh/troubleshooting/mcp-troubleshooting/index.html">MCP 排错</a></div></aside></div></section></main>
   <footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a></div><div class="footer-links"><a href="/zh/comparisons/index.html">对比</a><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer>
   <script src="/assets/js/site.js"></script>
 <!-- Google tag (gtag.js) -->

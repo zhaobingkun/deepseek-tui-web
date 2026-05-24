@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DeepSeek TUI API Key 设置</title>
-  <meta name="description" content="设置 DeepSeek TUI 的 API Key，并理解为什么 provider 配置通常是安装后的第一个真实阻塞点。">
+  <title>设置 DeepSeek TUI 的 API Key</title>
+  <meta name="description" content="正确配置 DeepSeek TUI 的 API Key，并把 provider 认证问题和安装、界面问题分开。">
   <link rel="canonical" href="https://deepseek-tui.app/zh/config/api-key/index.html">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="DeepSeek TUI API Key 设置">
-  <meta property="og:description" content="设置 DeepSeek TUI 的 API Key，并理解为什么 provider 配置通常是安装后的第一个真实阻塞点。">
+  <meta property="og:title" content="设置 DeepSeek TUI 的 API Key">
+  <meta property="og:description" content="正确配置 DeepSeek TUI 的 API Key，并把 provider 认证问题和安装、界面问题分开。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://deepseek-tui.app/zh/config/api-key/index.html">
   <meta property="og:site_name" content="DeepSeek TUI 中文指南">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DeepSeek TUI API Key 设置">
-  <meta name="twitter:description" content="设置 DeepSeek TUI 的 API Key，并理解为什么 provider 配置通常是安装后的第一个真实阻塞点。">
+  <meta name="twitter:title" content="设置 DeepSeek TUI 的 API Key">
+  <meta name="twitter:description" content="正确配置 DeepSeek TUI 的 API Key，并把 provider 认证问题和安装、界面问题分开。">
   <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/config/api-key/index.html">
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/config/api-key/index.html">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
@@ -61,22 +61,7 @@
 <body>
   <header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header>
   <div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/config/index.html">配置</a><span>/</span><span>API Key</span></div></div>
-  <main>
-    <section class="page-hero">
-      <div class="container two-col">
-        <div>
-          <span class="eyebrow">API Key</span>
-          <h1>DeepSeek TUI 装好以后，API Key 与 provider 配置往往是第一个真正的检查点</h1>
-          <p>如果命令已经装上了，但工具还不能真正工作，最可能的失败点通常不是高级 agent bug，而是 provider 选择、凭据加载或配置文件路径。</p>
-        </div>
-        <aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>先把 provider 和 API Key 配对正确，再去排查更复杂的问题。</h2><p>首次运行的大部分失败，本质上都是基础配置问题。</p></aside>
-      </div>
-    </section>
-    <section class="section"><div class="container two-col">
-<article class="prose"><h2>为什么这一页值得单独做成中文</h2><p>这个主题本身已经开始从英文 README 搜索，转向更具体的中文安装、配置、模式和排错问题，所以单独保留一个中文入口是有价值的。</p></article>
-<aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/guides/index.html">返回中文指南</a><a href="/zh/install/index.html">安装总页</a><a href="/zh/config/index.html">配置总页</a></div></aside>
-</div></section>
-  </main>
+  <main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">API Key 设置</span><h1>在模式、工具和高级功能之前，API Key 设置往往就是决定 DeepSeek TUI 能不能跑通的第一道关</h1><p>二进制能启动以后，真正的下一道硬边界通常就是 provider 认证。很多 API Key 错误表面像安装或运行时问题，实际上只是凭据位置、提供方选择或变量来源不一致。</p><div class="hero-points"><span>本页是站内详情页</span><span>设置 DeepSeek TUI 的 API Key</span><span>config</span></div></div><aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>把 API Key 问题当成 provider 认证问题来看，而不是笼统的安装问题。</h2><p>如果命令能跑但请求失败，下一步大概率不是重装，而是确认凭据是否缺失、放错位置，或者跟当前 provider 路线不匹配。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页能直接回答的问题</h2><ul><li>API Key 应该放在配置文件、环境变量还是 provider 配置块里？</li><li>怎样区分“没填 key”和“provider 选错了”？</li><li>哪些检查能证明失败层真的在认证，而不是别的地方？</li></ul><h2>做完后该核对什么</h2><ul><li>确认当前 key 确实属于你在 DeepSeek TUI 里配置的那个 provider。</li><li>检查拼写、空值和 shell profile 漂移。</li><li>如果认证已经成功但行为仍异常，再转去 provider 设置或配置文件排查。</li></ul><h2>最常见的误区</h2><ul><li>给 A provider 配了 key，但当前 config 指向的却是 B provider。</li><li>不同 shell 里残留了不同的导出凭据。</li><li>把认证错误误判成二进制安装坏了。</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/config/provider-setup/index.html">provider 设置</a><a href="/zh/config/environment-variables/index.html">环境变量</a><a href="/zh/troubleshooting/provider-troubleshooting/index.html">provider 排错</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按当前问题走，再决定要不要切去相邻详情页或 hub。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>先确认 provider</h3><p>动 key 之前先确认当前配置真正期待的是哪个 provider 路线。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>先保留一个可信来源</h3><p>优先让凭据只来自一个清晰来源，避免文件和环境变量互相打架。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>用最小请求路径验证</h3><p>先用最简单的请求去验证，再叠加模式、MCP 或其他高级行为。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/config/provider-setup/index.html">provider 设置</a><a href="/zh/config/environment-variables/index.html">环境变量</a><a href="/zh/troubleshooting/provider-troubleshooting/index.html">provider 排错</a></div></aside></div></section></main>
   <footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a></div><div class="footer-links"><a href="/zh/comparisons/index.html">对比</a><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer>
   <script src="/assets/js/site.js"></script>
 <!-- Google tag (gtag.js) -->

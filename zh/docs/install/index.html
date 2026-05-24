@@ -47,7 +47,184 @@
 }
   </script>
 </head>
-<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/docs/index.html">文档</a><span>/</span><span>安装文档</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">文档详情</span><h1>DeepSeek TUI 安装文档指南</h1><p>安装文档覆盖官方上手路径、前置条件，以及包管理器、源码和不同环境安装路线之间的差异。</p><div class="hero-points"><span>上游源文件：INSTALL.md</span><span>适合按主题阅读</span><span>可回连到站内 hub</span></div></div><aside class="answer-card"><span class="panel-kicker">最快用法</span><h2>先把这页当成 安装文档 的阅读路线图，而不是仓库文档清单。</h2><p>当你需要最官方的安装路径、快速命令失败，或者你要在不同环境之间选合适的安装方案时，就该先看这页。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这份文档真正覆盖什么</h2><p>安装文档覆盖官方上手路径、前置条件，以及包管理器、源码和不同环境安装路线之间的差异。</p><h2>这页能直接回答的问题</h2><ul><li>在选择包管理器或源码构建路线之前，哪些前置条件必须先满足？</li><li>在 Linux、macOS、Windows 或类似 CI 的环境里，应优先选哪条安装路径？</li><li>怎样判断问题真的是安装问题，而不是配置或模型提供方问题？</li></ul><h2>读上游文档时最该盯住的部分</h2><ul><li>支持的安装路线，以及每条路线对宿主机做了哪些假设。</li><li>版本可见性、更新策略，以及怎样避免多个二进制互相打架。</li><li>安装后的首轮验证，帮助你把二进制问题和提供方配置问题分开。</li><li>安装文档的边界在哪里，什么时候应该切到配置文档。</li></ul><h2>最常见的误区</h2><ul><li>只复制最快的命令，不核对平台前提。</li><li>安装成功了，却没有验证当前激活的二进制和版本路径。</li><li>把安装后的提供方报错误判成安装失败。</li></ul></article><aside class="panel-card"><span class="panel-kicker">阅读顺序</span><div class="link-stack"><a href="/zh/docs/index.html">文档总页</a><a href="/zh/install/index.html">安装总页</a><a href="/zh/config/index.html">配置总页</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按问题类型读，再决定要不要切回安装、配置、模式、MCP 或排错分支。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>先确认环境前提</h3><p>先核对平台、shell、安装路线和凭据假设，再去改更深层设置。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>把文档对应到你的具体路径</h3><p>把官方安装或配置步骤，和提供方、环境特定的覆盖逻辑分开看。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>最后做真实验证</h3><p>收尾时一定验证当前二进制、激活配置和第一次成功请求路径。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页在站内结构里的位置</h2><p>这批 docs 详情页的作用，不是简单复述上游 Markdown，而是帮你更快判断：这份文档为什么值得看、先看哪几段、看完之后要回站内哪条主线继续走。对于 DeepSeek TUI 这种同时覆盖安装、配置、模式、工具和运维的项目，这种按问题分流的正文结构，会比“仓库原样镜像”更容易用。</p><h2>什么时候应该离开这页</h2><p>如果你已经明确自己接下来要改配置、切模式、接 MCP、排查问题，或者进入更具体的使用指南，就不要停留在 docs 详情页本身。它最有价值的时候，是帮你建立主题边界和阅读顺序，而不是替代所有后续操作页。</p></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/docs/index.html">文档总页</a><a href="/zh/install/index.html">安装总页</a><a href="/zh/config/index.html">配置总页</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦文档、安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a></div><div class="footer-links"><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
+<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/docs/index.html">文档</a><span>/</span><span>安装文档</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">文档全文</span><h1>DeepSeek TUI 安装文档指南</h1><p>安装文档覆盖官方上手路径、前置条件，以及包管理器、源码和不同环境安装路线之间的差异。</p><div class="hero-points"><span>上游源文件：INSTALL.md</span><span>站内直接可读</span><span>原文保留在下方</span></div></div><aside class="answer-card"><span class="panel-kicker">本页用途</span><h2>这页现在直接承载上游文档正文，不再只是导读。</h2><p>当你需要最官方的安装路径、快速命令失败，或者你要在不同环境之间选合适的安装方案时，就该先看这页。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这份文档真正覆盖什么</h2><p>安装文档覆盖官方上手路径、前置条件，以及包管理器、源码和不同环境安装路线之间的差异。</p><h2>怎么用这页</h2><ul><li>先看右侧目录，直接跳到你当前最关心的小节。</li><li>如果你只是来解决具体问题，优先读正文里的相关标题，再回站内对应 hub。</li><li>如果你要核对原始来源，可以直接打开 GitHub 原文链接。</li></ul></article><aside class="panel-card"><span class="panel-kicker">快速入口</span><div class="link-stack"><a href="https://github.com/zhaobingkun/DeepSeek-TUI/blob/main/docs/INSTALL.md">GitHub 文档页</a><a href="https://raw.githubusercontent.com/zhaobingkun/DeepSeek-TUI/main/docs/INSTALL.md">Raw Markdown</a><a href="/zh/docs/index.html">文档总页</a><a href="/zh/install/index.html">安装总页</a><a href="/zh/config/index.html">配置总页</a></div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose doc-article"><h2>上游文档原文（英文）</h2><h1 id="installing-deepseek-tui">Installing DeepSeek TUI</h1>
+<p>This page covers every supported install path and the most common "it didn't install" failures, including <strong>Linux ARM64</strong> and other less common platforms.</p>
+<p>If you just want the short version, see the <a href="../README.md#quickstart">main README</a> or <a href="../README.zh-CN.md#快速开始">简体中文 README</a>.</p>
+<hr>
+<h2 id="1-supported-platforms">1. Supported platforms</h2>
+<p><code>deepseek-tui</code> ships prebuilt binaries for these platform/architecture combinations from v0.8.8 onward:</p>
+<table><thead><tr><th>Platform</th><th>Architecture</th><th>npm install</th><th><code>cargo install</code></th><th>GitHub release asset</th></tr></thead><tbody><tr><td>Linux</td><td>x64 (x86_64)</td><td>✅</td><td>✅</td><td><code>deepseek-linux-x64</code>, <code>deepseek-tui-linux-x64</code></td></tr><tr><td>Linux</td><td>arm64</td><td>✅</td><td>✅</td><td><code>deepseek-linux-arm64</code>, <code>deepseek-tui-linux-arm64</code></td></tr><tr><td>macOS</td><td>x64</td><td>✅</td><td>✅</td><td><code>deepseek-macos-x64</code>, <code>deepseek-tui-macos-x64</code></td></tr><tr><td>macOS</td><td>arm64 (M-series)</td><td>✅</td><td>✅</td><td><code>deepseek-macos-arm64</code>, <code>deepseek-tui-macos-arm64</code></td></tr><tr><td>Windows</td><td>x64</td><td>✅</td><td>✅</td><td><code>deepseek-windows-x64.exe</code>, <code>deepseek-tui-windows-x64.exe</code></td></tr><tr><td>Other Linux (musl, riscv64, …)</td><td>—</td><td>❌¹</td><td>✅²</td><td>build from source</td></tr><tr><td>FreeBSD / OpenBSD</td><td>—</td><td>❌</td><td>✅²</td><td>build from source</td></tr></tbody></table>
+<p>¹ The npm package will exit with a clear error and point you here. ² Provided your toolchain can compile a recent Rust workspace; see <a href="#5-build-from-source">Build from source</a> below.</p>
+<blockquote><p><strong>Linux ARM64 note (v0.8.7 and earlier).</strong> v0.8.7 and earlier do <strong>not</strong><br>publish a Linux ARM64 prebuilt; users on HarmonyOS thin-and-light, Asahi<br>Linux, Raspberry Pi, AWS Graviton, etc. saw <code>Unsupported architecture: arm64</code><br>from <code>npm i -g deepseek-tui</code>. v0.8.8 publishes both <code>deepseek-linux-arm64</code><br>and <code>deepseek-tui-linux-arm64</code>, so a plain <code>npm i -g deepseek-tui</code> works<br>on any glibc-based ARM64 Linux. If you're stuck on v0.8.7, jump to<br><a href="#5-build-from-source">Build from source</a> — <code>cargo install</code> works fine.</p></blockquote>
+<hr>
+<h2 id="2-install-via-npm-recommended">2. Install via npm (recommended)</h2>
+<pre><code class="language-bash">npm install -g deepseek-tui
+deepseek</code></pre>
+<p><code>postinstall</code> downloads the right pair of binaries from the matching GitHub release, verifies a SHA-256 manifest, and exposes both <code>deepseek</code> and <code>deepseek-tui</code> on your <code>PATH</code>.</p>
+<p>Useful environment variables:</p>
+<table><thead><tr><th>Variable</th><th>Purpose</th></tr></thead><tbody><tr><td><code>DEEPSEEK_TUI_VERSION</code></td><td>Pin which release the wrapper downloads (defaults to <code>deepseekBinaryVersion</code>)</td></tr><tr><td><code>DEEPSEEK_TUI_GITHUB_REPO</code></td><td>Point the downloader at a fork (<code>owner/repo</code>)</td></tr><tr><td><code>DEEPSEEK_TUI_RELEASE_BASE_URL</code></td><td>Override the download root (e.g. an internal mirror or release-asset proxy)</td></tr><tr><td><code>DEEPSEEK_TUI_FORCE_DOWNLOAD=1</code></td><td>Re-download even if a cached binary marker matches</td></tr><tr><td><code>DEEPSEEK_TUI_DISABLE_INSTALL=1</code></td><td>Skip the <code>postinstall</code> download entirely (CI smoke, vendored binaries)</td></tr><tr><td><code>DEEPSEEK_TUI_OPTIONAL_INSTALL=1</code></td><td>Don't fail <code>npm install</code> on download/extract errors — useful in CI matrices</td></tr></tbody></table>
+<blockquote><p><strong>Slow npm download from mainland China?</strong> If <code>npm install</code> itself is slow<br>(not just the postinstall binary download), use an npm registry mirror:<br>```bash<br>npm config set registry https://registry.npmmirror.com<br>npm install -g deepseek-tui<br>```<br>See also <a href="#3-install-via-cargo-any-tier-1-rust-target">Section 3</a> if you<br>prefer Cargo over npm.</p></blockquote>
+<hr>
+<h2 id="3-install-via-cargo-any-tier-1-rust-target">3. Install via Cargo (any Tier-1 Rust target)</h2>
+<p>If GitHub releases are slow, blocked, or you're on an unsupported architecture, install from crates.io directly. Both crates are required — the dispatcher delegates to the TUI runtime at runtime.</p>
+<pre><code class="language-bash"># Requires Rust 1.88+ (https://rustup.rs)
+cargo install deepseek-tui-cli --locked   # provides `deepseek`
+cargo install deepseek-tui     --locked   # provides `deepseek-tui`
+deepseek --version</code></pre>
+<h3 id="china-mirror-friendly-install">China / mirror-friendly install</h3>
+<p>When installing from mainland China, configure mirrors for both <strong>rustup</strong> (the Rust toolchain installer) and <strong>Cargo</strong> (the package registry) to avoid TLS timeouts and download failures.</p>
+<p><strong>Step 1: Install Rust via a rustup mirror</strong></p>
+<pre><code class="language-bash"># PowerShell
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+(New-Object Net.WebClient).DownloadFile(&#x27;https://win.rustup.rs/x86_64&#x27;, &#x27;rustup-init.exe&#x27;)
+
+# git-bash / msys2
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+./rustup-init.exe -y --default-toolchain stable
+
+# Linux / macOS
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+curl --proto &#x27;=https&#x27; --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable</code></pre>
+<p>The <code>RUSTUP_DIST_SERVER</code> and <code>RUSTUP_UPDATE_ROOT</code> environment variables must be set <strong>before</strong> running rustup-init; the toolchain download otherwise hits the same TLS handshake problem as the installer.</p>
+<p><strong>Step 2: Configure Cargo registry mirror</strong></p>
+<pre><code class="language-toml"># ~/.cargo/config.toml
+[source.crates-io]
+replace-with = &quot;tuna&quot;
+
+[source.tuna]
+registry = &quot;sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/&quot;</code></pre>
+<p><code>rsproxy</code>, Tencent COS, and Aliyun OSS mirrors work the same way; pick whichever is fastest from your network.</p>
+<hr>
+<h2 id="4-manual-download-from-github-releases">4. Manual download from GitHub Releases</h2>
+<p>Grab the matching pair of binaries for your platform from the <a href="https://github.com/Hmbown/DeepSeek-TUI/releases">Releases page</a> and drop them side by side into a directory on your <code>PATH</code> (e.g. <code>~/.local/bin</code>):</p>
+<pre><code class="language-bash"># Linux ARM64 example
+mkdir -p ~/.local/bin
+curl -L -o ~/.local/bin/deepseek      \
+    https://github.com/Hmbown/DeepSeek-TUI/releases/latest/download/deepseek-linux-arm64
+curl -L -o ~/.local/bin/deepseek-tui  \
+    https://github.com/Hmbown/DeepSeek-TUI/releases/latest/download/deepseek-tui-linux-arm64
+chmod +x ~/.local/bin/deepseek ~/.local/bin/deepseek-tui
+deepseek --version</code></pre>
+<p>Verify integrity against the per-release SHA-256 manifest:</p>
+<pre><code class="language-bash">curl -L -o /tmp/deepseek-artifacts-sha256.txt \
+    https://github.com/Hmbown/DeepSeek-TUI/releases/latest/download/deepseek-artifacts-sha256.txt
+( cd ~/.local/bin &amp;&amp; sha256sum -c /tmp/deepseek-artifacts-sha256.txt --ignore-missing )</code></pre>
+<p>(Use <code>shasum -a 256 -c</code> instead of <code>sha256sum</code> on macOS.)</p>
+<hr>
+<h2 id="5-build-from-source">5. Build from source</h2>
+<p>This is the catch-all for any platform we don't ship — including musl, riscv64, LoongArch, FreeBSD, and pre-2024 ARM64 distros.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul><li><strong>Rust</strong> 1.88 or later — install with <a href="https://rustup.rs">rustup</a>.</li><li><strong>Linux build-time deps</strong> (Debian/Ubuntu/openEuler/Kylin):</li></ul>
+<pre><code class="language-bash">  sudo apt-get install -y build-essential pkg-config libdbus-1-dev
+  # openEuler / RHEL family:
+  # sudo dnf install -y gcc make pkgconf-pkg-config dbus-devel</code></pre>
+<ul><li>A working <code>cmake</code> is <strong>not</strong> required.</li></ul>
+<h3 id="build-and-install">Build and install</h3>
+<pre><code class="language-bash">git clone https://github.com/Hmbown/DeepSeek-TUI.git
+cd DeepSeek-TUI
+
+cargo install --path crates/cli --locked   # provides `deepseek`
+cargo install --path crates/tui --locked   # provides `deepseek-tui`
+
+deepseek --version</code></pre>
+<p>Both binaries land in <code>~/.cargo/bin/</code> by default; make sure that directory is on your <code>PATH</code>.</p>
+<h3 id="cross-compiling-from-x64-to-arm64-linux">Cross-compiling from x64 to ARM64 Linux</h3>
+<p>If you want to build an ARM64 Linux binary on an x64 Linux host (e.g. for a HarmonyOS / openEuler ARM64 thin-and-light), use <a href="https://github.com/cross-rs/cross"><code>cross</code></a>, which wraps the official Rust cross-targets in a Docker container:</p>
+<pre><code class="language-bash"># Once
+rustup target add aarch64-unknown-linux-gnu
+cargo install cross --locked
+
+# Per build
+cross build --release --target aarch64-unknown-linux-gnu -p deepseek-tui-cli
+cross build --release --target aarch64-unknown-linux-gnu -p deepseek-tui</code></pre>
+<p>The resulting binaries land in <code>target/aarch64-unknown-linux-gnu/release/deepseek</code> and <code>target/aarch64-unknown-linux-gnu/release/deepseek-tui</code>. Copy the matched pair to the ARM64 host (e.g. via <code>scp</code>) and <code>chmod +x</code> them.</p>
+<p>If you don't have Docker available, install the cross-linker directly and let Cargo do the work:</p>
+<pre><code class="language-bash">sudo apt-get install -y gcc-aarch64-linux-gnu
+rustup target add aarch64-unknown-linux-gnu
+
+cat &gt;&gt; ~/.cargo/config.toml &lt;&lt;&#x27;EOF&#x27;
+[target.aarch64-unknown-linux-gnu]
+linker = &quot;aarch64-linux-gnu-gcc&quot;
+EOF
+
+cargo build --release --target aarch64-unknown-linux-gnu -p deepseek-tui-cli
+cargo build --release --target aarch64-unknown-linux-gnu -p deepseek-tui</code></pre>
+<p>The same recipe works for <code>aarch64-unknown-linux-musl</code> if your distro is musl-based.</p>
+<h3 id="windows-build-from-source">Windows build from source</h3>
+<p>Building on Windows requires the <strong>MSVC C toolchain</strong> from <a href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022">Visual Studio Build Tools</a> (the free workload-selectable installer, not the full IDE).</p>
+<p><strong>Prerequisites (Windows)</strong></p>
+<ol><li>Install Visual Studio 2022 Build Tools — select the <strong>"Desktop development with C++"</strong> workload.</li><li>Install <a href="https://rustup.rs">Rust</a> 1.88+ (see the <a href="#china--mirror-friendly-install">China mirror instructions</a> above if downloading from mainland China).</li><li>Install <a href="https://git-scm.com/download/win">Git for Windows</a> (provides <code>git</code> and the <code>git-bash</code> terminal).</li></ol>
+<p><strong>Recommended terminals</strong>: Windows Terminal, <code>git-bash</code>, or PowerShell. <code>cmd.exe</code> works but has a small buffer and limited PATH behavior.</p>
+<p><strong>Setting up the MSVC environment</strong></p>
+<p>Visual Studio Build Tools install <code>cl.exe</code> to a versioned directory but do <strong>not</strong> add it to <code>PATH</code> globally. You must set the environment manually or use a Developer Command Prompt. The required variables are:</p>
+<pre><code class="language-powershell"># Adjust version numbers to match your installation
+$msvc = &quot;C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207&quot;
+$sdk   = &quot;C:\Program Files (x86)\Windows Kits\10&quot;
+$sdkv  = &quot;10.0.26100.0&quot;
+
+$env:INCLUDE  = &quot;$msvc\include;$msvc\atlmfc\include;$sdk\Include\$sdkv\ucrt;$sdk\Include\$sdkv\um;$sdk\Include\$sdkv\shared&quot;
+$env:LIB      = &quot;$msvc\lib\x64;$msvc\atlmfc\lib\x64;$sdk\Lib\$sdkv\ucrt\x64;$sdk\Lib\$sdkv\um\x64&quot;
+$env:LIBPATH  = &quot;$msvc\lib\x64;$msvc\atlmfc\lib\x64&quot;
+$env:CC       = &quot;$msvc\bin\Hostx64\x64\cl.exe&quot;
+$env:CXX      = &quot;$msvc\bin\Hostx64\x64\cl.exe&quot;
+$env:PATH     = &quot;$msvc\bin\Hostx64\x64;$env:PATH&quot;</code></pre>
+<p>Alternatively, open a <strong>"Developer Command Prompt for VS 2022"</strong> (available from the Start Menu after installing Build Tools), which runs <code>vcvars64.bat</code> to configure all of the above automatically. Then add <code>cargo</code> to <code>PATH</code> inside that session and run <code>cargo build</code> from the project root.</p>
+<p><strong>Cargo registry mirror</strong> — on Windows the mirror config goes to <code>%USERPROFILE%\.cargo\config.toml</code>. See <a href="#china--mirror-friendly-install">Step 2 above</a>.</p>
+<p><strong>Build</strong></p>
+<pre><code class="language-bash">git clone https://github.com/Hmbown/DeepSeek-TUI.git
+cd DeepSeek-TUI
+set CARGO_HTTP_CHECK_REVOKE=false   # may be needed behind some Chinese ISPs
+cargo build --release</code></pre>
+<p>Both binaries appear in <code>target\release\deepseek.exe</code> and <code>target\release\deepseek-tui.exe</code>.</p>
+<blockquote><p><strong>Prefer <code>npm install -g</code> on Windows unless you need to modify source.</strong><br>The npm package pulls prebuilt binaries and avoids the C toolchain<br>dependency entirely — see <a href="#2-install-via-npm-recommended">Section 2</a>.</p></blockquote>
+<hr>
+<h2 id="6-troubleshooting">6. Troubleshooting</h2>
+<h3 id="unsupported-architecture-arm64-on-platform-linux"><code>Unsupported architecture: arm64 on platform linux</code></h3>
+<p>You're on a release earlier than v0.8.8 that doesn't publish Linux ARM64 binaries. Either upgrade (<code>npm i -g deepseek-tui@latest</code>) or use <code>cargo install</code> per <a href="#3-install-via-cargo-any-tier-1-rust-target">Section 3</a>.</p>
+<h3 id="missing-companion-binary-at-runtime"><code>MISSING_COMPANION_BINARY</code> at runtime</h3>
+<p>The dispatcher (<code>deepseek</code>) requires the TUI runtime (<code>deepseek-tui</code>) to be on the same <code>PATH</code>. If you installed only one crate via <code>cargo install</code>, install both:</p>
+<pre><code class="language-bash">cargo install deepseek-tui-cli --locked
+cargo install deepseek-tui     --locked</code></pre>
+<h3 id="deepseek-update-reports-no-asset-found-for-platform-deepseek-linux-aarch64"><code>deepseek update</code> reports <code>no asset found for platform deepseek-linux-aarch64</code></h3>
+<p>This is <a href="https://github.com/Hmbown/DeepSeek-TUI/issues/503">#503</a> in v0.8.7 — the self-updater used Rust's <code>aarch64</code>/<code>x86_64</code> arch names instead of the release artifact's <code>arm64</code>/<code>x64</code>. Workaround until v0.8.8:</p>
+<pre><code class="language-bash">npm i -g deepseek-tui@latest
+# or
+cargo install deepseek-tui-cli --locked</code></pre>
+<h3 id="npm-download-is-slow-or-times-out-from-mainland-china">npm download is slow or times out from mainland China</h3>
+<p>Set <code>DEEPSEEK_TUI_RELEASE_BASE_URL</code> to a mirrored release-asset directory (rsproxy, TUNA, Tencent COS, Aliyun OSS), or skip npm entirely and use the Cargo mirror setup in <a href="#3-install-via-cargo-any-tier-1-rust-target">Section 3</a>.</p>
+<h3 id="debian-ubuntu-error-linker-cc-not-found-while-building">Debian/Ubuntu: <code>error: linker &#x27;cc&#x27; not found</code> while building</h3>
+<p>Install the C toolchain:</p>
+<pre><code class="language-bash">sudo apt-get install -y build-essential pkg-config libdbus-1-dev</code></pre>
+<h3 id="wrapper-installs-but-deepseek-isn-t-found">Wrapper installs but <code>deepseek</code> isn't found</h3>
+<p><code>npm i -g</code> installs into <code>$(npm prefix -g)/bin</code>; make sure that directory is on your shell's <code>PATH</code>. With nvm: <code>nvm use --lts &amp;&amp; hash -r</code>.</p>
+<h3 id="windows-tls-handshake-eof-or-crypt-e-revocation-offline-from-rustup-init">Windows: <code>TLS handshake eof</code> or <code>CRYPT_E_REVOCATION_OFFLINE</code> from <code>rustup-init</code></h3>
+<p>The TLS handshake to <code>static.rust-lang.org</code> fails from behind the GFW or certain Chinese ISPs. Set the rustup mirror environment variables <strong>before</strong> running the installer:</p>
+<pre><code class="language-bash"># git-bash / msys2
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+./rustup-init.exe -y --default-toolchain stable</code></pre>
+<p>If you see <code>CRYPT_E_REVOCATION_OFFLINE</code> from Cargo after Rust is installed, also set <code>CARGO_HTTP_CHECK_REVOKE=false</code> during <code>cargo build</code>.</p>
+<h3 id="windows-msvc-compiler-cl-exe-not-found-during-cargo-build">Windows: MSVC compiler (<code>cl.exe</code>) not found during <code>cargo build</code></h3>
+<p>Visual Studio Build Tools do not add <code>cl.exe</code> to the global <code>PATH</code>. Either:</p>
+<ol><li>Open <strong>"Developer Command Prompt for VS 2022"</strong> from the Start Menu, add <code>%USERPROFILE%\.cargo\bin</code> to <code>PATH</code> in that window, and run <code>cargo build</code> from there; or</li><li>Set the MSVC environment variables manually — see the <a href="#windows-build-from-source">Windows build from source</a> section for the PowerShell snippet.</li></ol>
+<p>Verify the compiler is reachable: <code>cl.exe /?</code> should print help text.</p>
+<h3 id="windows-os-error-5-when-cargo-executes-build-scripts">Windows: <code>拒绝访问 (os error 5)</code> when Cargo executes build scripts</h3>
+<p>Third-party antivirus software (Huorong, 360, Kaspersky, etc.) may block Cargo from executing freshly-compiled build-script binaries (e.g. <code>libsqlite3-sys</code>, <code>aws-lc-sys</code>, <code>instability</code>). The error is path-agnostic — moving <code>target-dir</code> does not help.</p>
+<p><strong>Symptoms</strong>: <code>could not execute process ... build-script-build (never executed)</code></p>
+<p><strong>Workarounds</strong> (pick one):</p>
+<ol><li><strong>Add the project's <code>target/</code> directory to your AV exclusions list.</strong></li><li><strong>Close the antivirus software temporarily</strong> during <code>cargo build</code>.</li><li><strong>Use <code>npm install -g deepseek-tui</code> instead</strong> — the npm package ships prebuilt binaries and skips the Cargo build entirely (<a href="#2-install-via-npm-recommended">Section 2</a>).</li><li><strong>Use <code>cargo install deepseek-tui-cli --locked</code></strong> from crates.io — this changes the binary path, which some AV tools treat differently.</li></ol>
+<p>To verify that the build-script binary itself is valid (not corrupted), locate it under <code>target/debug/build/&lt;crate&gt;/build-script-build</code> and run it manually:</p>
+<pre><code class="language-bash">target/debug/build/libsqlite3-sys-*/build-script-build
+# If this runs but panics with &quot;NotPresent&quot; (no C compiler), the binary is
+# fine — the AV is blocking Cargo&#x27;s process-spawning path specifically.</code></pre>
+<hr>
+<h2 id="7-verifying-your-install">7. Verifying your install</h2>
+<pre><code class="language-bash">deepseek --version
+deepseek doctor       # checks API key, provider, runtime, and PATH integrity
+deepseek doctor --json</code></pre>
+<p><code>doctor</code> exits non-zero if it finds a problem and prints structured remediation hints. Paste the JSON output into a GitHub issue if you need help.</p></article><aside class="panel-card toc-card"><span class="panel-kicker">目录</span><ul><li class="toc-level-1"><a href="#installing-deepseek-tui">Installing DeepSeek TUI</a></li><li class="toc-level-2"><a href="#1-supported-platforms">1. Supported platforms</a></li><li class="toc-level-2"><a href="#2-install-via-npm-recommended">2. Install via npm (recommended)</a></li><li class="toc-level-2"><a href="#3-install-via-cargo-any-tier-1-rust-target">3. Install via Cargo (any Tier-1 Rust target)</a></li><li class="toc-level-3"><a href="#china-mirror-friendly-install">China / mirror-friendly install</a></li><li class="toc-level-2"><a href="#4-manual-download-from-github-releases">4. Manual download from GitHub Releases</a></li><li class="toc-level-2"><a href="#5-build-from-source">5. Build from source</a></li><li class="toc-level-3"><a href="#prerequisites">Prerequisites</a></li><li class="toc-level-3"><a href="#build-and-install">Build and install</a></li><li class="toc-level-3"><a href="#cross-compiling-from-x64-to-arm64-linux">Cross-compiling from x64 to ARM64 Linux</a></li><li class="toc-level-3"><a href="#windows-build-from-source">Windows build from source</a></li><li class="toc-level-2"><a href="#6-troubleshooting">6. Troubleshooting</a></li><li class="toc-level-3"><a href="#unsupported-architecture-arm64-on-platform-linux">`Unsupported architecture: arm64 on platform linux`</a></li><li class="toc-level-3"><a href="#missing-companion-binary-at-runtime">`MISSING_COMPANION_BINARY` at runtime</a></li><li class="toc-level-3"><a href="#deepseek-update-reports-no-asset-found-for-platform-deepseek-linux-aarch64">`deepseek update` reports `no asset found for platform deepseek-linux-aarch64`</a></li><li class="toc-level-3"><a href="#npm-download-is-slow-or-times-out-from-mainland-china">npm download is slow or times out from mainland China</a></li><li class="toc-level-3"><a href="#debian-ubuntu-error-linker-cc-not-found-while-building">Debian/Ubuntu: `error: linker &#x27;cc&#x27; not found` while building</a></li><li class="toc-level-3"><a href="#wrapper-installs-but-deepseek-isn-t-found">Wrapper installs but `deepseek` isn&#x27;t found</a></li><li class="toc-level-3"><a href="#windows-tls-handshake-eof-or-crypt-e-revocation-offline-from-rustup-init">Windows: `TLS handshake eof` or `CRYPT_E_REVOCATION_OFFLINE` from `rustup-init`</a></li><li class="toc-level-3"><a href="#windows-msvc-compiler-cl-exe-not-found-during-cargo-build">Windows: MSVC compiler (`cl.exe`) not found during `cargo build`</a></li><li class="toc-level-3"><a href="#windows-os-error-5-when-cargo-executes-build-scripts">Windows: `拒绝访问 (os error 5)` when Cargo executes build scripts</a></li><li class="toc-level-2"><a href="#7-verifying-your-install">7. Verifying your install</a></li></ul></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦文档、安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a></div><div class="footer-links"><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

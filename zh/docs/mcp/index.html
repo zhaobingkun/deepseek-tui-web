@@ -47,7 +47,111 @@
 }
   </script>
 </head>
-<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/docs/index.html">文档</a><span>/</span><span>MCP 文档</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">文档详情</span><h1>DeepSeek TUI MCP 文档指南</h1><p>MCP 文档说明了外部工具和服务器能力，如何在 DeepSeek TUI 工作流里被暴露、配置和约束。</p><div class="hero-points"><span>上游源文件：MCP.md</span><span>适合按主题阅读</span><span>可回连到站内 hub</span></div></div><aside class="answer-card"><span class="panel-kicker">最快用法</span><h2>先把这页当成 MCP 文档 的阅读路线图，而不是仓库文档清单。</h2><p>当单纯模型对话已经不够，你需要接入工具、结构化能力或更清楚的扩展边界时，就该先看 MCP 文档。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这份文档真正覆盖什么</h2><p>MCP 文档说明了外部工具和服务器能力，如何在 DeepSeek TUI 工作流里被暴露、配置和约束。</p><h2>这页能直接回答的问题</h2><ul><li>相比内建工具或简单的提供方设置，MCP 在这里承担什么角色？</li><li>当外部能力接进来后，信任、权限和失败处理该怎么理解？</li><li>从概念走到可运行的 MCP 配置，下一步应该接哪些文档？</li></ul><h2>读上游文档时最该盯住的部分</h2><ul><li>连接模型、服务定义，以及 MCP 在配置面的真实位置。</li><li>当工具能力超出纯文本补全后，权限边界和操作者预期应该如何设定。</li><li>“扩能力”和“保持流程可理解、可控”之间的平衡。</li><li>MCP 概念如何回连到工具边界、运行时和排错页面。</li></ul><h2>最常见的误区</h2><ul><li>把 MCP 当成普通配置项，而不是能力边界。</li><li>加了服务器却不说明信任模型和失败预期。</li><li>只看接入，不看运行时和排错影响。</li></ul></article><aside class="panel-card"><span class="panel-kicker">阅读顺序</span><div class="link-stack"><a href="/zh/docs/index.html">文档总页</a><a href="/zh/mcp/index.html">MCP 总页</a><a href="/zh/config/index.html">配置总页</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按问题类型读，再决定要不要切回安装、配置、模式、MCP 或排错分支。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>先确认环境前提</h3><p>先核对平台、shell、安装路线和凭据假设，再去改更深层设置。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>把文档对应到你的具体路径</h3><p>把官方安装或配置步骤，和提供方、环境特定的覆盖逻辑分开看。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>最后做真实验证</h3><p>收尾时一定验证当前二进制、激活配置和第一次成功请求路径。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页在站内结构里的位置</h2><p>这批 docs 详情页的作用，不是简单复述上游 Markdown，而是帮你更快判断：这份文档为什么值得看、先看哪几段、看完之后要回站内哪条主线继续走。对于 DeepSeek TUI 这种同时覆盖安装、配置、模式、工具和运维的项目，这种按问题分流的正文结构，会比“仓库原样镜像”更容易用。</p><h2>什么时候应该离开这页</h2><p>如果你已经明确自己接下来要改配置、切模式、接 MCP、排查问题，或者进入更具体的使用指南，就不要停留在 docs 详情页本身。它最有价值的时候，是帮你建立主题边界和阅读顺序，而不是替代所有后续操作页。</p></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/docs/index.html">文档总页</a><a href="/zh/mcp/index.html">MCP 总页</a><a href="/zh/config/index.html">配置总页</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦文档、安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a></div><div class="footer-links"><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
+<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/docs/index.html">文档</a><span>/</span><span>MCP 文档</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">文档全文</span><h1>DeepSeek TUI MCP 文档指南</h1><p>MCP 文档说明了外部工具和服务器能力，如何在 DeepSeek TUI 工作流里被暴露、配置和约束。</p><div class="hero-points"><span>上游源文件：MCP.md</span><span>站内直接可读</span><span>原文保留在下方</span></div></div><aside class="answer-card"><span class="panel-kicker">本页用途</span><h2>这页现在直接承载上游文档正文，不再只是导读。</h2><p>当单纯模型对话已经不够，你需要接入工具、结构化能力或更清楚的扩展边界时，就该先看 MCP 文档。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这份文档真正覆盖什么</h2><p>MCP 文档说明了外部工具和服务器能力，如何在 DeepSeek TUI 工作流里被暴露、配置和约束。</p><h2>怎么用这页</h2><ul><li>先看右侧目录，直接跳到你当前最关心的小节。</li><li>如果你只是来解决具体问题，优先读正文里的相关标题，再回站内对应 hub。</li><li>如果你要核对原始来源，可以直接打开 GitHub 原文链接。</li></ul></article><aside class="panel-card"><span class="panel-kicker">快速入口</span><div class="link-stack"><a href="https://github.com/zhaobingkun/DeepSeek-TUI/blob/main/docs/MCP.md">GitHub 文档页</a><a href="https://raw.githubusercontent.com/zhaobingkun/DeepSeek-TUI/main/docs/MCP.md">Raw Markdown</a><a href="/zh/docs/index.html">文档总页</a><a href="/zh/mcp/index.html">MCP 总页</a><a href="/zh/config/index.html">配置总页</a></div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose doc-article"><h2>上游文档原文（英文）</h2><h1 id="mcp-external-tool-servers">MCP (External Tool Servers)</h1>
+<p>DeepSeek TUI can load additional tools via MCP (Model Context Protocol). MCP servers are local processes that the TUI starts and communicates with over stdio.</p>
+<p>Browsing note:</p>
+<ul><li><code>web.run</code> is the canonical built-in browsing tool.</li><li><code>web_search</code> remains available as a compatibility alias for older prompts and integrations.</li></ul>
+<p>Server mode note:</p>
+<ul><li><code>deepseek-tui serve --mcp</code> runs the MCP stdio server.</li><li><code>deepseek-tui serve --http</code> runs the runtime HTTP/SSE API (separate mode).</li><li>The <code>deepseek</code> dispatcher exposes <code>deepseek mcp-server</code> as an equivalent stdio entrypoint used by the split CLI.</li></ul>
+<h2 id="bootstrap-mcp-config">Bootstrap MCP Config</h2>
+<p>Create a starter MCP config at your resolved MCP path:</p>
+<pre><code class="language-bash">deepseek-tui mcp init</code></pre>
+<p><code>deepseek-tui setup --mcp</code> performs the same MCP bootstrap alongside skills setup.</p>
+<p>Common management commands:</p>
+<pre><code class="language-bash">deepseek-tui mcp list
+deepseek-tui mcp tools [server]
+deepseek-tui mcp add &lt;name&gt; --command &quot;&lt;cmd&gt;&quot; --arg &quot;&lt;arg&gt;&quot;
+deepseek-tui mcp add &lt;name&gt; --url &quot;http://localhost:3000/mcp&quot;
+deepseek-tui mcp enable &lt;name&gt;
+deepseek-tui mcp disable &lt;name&gt;
+deepseek-tui mcp remove &lt;name&gt;
+deepseek-tui mcp validate</code></pre>
+<h2 id="in-tui-manager">In-TUI Manager</h2>
+<p>Inside the interactive TUI, <code>/mcp</code> opens a compact manager for the resolved MCP config path. It shows each configured server, whether it is enabled or disabled, its transport, command or URL, timeout values, connection errors, and discovered tools/resources/prompts when discovery has been run.</p>
+<p>Supported in-TUI actions:</p>
+<pre><code class="language-text">/mcp init
+/mcp init --force
+/mcp add stdio &lt;name&gt; &lt;command&gt; [args...]
+/mcp add http &lt;name&gt; &lt;url&gt;
+/mcp enable &lt;name&gt;
+/mcp disable &lt;name&gt;
+/mcp remove &lt;name&gt;
+/mcp validate
+/mcp reload</code></pre>
+<p><code>/mcp validate</code> and <code>/mcp reload</code> reconnect for UI discovery and refresh the manager snapshot. Config edits made from the TUI are written immediately, but the model-visible MCP tool pool is not hot-reloaded; the manager marks this as restart-required until the TUI is restarted.</p>
+<h2 id="config-file-location">Config File Location</h2>
+<p>Default path:</p>
+<ul><li><code>~/.deepseek/mcp.json</code></li></ul>
+<p>Overrides:</p>
+<ul><li>Config: <code>mcp_config_path = &quot;/path/to/mcp.json&quot;</code></li><li>Env: <code>DEEPSEEK_MCP_CONFIG=/path/to/mcp.json</code></li></ul>
+<p><code>deepseek-tui mcp init</code> (and <code>deepseek-tui setup --mcp</code>) writes to this resolved path.</p>
+<p>The interactive <code>/config</code> editor also exposes <code>mcp_config_path</code>. Changing it in the TUI updates the path used by <code>/mcp</code>, and requires a restart before the model-visible MCP tool pool is rebuilt.</p>
+<p>After editing the file or changing <code>mcp_config_path</code>, restart the TUI.</p>
+<h2 id="tool-naming">Tool Naming</h2>
+<p>Discovered MCP tools are exposed to the model as:</p>
+<ul><li><code>mcp_&lt;server&gt;_&lt;tool&gt;</code></li></ul>
+<p>Example: a server named <code>git</code> with a tool named <code>status</code> becomes <code>mcp_git_status</code>.</p>
+<p>The command palette includes MCP entries grouped by server. It shows disabled and failed servers instead of hiding them, and uses the same runtime tool names shown to the model.</p>
+<h2 id="resource-and-prompt-helpers">Resource and Prompt Helpers</h2>
+<p>The CLI also exposes helper tools when MCP is enabled:</p>
+<ul><li><code>list_mcp_resources</code> (optional <code>server</code> filter)</li><li><code>list_mcp_resource_templates</code> (optional <code>server</code> filter)</li><li><code>mcp_read_resource</code> / <code>read_mcp_resource</code> (aliases)</li><li><code>mcp_get_prompt</code></li></ul>
+<h2 id="minimal-example">Minimal Example</h2>
+<pre><code class="language-json">{
+  &quot;timeouts&quot;: {
+    &quot;connect_timeout&quot;: 10,
+    &quot;execute_timeout&quot;: 60,
+    &quot;read_timeout&quot;: 120
+  },
+  &quot;servers&quot;: {
+    &quot;example&quot;: {
+      &quot;command&quot;: &quot;node&quot;,
+      &quot;args&quot;: [&quot;./path/to/your-mcp-server.js&quot;],
+      &quot;env&quot;: {},
+      &quot;disabled&quot;: false
+    }
+  }
+}</code></pre>
+<p>You can also use <code>mcpServers</code> instead of <code>servers</code> for compatibility with other clients.</p>
+<h2 id="running-deepseek-as-an-mcp-server">Running DeepSeek as an MCP Server</h2>
+<p>You can register your local DeepSeek binary as an MCP server so other DeepSeek sessions (or any MCP client) can call its tools.</p>
+<h3 id="quick-setup">Quick Setup</h3>
+<pre><code class="language-bash">deepseek-tui mcp add-self</code></pre>
+<p>This resolves the current binary path, generates a config entry that runs <code>deepseek-tui serve --mcp</code>, and writes it to your MCP config file. The default server name is <code>deepseek</code>.</p>
+<p>Options:</p>
+<ul><li><code>--name &lt;NAME&gt;</code> — custom server name (default: <code>deepseek</code>)</li><li><code>--workspace &lt;PATH&gt;</code> — workspace directory for the server</li></ul>
+<h3 id="manual-config">Manual Config</h3>
+<p>Equivalent manual entry in <code>~/.deepseek/mcp.json</code>:</p>
+<pre><code class="language-json">{
+  &quot;servers&quot;: {
+    &quot;deepseek&quot;: {
+      &quot;command&quot;: &quot;/path/to/deepseek&quot;,
+      &quot;args&quot;: [&quot;serve&quot;, &quot;--mcp&quot;],
+      &quot;env&quot;: {}
+    }
+  }
+}</code></pre>
+<p>The <code>deepseek-tui</code> binary supports <code>serve --mcp</code> directly. The <code>deepseek</code> dispatcher offers the equivalent <code>deepseek mcp-server</code> stdio entrypoint. Use whichever is on your <code>PATH</code> (run <code>which deepseek</code> or <code>which deepseek-tui</code> to find the full path). The <code>mcp add-self</code> command automatically resolves the correct binary.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul><li>The binary referenced in <code>command</code> must exist and be executable.</li><li>The MCP server runs as a child process via stdio — no network ports required.</li><li>Each MCP client session spawns its own server process.</li></ul>
+<h3 id="tool-naming">Tool Naming</h3>
+<p>Tools from a self-hosted DeepSeek server follow the standard naming convention:</p>
+<ul><li><code>mcp_deepseek_&lt;tool&gt;</code> (if the server is named <code>deepseek</code>)</li></ul>
+<p>For example, the <code>shell</code> tool becomes <code>mcp_deepseek_shell</code>.</p>
+<h3 id="mcp-server-vs-http-sse-api-vs-acp">MCP Server vs HTTP/SSE API vs ACP</h3>
+<table><thead><tr><th></th><th><code>deepseek-tui serve --mcp</code></th><th><code>deepseek-tui serve --http</code></th><th><code>deepseek-tui serve --acp</code></th></tr></thead><tbody><tr><td><strong>Protocol</strong></td><td>MCP stdio</td><td>HTTP/SSE JSON-RPC</td><td>ACP stdio</td></tr><tr><td><strong>Use case</strong></td><td>Tool server for MCP clients</td><td>Runtime API for apps</td><td>Editor agent for Zed/custom ACP clients</td></tr><tr><td><strong>Config</strong></td><td><code>~/.deepseek/mcp.json</code> entry</td><td>Direct URL connection</td><td>Editor <code>agent_servers</code> custom command</td></tr><tr><td><strong>Lifecycle</strong></td><td>Spawned per client session</td><td>Long-running daemon</td><td>Spawned per editor agent session</td></tr></tbody></table>
+<p>Use <code>mcp add-self</code> when you want DeepSeek tools available to other MCP clients. Use <code>serve --http</code> when building applications that consume the API directly. Use <code>serve --acp</code> when an editor wants to talk to DeepSeek as an ACP agent.</p>
+<h3 id="verification">Verification</h3>
+<p>After adding, test the connection:</p>
+<pre><code class="language-bash">deepseek-tui mcp validate
+deepseek-tui mcp tools deepseek</code></pre>
+<h2 id="server-fields">Server Fields</h2>
+<p>Per-server settings:</p>
+<ul><li><code>command</code> (string, required)</li><li><code>args</code> (array of strings, optional)</li><li><code>env</code> (object, optional)</li><li><code>connect_timeout</code>, <code>execute_timeout</code>, <code>read_timeout</code> (seconds, optional)</li><li><code>disabled</code> (bool, optional)</li><li><code>enabled</code> (bool, optional, default <code>true</code>)</li><li><code>required</code> (bool, optional): startup/connect validation fails if this server cannot initialize.</li><li><code>enabled_tools</code> (array, optional): allowlist of tool names for this server.</li><li><code>disabled_tools</code> (array, optional): denylist applied after <code>enabled_tools</code>.</li></ul>
+<h2 id="safety-notes">Safety Notes</h2>
+<p>MCP tools now flow through the same tool-approval framework as built-in tools. Read-only MCP helpers (resource/prompt listing and reads) can run without prompts in suggestive approval modes, while side-effectful MCP tools require approval.</p>
+<p>You should still only configure MCP servers you trust, and treat MCP server configuration as equivalent to running code on your machine.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul><li>Run <code>deepseek-tui doctor</code> to confirm the MCP config path it resolved and whether it exists.</li><li>In the TUI, run <code>/mcp validate</code> to refresh the visible server/tool snapshot.</li><li>If the MCP config is missing, run <code>deepseek-tui mcp init --force</code> to regenerate it.</li><li>If tools don’t appear, verify the server command works from your shell and that the server supports MCP <code>tools/list</code>.</li></ul></article><aside class="panel-card toc-card"><span class="panel-kicker">目录</span><ul><li class="toc-level-1"><a href="#mcp-external-tool-servers">MCP (External Tool Servers)</a></li><li class="toc-level-2"><a href="#bootstrap-mcp-config">Bootstrap MCP Config</a></li><li class="toc-level-2"><a href="#in-tui-manager">In-TUI Manager</a></li><li class="toc-level-2"><a href="#config-file-location">Config File Location</a></li><li class="toc-level-2"><a href="#tool-naming">Tool Naming</a></li><li class="toc-level-2"><a href="#resource-and-prompt-helpers">Resource and Prompt Helpers</a></li><li class="toc-level-2"><a href="#minimal-example">Minimal Example</a></li><li class="toc-level-2"><a href="#running-deepseek-as-an-mcp-server">Running DeepSeek as an MCP Server</a></li><li class="toc-level-3"><a href="#quick-setup">Quick Setup</a></li><li class="toc-level-3"><a href="#manual-config">Manual Config</a></li><li class="toc-level-3"><a href="#prerequisites">Prerequisites</a></li><li class="toc-level-3"><a href="#tool-naming">Tool Naming</a></li><li class="toc-level-3"><a href="#mcp-server-vs-http-sse-api-vs-acp">MCP Server vs HTTP/SSE API vs ACP</a></li><li class="toc-level-3"><a href="#verification">Verification</a></li><li class="toc-level-2"><a href="#server-fields">Server Fields</a></li><li class="toc-level-2"><a href="#safety-notes">Safety Notes</a></li><li class="toc-level-2"><a href="#troubleshooting">Troubleshooting</a></li></ul></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦文档、安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a></div><div class="footer-links"><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
