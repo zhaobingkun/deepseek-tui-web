@@ -8,6 +8,20 @@ from pathlib import Path
 ROOT = Path("/Users/zhaobingkun/dev/DeepSeek-TUI")
 DOMAIN = "https://deepseek-tui.app"
 
+SECTION_LABELS_EN = {
+    "install": "Install",
+    "config": "Config",
+    "mcp": "MCP",
+    "modes": "Modes",
+}
+
+SECTION_LABELS_ZH = {
+    "install": "安装",
+    "config": "配置",
+    "mcp": "MCP",
+    "modes": "模式",
+}
+
 
 PAGES = {
     ("install", "npm"): {
@@ -1527,6 +1541,7 @@ def build_main(section: str, slug: str, zh: bool) -> str:
     examples = data.get("zh_examples" if zh else "examples", [])
     failure_routes = data.get("zh_failure_routes" if zh else "failure_routes", [])
     source_label = "本页是站内详情页" if zh else "Site detail page"
+    section_label = SECTION_LABELS_ZH.get(section, section) if zh else SECTION_LABELS_EN.get(section, section.title())
     section_head = "推荐阅读顺序" if zh else "Recommended reading order"
     section_desc = "先按当前问题走，再决定要不要切去相邻详情页或 hub。" if zh else "Move through the page by workflow need first, then branch into adjacent detail pages or hubs."
     question_head = "这页能直接回答的问题" if zh else "Questions this page should answer fast"
@@ -1547,7 +1562,7 @@ def build_main(section: str, slug: str, zh: bool) -> str:
     routes_section = ""
     if failure_routes:
         routes_section = f"""<section class="section section-alt"><div class="container"><div class="section-head"><h2>{routes_head}</h2><p>{'先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。' if zh else 'Work out which layer failed first instead of treating every problem as the same.'}</p></div><div class="detail-grid">{route_blocks_html(failure_routes)}</div></div></section>"""
-    return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">{html.escape(eyebrow)}</span><h1>{html.escape(h1)}</h1><p>{html.escape(intro)}</p><div class="hero-points"><span>{html.escape(source_label)}</span><span>{html.escape(title)}</span><span>{html.escape(section.title() if not zh else section)}</span></div></div><aside class="answer-card"><span class="panel-kicker">{html.escape(answer_kicker)}</span><h2>{html.escape(answer_h2)}</h2><p>{html.escape(answer_p)}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>{question_head}</h2><ul>{list_html(questions)}</ul><h2>{checks_head}</h2><ul>{list_html(checks)}</ul><h2>{mistakes_head}</h2><ul>{list_html(mistakes)}</ul></article><aside class="panel-card"><span class="panel-kicker">{'下一步' if zh else 'Next pages'}</span><div class="link-stack">{links_block}</div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>{section_head}</h2><p>{html.escape(section_desc)}</p></div><div class="card-grid card-grid-3">{cards_html(steps, zh)}</div></div></section>{examples_section}{routes_section}<section class="section"><div class="container two-col"><article class="prose"><h2>{where_head}</h2><p>{html.escape(where_text)}</p></article><aside class="panel-card"><span class="panel-kicker">{'继续看' if zh else 'Continue with'}</span><div class="link-stack">{links_block}</div></aside></div></section></main>"""
+    return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">{html.escape(eyebrow)}</span><h1>{html.escape(h1)}</h1><p>{html.escape(intro)}</p><div class="hero-points"><span>{html.escape(source_label)}</span><span>{html.escape(title)}</span><span>{html.escape(section_label)}</span></div></div><aside class="answer-card"><span class="panel-kicker">{html.escape(answer_kicker)}</span><h2>{html.escape(answer_h2)}</h2><p>{html.escape(answer_p)}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>{question_head}</h2><ul>{list_html(questions)}</ul><h2>{checks_head}</h2><ul>{list_html(checks)}</ul><h2>{mistakes_head}</h2><ul>{list_html(mistakes)}</ul></article><aside class="panel-card"><span class="panel-kicker">{'下一步' if zh else 'Next pages'}</span><div class="link-stack">{links_block}</div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>{section_head}</h2><p>{html.escape(section_desc)}</p></div><div class="card-grid card-grid-3">{cards_html(steps, zh)}</div></div></section>{examples_section}{routes_section}<section class="section"><div class="container two-col"><article class="prose"><h2>{where_head}</h2><p>{html.escape(where_text)}</p></article><aside class="panel-card"><span class="panel-kicker">{'继续看' if zh else 'Continue with'}</span><div class="link-stack">{links_block}</div></aside></div></section></main>"""
 
 
 def process(path: Path) -> None:

@@ -7,6 +7,22 @@ from pathlib import Path
 
 ROOT = Path("/Users/zhaobingkun/dev/DeepSeek-TUI")
 
+SECTION_LABELS_EN = {
+    "guides": "Guides",
+    "skills": "Skills",
+    "comparisons": "Comparisons",
+    "troubleshooting": "Troubleshooting",
+    "news": "News",
+}
+
+SECTION_LABELS_ZH = {
+    "guides": "指南",
+    "skills": "技能",
+    "comparisons": "对比",
+    "troubleshooting": "排错",
+    "news": "资讯",
+}
+
 
 PAGES = {
     ("guides", "pricing-and-cost"): {
@@ -1043,7 +1059,7 @@ def render_routes(rows: list[tuple[str, str]]) -> str:
     )
 
 
-def build_main(copy: dict[str, object], zh: bool) -> str:
+def build_main(copy: dict[str, object], zh: bool, section: str, title: str) -> str:
     questions = render_list(copy["questions"])  # type: ignore[index]
     mistakes = render_list(copy["mistakes"])  # type: ignore[index]
     diagnosis = render_diagnosis(copy["diagnosis"])  # type: ignore[index]
@@ -1068,20 +1084,27 @@ def build_main(copy: dict[str, object], zh: bool) -> str:
             else "This page is meant to answer the concrete question directly, not just point back to a hub. Use it when you already know the branch and need a clearer working path."
         ),
     }
+    source_label = "本页是站内详情页" if zh else "Site detail page"
+    section_label = SECTION_LABELS_ZH.get(section, section) if zh else SECTION_LABELS_EN.get(section, section.title())
     examples_section = ""
     if examples:
         examples_section = f"""<section class="section"><div class="container"><div class="section-head"><h2>{labels['examples']}</h2><p>{'先拿可执行例子，再回头做更细的调整。' if zh else 'Start from working examples first, then adjust the details.'}</p></div><div class="detail-grid">{examples}</div></div></section>"""
     routes_section = ""
     if failure_routes:
         routes_section = f"""<section class="section section-alt"><div class="container"><div class="section-head"><h2>{labels['routes']}</h2><p>{'先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。' if zh else 'Work out which layer failed first instead of treating every problem as the same.'}</p></div><div class="detail-grid">{failure_routes}</div></div></section>"""
-    return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">{html.escape(copy['eyebrow'])}</span><h1>{html.escape(copy['h1'])}</h1><p>{html.escape(copy['intro'])}</p></div><aside class="answer-card"><span class="panel-kicker">{html.escape(copy['answer_kicker'])}</span><h2>{html.escape(copy['answer_h2'])}</h2><p>{html.escape(copy['answer_p'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>{labels['questions']}</h2><ul>{questions}</ul><h2>{labels['coverage']}</h2><p>{html.escape(copy['coverage'])}</p><h2>{labels['diagnosis']}</h2>{diagnosis}</article><aside class="panel-card"><span class="panel-kicker">{labels['next']}</span><div class="link-stack">{links}</div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose"><h2>{labels['workflow']}</h2><ol>{workflow}</ol><h2>{labels['mistakes']}</h2><ul>{mistakes}</ul><h2>{labels['leave']}</h2><p>{html.escape(copy['leave'])}</p></article><aside class="panel-card"><span class="panel-kicker">{labels['detail_kicker']}</span><p>{html.escape(labels['detail_body'])}</p></aside></div></section>{examples_section}{routes_section}</main>"""
+    return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">{html.escape(copy['eyebrow'])}</span><h1>{html.escape(copy['h1'])}</h1><p>{html.escape(copy['intro'])}</p><div class="hero-points"><span>{html.escape(source_label)}</span><span>{html.escape(title)}</span><span>{html.escape(section_label)}</span></div></div><aside class="answer-card"><span class="panel-kicker">{html.escape(copy['answer_kicker'])}</span><h2>{html.escape(copy['answer_h2'])}</h2><p>{html.escape(copy['answer_p'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>{labels['questions']}</h2><ul>{questions}</ul><h2>{labels['coverage']}</h2><p>{html.escape(copy['coverage'])}</p><h2>{labels['diagnosis']}</h2>{diagnosis}</article><aside class="panel-card"><span class="panel-kicker">{labels['next']}</span><div class="link-stack">{links}</div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose"><h2>{labels['workflow']}</h2><ol>{workflow}</ol><h2>{labels['mistakes']}</h2><ul>{mistakes}</ul><h2>{labels['leave']}</h2><p>{html.escape(copy['leave'])}</p></article><aside class="panel-card"><span class="panel-kicker">{labels['detail_kicker']}</span><p>{html.escape(labels['detail_body'])}</p></aside></div></section>{examples_section}{routes_section}</main>"""
 
 
 def process_page(path: Path, copy: dict[str, object], zh: bool) -> None:
+    rel = path.relative_to(ROOT)
+    parts = rel.parts[1:] if zh else rel.parts
+    section = parts[0]
     text = path.read_text(encoding="utf-8")
     if not re.search(r"<main>.*?</main>", text, flags=re.S):
         raise RuntimeError(f"Failed to replace <main> block in {path}")
-    updated = re.sub(r"<main>.*?</main>", build_main(copy, zh), text, flags=re.S, count=1)
+    title_match = re.search(r"<title>(.*?)</title>", text, flags=re.S)
+    title = html.unescape(title_match.group(1)) if title_match else str(parts[-2])
+    updated = re.sub(r"<main>.*?</main>", build_main(copy, zh, section, title), text, flags=re.S, count=1)
     path.write_text(updated, encoding="utf-8")
 
 
