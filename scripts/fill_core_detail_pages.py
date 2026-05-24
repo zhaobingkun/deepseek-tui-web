@@ -44,6 +44,14 @@ PAGES = {
             ("API key setup", "/config/api-key/index.html"),
             ("Command not found troubleshooting", "/troubleshooting/command-not-found/index.html"),
         ],
+        "examples": [
+            ("Fastest npm install path", "Use one global npm route, then verify the command from a fresh shell instead of trusting the install window only.", "npm install -g deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
+            ("If you already use nvm or fnm", "Install and verify inside the same Node manager shell so package ownership does not split across different runtimes.", "node --version\nnpm --version\nnpm install -g deepseek-tui\ndeepseek --version"),
+        ],
+        "failure_routes": [
+            ("Install command succeeded but `deepseek` is missing", "That is usually a PATH or shell-profile problem, not an npm package failure. Go to command-not-found troubleshooting before reinstalling."),
+            ("`deepseek --version` works in one terminal but not another", "Your Node manager or shell startup files are inconsistent across terminal profiles. Compare the active shell first instead of changing the app."),
+        ],
         "zh_title": "用 npm 安装 DeepSeek TUI",
         "zh_description": "使用 npm 安装 DeepSeek TUI，并核对全局二进制、PATH 与最常见的 Node 安装问题。",
         "zh_eyebrow": "npm 安装",
@@ -76,6 +84,14 @@ PAGES = {
             ("配置总页", "/zh/config/index.html"),
             ("API Key 设置", "/zh/config/api-key/index.html"),
             ("command not found 排错", "/zh/troubleshooting/command-not-found/index.html"),
+        ],
+        "zh_examples": [
+            ("最快的 npm 安装路径", "只保留一条全局 npm 路线，然后在新 shell 里验证，不要只相信安装窗口里的结果。", "npm install -g deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
+            ("如果你本来就在用 nvm 或 fnm", "安装和验证都放在同一套 Node 管理器 shell 里完成，避免把不同运行时的包归属混在一起。", "node --version\nnpm --version\nnpm install -g deepseek-tui\ndeepseek --version"),
+        ],
+        "zh_failure_routes": [
+            ("安装命令成功了，但 `deepseek` 不存在", "这通常是 PATH 或 shell profile 问题，不是 npm 包本身失败。先去看 command-not-found 排错，不要先重装。"),
+            ("一个终端里能跑，另一个终端里不能跑", "说明 Node 管理器或 shell 启动文件在不同 terminal profile 里不一致。先比 shell，再动应用。"),
         ],
     },
     ("install", "cargo"): {
@@ -112,6 +128,14 @@ PAGES = {
             ("Update or upgrade", "/install/update-or-upgrade/index.html"),
             ("Provider setup", "/config/provider-setup/index.html"),
         ],
+        "examples": [
+            ("Verify cargo owns the binary you are about to trust", "Before you debug the app, prove that the Rust toolchain and the resolved binary path line up in the same shell.", "cargo --version\ncargo install deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
+            ("Check for a shadowed older install", "If cargo install worked but behavior did not change, inspect whether npm or a manual binary still wins PATH.", "command -v deepseek || which deepseek\ndeepseek --version\n# compare with the expected cargo bin path"),
+        ],
+        "failure_routes": [
+            ("Cargo finished cleanly but the command still looks old", "That usually means an older binary is still resolving first. Check PATH ownership before touching provider config."),
+            ("`cargo install` fails before the app even builds", "Treat that as a Rust toolchain problem first. Fix cargo and the build environment before you debug DeepSeek TUI itself."),
+        ],
         "zh_title": "用 cargo 安装 DeepSeek TUI",
         "zh_description": "当你的终端工具链本来就以 Rust 为主时，用 cargo 安装 DeepSeek TUI 会更合适。",
         "zh_eyebrow": "Cargo 安装",
@@ -144,6 +168,14 @@ PAGES = {
             ("安装总页", "/zh/install/index.html"),
             ("更新与升级", "/zh/install/update-or-upgrade/index.html"),
             ("provider 设置", "/zh/config/provider-setup/index.html"),
+        ],
+        "zh_examples": [
+            ("先确认 cargo 真是当前拥有者", "在排 app 之前，先证明 Rust 工具链和当前解析到的二进制路径是在同一个 shell 里对齐的。", "cargo --version\ncargo install deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
+            ("检查是不是被旧安装挡住了", "如果 cargo 安装成功但行为没变，先看是不是 npm 或手动二进制还在 PATH 前面。", "command -v deepseek || which deepseek\ndeepseek --version\n# 对照预期的 cargo bin 路径"),
+        ],
+        "zh_failure_routes": [
+            ("cargo 完整装完了，但命令还是旧的", "这通常说明旧二进制还在优先解析。先查 PATH 归属，不要先动 provider 配置。"),
+            ("`cargo install` 在构建前就失败", "先把它当成 Rust 工具链问题处理。cargo 和构建环境没稳定前，不要先怪 DeepSeek TUI。"),
         ],
     },
     ("install", "homebrew"): {
@@ -180,6 +212,16 @@ PAGES = {
             ("Update or upgrade", "/install/update-or-upgrade/index.html"),
             ("Config file location", "/config/file-location/index.html"),
         ],
+        "examples": [
+            ("Install and verify through brew only", "Keep package ownership obvious. Install, reopen the shell, then confirm the same brew-managed binary is active.", "brew install deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
+            ("Check which Homebrew prefix actually won", "On macOS, confusion often comes from `/opt/homebrew` versus `/usr/local` or another package path winning first.", "command -v deepseek || which deepseek\n# compare whether the resolved path matches your brew prefix"),
+            ("Confirm brew health before you blame the app", "If brew itself is stale or unhealthy, fix that first so you do not turn package-manager drift into an app debugging session.", "brew --version\nbrew doctor\nbrew list | rg deepseek-tui || true"),
+        ],
+        "failure_routes": [
+            ("Brew install succeeded but the command still points somewhere else", "That means Homebrew is not the active owner yet. Fix PATH order before you treat this as a DeepSeek TUI issue."),
+            ("The brew binary is active but requests still fail", "That is usually not an install problem anymore. Move straight into provider setup or config checks."),
+            ("`brew doctor` is already complaining before install", "Treat that as Homebrew environment debt first. A noisy brew base will make install verification unreliable."),
+        ],
         "zh_title": "用 Homebrew 安装 DeepSeek TUI",
         "zh_description": "当你的 macOS 终端工具本来就大量依赖 Homebrew 时，用 brew 安装 DeepSeek TUI 会更整洁。",
         "zh_eyebrow": "Homebrew 安装",
@@ -212,6 +254,16 @@ PAGES = {
             ("安装总页", "/zh/install/index.html"),
             ("更新与升级", "/zh/install/update-or-upgrade/index.html"),
             ("配置文件位置", "/zh/config/file-location/index.html"),
+        ],
+        "zh_examples": [
+            ("只通过 brew 安装并验证", "让包归属保持单一。安装、重开 shell，然后确认当前活跃二进制确实来自 brew。", "brew install deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
+            ("检查当前生效的是哪条 Homebrew 前缀", "在 macOS 上，很多混乱都来自 `/opt/homebrew`、`/usr/local` 或别的包路径先赢。", "command -v deepseek || which deepseek\n# 对照解析到的路径是不是你的 brew 前缀"),
+            ("先确认 brew 自己健康，再怪应用", "如果 brew 本身就有问题，先修它，不要把包管理器漂移误判成 DeepSeek TUI 安装问题。", "brew --version\nbrew doctor\nbrew list | rg deepseek-tui || true"),
+        ],
+        "zh_failure_routes": [
+            ("brew 安装成功了，但命令仍然指向别处", "这说明 Homebrew 还不是当前拥有者。先修 PATH 顺序，不要先把问题归到 DeepSeek TUI。"),
+            ("当前已经是 brew 二进制，但请求还是失败", "那通常就不再是安装层问题了，直接去看 provider 设置或配置层。"),
+            ("`brew doctor` 在安装前就已经报很多问题", "先把它当成 Homebrew 环境债务处理。brew 基线不干净，后面的安装验证就不可靠。"),
         ],
     },
     ("install", "windows"): {
@@ -248,6 +300,14 @@ PAGES = {
             ("npm install guide", "/install/npm/index.html"),
             ("Command not found troubleshooting", "/troubleshooting/command-not-found/index.html"),
         ],
+        "examples": [
+            ("Test in the shell you really use for work", "Windows setup only counts in the shell that will own your daily workflow, not just the shell where installation happened to succeed once.", "deepseek --version\nwhere deepseek"),
+            ("Separate Windows shell paths before changing package ecosystems", "If PowerShell, Git Bash, and WSL disagree, compare their binary paths first before you reinstall through another toolchain.", "where deepseek\n# repeat in the exact shell profile you plan to use"),
+        ],
+        "failure_routes": [
+            ("PowerShell works but Git Bash or WSL does not", "Treat that as a shell-boundary or PATH-boundary issue first. Do not assume the package manager itself is broken."),
+            ("The command exists but only inside the install shell", "That usually means PATH propagation or terminal-profile scope is incomplete. Reopen the target shell and inspect which path actually resolves."),
+        ],
         "zh_title": "在 Windows 上安装 DeepSeek TUI",
         "zh_description": "根据 PowerShell、Git Bash、WSL 或混合终端环境，为 DeepSeek TUI 选择正确的 Windows 安装路径。",
         "zh_eyebrow": "Windows 安装",
@@ -280,6 +340,14 @@ PAGES = {
             ("安装总页", "/zh/install/index.html"),
             ("npm 安装", "/zh/install/npm/index.html"),
             ("command not found 排错", "/zh/troubleshooting/command-not-found/index.html"),
+        ],
+        "zh_examples": [
+            ("一定在你真实工作的 shell 里测试", "Windows 安装是否成功，只在你日常真正工作的 shell 里才算数，不是某个安装窗口里跑通一次就结束。", "deepseek --version\nwhere deepseek"),
+            ("先把不同 Windows shell 的路径边界分开", "如果 PowerShell、Git Bash、WSL 结果不一致，先比二进制路径，不要先换包管理器。", "where deepseek\n# 在你真正要使用的 shell profile 里重复执行"),
+        ],
+        "zh_failure_routes": [
+            ("PowerShell 正常，但 Git Bash 或 WSL 不正常", "先把它当成 shell 边界或 PATH 边界问题，不要立刻判断包管理器坏了。"),
+            ("命令只在安装那个 shell 里存在", "通常是 PATH 传播或 terminal profile 范围没打通。重开目标 shell，再查当前实际解析的路径。"),
         ],
     },
     ("install", "update-or-upgrade"): {
@@ -316,6 +384,14 @@ PAGES = {
             ("Config reset", "/config/reset/index.html"),
             ("Release binaries troubleshooting", "/troubleshooting/release-binaries/index.html"),
         ],
+        "examples": [
+            ("Upgrade the same owner you installed with", "Do not shotgun-update every package manager. First work out which route actually owns the live binary.", "deepseek --version\ncommand -v deepseek || which deepseek\n# then update through the matching package route"),
+            ("Verify after a fresh shell", "An upgrade only counts once a new terminal session resolves the same binary at the newer version.", "deepseek --version"),
+        ],
+        "failure_routes": [
+            ("You upgraded but the version did not change", "That usually means you updated the wrong package owner or an older binary still resolves earlier in PATH."),
+            ("The version changed but behavior got strange", "This is often config drift or provider mismatch after upgrade, not a broken package manager. Check config compatibility next."),
+        ],
         "zh_title": "更新或升级 DeepSeek TUI",
         "zh_description": "通过当前真正拥有活跃二进制的包路径，安全地更新或升级 DeepSeek TUI。",
         "zh_eyebrow": "更新与升级",
@@ -348,6 +424,14 @@ PAGES = {
             ("安装总页", "/zh/install/index.html"),
             ("配置重置", "/zh/config/reset/index.html"),
             ("Release binaries 排错", "/zh/troubleshooting/release-binaries/index.html"),
+        ],
+        "zh_examples": [
+            ("谁安装谁更新", "不要几个包管理器一起跑更新。先确认当前活跃二进制到底归谁管。", "deepseek --version\ncommand -v deepseek || which deepseek\n# 再走对应的那条更新路径"),
+            ("重开 shell 以后再核对", "只有在新终端里解析到的还是同一个二进制、而且版本已经变了，这次升级才算真的完成。", "deepseek --version"),
+        ],
+        "zh_failure_routes": [
+            ("你更新了，但版本号没变", "通常说明你更新的是错误的拥有者，或者旧二进制还排在 PATH 前面。"),
+            ("版本号变了，但行为变怪了", "这往往不是包管理器坏了，而是升级后配置或 provider 预期漂移。下一步去看配置兼容。"),
         ],
     },
     ("config", "api-key"): {
@@ -384,6 +468,14 @@ PAGES = {
             ("Environment variables", "/config/environment-variables/index.html"),
             ("Provider troubleshooting", "/troubleshooting/provider-troubleshooting/index.html"),
         ],
+        "examples": [
+            ("Environment-first auth check", "Keep the first pass simple: one credential source, one shell, one live request path.", "export DEEPSEEK_API_KEY=\"your-key-here\"\ndeepseek"),
+            ("Before you blame the key", "Confirm the shell really sees the value you think it sees before editing more config.", "echo \"$DEEPSEEK_API_KEY\"\ndeepseek --version"),
+        ],
+        "failure_routes": [
+            ("The app opens but the first request fails", "That usually means the credential is missing, empty, or tied to the wrong provider path. Check provider setup before touching modes or MCP."),
+            ("It works in one shell but fails in another", "You probably have shell-specific exports or stale profile values. Compare environment variables before changing the key again."),
+        ],
         "zh_title": "设置 DeepSeek TUI 的 API Key",
         "zh_description": "正确配置 DeepSeek TUI 的 API Key，并把 provider 认证问题和安装、界面问题分开。",
         "zh_eyebrow": "API Key 设置",
@@ -416,6 +508,14 @@ PAGES = {
             ("provider 设置", "/zh/config/provider-setup/index.html"),
             ("环境变量", "/zh/config/environment-variables/index.html"),
             ("provider 排错", "/zh/troubleshooting/provider-troubleshooting/index.html"),
+        ],
+        "zh_examples": [
+            ("先走环境变量认证验证", "第一轮先只保留一个清楚的凭据来源，这样最容易判断失败是不是卡在认证层。", "export DEEPSEEK_API_KEY=\"your-key-here\"\ndeepseek"),
+            ("先别急着怪 key", "动更多配置文件之前，先确认当前 shell 里真的有你以为的那个值。", "echo \"$DEEPSEEK_API_KEY\"\ndeepseek --version"),
+        ],
+        "zh_failure_routes": [
+            ("程序能打开，但第一条请求失败", "通常不是安装坏了，而是凭据缺失、空值，或者 provider 路线不匹配。先去核对 provider 设置。"),
+            ("一个 shell 里能用，另一个 shell 里失败", "大概率是不同 shell 的导出值不一致，或者旧 profile 还在生效。先比环境变量。"),
         ],
     },
     ("config", "environment-variables"): {
@@ -452,6 +552,14 @@ PAGES = {
             ("Config file location", "/config/file-location/index.html"),
             ("Config reset", "/config/reset/index.html"),
         ],
+        "examples": [
+            ("Check what the current shell really exports", "List the relevant values before you edit config files, especially if different terminals behave differently.", "echo \"$DEEPSEEK_API_KEY\"\n# inspect any provider-related exports in the current shell"),
+            ("Compare with and without overrides", "The fastest way to prove the env layer is involved is to compare behavior before and after clearing the relevant export.", "unset DEEPSEEK_API_KEY\n# reopen the shell or retry the narrowest request path"),
+        ],
+        "failure_routes": [
+            ("One terminal works and another does not", "That is usually a shell-profile difference, not a provider outage. Compare exports across the two shells before rewriting config."),
+            ("You changed the config file but nothing moved", "An environment override may still be winning. Clear or inspect env values before assuming the file path is wrong."),
+        ],
         "zh_title": "DeepSeek TUI 的环境变量怎么用",
         "zh_description": "在 DeepSeek TUI 中使用环境变量，同时搞清楚到底是哪一个 shell 值覆盖了你的配置。",
         "zh_eyebrow": "环境变量",
@@ -484,6 +592,14 @@ PAGES = {
             ("API Key 设置", "/zh/config/api-key/index.html"),
             ("配置文件位置", "/zh/config/file-location/index.html"),
             ("配置重置", "/zh/config/reset/index.html"),
+        ],
+        "zh_examples": [
+            ("先看当前 shell 到底导出了什么", "尤其当不同终端行为不一致时，先把相关值列出来，再动配置文件。", "echo \"$DEEPSEEK_API_KEY\"\n# 再检查当前 shell 里的 provider 相关导出"),
+            ("做一次有无覆盖的对照", "想快速证明 env 层是不是在作怪，最直接的方法就是清掉相关导出后再比一次。", "unset DEEPSEEK_API_KEY\n# 重开 shell 或重试最窄请求路径"),
+        ],
+        "zh_failure_routes": [
+            ("一个终端正常，另一个终端不正常", "这通常不是 provider 掉了，而是 shell profile 差异。先对比两个 shell 的导出值。"),
+            ("你改了配置文件，但行为完全没动", "很可能环境变量覆盖还在赢。先把 env 值查清楚，再判断是不是文件路径问题。"),
         ],
     },
     ("config", "file-location"): {
@@ -520,6 +636,14 @@ PAGES = {
             ("Config reset", "/config/reset/index.html"),
             ("Provider setup", "/config/provider-setup/index.html"),
         ],
+        "examples": [
+            ("Locate the file before you edit values", "The safest first move is to prove which config file exists and which path you are about to change.", "find ~ -name '*deepseek*' 2>/dev/null | head\n# compare candidates before editing anything"),
+            ("Change one value, then validate immediately", "Once the active file is confirmed, edit the smallest possible value and test that one change before touching the rest.", "# edit the confirmed active file\n# then run the narrowest possible DeepSeek TUI check"),
+        ],
+        "failure_routes": [
+            ("You edited the file but behavior never moved", "That usually means you changed an inactive copy or an environment override is still winning. Re-check the active path first."),
+            ("You found several config files and do not know which one matters", "Stop editing all of them. Narrow the live path first, then keep one source of truth and archive the rest."),
+        ],
         "zh_title": "DeepSeek TUI 配置文件位置",
         "zh_description": "找到 DeepSeek TUI 的配置文件，确认当前活跃文件路径，并停止编辑错误的那份文件。",
         "zh_eyebrow": "配置文件位置",
@@ -552,6 +676,14 @@ PAGES = {
             ("环境变量", "/zh/config/environment-variables/index.html"),
             ("配置重置", "/zh/config/reset/index.html"),
             ("provider 设置", "/zh/config/provider-setup/index.html"),
+        ],
+        "zh_examples": [
+            ("先找文件，再改值", "最稳的第一步不是调参数，而是先证明机器上到底有哪些配置文件候选，以及你准备改的是哪一份。", "find ~ -name '*deepseek*' 2>/dev/null | head\n# 改任何值前先对照候选路径"),
+            ("一次只改一个值，并立刻验证", "活跃文件确认后，每次只动最小的一项，再立刻验证这一次改动有没有生效。", "# 只编辑确认过的活跃文件\n# 然后跑一次最窄的 DeepSeek TUI 检查"),
+        ],
+        "zh_failure_routes": [
+            ("你改了文件，但行为完全没动", "这通常说明你改的是无效副本，或者环境变量覆盖还在赢。先重新确认活跃路径。"),
+            ("你找到了好几份配置文件，不知道哪份才算数", "先停下来，不要每份都改。先缩窄出活跃路径，再保留一份真相来源，其余归档。"),
         ],
     },
     ("config", "provider-cost"): {
@@ -588,6 +720,14 @@ PAGES = {
             ("Plan vs yolo", "/modes/plan-vs-yolo/index.html"),
             ("Pricing and cost guide", "/guides/pricing-and-cost/index.html"),
         ],
+        "examples": [
+            ("Compare cost under the same workflow shape", "If you want a useful comparison, keep the task shape stable while you compare provider choice or mode choice.", "# run the same style of task\n# compare provider and mode decisions, not two unrelated workflows"),
+            ("Reduce waste before changing providers", "Sometimes the cheaper move is narrowing the session or mode scope before you migrate the backend.", "# compare plan-style and broader yolo-style usage on the same task"),
+        ],
+        "failure_routes": [
+            ("You changed providers and cost still feels wrong", "That may be a workflow-width problem, not a provider problem. Look at mode choice and session sprawl next."),
+            ("You cannot explain which provider is billing this session", "Stop cost comparisons until provider ownership is explicit. A vague billing layer makes every pricing guess weak."),
+        ],
         "zh_title": "DeepSeek TUI 的 Provider 成本",
         "zh_description": "理解 DeepSeek TUI 的 provider 成本问题，并把工具使用习惯和模型提供方计费模型分开看。",
         "zh_eyebrow": "Provider 成本",
@@ -620,6 +760,14 @@ PAGES = {
             ("provider 设置", "/zh/config/provider-setup/index.html"),
             ("plan vs yolo", "/zh/modes/plan-vs-yolo/index.html"),
             ("pricing / cost 指南", "/zh/guides/pricing-and-cost/index.html"),
+        ],
+        "zh_examples": [
+            ("在同一种工作流形状下比较成本", "想做出有意义的成本对比，前提是任务风格不变，只比较 provider 或 mode 变化。", "# 用同一种任务类型做对照\n# 比 provider 和模式，不要比两种完全不同的工作流"),
+            ("先减少浪费，再考虑换 provider", "很多时候更省钱的动作不是立刻迁移后端，而是先把会话范围和模式宽度缩窄。", "# 在同一任务上对比 plan 风格和更宽的 yolo 风格"),
+        ],
+        "zh_failure_routes": [
+            ("换了 provider，但成本感觉还是不对", "那可能不是 provider 问题，而是工作流宽度问题。下一步先看模式选择和会话扩张。"),
+            ("你说不清这次会话到底是谁在计费", "在 provider 归属没说清前，先不要做成本结论。计费层模糊，所有价格判断都会失真。"),
         ],
     },
     ("config", "provider-setup"): {
@@ -656,6 +804,16 @@ PAGES = {
             ("Environment variables", "/config/environment-variables/index.html"),
             ("Provider troubleshooting", "/troubleshooting/provider-troubleshooting/index.html"),
         ],
+        "examples": [
+            ("Provider-first setup order", "Do not configure auth, model defaults, and advanced features all at once. Lock the provider path first, then verify one minimal request.", "deepseek --version\n# then start one minimal session after auth is set"),
+            ("One-source-of-truth pass", "Keep provider choice, auth source, and model assumptions aligned in one pass before you add MCP or more advanced runtime behavior.", "export DEEPSEEK_API_KEY=\"your-key-here\"\n# keep env and config pointing at the same provider"),
+            ("Verify the credential layer before tuning models", "A working provider path is worth more than any model tweak. First prove the key and provider route agree, then change model defaults later.", "echo \"$DEEPSEEK_API_KEY\"\n# confirm the intended provider block\n# run one minimal request before touching model defaults"),
+        ],
+        "failure_routes": [
+            ("Provider is selected but auth still fails", "That usually means the provider name and credential source disagree. Check API key setup and env overrides before changing models."),
+            ("Auth works but responses feel wrong", "This is often a model-default or mode-assumption problem, not a credential problem. Move into config and mode pages next."),
+            ("You are changing provider, env vars, and model defaults in one pass", "Stop and split the work. Lock the provider and auth layer first, or you will not know which change fixed or broke the session."),
+        ],
         "zh_title": "DeepSeek TUI 的 Provider 设置",
         "zh_description": "为 DeepSeek TUI 设置正确的 provider，让认证、后端选择和配置路径真正对齐。",
         "zh_eyebrow": "Provider 设置",
@@ -688,6 +846,16 @@ PAGES = {
             ("API Key 设置", "/zh/config/api-key/index.html"),
             ("环境变量", "/zh/config/environment-variables/index.html"),
             ("provider 排错", "/zh/troubleshooting/provider-troubleshooting/index.html"),
+        ],
+        "zh_examples": [
+            ("先锁 provider，再测最小请求", "不要一上来同时配认证、模型默认值和高级功能。先把 provider 路线锁定，再验证最小请求。", "deepseek --version\n# 在认证完成后再开最小会话验证"),
+            ("先只保留一套真相来源", "让 provider 选择、凭据来源和模型预期先在一轮里对齐，再去加 MCP 或更多运行时行为。", "export DEEPSEEK_API_KEY=\"your-key-here\"\n# 保证环境变量和配置文件指向同一 provider"),
+            ("先证明认证层是通的，再去调模型", "真正值钱的是先让 provider 路线跑通，而不是一开始就改模型默认值。", "echo \"$DEEPSEEK_API_KEY\"\n# 确认当前 provider 配置块\n# 先跑一次最小请求，再动模型默认值"),
+        ],
+        "zh_failure_routes": [
+            ("Provider 选对了，但认证还是失败", "通常是 provider 名字和凭据来源没对齐。先查 API Key 设置和环境变量覆盖。"),
+            ("认证已经通过，但返回行为不对", "这更像模型默认值或模式预期的问题，不再是凭据问题。下一步去看 config 和 modes。"),
+            ("你同时在改 provider、环境变量和模型默认值", "先停下来拆层。先把 provider 和认证层锁定，否则你根本不知道是哪一项让会话变好或变坏。"),
         ],
     },
     ("config", "reset"): {
@@ -724,6 +892,14 @@ PAGES = {
             ("Environment variables", "/config/environment-variables/index.html"),
             ("Provider setup", "/config/provider-setup/index.html"),
         ],
+        "examples": [
+            ("Back up before you wipe ambiguity", "A reset is cleaner when you preserve the old state once, then rebuild from a narrower baseline instead of half-resetting repeatedly.", "cp path/to/current-config path/to/current-config.backup\n# then clear or replace the active file on purpose"),
+            ("Reset one layer and test one layer", "After reset, validate install, then provider auth, then config values. Do not restore every old tweak immediately.", "# reopen shell\n# verify deepseek --version\n# then re-add only the minimum provider settings"),
+        ],
+        "failure_routes": [
+            ("You reset the file but the behavior stayed the same", "That usually means environment variables or another config copy are still active. Resetting one layer is not enough if another layer still wins."),
+            ("You reset and immediately reintroduced the same mess", "If you restore every previous tweak at once, the reset bought you nothing. Rebuild from a minimal known-good path instead."),
+        ],
         "zh_title": "如何重置 DeepSeek TUI 配置",
         "zh_description": "当当前配置状态已经混乱到不值得继续修时，干净地重置 DeepSeek TUI 配置。",
         "zh_eyebrow": "配置重置",
@@ -756,6 +932,14 @@ PAGES = {
             ("配置文件位置", "/zh/config/file-location/index.html"),
             ("环境变量", "/zh/config/environment-variables/index.html"),
             ("provider 设置", "/zh/config/provider-setup/index.html"),
+        ],
+        "zh_examples": [
+            ("先备份，再一次性清掉歧义", "重置最怕半清半留。先保留旧状态一份备份，再从更窄的基线重新搭。", "cp path/to/current-config path/to/current-config.backup\n# 然后有意识地清掉或替换当前活跃文件"),
+            ("一次只重建一层", "重置后先验证安装，再验证 provider 认证，最后再加配置细节。不要把所有旧 tweak 立刻恢复。", "# 重开 shell\n# 先验证 deepseek --version\n# 再只补最小 provider 设置"),
+        ],
+        "zh_failure_routes": [
+            ("你重置了文件，但行为完全没变", "这通常说明环境变量或另一份配置副本还在生效。只清一层不够，另一层还在赢。"),
+            ("你刚重置完，就又把旧混乱全部加回来了", "如果一次性恢复所有旧 tweak，重置就失去了意义。应该从最小可工作的基线重建。"),
         ],
     },
     ("mcp", "setup"): {
@@ -792,6 +976,16 @@ PAGES = {
             ("MCP servers", "/mcp/servers/index.html"),
             ("MCP troubleshooting", "/troubleshooting/mcp-troubleshooting/index.html"),
         ],
+        "examples": [
+            ("Minimal MCP bootstrap", "Start from one simple MCP config path and validate it before you add multiple servers or trust boundaries.", "deepseek-tui mcp init\ndeepseek-tui mcp list\ndeepseek-tui mcp validate"),
+            ("Single-server first pass", "Add one server, validate it, and only then decide whether discovery, resources, or prompts are worth expanding.", "deepseek-tui mcp add stdio demo node ./server.js\ndeepseek-tui mcp validate"),
+            ("Compare the same task with and without MCP", "The fastest way to isolate MCP is to keep the task constant and only change the MCP layer.", "# run one narrow task without MCP\n# then repeat after enabling one server"),
+        ],
+        "failure_routes": [
+            ("Base app works but MCP tools do not appear", "That usually means server definition, config path, or discovery is wrong. Compare the same task without MCP first."),
+            ("One server blocks the whole MCP layer", "Start by disabling or removing the newest server so you can isolate whether the issue is global MCP setup or one broken definition."),
+            ("You added MCP before the base provider path was stable", "Roll back to the non-MCP baseline first. MCP should sit on a known-good provider path, not replace it."),
+        ],
         "zh_title": "给 DeepSeek TUI 设置 MCP",
         "zh_description": "按正确顺序为 DeepSeek TUI 设置 MCP：先让基础安装和 provider 配置稳定，再进入 server 级问题。",
         "zh_eyebrow": "MCP 设置",
@@ -824,6 +1018,16 @@ PAGES = {
             ("MCP 文档", "/zh/docs/mcp/index.html"),
             ("MCP servers", "/zh/mcp/servers/index.html"),
             ("MCP 排错", "/zh/troubleshooting/mcp-troubleshooting/index.html"),
+        ],
+        "zh_examples": [
+            ("最小 MCP 启动路径", "先只用一条简单 MCP 配置路径验证，不要一开始就同时上多个 server 和复杂信任边界。", "deepseek-tui mcp init\ndeepseek-tui mcp list\ndeepseek-tui mcp validate"),
+            ("先只验证一个 server", "先加一个 server，确认能被识别，再决定要不要继续扩资源、prompts 或更多工具。", "deepseek-tui mcp add stdio demo node ./server.js\ndeepseek-tui mcp validate"),
+            ("拿同一任务做有无 MCP 的对照", "隔离 MCP 最快的方法，是让任务不变，只改变 MCP 这一层。", "# 先在无 MCP 情况下跑一次窄任务\n# 再在启用单个 server 后重复同一任务"),
+        ],
+        "zh_failure_routes": [
+            ("基础 app 能用，但 MCP 工具不出现", "通常不是 app 本体坏了，而是 server 定义、配置路径或 discovery 出了问题。先拿同一任务做一次无 MCP 对照。"),
+            ("加了一个 server 以后整层都不稳定", "先禁用或移除最新 server，判断是全局 MCP 配置有问题，还是某个定义单独坏掉。"),
+            ("你在基础 provider 路线还没稳时就加了 MCP", "先退回无 MCP 基线。MCP 应该建立在已知没问题的 provider 路线上，而不是拿来替代它。"),
         ],
     },
     ("mcp", "servers"): {
@@ -860,6 +1064,14 @@ PAGES = {
             ("Server examples", "/mcp/server-examples/index.html"),
             ("Tool surface docs", "/docs/tool-surface/index.html"),
         ],
+        "examples": [
+            ("Group servers by job, not by hype", "Write down whether a server expands context, executes actions, or only adds convenience before you add it to the stack.", "# classify each candidate server by workflow benefit\n# keep only the ones that close a real gap"),
+            ("Test one server against one real task", "A useful server should make one concrete workflow better, not just make the config look more advanced.", "# add one server\n# test one task that clearly needs that capability"),
+        ],
+        "failure_routes": [
+            ("You keep adding servers but the workflow is not getting better", "That usually means you are collecting capability names, not solving a real task gap. Re-evaluate from the workflow backward."),
+            ("You do not know which server caused the failure", "The stack is already too wide. Disable back to one server and rebuild one capability layer at a time."),
+        ],
         "zh_title": "DeepSeek TUI 的 MCP Servers",
         "zh_description": "把 DeepSeek TUI 的 MCP servers 看成工作流能力层，而不是只复制进配置的一串名字。",
         "zh_eyebrow": "MCP Servers",
@@ -892,6 +1104,14 @@ PAGES = {
             ("MCP 设置", "/zh/mcp/setup/index.html"),
             ("server examples", "/zh/mcp/server-examples/index.html"),
             ("工具边界文档", "/zh/docs/tool-surface/index.html"),
+        ],
+        "zh_examples": [
+            ("按工作职能分组，不按热度分组", "先写清楚一个 server 到底是在补上下文、执行动作，还是只是增加便利，再决定要不要接进去。", "# 先按工作流收益给每个候选 server 分类\n# 只留下真正补缺口的"),
+            ("一个 server 只对照一个真实任务", "有价值的 server 应该能明确改善一类任务，而不是只让配置看起来更高级。", "# 先加一个 server\n# 用一个明确需要该能力的任务做验证"),
+        ],
+        "zh_failure_routes": [
+            ("server 越加越多，但工作流并没有更顺", "这通常说明你在收集能力名词，而不是在解决真实任务缺口。先回到工作流本身重判。"),
+            ("你已经说不清到底是哪个 server 在导致失败", "说明栈已经太宽了。先退回到单 server，再一层一层加回来。"),
         ],
     },
     ("mcp", "server-examples"): {
@@ -928,6 +1148,14 @@ PAGES = {
             ("MCP setup", "/mcp/setup/index.html"),
             ("Skills examples", "/skills/examples/index.html"),
         ],
+        "examples": [
+            ("Translate the example into a workflow sentence first", "Before you copy any config, say what the example changes in plain workflow terms: more context, more action, or less manual repetition.", "# write the workflow sentence first\n# only then compare it with the example server block"),
+            ("Discard examples that do not improve a live task", "If an example does not improve one real task on your machine, keep it out of the active MCP stack.", "# test one real task\n# remove the example if it adds setup cost without workflow gain"),
+        ],
+        "failure_routes": [
+            ("The example config looks fine but the task did not improve", "Then the example may be interesting but not relevant to your workflow. Do not keep it just because it works in theory."),
+            ("You copied several examples and lost the original baseline", "Reset to one example and one task. Examples are only useful when you can isolate the benefit of each one."),
+        ],
         "zh_title": "DeepSeek TUI 的 MCP Server Examples",
         "zh_description": "通过 DeepSeek TUI 的 MCP server examples，先理解每个示例扩展了哪类工作流，再决定要不要接进配置。",
         "zh_eyebrow": "MCP Server Examples",
@@ -960,6 +1188,14 @@ PAGES = {
             ("MCP servers", "/zh/mcp/servers/index.html"),
             ("MCP 设置", "/zh/mcp/setup/index.html"),
             ("Skills examples", "/zh/skills/examples/index.html"),
+        ],
+        "zh_examples": [
+            ("先把示例翻译成一句工作流描述", "复制任何配置前，先用一句人话说清楚这个示例到底改变了什么：更多上下文、更多动作，还是减少手工重复。", "# 先写出这条工作流说明\n# 再回头对照示例 server 配置"),
+            ("对真实任务没帮助的示例就不要留", "如果一个示例在你机器上的真实任务里没有明显收益，就不要把它留在活跃 MCP 栈里。", "# 用一个真实任务测试\n# 没有流程收益就移除这个示例"),
+        ],
+        "zh_failure_routes": [
+            ("示例配置看起来没问题，但任务没有变好", "那说明它可能只是有趣，不一定适合你的工作流。不要因为理论上能用就继续保留。"),
+            ("你一口气复制了多个示例，最后连基线都丢了", "先退回单个示例和单个任务。示例只有在你能隔离收益时才有价值。"),
         ],
     },
     ("modes", "plan-mode"): {
@@ -996,6 +1232,16 @@ PAGES = {
             ("Plan vs yolo", "/modes/plan-vs-yolo/index.html"),
             ("Yolo mode", "/modes/yolo-mode/index.html"),
         ],
+        "examples": [
+            ("Good fit example", "Use plan mode when you are entering an unfamiliar repo, making broader edits, or touching commands whose downside is more expensive than extra review time.", ""),
+            ("Review-first checkpoint", "If you still need to inspect intended file scope, command sequence, or task shape before action, plan mode is doing real work for you rather than adding ceremony.", ""),
+            ("Escalate from discovery to action in stages", "A practical plan-mode session usually starts with repo reading, then narrows to a concrete edit plan, then only later reaches commands or file writes.", "# first inspect repo structure\n# then summarize intended file scope\n# only then move into edits or commands"),
+        ],
+        "failure_routes": [
+            ("Plan mode feels slow on every task", "That usually means the task no longer deserves high review overhead. Compare it against yolo mode instead of blaming the mode itself."),
+            ("You still skip review even in plan mode", "Then the workflow problem is operator discipline, not mode choice. Plan mode only helps if you actually use the visibility it provides."),
+            ("You are using plan mode but still making huge jumps", "The issue is not the mode label; it is that the work is not being staged. Break the task into repo reading, intent check, and action steps."),
+        ],
         "zh_title": "DeepSeek TUI 的 Plan Mode",
         "zh_description": "把 DeepSeek TUI 的 plan mode 理解成更偏审查优先的工作流，适合高风险任务、较慢执行和更清楚的操作者控制。",
         "zh_eyebrow": "Plan Mode",
@@ -1028,6 +1274,16 @@ PAGES = {
             ("模式总页", "/zh/modes/index.html"),
             ("plan vs yolo", "/zh/modes/plan-vs-yolo/index.html"),
             ("Yolo mode", "/zh/modes/yolo-mode/index.html"),
+        ],
+        "zh_examples": [
+            ("适合 plan mode 的场景", "进入陌生仓库、要做范围更大的修改，或者命令一旦错了代价更高时，plan mode 才是在替你省风险。", ""),
+            ("真正的 review-first 检查点", "如果你还需要看清文件范围、命令顺序和任务形状，plan mode 就不是仪式感，而是在做实事。", ""),
+            ("按阶段从发现走到执行", "更实用的 plan-mode 会话，通常不是立刻动手，而是先看仓库、再缩窄文件范围、最后才进入命令和写入。", "# 先读 repo 结构\n# 再总结要动的文件范围\n# 最后才进入编辑或命令"),
+        ],
+        "zh_failure_routes": [
+            ("你觉得每个任务都太慢", "通常不是 mode 本身有问题，而是这个任务已经不值得这么高的审查成本。应该和 yolo mode 对比。"),
+            ("开了 plan mode 但你还是不看审查信息", "那问题就不是 mode 选择，而是操作者根本没利用它提供的可见性。"),
+            ("你开着 plan mode，却还是在做大跳跃", "问题不在名字，而在于任务没有分阶段。先拆成看 repo、核对意图、再执行这三层。"),
         ],
     },
     ("modes", "yolo-mode"): {
@@ -1064,6 +1320,14 @@ PAGES = {
             ("Plan vs yolo", "/modes/plan-vs-yolo/index.html"),
             ("Plan mode", "/modes/plan-mode/index.html"),
         ],
+        "examples": [
+            ("Good fit example", "Use yolo mode on tasks that are already bounded, recoverable, and cheap to correct, such as narrow repetitive edits or known-safe verification loops.", ""),
+            ("Still keep a recovery path", "The mode is faster, but it still works best when you know which files, commands, or checkpoints let you stop or recover quickly.", ""),
+        ],
+        "failure_routes": [
+            ("Yolo mode feels reckless too early", "That usually means the task boundary is still unclear. Switch back to plan mode until the repo and file scope are stable."),
+            ("You are re-reading every step anyway", "Then the task is not actually yolo-ready yet, or your risk tolerance is lower than the mode assumes. Use plan mode instead of fighting the workflow."),
+        ],
         "zh_title": "DeepSeek TUI 的 Yolo Mode",
         "zh_description": "把 DeepSeek TUI 的 yolo mode 理解成速度优先工作流，适合边界已经清楚、不值得再多做犹豫的任务。",
         "zh_eyebrow": "Yolo Mode",
@@ -1096,6 +1360,14 @@ PAGES = {
             ("模式总页", "/zh/modes/index.html"),
             ("plan vs yolo", "/zh/modes/plan-vs-yolo/index.html"),
             ("Plan mode", "/zh/modes/plan-mode/index.html"),
+        ],
+        "zh_examples": [
+            ("适合 yolo mode 的场景", "边界已经清楚、可恢复成本低、修正代价也低的任务，更适合 yolo mode，比如窄范围重复修改或已知安全的验证循环。", ""),
+            ("更快不等于没有恢复路径", "它确实更快，但前提仍然是你知道哪些文件、命令或检查点能让你及时停下或回退。", ""),
+        ],
+        "zh_failure_routes": [
+            ("你觉得它太早开始鲁莽", "通常说明任务边界还不够清楚。先切回 plan mode，把 repo 和文件范围压稳。"),
+            ("你其实每一步还是要重新审", "那这个任务还没准备好进入 yolo，或者你的风险容忍本来就更低。不要硬撑。"),
         ],
     },
     ("modes", "plan-vs-yolo"): {
@@ -1132,6 +1404,14 @@ PAGES = {
             ("Yolo mode", "/modes/yolo-mode/index.html"),
             ("Modes hub", "/modes/index.html"),
         ],
+        "examples": [
+            ("Switch to yolo only after plan has collapsed the uncertainty", "A common good path is starting in plan mode for repo discovery, then moving to yolo once file scope and recovery paths are obvious.", "# start in plan mode for unknown scope\n# switch to yolo only after the task is narrow and recoverable"),
+            ("Stay in plan when the downside is still larger than the delay", "If you still cannot comfortably name the affected files, command risk, or rollback story, the task is not ready for yolo yet.", "# if uncertainty is still high, keep plan mode active"),
+        ],
+        "failure_routes": [
+            ("You chose a mode because it matched your identity, not the task", "That usually creates friction quickly. Re-evaluate the task boundary instead of trying to force one mode everywhere."),
+            ("You keep wanting speed and safety at the same time", "That usually means the task should be staged: use plan to narrow it, then switch to yolo for the low-risk finish."),
+        ],
         "zh_title": "DeepSeek TUI 的 Plan Mode vs Yolo Mode",
         "zh_description": "从风险、任务形状、审查习惯和“慢下来或冲太快”的真实代价，比较 DeepSeek TUI 的 plan mode 与 yolo mode。",
         "zh_eyebrow": "模式对比",
@@ -1165,6 +1445,14 @@ PAGES = {
             ("Yolo mode", "/zh/modes/yolo-mode/index.html"),
             ("模式总页", "/zh/modes/index.html"),
         ],
+        "zh_examples": [
+            ("先用 plan 压缩不确定性，再切 yolo", "最常见的好路径不是二选一，而是先用 plan 看清仓库和文件范围，等边界清楚后再切 yolo 收尾。", "# 先用 plan mode 处理未知范围\n# 只有任务够窄、可恢复时再切 yolo"),
+            ("当错误代价仍高于等待代价时，就别急着切 yolo", "如果你还说不清会动哪些文件、命令风险多大、回退路径在哪里，这个任务就还没准备好上 yolo。", "# 只要不确定性还高，就继续保留 plan mode"),
+        ],
+        "zh_failure_routes": [
+            ("你选 mode 是因为它像一种身份标签，不是因为任务需要", "这种情况很快就会产生摩擦。先重新判断任务边界，不要硬把一个 mode 套到所有任务上。"),
+            ("你同时又想要最快速度，又想要最高安全", "这通常说明任务应该分阶段：先用 plan 缩窄，再把低风险尾段切给 yolo。"),
+        ],
     },
 }
 
@@ -1189,6 +1477,23 @@ def links_html(items: list[tuple[str, str]]) -> str:
     return "".join(f'<a href="{href}">{html.escape(label)}</a>' for label, href in items)
 
 
+def example_blocks_html(items: list[tuple[str, str, str]]) -> str:
+    blocks = []
+    for title, body, code in items:
+        code_html = f"<pre><code>{html.escape(code)}</code></pre>" if code else ""
+        blocks.append(
+            f'<article class="detail-card"><h3>{html.escape(title)}</h3><p>{html.escape(body)}</p>{code_html}</article>'
+        )
+    return "".join(blocks)
+
+
+def route_blocks_html(items: list[tuple[str, str]]) -> str:
+    return "".join(
+        f'<article class="detail-card"><h3>{html.escape(title)}</h3><p>{html.escape(body)}</p></article>'
+        for title, body in items
+    )
+
+
 def build_main(section: str, slug: str, zh: bool) -> str:
     data = PAGES[(section, slug)]
     title = data["zh_title"] if zh else data["title"]
@@ -1203,6 +1508,8 @@ def build_main(section: str, slug: str, zh: bool) -> str:
     checks = data["zh_checks"] if zh else data["checks"]
     mistakes = data["zh_mistakes"] if zh else data["mistakes"]
     links = data["zh_links"] if zh else data["links"]
+    examples = data.get("zh_examples" if zh else "examples", [])
+    failure_routes = data.get("zh_failure_routes" if zh else "failure_routes", [])
     source_label = "本页是站内详情页" if zh else "Site detail page"
     section_head = "推荐阅读顺序" if zh else "Recommended reading order"
     section_desc = "先按当前问题走，再决定要不要切去相邻详情页或 hub。" if zh else "Move through the page by workflow need first, then branch into adjacent detail pages or hubs."
@@ -1210,13 +1517,21 @@ def build_main(section: str, slug: str, zh: bool) -> str:
     checks_head = "做完后该核对什么" if zh else "What to verify next"
     mistakes_head = "最常见的误区" if zh else "Common mistakes"
     where_head = "什么时候该离开这页" if zh else "When to leave this page"
+    examples_head = "直接可用的示例" if zh else "Use-it-now examples"
+    routes_head = "常见失败分支" if zh else "Common failure branches"
     where_text = (
         "当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。"
         if zh else
         "Once the route is clear, leave this page quickly. Install pages should hand you into config, config pages should send you into provider or troubleshooting, and MCP or mode pages should send you back into live workflow decisions. A detail page is valuable because it narrows the problem, not because you stay on it forever."
     )
     links_block = links_html(links)
-    return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">{html.escape(eyebrow)}</span><h1>{html.escape(h1)}</h1><p>{html.escape(intro)}</p><div class="hero-points"><span>{html.escape(source_label)}</span><span>{html.escape(title)}</span><span>{html.escape(section.title() if not zh else section)}</span></div></div><aside class="answer-card"><span class="panel-kicker">{html.escape(answer_kicker)}</span><h2>{html.escape(answer_h2)}</h2><p>{html.escape(answer_p)}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>{question_head}</h2><ul>{list_html(questions)}</ul><h2>{checks_head}</h2><ul>{list_html(checks)}</ul><h2>{mistakes_head}</h2><ul>{list_html(mistakes)}</ul></article><aside class="panel-card"><span class="panel-kicker">{'下一步' if zh else 'Next pages'}</span><div class="link-stack">{links_block}</div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>{section_head}</h2><p>{html.escape(section_desc)}</p></div><div class="card-grid card-grid-3">{cards_html(steps, zh)}</div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>{where_head}</h2><p>{html.escape(where_text)}</p></article><aside class="panel-card"><span class="panel-kicker">{'继续看' if zh else 'Continue with'}</span><div class="link-stack">{links_block}</div></aside></div></section></main>"""
+    examples_section = ""
+    if examples:
+        examples_section = f"""<section class="section"><div class="container"><div class="section-head"><h2>{examples_head}</h2><p>{'先拿可执行例子，再回头做更细的调整。' if zh else 'Start from working examples first, then adjust the details.'}</p></div><div class="detail-grid">{example_blocks_html(examples)}</div></div></section>"""
+    routes_section = ""
+    if failure_routes:
+        routes_section = f"""<section class="section section-alt"><div class="container"><div class="section-head"><h2>{routes_head}</h2><p>{'先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。' if zh else 'Work out which layer failed first instead of treating every problem as the same.'}</p></div><div class="detail-grid">{route_blocks_html(failure_routes)}</div></div></section>"""
+    return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">{html.escape(eyebrow)}</span><h1>{html.escape(h1)}</h1><p>{html.escape(intro)}</p><div class="hero-points"><span>{html.escape(source_label)}</span><span>{html.escape(title)}</span><span>{html.escape(section.title() if not zh else section)}</span></div></div><aside class="answer-card"><span class="panel-kicker">{html.escape(answer_kicker)}</span><h2>{html.escape(answer_h2)}</h2><p>{html.escape(answer_p)}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>{question_head}</h2><ul>{list_html(questions)}</ul><h2>{checks_head}</h2><ul>{list_html(checks)}</ul><h2>{mistakes_head}</h2><ul>{list_html(mistakes)}</ul></article><aside class="panel-card"><span class="panel-kicker">{'下一步' if zh else 'Next pages'}</span><div class="link-stack">{links_block}</div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>{section_head}</h2><p>{html.escape(section_desc)}</p></div><div class="card-grid card-grid-3">{cards_html(steps, zh)}</div></div></section>{examples_section}{routes_section}<section class="section"><div class="container two-col"><article class="prose"><h2>{where_head}</h2><p>{html.escape(where_text)}</p></article><aside class="panel-card"><span class="panel-kicker">{'继续看' if zh else 'Continue with'}</span><div class="link-stack">{links_block}</div></aside></div></section></main>"""
 
 
 def process(path: Path) -> None:

@@ -81,6 +81,13 @@ def fetch_blob_text(item: dict) -> str:
     return base64.b64decode(content).decode("utf-8")
 
 
+def source_urls(filename: str) -> tuple[str, str]:
+    return (
+        f"https://github.com/zhaobingkun/DeepSeek-TUI/blob/main/docs/{filename}",
+        f"https://raw.githubusercontent.com/zhaobingkun/DeepSeek-TUI/main/docs/{filename}",
+    )
+
+
 def slugify(text: str) -> str:
     slug = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
     return slug or "section"
@@ -282,8 +289,8 @@ def build_main(slug: str, zh: bool, doc_html: str, toc: str, source_html_url: st
     title, _ = build_title_desc(slug, zh)
     links_html = render_links(topic["related"], zh)
     if zh:
-        return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">文档全文</span><h1>{html.escape(title)}</h1><p>{html.escape(topic['summary_zh'])}</p><div class="hero-points"><span>上游源文件：{html.escape(topic['upstream'])}</span><span>站内直接可读</span><span>原文保留在下方</span></div></div><aside class="answer-card"><span class="panel-kicker">本页用途</span><h2>这页现在直接承载上游文档正文，不再只是导读。</h2><p>{html.escape(topic['when_zh'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这份文档真正覆盖什么</h2><p>{html.escape(topic['summary_zh'])}</p><h2>怎么用这页</h2><ul><li>先看右侧目录，直接跳到你当前最关心的小节。</li><li>如果你只是来解决具体问题，优先读正文里的相关标题，再回站内对应 hub。</li><li>如果你要核对原始来源，可以直接打开 GitHub 原文链接。</li></ul></article><aside class="panel-card"><span class="panel-kicker">快速入口</span><div class="link-stack"><a href="{html.escape(source_html_url, quote=True)}">GitHub 文档页</a><a href="{html.escape(source_raw_url, quote=True)}">Raw Markdown</a>{links_html}</div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose doc-article"><h2>上游文档原文（英文）</h2>{doc_html}</article><aside class="panel-card toc-card"><span class="panel-kicker">目录</span>{toc}</aside></div></section></main>"""
-    return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Full Docs Article</span><h1>{html.escape(title)}</h1><p>{html.escape(topic['summary_en'])}</p><div class="hero-points"><span>Upstream source: {html.escape(topic['upstream'])}</span><span>Readable on-site</span><span>Full article embedded below</span></div></div><aside class="answer-card"><span class="panel-kicker">What changed</span><h2>This page now carries the upstream doc body directly instead of acting as a lightweight reading map only.</h2><p>{html.escape(topic['when_en'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>What this document actually covers</h2><p>{html.escape(topic['summary_en'])}</p><h2>How to use this page</h2><ul><li>Use the section list on the right to jump into the exact upstream section you need.</li><li>If you came here for one problem only, read the relevant heading first and return to the matching hub afterward.</li><li>If you need source verification, open the GitHub page or raw Markdown directly.</li></ul></article><aside class="panel-card"><span class="panel-kicker">Quick links</span><div class="link-stack"><a href="{html.escape(source_html_url, quote=True)}">GitHub doc page</a><a href="{html.escape(source_raw_url, quote=True)}">Raw Markdown</a>{links_html}</div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose doc-article"><h2>Full upstream document</h2>{doc_html}</article><aside class="panel-card toc-card"><span class="panel-kicker">Contents</span>{toc}</aside></div></section></main>"""
+        return f"""<main id="top"><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">文档全文</span><h1>{html.escape(title)}</h1><p>{html.escape(topic['summary_zh'])}</p><div class="hero-points"><span>上游源文件：{html.escape(topic['upstream'])}</span><span>站内直接可读</span><span>原文保留在下方</span></div></div><aside class="answer-card"><span class="panel-kicker">本页用途</span><h2>这页现在直接承载上游文档正文，不再只是导读。</h2><p>{html.escape(topic['when_zh'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这份文档真正覆盖什么</h2><p>{html.escape(topic['summary_zh'])}</p><h2>怎么用这页</h2><ul><li>先看右侧目录，直接跳到你当前最关心的小节。</li><li>如果你只是来解决具体问题，优先读正文里的相关标题，再回站内对应 hub。</li><li>如果你要核对原始来源，可以直接打开 GitHub 原文链接。</li></ul></article><aside class="panel-card"><span class="panel-kicker">快速入口</span><div class="link-stack"><a href="{html.escape(source_html_url, quote=True)}">GitHub 文档页</a><a href="{html.escape(source_raw_url, quote=True)}">Raw Markdown</a>{links_html}</div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose doc-article"><h2>上游文档原文（英文）</h2>{doc_html}<p class="back-to-top-wrap"><a class="back-to-top" href="#top">回到顶部</a></p></article><aside class="panel-card toc-card"><span class="panel-kicker">目录</span>{toc}</aside></div></section></main>"""
+    return f"""<main id="top"><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Full Docs Article</span><h1>{html.escape(title)}</h1><p>{html.escape(topic['summary_en'])}</p><div class="hero-points"><span>Upstream source: {html.escape(topic['upstream'])}</span><span>Readable on-site</span><span>Full article embedded below</span></div></div><aside class="answer-card"><span class="panel-kicker">What changed</span><h2>This page now carries the upstream doc body directly instead of acting as a lightweight reading map only.</h2><p>{html.escape(topic['when_en'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>What this document actually covers</h2><p>{html.escape(topic['summary_en'])}</p><h2>How to use this page</h2><ul><li>Use the section list on the right to jump into the exact upstream section you need.</li><li>If you came here for one problem only, read the relevant heading first and return to the matching hub afterward.</li><li>If you need source verification, open the GitHub page or raw Markdown directly.</li></ul></article><aside class="panel-card"><span class="panel-kicker">Quick links</span><div class="link-stack"><a href="{html.escape(source_html_url, quote=True)}">GitHub doc page</a><a href="{html.escape(source_raw_url, quote=True)}">Raw Markdown</a>{links_html}</div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose doc-article"><h2>Full upstream document</h2>{doc_html}<p class="back-to-top-wrap"><a class="back-to-top" href="#top">Back to top</a></p></article><aside class="panel-card toc-card"><span class="panel-kicker">Contents</span>{toc}</aside></div></section></main>"""
 
 
 def process_page(path: Path, slug: str, zh: bool, doc_html: str, toc: str, source_html_url: str, source_raw_url: str) -> None:
@@ -309,20 +316,36 @@ def process_page(path: Path, slug: str, zh: bool, doc_html: str, toc: str, sourc
 
 
 def main() -> None:
-    manifest = fetch_manifest()
+    try:
+        manifest = fetch_manifest()
+    except Exception:
+        manifest = {}
     file_map = build_file_map()
     SYNC_DIR.mkdir(parents=True, exist_ok=True)
 
     for slug, filename in SLUG_TO_FILENAME.items():
         item = manifest.get(filename)
-        if not item:
-            raise RuntimeError(f"Upstream doc not found for {slug}: {filename}")
-        markdown_text = fetch_blob_text(item)
-        (SYNC_DIR / filename).write_text(markdown_text, encoding="utf-8")
+        source_html_url, source_raw_url = source_urls(filename)
+        if item:
+            try:
+                markdown_text = fetch_blob_text(item)
+                (SYNC_DIR / filename).write_text(markdown_text, encoding="utf-8")
+                source_html_url = item["html_url"]
+                source_raw_url = item["download_url"]
+            except Exception:
+                cache_path = SYNC_DIR / filename
+                if not cache_path.exists():
+                    raise RuntimeError(f"Failed to fetch {filename} and no local cache exists")
+                markdown_text = cache_path.read_text(encoding="utf-8")
+        else:
+            cache_path = SYNC_DIR / filename
+            if not cache_path.exists():
+                raise RuntimeError(f"Upstream doc not found for {slug}: {filename}")
+            markdown_text = cache_path.read_text(encoding="utf-8")
         rendered, headings = render_markdown(markdown_text, file_map)
         toc = toc_html(headings)
-        process_page(ROOT / "docs" / slug / "index.html", slug, False, rendered, toc, item["html_url"], item["download_url"])
-        process_page(ROOT / "zh" / "docs" / slug / "index.html", slug, True, rendered, toc, item["html_url"], item["download_url"])
+        process_page(ROOT / "docs" / slug / "index.html", slug, False, rendered, toc, source_html_url, source_raw_url)
+        process_page(ROOT / "zh" / "docs" / slug / "index.html", slug, True, rendered, toc, source_html_url, source_raw_url)
 
 
 if __name__ == "__main__":
