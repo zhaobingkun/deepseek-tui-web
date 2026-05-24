@@ -66,7 +66,15 @@
         <aside class="answer-card"><span class="panel-kicker">优先级建议</span><h2>先查命令能不能调用，再查配置和 provider，最后再怀疑更复杂的问题。</h2><p>大多数排错都不需要从最复杂的方向开始。</p></aside>
       </div>
     </section>
+    <section class="section section-alt"><div class="container">
+<div class="section-head"><h2>按问题类型选择排错路径</h2><p>先把这页当成排错列表。先判断是命令路径、provider、二进制还是 MCP 问题，再开详情页。</p></div>
+<div class="card-grid card-grid-3">
+<article class="topic-card"><span class="tag">命令</span><h3>我装好了，但命令还是调不起来</h3><p>如果问题是 command not found 或 shell path，先走命令修复路线，不要先查高级配置。</p><a href="/zh/troubleshooting/command-not-found/index.html">去命令修复</a></article>
+<article class="topic-card"><span class="tag">Provider</span><h3>命令能跑，但 provider 还是不对</h3><p>如果命令存在，但鉴权、endpoint 或返回行为不对，先走 provider 排错路线。</p><a href="/zh/troubleshooting/provider-troubleshooting/index.html">去 provider 排错</a></article>
+<article class="topic-card"><span class="tag">进阶</span><h3>我怀疑是 MCP 或二进制安装这层的问题</h3><p>如果基础命令和配置看起来没问题，再看 release binaries 或 MCP 这一层。</p><a href="/zh/troubleshooting/mcp-troubleshooting/index.html">去 MCP 排错</a></article>
+</div></div></section>
     <section class="section"><div class="container">
+<div class="section-head"><h2>排错文章列表</h2><p>先把问题缩小到具体一层，再看对应修复页，不要把安装、provider 和 MCP 调试混在一起。</p></div>
 <div class="card-grid card-grid-2">
 <article class="content-card"><span class="tag">Command Not Found</span><h3>command not found 修复</h3><p>安装后最常见的第一类错误，通常和 shell path 或安装路径有关。</p><a href="/zh/troubleshooting/command-not-found/index.html">打开修复页</a></article>
 <article class="content-card"><span class="tag">Homebrew</span><h3>Homebrew command not found</h3><p>如果 brew 说装好了，但终端还是找不到命令，这页更对应。</p><a href="/zh/troubleshooting/homebrew-command-not-found/index.html">打开 Homebrew 修复</a></article>
