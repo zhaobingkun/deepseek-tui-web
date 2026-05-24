@@ -131,10 +131,12 @@ PAGES = {
         "examples": [
             ("Verify cargo owns the binary you are about to trust", "Before you debug the app, prove that the Rust toolchain and the resolved binary path line up in the same shell.", "cargo --version\ncargo install deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
             ("Check for a shadowed older install", "If cargo install worked but behavior did not change, inspect whether npm or a manual binary still wins PATH.", "command -v deepseek || which deepseek\ndeepseek --version\n# compare with the expected cargo bin path"),
+            ("Re-check the cargo bin path after a fresh shell", "Cargo installs often look correct in the install shell. Reopen the terminal and confirm the same path still wins before you move into provider setup.", "command -v deepseek || which deepseek\ndeepseek --version\n# reopen shell and repeat"),
         ],
         "failure_routes": [
             ("Cargo finished cleanly but the command still looks old", "That usually means an older binary is still resolving first. Check PATH ownership before touching provider config."),
             ("`cargo install` fails before the app even builds", "Treat that as a Rust toolchain problem first. Fix cargo and the build environment before you debug DeepSeek TUI itself."),
+            ("The command changed, but the next shell cannot find it", "That usually means cargo bin is not exported consistently across shells. Fix shell startup before you debug provider auth."),
         ],
         "zh_title": "用 cargo 安装 DeepSeek TUI",
         "zh_description": "当你的终端工具链本来就以 Rust 为主时，用 cargo 安装 DeepSeek TUI 会更合适。",
@@ -172,10 +174,12 @@ PAGES = {
         "zh_examples": [
             ("先确认 cargo 真是当前拥有者", "在排 app 之前，先证明 Rust 工具链和当前解析到的二进制路径是在同一个 shell 里对齐的。", "cargo --version\ncargo install deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
             ("检查是不是被旧安装挡住了", "如果 cargo 安装成功但行为没变，先看是不是 npm 或手动二进制还在 PATH 前面。", "command -v deepseek || which deepseek\ndeepseek --version\n# 对照预期的 cargo bin 路径"),
+            ("重开 shell 后再核对 cargo bin", "很多 cargo 安装在当前终端看起来没问题，但新 shell 里才会暴露路径没接好的问题。", "command -v deepseek || which deepseek\ndeepseek --version\n# 重开 shell 后再重复一次"),
         ],
         "zh_failure_routes": [
             ("cargo 完整装完了，但命令还是旧的", "这通常说明旧二进制还在优先解析。先查 PATH 归属，不要先动 provider 配置。"),
             ("`cargo install` 在构建前就失败", "先把它当成 Rust 工具链问题处理。cargo 和构建环境没稳定前，不要先怪 DeepSeek TUI。"),
+            ("当前 shell 能用，换个 shell 就找不到", "通常不是 provider 问题，而是 cargo bin 没有稳定写进各个 shell 的启动路径。"),
         ],
     },
     ("install", "homebrew"): {
@@ -303,10 +307,12 @@ PAGES = {
         "examples": [
             ("Test in the shell you really use for work", "Windows setup only counts in the shell that will own your daily workflow, not just the shell where installation happened to succeed once.", "deepseek --version\nwhere deepseek"),
             ("Separate Windows shell paths before changing package ecosystems", "If PowerShell, Git Bash, and WSL disagree, compare their binary paths first before you reinstall through another toolchain.", "where deepseek\n# repeat in the exact shell profile you plan to use"),
+            ("Check version and path together after restart", "On Windows, version success without path consistency is not enough. Reopen the exact terminal profile and verify both again.", "deepseek --version\nwhere deepseek\n# repeat after opening a new PowerShell, Git Bash, or WSL session"),
         ],
         "failure_routes": [
             ("PowerShell works but Git Bash or WSL does not", "Treat that as a shell-boundary or PATH-boundary issue first. Do not assume the package manager itself is broken."),
             ("The command exists but only inside the install shell", "That usually means PATH propagation or terminal-profile scope is incomplete. Reopen the target shell and inspect which path actually resolves."),
+            ("The path looks right but requests still fail only in one shell", "That often means auth or env exports differ by shell profile. Move from install debugging into env and provider checks."),
         ],
         "zh_title": "在 Windows 上安装 DeepSeek TUI",
         "zh_description": "根据 PowerShell、Git Bash、WSL 或混合终端环境，为 DeepSeek TUI 选择正确的 Windows 安装路径。",
@@ -344,10 +350,12 @@ PAGES = {
         "zh_examples": [
             ("一定在你真实工作的 shell 里测试", "Windows 安装是否成功，只在你日常真正工作的 shell 里才算数，不是某个安装窗口里跑通一次就结束。", "deepseek --version\nwhere deepseek"),
             ("先把不同 Windows shell 的路径边界分开", "如果 PowerShell、Git Bash、WSL 结果不一致，先比二进制路径，不要先换包管理器。", "where deepseek\n# 在你真正要使用的 shell profile 里重复执行"),
+            ("重开终端后同时看版本和路径", "在 Windows 上，只看一次版本成功不够，还要在新开的同一终端 profile 里再对照路径。", "deepseek --version\nwhere deepseek\n# 新开 PowerShell、Git Bash 或 WSL 后再重复"),
         ],
         "zh_failure_routes": [
             ("PowerShell 正常，但 Git Bash 或 WSL 不正常", "先把它当成 shell 边界或 PATH 边界问题，不要立刻判断包管理器坏了。"),
             ("命令只在安装那个 shell 里存在", "通常是 PATH 传播或 terminal profile 范围没打通。重开目标 shell，再查当前实际解析的路径。"),
+            ("路径看起来对，但只有某个 shell 请求失败", "这往往不是安装层，而是不同 shell 的认证或环境变量导出不一致。下一步去看 env 和 provider。"),
         ],
     },
     ("install", "update-or-upgrade"): {
@@ -639,10 +647,12 @@ PAGES = {
         "examples": [
             ("Locate the file before you edit values", "The safest first move is to prove which config file exists and which path you are about to change.", "find ~ -name '*deepseek*' 2>/dev/null | head\n# compare candidates before editing anything"),
             ("Change one value, then validate immediately", "Once the active file is confirmed, edit the smallest possible value and test that one change before touching the rest.", "# edit the confirmed active file\n# then run the narrowest possible DeepSeek TUI check"),
+            ("Archive old copies once the active file is known", "You do not need several live-looking copies once the true path is confirmed. Archive the extras so the next edit does not start from confusion.", "# keep one active config path\n# move old examples or backups into a clearly named archive folder"),
         ],
         "failure_routes": [
             ("You edited the file but behavior never moved", "That usually means you changed an inactive copy or an environment override is still winning. Re-check the active path first."),
             ("You found several config files and do not know which one matters", "Stop editing all of them. Narrow the live path first, then keep one source of truth and archive the rest."),
+            ("The active file is correct but the values still seem ignored", "That usually means another layer is winning, most often env overrides or provider defaults. Leave file-location debugging and check those layers next."),
         ],
         "zh_title": "DeepSeek TUI 配置文件位置",
         "zh_description": "找到 DeepSeek TUI 的配置文件，确认当前活跃文件路径，并停止编辑错误的那份文件。",
@@ -680,10 +690,12 @@ PAGES = {
         "zh_examples": [
             ("先找文件，再改值", "最稳的第一步不是调参数，而是先证明机器上到底有哪些配置文件候选，以及你准备改的是哪一份。", "find ~ -name '*deepseek*' 2>/dev/null | head\n# 改任何值前先对照候选路径"),
             ("一次只改一个值，并立刻验证", "活跃文件确认后，每次只动最小的一项，再立刻验证这一次改动有没有生效。", "# 只编辑确认过的活跃文件\n# 然后跑一次最窄的 DeepSeek TUI 检查"),
+            ("活跃文件确认后，把旧副本归档", "一旦知道哪份是真的在用，就把其他像活跃文件的旧副本收起来，不要让下一次修改又从混乱开始。", "# 只保留一份活跃配置路径\n# 旧示例或备份移动到命名清楚的归档目录"),
         ],
         "zh_failure_routes": [
             ("你改了文件，但行为完全没动", "这通常说明你改的是无效副本，或者环境变量覆盖还在赢。先重新确认活跃路径。"),
             ("你找到了好几份配置文件，不知道哪份才算数", "先停下来，不要每份都改。先缩窄出活跃路径，再保留一份真相来源，其余归档。"),
+            ("活跃文件确认没错，但值看起来还是没被用到", "那通常就不是文件定位层了，而是 env 覆盖或 provider 默认值还在赢。下一步去查那些层。"),
         ],
     },
     ("config", "provider-cost"): {
@@ -895,10 +907,12 @@ PAGES = {
         "examples": [
             ("Back up before you wipe ambiguity", "A reset is cleaner when you preserve the old state once, then rebuild from a narrower baseline instead of half-resetting repeatedly.", "cp path/to/current-config path/to/current-config.backup\n# then clear or replace the active file on purpose"),
             ("Reset one layer and test one layer", "After reset, validate install, then provider auth, then config values. Do not restore every old tweak immediately.", "# reopen shell\n# verify deepseek --version\n# then re-add only the minimum provider settings"),
+            ("Write down the minimum rebuild order first", "A reset works better when you already know the shortest order for rebuilding: binary, auth, active config, then workflow extras.", "# 1. verify binary\n# 2. verify provider auth\n# 3. confirm active config path\n# 4. add extras later"),
         ],
         "failure_routes": [
             ("You reset the file but the behavior stayed the same", "That usually means environment variables or another config copy are still active. Resetting one layer is not enough if another layer still wins."),
             ("You reset and immediately reintroduced the same mess", "If you restore every previous tweak at once, the reset bought you nothing. Rebuild from a minimal known-good path instead."),
+            ("You cannot tell whether reset improved anything", "The rebuild order is too wide. Narrow it to one layer at a time so each change has a visible result."),
         ],
         "zh_title": "如何重置 DeepSeek TUI 配置",
         "zh_description": "当当前配置状态已经混乱到不值得继续修时，干净地重置 DeepSeek TUI 配置。",
@@ -936,10 +950,12 @@ PAGES = {
         "zh_examples": [
             ("先备份，再一次性清掉歧义", "重置最怕半清半留。先保留旧状态一份备份，再从更窄的基线重新搭。", "cp path/to/current-config path/to/current-config.backup\n# 然后有意识地清掉或替换当前活跃文件"),
             ("一次只重建一层", "重置后先验证安装，再验证 provider 认证，最后再加配置细节。不要把所有旧 tweak 立刻恢复。", "# 重开 shell\n# 先验证 deepseek --version\n# 再只补最小 provider 设置"),
+            ("先写下最小重建顺序", "重置真正有效的前提，是你知道应该按什么最短顺序重建：二进制、认证、活跃配置、最后才是额外工作流设置。", "# 1. 先验证二进制\n# 2. 再验证 provider 认证\n# 3. 确认活跃配置路径\n# 4. 其他增强最后再加"),
         ],
         "zh_failure_routes": [
             ("你重置了文件，但行为完全没变", "这通常说明环境变量或另一份配置副本还在生效。只清一层不够，另一层还在赢。"),
             ("你刚重置完，就又把旧混乱全部加回来了", "如果一次性恢复所有旧 tweak，重置就失去了意义。应该从最小可工作的基线重建。"),
+            ("你甚至看不出来重置到底有没有改善", "那通常说明重建顺序太宽了。把它缩成一次只验证一层，才能看见每一步有没有效果。"),
         ],
     },
     ("mcp", "setup"): {
