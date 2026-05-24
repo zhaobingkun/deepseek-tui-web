@@ -45,6 +45,14 @@ PAGES = {
                 ("API key setup", "/config/api-key/index.html"),
                 ("Environment variables", "/config/environment-variables/index.html"),
             ],
+            "examples": [
+                ("Separate provider cost from app cost first", "Before you compare numbers, write down which provider, model, and workflow pattern you are actually using right now.", "# note provider\n# note model tier\n# note whether sessions are short, broad, or retry-heavy"),
+                ("Compare one workflow shape, not two different habits", "A pricing comparison only means something if the task shape stays stable while the provider or model changes.", "# run the same style of task\n# only then compare provider or model changes"),
+            ],
+            "failure_routes": [
+                ("You changed provider but the bill still feels high", "That often means the workflow stayed expensive. Check mode width, retries, and context length before blaming pricing tables alone."),
+                ("You cannot tell what is actually billing the session", "Stop the comparison until provider ownership is explicit. Cost analysis without a known billing layer is noise."),
+            ],
         },
         "zh": {
             "eyebrow": "价格指南",
@@ -80,6 +88,14 @@ PAGES = {
                 ("Provider 设置", "/zh/config/provider-setup/index.html"),
                 ("API Key 设置", "/zh/config/api-key/index.html"),
                 ("环境变量", "/zh/config/environment-variables/index.html"),
+            ],
+            "examples": [
+                ("先把 provider 成本和 app 成本拆开", "比较任何数字前，先写清楚当前到底是哪家 provider、哪档模型、哪种工作流在实际计费。", "# 先记下 provider\n# 再记下模型档位\n# 再记下会话是短、宽还是重试很多"),
+                ("同一种任务形状下再比价格", "只有任务风格不变时，provider 或模型的价格对比才有意义。", "# 先用同一种任务风格\n# 再去比较 provider 或模型变化"),
+            ],
+            "failure_routes": [
+                ("换了 provider，账单还是很高", "那往往不是 provider 单独的问题，而是工作流本身还很贵。先看模式宽度、重试次数和上下文长度。"),
+                ("你根本说不清是谁在计费", "在 provider 归属没明确前，先不要做价格结论。计费层不清楚，所有比较都会失真。"),
             ],
         },
     },
@@ -119,6 +135,14 @@ PAGES = {
                 ("Skills hub", "/skills/index.html"),
                 ("MCP setup", "/mcp/setup/index.html"),
             ],
+            "examples": [
+                ("Start from one repeated terminal workflow", "A useful example usually begins with a task you keep repeating, such as release-note drafting, repo triage, or structured code review.", "# identify one task you repeat weekly\n# define what stays the same each time"),
+                ("Write the boundary before the wording", "A skill example becomes real once you can say what it owns, what it leaves to the operator, and what a successful run should hand back.", "# define scope\n# define stop point\n# define expected output shape"),
+            ],
+            "failure_routes": [
+                ("The example sounds good but saves no time", "Then it is probably still just polished prompt text. Real skills reduce repeated setup or repeated decision overhead."),
+                ("You cannot explain where the skill should stop", "That means the boundary is too vague. Tighten scope before you try to keep it as a reusable asset."),
+            ],
         },
         "zh": {
             "eyebrow": "技能示例",
@@ -154,6 +178,14 @@ PAGES = {
                 ("Skills vs Prompts", "/zh/skills/vs-prompts/index.html"),
                 ("技能总页", "/zh/skills/index.html"),
                 ("MCP 设置", "/zh/mcp/setup/index.html"),
+            ],
+            "examples": [
+                ("从一个重复终端任务开始", "真正有用的 skill 示例，通常都来自你每周都会反复做的任务，比如 release note、仓库分诊或结构化 code review。", "# 先挑一个每周重复的任务\n# 写下每次都稳定不变的部分"),
+                ("先写边界，再写文案", "当你能说清它负责什么、在哪停、最后交回什么结果时，这个示例才像真正的 skill。", "# 先定义范围\n# 再定义停止点\n# 最后定义输出形状"),
+            ],
+            "failure_routes": [
+                ("这个示例看起来不错，但并没有省时间", "那它大概率还是润色过的 prompt，不是真正的 skill。真正的 skill 应该减少重复准备或重复判断。"),
+                ("你说不清它到底该在哪停", "那说明边界太模糊了。先收紧范围，再决定要不要把它沉淀成可复用资产。"),
             ],
         },
     },
@@ -193,6 +225,14 @@ PAGES = {
                 ("Skills hub", "/skills/index.html"),
                 ("Guides hub", "/guides/index.html"),
             ],
+            "examples": [
+                ("Keep a prompt for one-off requests", "If the task is unlikely to return in the same shape, keep it as a prompt and avoid premature structure.", "# ask once\n# do not create a maintained artifact unless the workflow repeats"),
+                ("Promote to a skill when the same checks keep recurring", "Once you keep rewriting the same scope, order, and guardrails, the workflow is already skill-shaped.", "# list what you repeat each time\n# if it repeats, extract the stable boundary"),
+            ],
+            "failure_routes": [
+                ("You turned a one-off request into a skill too early", "That creates maintenance overhead without reuse. Drop back to a prompt until the workflow actually repeats."),
+                ("Your skill became so broad that it no longer constrains anything", "Then the boundary is gone. Split it back into a prompt or several smaller skills."),
+            ],
         },
         "zh": {
             "eyebrow": "Skills vs Prompts",
@@ -228,6 +268,14 @@ PAGES = {
                 ("技能示例", "/zh/skills/examples/index.html"),
                 ("技能总页", "/zh/skills/index.html"),
                 ("Guides 总页", "/zh/guides/index.html"),
+            ],
+            "examples": [
+                ("一次性请求就继续用 prompt", "如果任务很难以同样形状回来，就先把它留在 prompt，不要过早加结构。", "# 先当一次性请求处理\n# 没有重复之前不要维护额外资产"),
+                ("当同样的核对步骤反复出现时，就该升级成 skill", "如果你每次都在重写同样的范围、顺序和护栏，说明它其实已经是 skill 形状了。", "# 列出每次都重复的检查项\n# 如果一直重复，就抽出稳定边界"),
+            ],
+            "failure_routes": [
+                ("工作流还没重复，你就太早抽成了 skill", "那只会增加维护成本。先退回 prompt，等它真的反复出现再升级。"),
+                ("你的 skill 宽到什么都能做", "这说明边界已经消失了。要么拆成几个小 skill，要么退回普通 prompt。"),
             ],
         },
     },
@@ -267,6 +315,14 @@ PAGES = {
                 ("Install hub", "/install/index.html"),
                 ("Docs hub", "/docs/index.html"),
             ],
+            "examples": [
+                ("Compare from the workflow you already trust", "Start by asking which shell, model ecosystem, and approval style already feel natural in your daily work.", "# note current terminal habits\n# note preferred model ecosystem\n# compare from there"),
+                ("Judge fit after repeated sessions, not one launch", "The real comparison shows up after several coding sessions, not after a single successful install.", "# test across several sessions\n# note friction in planning, approvals, and repeated use"),
+            ],
+            "failure_routes": [
+                ("The comparison still feels vague after reading the feature list", "That usually means you are comparing features instead of workflow posture. Go back to guardrails, ecosystem, and session style."),
+                ("One tool looked fine at launch but felt wrong later", "That is normal. Long-session fit matters more than first-install success in this category."),
+            ],
         },
         "zh": {
             "eyebrow": "对比",
@@ -302,6 +358,14 @@ PAGES = {
                 ("Modes 总页", "/zh/modes/index.html"),
                 ("安装总页", "/zh/install/index.html"),
                 ("Docs 总页", "/zh/docs/index.html"),
+            ],
+            "examples": [
+                ("从你已经习惯的工作流出发比较", "先问自己更熟的是哪种 shell、哪套模型生态、哪种审批风格，再从那里比较，而不是先数功能。", "# 先写下当前终端习惯\n# 再写下偏好的模型生态\n# 从这些出发比较"),
+                ("不要只在首次启动后下结论", "真正的适配度，是连续做几次真实 coding 会话后才会暴露出来。", "# 连续做几次真实会话\n# 记录 planning、审批和重复使用的摩擦点"),
+            ],
+            "failure_routes": [
+                ("看完功能表还是觉得很空", "那通常说明你还在比功能点，而不是在比工作流姿态。回去看 guardrails、生态位和会话风格。"),
+                ("第一次启动觉得还行，后面越用越别扭", "这很正常。终端代理更看重长期会话适配，不是首次安装体验。"),
             ],
         },
     },
@@ -341,6 +405,14 @@ PAGES = {
                 ("Config hub", "/config/index.html"),
                 ("Comparisons hub", "/comparisons/index.html"),
             ],
+            "examples": [
+                ("Compare planning and approval posture directly", "If guardrails and approval flow matter in your terminal work, compare those before you compare surface commands.", "# compare planning visibility\n# compare approval friction\n# only then compare command surface"),
+                ("Test both tools on the same task shape", "A fair comparison keeps the task fixed and watches how the workflow feels, not just whether the task eventually finishes.", "# use one repeated task\n# compare session feel across both tools"),
+            ],
+            "failure_routes": [
+                ("The tools look identical on paper but feel different in practice", "That usually means the workflow posture differs even if headline features overlap. Trust the session feel, not the spreadsheet."),
+                ("You are stuck comparing install steps only", "That is too shallow for terminal agents. Move the comparison into approval flow, session model, and daily reuse."),
+            ],
         },
         "zh": {
             "eyebrow": "对比",
@@ -376,6 +448,14 @@ PAGES = {
                 ("Modes 总页", "/zh/modes/index.html"),
                 ("配置总页", "/zh/config/index.html"),
                 ("对比总页", "/zh/comparisons/index.html"),
+            ],
+            "examples": [
+                ("直接比较 planning 和 approval 姿态", "如果你的终端工作很依赖护栏和审批流程，就先比这些，而不是先比命令表面。", "# 先比 planning 可见性\n# 再比 approval 摩擦\n# 最后才比命令面"),
+                ("用同一种任务去压两边", "公平的比较应该让任务不变，再看工作流感受，而不是只看最后是不是做完。", "# 用一个重复任务\n# 对照两边的会话体验"),
+            ],
+            "failure_routes": [
+                ("纸面功能很像，但实际感受很不一样", "这通常说明差异在工作流姿态，而不是功能点。终端代理要更信长期会话感受。"),
+                ("你一直停留在安装步骤对比", "那还太浅。应该把比较推进到 approval、session model 和长期复用层。"),
             ],
         },
     },
@@ -415,6 +495,14 @@ PAGES = {
                 ("Homebrew command not found", "/troubleshooting/homebrew-command-not-found/index.html"),
                 ("Release binaries", "/troubleshooting/release-binaries/index.html"),
             ],
+            "examples": [
+                ("Check owner and visible path together", "A command-not-found fix starts by checking which install route should own the binary and whether the shell can actually see that path.", "command -v deepseek || which deepseek\ndeepseek --version"),
+                ("Retest in a fresh shell after any path change", "A temporary shell success is not enough. Reopen the terminal and repeat the narrowest resolution checks.", "command -v deepseek || which deepseek\n# reopen shell and repeat"),
+            ],
+            "failure_routes": [
+                ("The install succeeded but the command is still missing", "That usually means the shell exposure is wrong, not that the package failed to install."),
+                ("One shell finds the command and another does not", "That is a shell-profile or PATH-boundary problem. Compare startup files before reinstalling anything."),
+            ],
         },
         "zh": {
             "eyebrow": "路径排错",
@@ -450,6 +538,14 @@ PAGES = {
                 ("npm 安装", "/zh/install/npm/index.html"),
                 ("Homebrew command not found", "/zh/troubleshooting/homebrew-command-not-found/index.html"),
                 ("Release binaries", "/zh/troubleshooting/release-binaries/index.html"),
+            ],
+            "examples": [
+                ("把拥有者和可见路径一起查", "command-not-found 的起点，是同时确认理论拥有者和当前 shell 是否真能看到那条路径。", "command -v deepseek || which deepseek\ndeepseek --version"),
+                ("任何路径修改后，都要在新 shell 里重测", "只在当前窗口里成功不够，必须重开终端后再跑最窄的解析检查。", "command -v deepseek || which deepseek\n# 重开 shell 后再重复"),
+            ],
+            "failure_routes": [
+                ("安装明明成功了，但命令还是不存在", "这通常不是包没装上，而是 shell 没看到对应路径。"),
+                ("一个 shell 找得到，另一个 shell 找不到", "这就是 shell profile 或 PATH 边界问题，先去对比启动文件，不要先重装。"),
             ],
         },
     },
@@ -489,6 +585,14 @@ PAGES = {
                 ("Generic command not found", "/troubleshooting/command-not-found/index.html"),
                 ("Release binaries", "/troubleshooting/release-binaries/index.html"),
             ],
+            "examples": [
+                ("Verify brew package presence before changing PATH", "Confirm the package exists in Homebrew first, then inspect whether the active shell exports the right brew prefix.", "brew list | rg deepseek-tui || true\ncommand -v deepseek || which deepseek"),
+                ("Retest after a full new terminal launch", "A brew path fix should survive a fresh terminal profile, not just the current shell window.", "command -v deepseek || which deepseek\n# quit and relaunch terminal, then repeat"),
+            ],
+            "failure_routes": [
+                ("Brew knows the package but the shell does not", "That is a path-export problem first, not a package-install problem."),
+                ("The brew path exists but another binary still wins", "Look for shadowing by npm, cargo, or a manual binary before you blame Homebrew."),
+            ],
         },
         "zh": {
             "eyebrow": "Homebrew 路径修复",
@@ -524,6 +628,14 @@ PAGES = {
                 ("Homebrew 安装", "/zh/install/homebrew/index.html"),
                 ("通用 command not found", "/zh/troubleshooting/command-not-found/index.html"),
                 ("Release binaries", "/zh/troubleshooting/release-binaries/index.html"),
+            ],
+            "examples": [
+                ("先确认 brew 里真的有这个包，再动 PATH", "先证明确实装在 Homebrew 里，再去看当前 shell 有没有导出正确前缀。", "brew list | rg deepseek-tui || true\ncommand -v deepseek || which deepseek"),
+                ("用全新终端重测 brew 路径修复", "brew 的路径修复必须在新终端 profile 里也稳定存在，才算真的修好。", "command -v deepseek || which deepseek\n# 完全退出终端再打开后重跑"),
+            ],
+            "failure_routes": [
+                ("brew 里看得到包，但 shell 看不到命令", "那首先是路径导出问题，不是包安装问题。"),
+                ("brew 路径在，但还是别的二进制先赢", "先查 npm、cargo 或手动二进制遮挡，再来怪 Homebrew。"),
             ],
         },
     },
@@ -564,6 +676,14 @@ PAGES = {
                 ("MCP server examples", "/mcp/server-examples/index.html"),
                 ("Provider troubleshooting", "/troubleshooting/provider-troubleshooting/index.html"),
             ],
+            "examples": [
+                ("Run the same task without MCP first", "The quickest isolation move is to keep the task the same and remove MCP from the path.", "# run one narrow task without MCP\n# then retry after enabling one MCP server"),
+                ("Check server declaration before client assumptions", "Confirm the server command, path, and expected capabilities before you assume the client side is wrong.", "# inspect server definition\n# verify startup command and expected tool surface"),
+            ],
+            "failure_routes": [
+                ("The base app is already unstable", "Then stop calling this an MCP bug. Fix the base install, config, or provider path first."),
+                ("The server launches but the expected tool never appears", "That may be a server-surface mismatch, not a launch failure. Re-check what the server actually exposes."),
+            ],
         },
         "zh": {
             "eyebrow": "MCP 排错",
@@ -600,6 +720,14 @@ PAGES = {
                 ("MCP 设置", "/zh/mcp/setup/index.html"),
                 ("MCP server 示例", "/zh/mcp/server-examples/index.html"),
                 ("Provider 排错", "/zh/troubleshooting/provider-troubleshooting/index.html"),
+            ],
+            "examples": [
+                ("先拿同一任务做一次无 MCP 对照", "隔离 MCP 最快的方法，就是让任务不变，只把 MCP 这一层拿掉。", "# 先在无 MCP 情况下跑一次窄任务\n# 再启用单个 MCP server 重跑"),
+                ("先查 server 声明，再猜客户端问题", "先确认 server 命令、路径和它承诺暴露的能力，再判断是不是客户端层异常。", "# 检查 server 定义\n# 核对启动命令和预期 tool surface"),
+            ],
+            "failure_routes": [
+                ("基础 app 本身已经不稳", "那就不要先叫它 MCP bug。先把安装、配置或 provider 基线修稳。"),
+                ("server 启动了，但预期工具没有出现", "这可能不是启动失败，而是 server 能力面和你的预期不一致。"),
             ],
         },
     },
@@ -640,6 +768,14 @@ PAGES = {
                 ("API key setup", "/config/api-key/index.html"),
                 ("Environment variables", "/config/environment-variables/index.html"),
             ],
+            "examples": [
+                ("Read the active provider stack before rotating keys", "Check provider name, endpoint, and current env overrides before you change credentials.", "# inspect config provider block\n# inspect active env overrides\n# only then test credentials"),
+                ("Change one provider layer at a time", "A stable provider debug path changes auth, endpoint, or provider selection one layer at a time.", "# test current key\n# then test endpoint\n# then test provider selection"),
+            ],
+            "failure_routes": [
+                ("You changed the key and nothing improved", "That often means the provider or endpoint layer was wrong, not the key itself."),
+                ("The config looks right but behavior still feels inherited", "Check environment overrides and old shell exports before you rewrite the config again."),
+            ],
         },
         "zh": {
             "eyebrow": "Provider 排错",
@@ -676,6 +812,14 @@ PAGES = {
                 ("Provider 设置", "/zh/config/provider-setup/index.html"),
                 ("API Key 设置", "/zh/config/api-key/index.html"),
                 ("环境变量", "/zh/config/environment-variables/index.html"),
+            ],
+            "examples": [
+                ("换 key 前先把当前 provider 栈读清楚", "先核对 provider 名称、endpoint 和环境变量覆盖，再决定要不要动凭证。", "# 先看配置里的 provider 块\n# 再看当前 env 覆盖\n# 最后才去测凭证"),
+                ("一次只改 provider 的一层", "更稳的 provider 排错，是把 auth、endpoint、provider 选择分层测试，而不是一次全改。", "# 先测当前 key\n# 再测 endpoint\n# 最后再测 provider 选择"),
+            ],
+            "failure_routes": [
+                ("你换了 key，但一点改善都没有", "那通常不是 key 本身的问题，而是 provider 或 endpoint 层本来就错了。"),
+                ("配置看起来对，但行为还是像继承了旧状态", "先回去看环境变量和旧 shell export，不要立刻重写配置。"),
             ],
         },
     },
@@ -715,6 +859,14 @@ PAGES = {
                 ("Command not found", "/troubleshooting/command-not-found/index.html"),
                 ("Update or upgrade", "/install/update-or-upgrade/index.html"),
             ],
+            "examples": [
+                ("Place the binary where the daily shell can really see it", "Manual binaries only count once the executable lives in a directory your normal terminal profile resolves first.", "# move binary into a shell-visible directory\n# reopen terminal and run command -v deepseek || which deepseek"),
+                ("Plan the next replacement before you rely on it", "If you choose release binaries, decide now how you will swap versions later so the route stays maintainable.", "# note current binary location\n# note how the next version will replace it safely"),
+            ],
+            "failure_routes": [
+                ("The binary runs once but disappears later", "That usually means you tested in a temporary shell context and never stabilized path placement."),
+                ("Manual binaries solved install friction but created update drift", "That is the tradeoff of this route. If drift is growing, consider a managed install path again."),
+            ],
         },
         "zh": {
             "eyebrow": "Release Binaries",
@@ -750,6 +902,14 @@ PAGES = {
                 ("安装总页", "/zh/install/index.html"),
                 ("command not found", "/zh/troubleshooting/command-not-found/index.html"),
                 ("更新与升级", "/zh/install/update-or-upgrade/index.html"),
+            ],
+            "examples": [
+                ("把二进制放到日常 shell 真能看到的位置", "手动二进制只有在你平时真正用的终端 profile 里能稳定解析，才算真的装好。", "# 把 binary 放到 shell 可见目录\n# 重开终端后跑 command -v deepseek || which deepseek"),
+                ("在依赖它前先想好以后怎么替换", "既然选了 release binaries，就应该提前决定以后版本如何替换，避免维护失控。", "# 记下当前 binary 位置\n# 再记下下次版本替换的安全步骤"),
+            ],
+            "failure_routes": [
+                ("二进制这次能跑，下次却又消失", "这通常说明你只是用了临时 shell 上下文，还没有把路径放置稳定下来。"),
+                ("手动二进制解决了安装摩擦，却带来了版本漂移", "这正是这条路线的代价。如果漂移越来越重，就该重新考虑受管安装路径。"),
             ],
         },
     },
@@ -789,6 +949,14 @@ PAGES = {
                 ("Configure DeepSeek TUI", "/config/index.html"),
                 ("Docs hub", "/docs/index.html"),
             ],
+            "examples": [
+                ("Describe the product in one operational sentence", "A useful first sentence usually mentions terminal work, files, shell actions, config, and structured agent behavior.", "# write one sentence that explains terminal agent workflow, not just 'AI chat'"),
+                ("Choose the next branch by the current blocker", "Once the category is clear, route immediately to install, config, docs, or comparisons based on the user's actual question.", "# if binary missing -> install\n# if auth broken -> config\n# if evaluating fit -> comparisons"),
+            ],
+            "failure_routes": [
+                ("The site still feels fragmented after reading this page", "That usually means the product is still being framed as terminal chat instead of a coding-agent workflow."),
+                ("A new reader jumps straight into deep docs and gets lost", "They probably needed install or config first. Route by blocker, not by curiosity alone."),
+            ],
         },
         "zh": {
             "eyebrow": "产品背景",
@@ -825,6 +993,14 @@ PAGES = {
                 ("配置总页", "/zh/config/index.html"),
                 ("Docs 总页", "/zh/docs/index.html"),
             ],
+            "examples": [
+                ("用一句操作层的话把产品讲清楚", "更实用的第一句话，通常会同时提到终端工作、文件、shell 动作、配置和结构化代理行为。", "# 写一句能说明它是终端编码代理工作流，而不只是聊天壳的话"),
+                ("按当前阻塞点把人送去下一条分支", "一旦类别清楚，就应该立刻按当前问题把用户送到 install、config、docs 或 comparisons。", "# 二进制没跑起来 -> install\n# 认证坏了 -> config\n# 正在评估适配度 -> comparisons"),
+            ],
+            "failure_routes": [
+                ("看完这页，整站还是像很多散页", "那通常说明你还在把它当成终端聊天，而不是终端编码代理工作流。"),
+                ("新读者一上来就进深 docs，然后迷路", "他大概率其实先该看 install 或 config。应该按阻塞点分流，而不是按好奇心乱跳。"),
+            ],
         },
     },
 }
@@ -852,12 +1028,29 @@ def render_workflow(rows: list[tuple[str, str]]) -> str:
     return "".join(items)
 
 
+def render_examples(rows: list[tuple[str, str, str]]) -> str:
+    blocks = []
+    for title, body, code in rows:
+        code_html = f"<pre><code>{html.escape(code)}</code></pre>" if code else ""
+        blocks.append(f'<article class="detail-card"><h3>{html.escape(title)}</h3><p>{html.escape(body)}</p>{code_html}</article>')
+    return "".join(blocks)
+
+
+def render_routes(rows: list[tuple[str, str]]) -> str:
+    return "".join(
+        f'<article class="detail-card"><h3>{html.escape(title)}</h3><p>{html.escape(body)}</p></article>'
+        for title, body in rows
+    )
+
+
 def build_main(copy: dict[str, object], zh: bool) -> str:
     questions = render_list(copy["questions"])  # type: ignore[index]
     mistakes = render_list(copy["mistakes"])  # type: ignore[index]
     diagnosis = render_diagnosis(copy["diagnosis"])  # type: ignore[index]
     workflow = render_workflow(copy["workflow"])  # type: ignore[index]
     links = render_links(copy["links"])  # type: ignore[index]
+    examples = render_examples(copy.get("examples", []))  # type: ignore[arg-type]
+    failure_routes = render_routes(copy.get("failure_routes", []))  # type: ignore[arg-type]
     labels = {
         "questions": "这页应该先回答的问题" if zh else "Questions this page should answer fast",
         "coverage": "这页应该帮你判断什么" if zh else "What this page should help you decide",
@@ -867,13 +1060,21 @@ def build_main(copy: dict[str, object], zh: bool) -> str:
         "mistakes": "常见误区" if zh else "Common mistakes",
         "leave": "什么时候可以离开这页" if zh else "When to leave this page",
         "detail_kicker": "把这页当作正文页来用" if zh else "Use this as a detail page",
+        "examples": "直接可用的示例" if zh else "Use-it-now examples",
+        "routes": "常见失败分支" if zh else "Common failure branches",
         "detail_body": (
             "这页的目标是直接回答当前这个具体问题，而不是只把你推回栏目页。适合已经明确分支、现在需要更清楚处理路径的时候打开。"
             if zh
             else "This page is meant to answer the concrete question directly, not just point back to a hub. Use it when you already know the branch and need a clearer working path."
         ),
     }
-    return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">{html.escape(copy['eyebrow'])}</span><h1>{html.escape(copy['h1'])}</h1><p>{html.escape(copy['intro'])}</p></div><aside class="answer-card"><span class="panel-kicker">{html.escape(copy['answer_kicker'])}</span><h2>{html.escape(copy['answer_h2'])}</h2><p>{html.escape(copy['answer_p'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>{labels['questions']}</h2><ul>{questions}</ul><h2>{labels['coverage']}</h2><p>{html.escape(copy['coverage'])}</p><h2>{labels['diagnosis']}</h2>{diagnosis}</article><aside class="panel-card"><span class="panel-kicker">{labels['next']}</span><div class="link-stack">{links}</div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose"><h2>{labels['workflow']}</h2><ol>{workflow}</ol><h2>{labels['mistakes']}</h2><ul>{mistakes}</ul><h2>{labels['leave']}</h2><p>{html.escape(copy['leave'])}</p></article><aside class="panel-card"><span class="panel-kicker">{labels['detail_kicker']}</span><p>{html.escape(labels['detail_body'])}</p></aside></div></section></main>"""
+    examples_section = ""
+    if examples:
+        examples_section = f"""<section class="section"><div class="container"><div class="section-head"><h2>{labels['examples']}</h2><p>{'先拿可执行例子，再回头做更细的调整。' if zh else 'Start from working examples first, then adjust the details.'}</p></div><div class="detail-grid">{examples}</div></div></section>"""
+    routes_section = ""
+    if failure_routes:
+        routes_section = f"""<section class="section section-alt"><div class="container"><div class="section-head"><h2>{labels['routes']}</h2><p>{'先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。' if zh else 'Work out which layer failed first instead of treating every problem as the same.'}</p></div><div class="detail-grid">{failure_routes}</div></div></section>"""
+    return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">{html.escape(copy['eyebrow'])}</span><h1>{html.escape(copy['h1'])}</h1><p>{html.escape(copy['intro'])}</p></div><aside class="answer-card"><span class="panel-kicker">{html.escape(copy['answer_kicker'])}</span><h2>{html.escape(copy['answer_h2'])}</h2><p>{html.escape(copy['answer_p'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>{labels['questions']}</h2><ul>{questions}</ul><h2>{labels['coverage']}</h2><p>{html.escape(copy['coverage'])}</p><h2>{labels['diagnosis']}</h2>{diagnosis}</article><aside class="panel-card"><span class="panel-kicker">{labels['next']}</span><div class="link-stack">{links}</div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose"><h2>{labels['workflow']}</h2><ol>{workflow}</ol><h2>{labels['mistakes']}</h2><ul>{mistakes}</ul><h2>{labels['leave']}</h2><p>{html.escape(copy['leave'])}</p></article><aside class="panel-card"><span class="panel-kicker">{labels['detail_kicker']}</span><p>{html.escape(labels['detail_body'])}</p></aside></div></section>{examples_section}{routes_section}</main>"""
 
 
 def process_page(path: Path, copy: dict[str, object], zh: bool) -> None:
