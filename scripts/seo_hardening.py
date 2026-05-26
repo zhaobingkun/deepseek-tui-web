@@ -106,16 +106,16 @@ def canonical_to_path(canonical: str) -> str:
 
 
 def page_type(path: str) -> str:
-    if path in {"/", "/index.html", "/zh/index.html"}:
+    if path in {"/", "/zh/"}:
         return "WebPage"
-    if path.endswith("/about/index.html"):
+    if path.endswith("/about/"):
         return "AboutPage"
-    if path.endswith("/contact/index.html"):
+    if path.endswith("/contact/"):
         return "ContactPage"
     parts = [p for p in path.strip("/").split("/") if p]
     if not parts:
         return "WebPage"
-    if parts[-1] == "index.html" and len(parts) <= 2:
+    if len(parts) <= 2:
         return "CollectionPage"
     if len(parts) >= 2 and parts[-2] == "news":
         return "NewsArticle"
@@ -123,18 +123,16 @@ def page_type(path: str) -> str:
 
 
 def breadcrumb_items(path: str, title: str, zh: bool) -> list[dict]:
-    if path in {"/", "/index.html", "/zh/index.html"}:
+    if path in {"/", "/zh/"}:
         return []
     parts = [p for p in path.strip("/").split("/") if p]
     items = []
     if zh:
-        items.append({"@type": "ListItem", "position": 1, "name": "首页", "item": f"{DOMAIN}/zh/index.html"})
+        items.append({"@type": "ListItem", "position": 1, "name": "首页", "item": f"{DOMAIN}/zh/"})
     else:
-        items.append({"@type": "ListItem", "position": 1, "name": "Home", "item": f"{DOMAIN}/index.html"})
+        items.append({"@type": "ListItem", "position": 1, "name": "Home", "item": f"{DOMAIN}/"})
     if zh and parts and parts[0] == "zh":
         parts = parts[1:]
-    if parts and parts[-1] == "index.html":
-        parts = parts[:-1]
     pos = 2
     current = "/zh" if zh else ""
     for idx, part in enumerate(parts):
@@ -145,7 +143,7 @@ def breadcrumb_items(path: str, title: str, zh: bool) -> list[dict]:
             label = (DOC_LABELS_ZH if zh else DOC_LABELS_EN).get(part, prettify_slug(part))
         else:
             label = prettify_slug(part) if not zh else DOC_LABELS_ZH.get(part, SECTION_LABELS_ZH.get(part, part.replace("-", " ")))
-        items.append({"@type": "ListItem", "position": pos, "name": label, "item": f"{DOMAIN}{current}/index.html"})
+        items.append({"@type": "ListItem", "position": pos, "name": label, "item": f"{DOMAIN}{current}/"})
         pos += 1
     if items:
         items[-1]["name"] = title
@@ -174,15 +172,15 @@ def ensure_og_and_twitter(text: str, title: str, desc: str, canonical: str, og_t
 
 def build_schema(path: str, title: str, desc: str, canonical: str, zh: bool) -> str:
     ptype = page_type(path)
-    if path in {"/", "/index.html"}:
+    if path == "/":
         graph = [
             {"@type": "WebSite", "name": "DeepSeek TUI Guide", "url": f"{DOMAIN}/"},
             {"@type": "Organization", "name": "DeepSeek TUI Guide", "url": f"{DOMAIN}/"},
         ]
-    elif path == "/zh/index.html":
+    elif path == "/zh/":
         graph = [
-            {"@type": "WebSite", "name": "DeepSeek TUI 中文指南", "url": f"{DOMAIN}/zh/index.html"},
-            {"@type": "Organization", "name": "DeepSeek TUI 中文指南", "url": f"{DOMAIN}/zh/index.html"},
+            {"@type": "WebSite", "name": "DeepSeek TUI 中文指南", "url": f"{DOMAIN}/zh/"},
+            {"@type": "Organization", "name": "DeepSeek TUI 中文指南", "url": f"{DOMAIN}/zh/"},
         ]
     else:
         primary = {

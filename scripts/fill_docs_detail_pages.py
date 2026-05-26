@@ -1022,36 +1022,36 @@ TOPIC_DATA = {
 
 RELATED_LINKS = {
     "docs": {
-        "en": ("Docs hub", "/docs/index.html"),
-        "zh": ("文档总页", "/zh/docs/index.html"),
+        "en": ("Docs hub", "/docs/"),
+        "zh": ("文档总页", "/zh/docs/"),
     },
     "guides": {
-        "en": ("Guides hub", "/guides/index.html"),
-        "zh": ("指南总页", "/zh/guides/index.html"),
+        "en": ("Guides hub", "/guides/"),
+        "zh": ("指南总页", "/zh/guides/"),
     },
     "troubleshooting": {
-        "en": ("Troubleshooting hub", "/troubleshooting/index.html"),
-        "zh": ("排错总页", "/zh/troubleshooting/index.html"),
+        "en": ("Troubleshooting hub", "/troubleshooting/"),
+        "zh": ("排错总页", "/zh/troubleshooting/"),
     },
     "install": {
-        "en": ("Install hub", "/install/index.html"),
-        "zh": ("安装总页", "/zh/install/index.html"),
+        "en": ("Install hub", "/install/"),
+        "zh": ("安装总页", "/zh/install/"),
     },
     "config": {
-        "en": ("Config hub", "/config/index.html"),
-        "zh": ("配置总页", "/zh/config/index.html"),
+        "en": ("Config hub", "/config/"),
+        "zh": ("配置总页", "/zh/config/"),
     },
     "modes": {
-        "en": ("Modes hub", "/modes/index.html"),
-        "zh": ("模式总页", "/zh/modes/index.html"),
+        "en": ("Modes hub", "/modes/"),
+        "zh": ("模式总页", "/zh/modes/"),
     },
     "mcp": {
-        "en": ("MCP hub", "/mcp/index.html"),
-        "zh": ("MCP 总页", "/zh/mcp/index.html"),
+        "en": ("MCP hub", "/mcp/"),
+        "zh": ("MCP 总页", "/zh/mcp/"),
     },
     "comparisons": {
-        "en": ("Comparisons hub", "/comparisons/index.html"),
-        "zh": ("对比总页", "/zh/comparisons/index.html"),
+        "en": ("Comparisons hub", "/comparisons/"),
+        "zh": ("对比总页", "/zh/comparisons/"),
     },
 }
 

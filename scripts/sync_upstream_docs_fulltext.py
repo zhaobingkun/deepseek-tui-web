@@ -263,9 +263,9 @@ def render_markdown(md: str, file_map: dict[str, str]) -> tuple[str, list[tuple[
 def build_file_map() -> dict[str, str]:
     file_map: dict[str, str] = {}
     for slug, filename in SLUG_TO_FILENAME.items():
-        file_map[f"./{filename}"] = f"/docs/{slug}/index.html"
-        file_map[filename] = f"/docs/{slug}/index.html"
-        file_map[f"docs/{filename}"] = f"/docs/{slug}/index.html"
+        file_map[f"./{filename}"] = f"/docs/{slug}/"
+        file_map[filename] = f"/docs/{slug}/"
+        file_map[f"docs/{filename}"] = f"/docs/{slug}/"
     return file_map
 
 

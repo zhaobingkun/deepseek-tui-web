@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DeepSeek TUI 排错指南</title>
   <meta name="description" content="修复 DeepSeek TUI 常见问题，包括安装失败、认证问题、配置错误和运行时异常。">
-  <link rel="canonical" href="https://deepseek-tui.app/zh/troubleshooting/index.html">
+  <link rel="canonical" href="https://deepseek-tui.app/zh/troubleshooting/">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="DeepSeek TUI 排错指南">
   <meta property="og:description" content="修复 DeepSeek TUI 常见问题，包括安装失败、认证问题、配置错误和运行时异常。">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://deepseek-tui.app/zh/troubleshooting/index.html">
+  <meta property="og:url" content="https://deepseek-tui.app/zh/troubleshooting/">
   <meta property="og:site_name" content="DeepSeek TUI 中文指南">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DeepSeek TUI 排错指南">
   <meta name="twitter:description" content="修复 DeepSeek TUI 常见问题，包括安装失败、认证问题、配置错误和运行时异常。">
-  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/troubleshooting/index.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/troubleshooting/index.html">
+  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/troubleshooting/">
+  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/troubleshooting/">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="stylesheet" href="/assets/css/site.css">
   <script type="application/ld+json">
@@ -28,7 +28,7 @@
       "headline": "DeepSeek TUI 排错指南",
       "name": "DeepSeek TUI 排错指南",
       "description": "修复 DeepSeek TUI 常见问题，包括安装失败、认证问题、配置错误和运行时异常。",
-      "url": "https://deepseek-tui.app/zh/troubleshooting/index.html",
+      "url": "https://deepseek-tui.app/zh/troubleshooting/",
       "inLanguage": "zh-CN"
     },
     {
@@ -38,13 +38,13 @@
           "@type": "ListItem",
           "position": 1,
           "name": "首页",
-          "item": "https://deepseek-tui.app/zh/index.html"
+          "item": "https://deepseek-tui.app/zh/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "DeepSeek TUI 排错指南",
-          "item": "https://deepseek-tui.app/zh/troubleshooting/index.html"
+          "item": "https://deepseek-tui.app/zh/troubleshooting/"
         }
       ]
     }
@@ -53,8 +53,8 @@
   </script>
 </head>
 <body>
-  <header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header>
-  <div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><span>排错</span></div></div>
+  <header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/">首页</a><a href="/zh/guides/">指南</a><a href="/zh/docs/">文档</a><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a><a href="/zh/comparisons/">对比</a><a href="/zh/troubleshooting/">排错</a><a href="/">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header>
+  <div class="page-path"><div class="container"><a href="/zh/">首页</a><span>/</span><span>排错</span></div></div>
   <main>
     <section class="page-hero">
       <div class="container two-col">
@@ -69,21 +69,21 @@
     <section class="section section-alt"><div class="container">
 <div class="section-head"><h2>按问题类型选择排错路径</h2><p>先把这页当成排错列表。先判断是命令路径、provider、二进制还是 MCP 问题，再开详情页。</p></div>
 <div class="card-grid card-grid-3">
-<article class="topic-card"><span class="tag">命令</span><h3>我装好了，但命令还是调不起来</h3><p>如果问题是 command not found 或 shell path，先走命令修复路线，不要先查高级配置。</p><a href="/zh/troubleshooting/command-not-found/index.html">去命令修复</a></article>
-<article class="topic-card"><span class="tag">Provider</span><h3>命令能跑，但 provider 还是不对</h3><p>如果命令存在，但鉴权、endpoint 或返回行为不对，先走 provider 排错路线。</p><a href="/zh/troubleshooting/provider-troubleshooting/index.html">去 provider 排错</a></article>
-<article class="topic-card"><span class="tag">进阶</span><h3>我怀疑是 MCP 或二进制安装这层的问题</h3><p>如果基础命令和配置看起来没问题，再看 release binaries 或 MCP 这一层。</p><a href="/zh/troubleshooting/mcp-troubleshooting/index.html">去 MCP 排错</a></article>
+<article class="topic-card"><span class="tag">命令</span><h3>我装好了，但命令还是调不起来</h3><p>如果问题是 command not found 或 shell path，先走命令修复路线，不要先查高级配置。</p><a href="/zh/troubleshooting/command-not-found/">去命令修复</a></article>
+<article class="topic-card"><span class="tag">Provider</span><h3>命令能跑，但 provider 还是不对</h3><p>如果命令存在，但鉴权、endpoint 或返回行为不对，先走 provider 排错路线。</p><a href="/zh/troubleshooting/provider-troubleshooting/">去 provider 排错</a></article>
+<article class="topic-card"><span class="tag">进阶</span><h3>我怀疑是 MCP 或二进制安装这层的问题</h3><p>如果基础命令和配置看起来没问题，再看 release binaries 或 MCP 这一层。</p><a href="/zh/troubleshooting/mcp-troubleshooting/">去 MCP 排错</a></article>
 </div></div></section>
     <section class="section"><div class="container">
 <div class="section-head"><h2>排错文章列表</h2><p>先把问题缩小到具体一层，再看对应修复页，不要把安装、provider 和 MCP 调试混在一起。</p></div>
 <div class="card-grid card-grid-2">
-<article class="content-card"><span class="tag">Command Not Found</span><h3>command not found 修复</h3><p>安装后最常见的第一类错误，通常和 shell path 或安装路径有关。</p><a href="/zh/troubleshooting/command-not-found/index.html">打开修复页</a></article>
-<article class="content-card"><span class="tag">Homebrew</span><h3>Homebrew command not found</h3><p>如果 brew 说装好了，但终端还是找不到命令，这页更对应。</p><a href="/zh/troubleshooting/homebrew-command-not-found/index.html">打开 Homebrew 修复</a></article>
-<article class="content-card"><span class="tag">Provider</span><h3>Provider 排错</h3><p>命令存在但行为不对时，provider 线通常比安装线更重要。</p><a href="/zh/troubleshooting/provider-troubleshooting/index.html">打开 provider 排错</a></article>
-<article class="content-card"><span class="tag">Binaries</span><h3>Release binaries</h3><p>如果包管理器本身就是阻力，二进制安装这条线更值得单独看。</p><a href="/zh/troubleshooting/release-binaries/index.html">打开 release binaries</a></article>
-<article class="content-card"><span class="tag">API Key</span><h3>API Key 与 provider</h3><p>如果命令存在但无法使用，配置线通常比安装线更关键。</p><a href="/zh/config/api-key/index.html">打开 API Key 页</a></article>
-<article class="content-card"><span class="tag">MCP</span><h3>MCP 排错</h3><p>如果你怀疑是 MCP 坏了，这页会先帮你分清楚是不是基础配置没稳。</p><a href="/zh/troubleshooting/mcp-troubleshooting/index.html">打开 MCP 排错</a></article>
+<article class="content-card"><span class="tag">Command Not Found</span><h3>command not found 修复</h3><p>安装后最常见的第一类错误，通常和 shell path 或安装路径有关。</p><a href="/zh/troubleshooting/command-not-found/">打开修复页</a></article>
+<article class="content-card"><span class="tag">Homebrew</span><h3>Homebrew command not found</h3><p>如果 brew 说装好了，但终端还是找不到命令，这页更对应。</p><a href="/zh/troubleshooting/homebrew-command-not-found/">打开 Homebrew 修复</a></article>
+<article class="content-card"><span class="tag">Provider</span><h3>Provider 排错</h3><p>命令存在但行为不对时，provider 线通常比安装线更重要。</p><a href="/zh/troubleshooting/provider-troubleshooting/">打开 provider 排错</a></article>
+<article class="content-card"><span class="tag">Binaries</span><h3>Release binaries</h3><p>如果包管理器本身就是阻力，二进制安装这条线更值得单独看。</p><a href="/zh/troubleshooting/release-binaries/">打开 release binaries</a></article>
+<article class="content-card"><span class="tag">API Key</span><h3>API Key 与 provider</h3><p>如果命令存在但无法使用，配置线通常比安装线更关键。</p><a href="/zh/config/api-key/">打开 API Key 页</a></article>
+<article class="content-card"><span class="tag">MCP</span><h3>MCP 排错</h3><p>如果你怀疑是 MCP 坏了，这页会先帮你分清楚是不是基础配置没稳。</p><a href="/zh/troubleshooting/mcp-troubleshooting/">打开 MCP 排错</a></article>
 </div></div></section>
-  <footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a></div><div class="footer-links"><a href="/zh/comparisons/index.html">对比</a><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer>
+  <footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a></div><div class="footer-links"><a href="/zh/comparisons/">对比</a><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a></div></div></footer>
   <script src="/assets/js/site.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>

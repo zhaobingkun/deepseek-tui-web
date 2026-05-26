@@ -57,9 +57,9 @@ PAGES = {
             ],
             "leave": "Leave this page once you know which provider and model combination you are using now, what part of the stack creates the real bill, and which config page you need next to change that path safely.",
             "links": [
-                ("Provider setup", "/config/provider-setup/index.html"),
-                ("API key setup", "/config/api-key/index.html"),
-                ("Environment variables", "/config/environment-variables/index.html"),
+                ("Provider setup", "/config/provider-setup/"),
+                ("API key setup", "/config/api-key/"),
+                ("Environment variables", "/config/environment-variables/"),
             ],
             "examples": [
                 ("Separate provider cost from app cost first", "Before you compare numbers, write down which provider, model, and workflow pattern you are actually using right now.", "# note provider\n# note model tier\n# note whether sessions are short, broad, or retry-heavy"),
@@ -101,9 +101,9 @@ PAGES = {
             ],
             "leave": "当你已经知道当前用的是哪条 provider 路线、真正产生费用的是哪一层，以及下一步该去哪个配置页改 provider 或模型时，就可以离开这页了。",
             "links": [
-                ("Provider 设置", "/zh/config/provider-setup/index.html"),
-                ("API Key 设置", "/zh/config/api-key/index.html"),
-                ("环境变量", "/zh/config/environment-variables/index.html"),
+                ("Provider 设置", "/zh/config/provider-setup/"),
+                ("API Key 设置", "/zh/config/api-key/"),
+                ("环境变量", "/zh/config/environment-variables/"),
             ],
             "examples": [
                 ("先把 provider 成本和 app 成本拆开", "比较任何数字前，先写清楚当前到底是哪家 provider、哪档模型、哪种工作流在实际计费。", "# 先记下 provider\n# 再记下模型档位\n# 再记下会话是短、宽还是重试很多"),
@@ -147,9 +147,9 @@ PAGES = {
             ],
             "leave": "Leave this page once you can look at a repeated task and decide whether it deserves a reusable skill or should remain a one-off prompt.",
             "links": [
-                ("Skills vs prompts", "/skills/vs-prompts/index.html"),
-                ("Skills hub", "/skills/index.html"),
-                ("MCP setup", "/mcp/setup/index.html"),
+                ("Skills vs prompts", "/skills/vs-prompts/"),
+                ("Skills hub", "/skills/"),
+                ("MCP setup", "/mcp/setup/"),
             ],
             "examples": [
                 ("Start from one repeated terminal workflow", "A useful example usually begins with a task you keep repeating, such as release-note drafting, repo triage, or structured code review.", "# identify one task you repeat weekly\n# define what stays the same each time"),
@@ -191,9 +191,9 @@ PAGES = {
             ],
             "leave": "当你已经能判断一个重复任务该不该抽成技能，以及 skill 和普通 prompt 的边界时，就可以离开这页了。",
             "links": [
-                ("Skills vs Prompts", "/zh/skills/vs-prompts/index.html"),
-                ("技能总页", "/zh/skills/index.html"),
-                ("MCP 设置", "/zh/mcp/setup/index.html"),
+                ("Skills vs Prompts", "/zh/skills/vs-prompts/"),
+                ("技能总页", "/zh/skills/"),
+                ("MCP 设置", "/zh/mcp/setup/"),
             ],
             "examples": [
                 ("从一个重复终端任务开始", "真正有用的 skill 示例，通常都来自你每周都会反复做的任务，比如 release note、仓库分诊或结构化 code review。", "# 先挑一个每周重复的任务\n# 写下每次都稳定不变的部分"),
@@ -237,9 +237,9 @@ PAGES = {
             ],
             "leave": "Leave this page once you can judge whether your current problem is a one-off instruction problem or a reusable workflow problem.",
             "links": [
-                ("Skills examples", "/skills/examples/index.html"),
-                ("Skills hub", "/skills/index.html"),
-                ("Guides hub", "/guides/index.html"),
+                ("Skills examples", "/skills/examples/"),
+                ("Skills hub", "/skills/"),
+                ("Guides hub", "/guides/"),
             ],
             "examples": [
                 ("Keep a prompt for one-off requests", "If the task is unlikely to return in the same shape, keep it as a prompt and avoid premature structure.", "# ask once\n# do not create a maintained artifact unless the workflow repeats"),
@@ -281,9 +281,9 @@ PAGES = {
             ],
             "leave": "当你已经能判断自己面对的是一次性指令问题，还是一个值得沉淀成 skill 的重复工作流时，就可以离开这页了。",
             "links": [
-                ("技能示例", "/zh/skills/examples/index.html"),
-                ("技能总页", "/zh/skills/index.html"),
-                ("Guides 总页", "/zh/guides/index.html"),
+                ("技能示例", "/zh/skills/examples/"),
+                ("技能总页", "/zh/skills/"),
+                ("Guides 总页", "/zh/guides/"),
             ],
             "examples": [
                 ("一次性请求就继续用 prompt", "如果任务很难以同样形状回来，就先把它留在 prompt，不要过早加结构。", "# 先当一次性请求处理\n# 没有重复之前不要维护额外资产"),
@@ -327,9 +327,9 @@ PAGES = {
             ],
             "leave": "Leave this page once you know which workflow posture matches your real terminal habits and which branch to read next for setup, modes, or guardrails.",
             "links": [
-                ("Modes hub", "/modes/index.html"),
-                ("Install hub", "/install/index.html"),
-                ("Docs hub", "/docs/index.html"),
+                ("Modes hub", "/modes/"),
+                ("Install hub", "/install/"),
+                ("Docs hub", "/docs/"),
             ],
             "examples": [
                 ("Compare from the workflow you already trust", "Start by asking which shell, model ecosystem, and approval style already feel natural in your daily work.", "# note current terminal habits\n# note preferred model ecosystem\n# compare from there"),
@@ -371,9 +371,9 @@ PAGES = {
             ],
             "leave": "当你已经知道哪种工作流姿态更接近自己的终端习惯，以及下一步该去看 setup、modes 还是 docs 时，就可以离开这页了。",
             "links": [
-                ("Modes 总页", "/zh/modes/index.html"),
-                ("安装总页", "/zh/install/index.html"),
-                ("Docs 总页", "/zh/docs/index.html"),
+                ("Modes 总页", "/zh/modes/"),
+                ("安装总页", "/zh/install/"),
+                ("Docs 总页", "/zh/docs/"),
             ],
             "examples": [
                 ("从你已经习惯的工作流出发比较", "先问自己更熟的是哪种 shell、哪套模型生态、哪种审批风格，再从那里比较，而不是先数功能。", "# 先写下当前终端习惯\n# 再写下偏好的模型生态\n# 从这些出发比较"),
@@ -417,9 +417,9 @@ PAGES = {
             ],
             "leave": "Leave this page once you know which tool's workflow posture fits your terminal habits and which deeper branch you need next.",
             "links": [
-                ("Modes hub", "/modes/index.html"),
-                ("Config hub", "/config/index.html"),
-                ("Comparisons hub", "/comparisons/index.html"),
+                ("Modes hub", "/modes/"),
+                ("Config hub", "/config/"),
+                ("Comparisons hub", "/comparisons/"),
             ],
             "examples": [
                 ("Compare planning and approval posture directly", "If guardrails and approval flow matter in your terminal work, compare those before you compare surface commands.", "# compare planning visibility\n# compare approval friction\n# only then compare command surface"),
@@ -461,9 +461,9 @@ PAGES = {
             ],
             "leave": "当你已经知道哪一边的工作流姿态更贴近自己的终端习惯，以及下一步该进哪个更深的栏目时，就可以离开这页了。",
             "links": [
-                ("Modes 总页", "/zh/modes/index.html"),
-                ("配置总页", "/zh/config/index.html"),
-                ("对比总页", "/zh/comparisons/index.html"),
+                ("Modes 总页", "/zh/modes/"),
+                ("配置总页", "/zh/config/"),
+                ("对比总页", "/zh/comparisons/"),
             ],
             "examples": [
                 ("直接比较 planning 和 approval 姿态", "如果你的终端工作很依赖护栏和审批流程，就先比这些，而不是先比命令表面。", "# 先比 planning 可见性\n# 再比 approval 摩擦\n# 最后才比命令面"),
@@ -507,9 +507,9 @@ PAGES = {
             ],
             "leave": "Leave this page once you know which install route owns the binary and whether the shell path mismatch is generic or route-specific.",
             "links": [
-                ("npm install", "/install/npm/index.html"),
-                ("Homebrew command not found", "/troubleshooting/homebrew-command-not-found/index.html"),
-                ("Release binaries", "/troubleshooting/release-binaries/index.html"),
+                ("npm install", "/install/npm/"),
+                ("Homebrew command not found", "/troubleshooting/homebrew-command-not-found/"),
+                ("Release binaries", "/troubleshooting/release-binaries/"),
             ],
             "examples": [
                 ("Check owner and visible path together", "A command-not-found fix starts by checking which install route should own the binary and whether the shell can actually see that path.", "command -v deepseek || which deepseek\ndeepseek --version"),
@@ -551,9 +551,9 @@ PAGES = {
             ],
             "leave": "当你已经知道是谁安装了二进制，以及当前 shell 的问题是通用 PATH 问题还是路线专属问题时，就可以离开这页了。",
             "links": [
-                ("npm 安装", "/zh/install/npm/index.html"),
-                ("Homebrew command not found", "/zh/troubleshooting/homebrew-command-not-found/index.html"),
-                ("Release binaries", "/zh/troubleshooting/release-binaries/index.html"),
+                ("npm 安装", "/zh/install/npm/"),
+                ("Homebrew command not found", "/zh/troubleshooting/homebrew-command-not-found/"),
+                ("Release binaries", "/zh/troubleshooting/release-binaries/"),
             ],
             "examples": [
                 ("把拥有者和可见路径一起查", "command-not-found 的起点，是同时确认理论拥有者和当前 shell 是否真能看到那条路径。", "command -v deepseek || which deepseek\ndeepseek --version"),
@@ -597,9 +597,9 @@ PAGES = {
             ],
             "leave": "Leave this page once the brew-owned binary resolves first in the shell you actually use every day.",
             "links": [
-                ("Homebrew install", "/install/homebrew/index.html"),
-                ("Generic command not found", "/troubleshooting/command-not-found/index.html"),
-                ("Release binaries", "/troubleshooting/release-binaries/index.html"),
+                ("Homebrew install", "/install/homebrew/"),
+                ("Generic command not found", "/troubleshooting/command-not-found/"),
+                ("Release binaries", "/troubleshooting/release-binaries/"),
             ],
             "examples": [
                 ("Verify brew package presence before changing PATH", "Confirm the package exists in Homebrew first, then inspect whether the active shell exports the right brew prefix.", "brew list | rg deepseek-tui || true\ncommand -v deepseek || which deepseek"),
@@ -641,9 +641,9 @@ PAGES = {
             ],
             "leave": "当 brew 对应的二进制已经在你日常使用的 shell 里优先解析出来时，就可以离开这页了。",
             "links": [
-                ("Homebrew 安装", "/zh/install/homebrew/index.html"),
-                ("通用 command not found", "/zh/troubleshooting/command-not-found/index.html"),
-                ("Release binaries", "/zh/troubleshooting/release-binaries/index.html"),
+                ("Homebrew 安装", "/zh/install/homebrew/"),
+                ("通用 command not found", "/zh/troubleshooting/command-not-found/"),
+                ("Release binaries", "/zh/troubleshooting/release-binaries/"),
             ],
             "examples": [
                 ("先确认 brew 里真的有这个包，再动 PATH", "先证明确实装在 Homebrew 里，再去看当前 shell 有没有导出正确前缀。", "brew list | rg deepseek-tui || true\ncommand -v deepseek || which deepseek"),
@@ -688,9 +688,9 @@ PAGES = {
             ],
             "leave": "Leave this page once you know whether the failure belongs to the base stack, the MCP declaration, the server runtime, or your expectation of the tool surface.",
             "links": [
-                ("MCP setup", "/mcp/setup/index.html"),
-                ("MCP server examples", "/mcp/server-examples/index.html"),
-                ("Provider troubleshooting", "/troubleshooting/provider-troubleshooting/index.html"),
+                ("MCP setup", "/mcp/setup/"),
+                ("MCP server examples", "/mcp/server-examples/"),
+                ("Provider troubleshooting", "/troubleshooting/provider-troubleshooting/"),
             ],
             "examples": [
                 ("Run the same task without MCP first", "The quickest isolation move is to keep the task the same and remove MCP from the path.", "# run one narrow task without MCP\n# then retry after enabling one MCP server"),
@@ -733,9 +733,9 @@ PAGES = {
             ],
             "leave": "当你已经知道问题属于基础栈、MCP 声明、server 运行时，还是自己对 tool surface 的预期错误时，就可以离开这页了。",
             "links": [
-                ("MCP 设置", "/zh/mcp/setup/index.html"),
-                ("MCP server 示例", "/zh/mcp/server-examples/index.html"),
-                ("Provider 排错", "/zh/troubleshooting/provider-troubleshooting/index.html"),
+                ("MCP 设置", "/zh/mcp/setup/"),
+                ("MCP server 示例", "/zh/mcp/server-examples/"),
+                ("Provider 排错", "/zh/troubleshooting/provider-troubleshooting/"),
             ],
             "examples": [
                 ("先拿同一任务做一次无 MCP 对照", "隔离 MCP 最快的方法，就是让任务不变，只把 MCP 这一层拿掉。", "# 先在无 MCP 情况下跑一次窄任务\n# 再启用单个 MCP server 重跑"),
@@ -780,9 +780,9 @@ PAGES = {
             ],
             "leave": "Leave this page once you know whether the failure lives in credentials, provider selection, endpoint routing, or environment inheritance.",
             "links": [
-                ("Provider setup", "/config/provider-setup/index.html"),
-                ("API key setup", "/config/api-key/index.html"),
-                ("Environment variables", "/config/environment-variables/index.html"),
+                ("Provider setup", "/config/provider-setup/"),
+                ("API key setup", "/config/api-key/"),
+                ("Environment variables", "/config/environment-variables/"),
             ],
             "examples": [
                 ("Read the active provider stack before rotating keys", "Check provider name, endpoint, and current env overrides before you change credentials.", "# inspect config provider block\n# inspect active env overrides\n# only then test credentials"),
@@ -825,9 +825,9 @@ PAGES = {
             ],
             "leave": "当你已经知道问题属于凭证、provider 选择、endpoint 路由，还是环境变量继承时，就可以离开这页了。",
             "links": [
-                ("Provider 设置", "/zh/config/provider-setup/index.html"),
-                ("API Key 设置", "/zh/config/api-key/index.html"),
-                ("环境变量", "/zh/config/environment-variables/index.html"),
+                ("Provider 设置", "/zh/config/provider-setup/"),
+                ("API Key 设置", "/zh/config/api-key/"),
+                ("环境变量", "/zh/config/environment-variables/"),
             ],
             "examples": [
                 ("换 key 前先把当前 provider 栈读清楚", "先核对 provider 名称、endpoint 和环境变量覆盖，再决定要不要动凭证。", "# 先看配置里的 provider 块\n# 再看当前 env 覆盖\n# 最后才去测凭证"),
@@ -871,9 +871,9 @@ PAGES = {
             ],
             "leave": "Leave this page once you know whether manual binaries are the right fit and where the executable should live for your shell.",
             "links": [
-                ("Install hub", "/install/index.html"),
-                ("Command not found", "/troubleshooting/command-not-found/index.html"),
-                ("Update or upgrade", "/install/update-or-upgrade/index.html"),
+                ("Install hub", "/install/"),
+                ("Command not found", "/troubleshooting/command-not-found/"),
+                ("Update or upgrade", "/install/update-or-upgrade/"),
             ],
             "examples": [
                 ("Place the binary where the daily shell can really see it", "Manual binaries only count once the executable lives in a directory your normal terminal profile resolves first.", "# move binary into a shell-visible directory\n# reopen terminal and run command -v deepseek || which deepseek"),
@@ -915,9 +915,9 @@ PAGES = {
             ],
             "leave": "当你已经知道手动二进制是不是适合自己，以及它该放在哪里才能被 shell 稳定识别时，就可以离开这页了。",
             "links": [
-                ("安装总页", "/zh/install/index.html"),
-                ("command not found", "/zh/troubleshooting/command-not-found/index.html"),
-                ("更新与升级", "/zh/install/update-or-upgrade/index.html"),
+                ("安装总页", "/zh/install/"),
+                ("command not found", "/zh/troubleshooting/command-not-found/"),
+                ("更新与升级", "/zh/install/update-or-upgrade/"),
             ],
             "examples": [
                 ("把二进制放到日常 shell 真能看到的位置", "手动二进制只有在你平时真正用的终端 profile 里能稳定解析，才算真的装好。", "# 把 binary 放到 shell 可见目录\n# 重开终端后跑 command -v deepseek || which deepseek"),
@@ -961,9 +961,9 @@ PAGES = {
             ],
             "leave": "Leave this page once you can explain what DeepSeek TUI is in one sentence and know whether your next stop should be install, config, docs, modes, or comparisons.",
             "links": [
-                ("Install DeepSeek TUI", "/install/index.html"),
-                ("Configure DeepSeek TUI", "/config/index.html"),
-                ("Docs hub", "/docs/index.html"),
+                ("Install DeepSeek TUI", "/install/"),
+                ("Configure DeepSeek TUI", "/config/"),
+                ("Docs hub", "/docs/"),
             ],
             "examples": [
                 ("Describe the product in one operational sentence", "A useful first sentence usually mentions terminal work, files, shell actions, config, and structured agent behavior.", "# write one sentence that explains terminal agent workflow, not just 'AI chat'"),
@@ -1005,9 +1005,9 @@ PAGES = {
             ],
             "leave": "当你已经能用一句话解释 DeepSeek TUI 是什么，并且知道下一步该去 install、config、docs、modes 还是 comparisons 时，就可以离开这页了。",
             "links": [
-                ("安装总页", "/zh/install/index.html"),
-                ("配置总页", "/zh/config/index.html"),
-                ("Docs 总页", "/zh/docs/index.html"),
+                ("安装总页", "/zh/install/"),
+                ("配置总页", "/zh/config/"),
+                ("Docs 总页", "/zh/docs/"),
             ],
             "examples": [
                 ("用一句操作层的话把产品讲清楚", "更实用的第一句话，通常会同时提到终端工作、文件、shell 动作、配置和结构化代理行为。", "# 写一句能说明它是终端编码代理工作流，而不只是聊天壳的话"),

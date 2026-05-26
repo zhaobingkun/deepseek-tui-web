@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DeepSeek TUI 的 MCP 排错</title><meta name="description" content="排查 DeepSeek TUI 的 MCP 问题，先分清基础配置错误和 MCP server / tool 加载错误。"><link rel="canonical" href="https://deepseek-tui.app/zh/troubleshooting/mcp-troubleshooting/index.html"><meta name="robots" content="index, follow">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DeepSeek TUI 的 MCP 排错</title><meta name="description" content="排查 DeepSeek TUI 的 MCP 问题，先分清基础配置错误和 MCP server / tool 加载错误。"><link rel="canonical" href="https://deepseek-tui.app/zh/troubleshooting/mcp-troubleshooting/"><meta name="robots" content="index, follow">
   <meta property="og:title" content="DeepSeek TUI 的 MCP 排错">
   <meta property="og:description" content="排查 DeepSeek TUI 的 MCP 问题，先分清基础配置错误和 MCP server / tool 加载错误。">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://deepseek-tui.app/zh/troubleshooting/mcp-troubleshooting/index.html">
+  <meta property="og:url" content="https://deepseek-tui.app/zh/troubleshooting/mcp-troubleshooting/">
   <meta property="og:site_name" content="DeepSeek TUI Guide">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DeepSeek TUI 的 MCP 排错">
-  <meta name="twitter:description" content="排查 DeepSeek TUI 的 MCP 问题，先分清基础配置错误和 MCP server / tool 加载错误。">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/troubleshooting/mcp-troubleshooting/index.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/troubleshooting/mcp-troubleshooting/index.html">
+  <meta name="twitter:description" content="排查 DeepSeek TUI 的 MCP 问题，先分清基础配置错误和 MCP server / tool 加载错误。">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/troubleshooting/mcp-troubleshooting/">
+  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/troubleshooting/mcp-troubleshooting/">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -19,7 +19,7 @@
       "headline": "DeepSeek TUI 的 MCP 排错",
       "name": "DeepSeek TUI 的 MCP 排错",
       "description": "排查 DeepSeek TUI 的 MCP 问题，先分清基础配置错误和 MCP server / tool 加载错误。",
-      "url": "https://deepseek-tui.app/zh/troubleshooting/mcp-troubleshooting/index.html",
+      "url": "https://deepseek-tui.app/zh/troubleshooting/mcp-troubleshooting/",
       "inLanguage": "zh-CN"
     },
     {
@@ -29,19 +29,19 @@
           "@type": "ListItem",
           "position": 1,
           "name": "首页",
-          "item": "https://deepseek-tui.app/zh/index.html"
+          "item": "https://deepseek-tui.app/zh/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "排错",
-          "item": "https://deepseek-tui.app/zh/troubleshooting/index.html"
+          "item": "https://deepseek-tui.app/zh/troubleshooting/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "DeepSeek TUI 的 MCP 排错",
-          "item": "https://deepseek-tui.app/zh/troubleshooting/mcp-troubleshooting/index.html"
+          "item": "https://deepseek-tui.app/zh/troubleshooting/mcp-troubleshooting/"
         }
       ]
     }
@@ -49,9 +49,9 @@
 }
   </script>
 </head>
-<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/troubleshooting/index.html">排错</a><span>/</span><span>MCP 排错</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">MCP 排错</span><h1>只要把基础工具层和 server 层分开看，MCP 排错就会清楚很多</h1><p>MCP 问题很容易被过度诊断，因为它出现在栈的更高层。现实里，很多所谓 MCP 故障，其实还是安装、配置、provider 或 shell 层的问题，只是加了 server 以后才暴露出来。</p><div class="hero-points"><span>本页是站内详情页</span><span>DeepSeek TUI 的 MCP 排错</span><span>排错</span></div></div><aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>先证明基础 DeepSeek TUI 路线稳定，再去怪 MCP 层。</h2><p>如果安装、配置、provider 认证或 shell 行为本身都还不稳定，直接排 MCP 只会浪费时间，因为根因并不在 server 层。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页应该先回答的问题</h2><ul><li>不启用 MCP 时，基础工具本身是否工作正常？</li><li>server 是否以配置预期的方式被声明和启动？</li><li>你现在排的是 MCP server 问题，还是一个披着 MCP 外衣的更底层问题？</li></ul><h2>这页应该帮你判断什么</h2><p>这页要帮助用户按层排 MCP：基础安装、配置、server 声明、server 可达性，以及预期工具面。</p><h2>快速定位</h2><h3>基础工具层</h3><p>先确认不带 MCP 时应用也能正常工作，保证基础层是稳的。</p><h3>声明层</h3><p>检查 server 的配置路径、启动命令和环境变量是否真的和当前配置一致。</p><h3>可达层</h3><p>确认 server 能启动且持续存活，而不是刚起就挂。</p><h3>预期层</h3><p>别把没有暴露的能力误当成启动失败，要确认 server 原本承诺的 tool surface 是什么。</p></article><aside class="panel-card"><span class="panel-kicker">下一步最该去的页面</span><div class="link-stack"><a href="/zh/mcp/setup/index.html">MCP 设置</a><a href="/zh/mcp/server-examples/index.html">MCP server 示例</a><a href="/zh/troubleshooting/provider-troubleshooting/index.html">Provider 排错</a></div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose"><h2>逐步处理流程</h2><ol><li><strong>先跑非 MCP 基线</strong><br>如果不带 MCP 时工具已经不稳定，先修基础层。</li><li><strong>再看 server 声明</strong><br>核对配置文件里的 server 定义、命令和环境。</li><li><strong>验证 server 可用性</strong><br>确认 server 能正确启动并持续可用，而不是瞬间退出。</li><li><strong>比较预期与实际 tool surface</strong><br>缺少某个能力，不一定是故障，也可能只是 server 本来就没有提供。</li></ol><h2>常见误区</h2><ul><li>基础安装都没稳，就先把所有高级问题归咎于 MCP。</li><li>默认 server 会提供它从未承诺的工具或 schema。</li><li>只从客户端侧看问题，没有确认 server 启动层是否正常。</li></ul><h2>什么时候可以离开这页</h2><p>当你已经知道问题属于基础栈、MCP 声明、server 运行时，还是自己对 tool surface 的预期错误时，就可以离开这页了。</p></article><aside class="panel-card"><span class="panel-kicker">把这页当作正文页来用</span><p>这页的目标是直接回答当前这个具体问题，而不是只把你推回栏目页。适合已经明确分支、现在需要更清楚处理路径的时候打开。</p></aside></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>先拿同一任务做一次无 MCP 对照</h3><p>隔离 MCP 最快的方法，就是让任务不变，只把 MCP 这一层拿掉。</p><pre><code># 先在无 MCP 情况下跑一次窄任务
+<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/">首页</a><a href="/zh/guides/">指南</a><a href="/zh/docs/">文档</a><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a><a href="/zh/comparisons/">对比</a><a href="/zh/troubleshooting/">排错</a><a href="/">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/">首页</a><span>/</span><a href="/zh/troubleshooting/">排错</a><span>/</span><span>MCP 排错</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">MCP 排错</span><h1>只要把基础工具层和 server 层分开看，MCP 排错就会清楚很多</h1><p>MCP 问题很容易被过度诊断，因为它出现在栈的更高层。现实里，很多所谓 MCP 故障，其实还是安装、配置、provider 或 shell 层的问题，只是加了 server 以后才暴露出来。</p><div class="hero-points"><span>本页是站内详情页</span><span>DeepSeek TUI 的 MCP 排错</span><span>排错</span></div></div><aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>先证明基础 DeepSeek TUI 路线稳定，再去怪 MCP 层。</h2><p>如果安装、配置、provider 认证或 shell 行为本身都还不稳定，直接排 MCP 只会浪费时间，因为根因并不在 server 层。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页应该先回答的问题</h2><ul><li>不启用 MCP 时，基础工具本身是否工作正常？</li><li>server 是否以配置预期的方式被声明和启动？</li><li>你现在排的是 MCP server 问题，还是一个披着 MCP 外衣的更底层问题？</li></ul><h2>这页应该帮你判断什么</h2><p>这页要帮助用户按层排 MCP：基础安装、配置、server 声明、server 可达性，以及预期工具面。</p><h2>快速定位</h2><h3>基础工具层</h3><p>先确认不带 MCP 时应用也能正常工作，保证基础层是稳的。</p><h3>声明层</h3><p>检查 server 的配置路径、启动命令和环境变量是否真的和当前配置一致。</p><h3>可达层</h3><p>确认 server 能启动且持续存活，而不是刚起就挂。</p><h3>预期层</h3><p>别把没有暴露的能力误当成启动失败，要确认 server 原本承诺的 tool surface 是什么。</p></article><aside class="panel-card"><span class="panel-kicker">下一步最该去的页面</span><div class="link-stack"><a href="/zh/mcp/setup/">MCP 设置</a><a href="/zh/mcp/server-examples/">MCP server 示例</a><a href="/zh/troubleshooting/provider-troubleshooting/">Provider 排错</a></div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose"><h2>逐步处理流程</h2><ol><li><strong>先跑非 MCP 基线</strong><br>如果不带 MCP 时工具已经不稳定，先修基础层。</li><li><strong>再看 server 声明</strong><br>核对配置文件里的 server 定义、命令和环境。</li><li><strong>验证 server 可用性</strong><br>确认 server 能正确启动并持续可用，而不是瞬间退出。</li><li><strong>比较预期与实际 tool surface</strong><br>缺少某个能力，不一定是故障，也可能只是 server 本来就没有提供。</li></ol><h2>常见误区</h2><ul><li>基础安装都没稳，就先把所有高级问题归咎于 MCP。</li><li>默认 server 会提供它从未承诺的工具或 schema。</li><li>只从客户端侧看问题，没有确认 server 启动层是否正常。</li></ul><h2>什么时候可以离开这页</h2><p>当你已经知道问题属于基础栈、MCP 声明、server 运行时，还是自己对 tool surface 的预期错误时，就可以离开这页了。</p></article><aside class="panel-card"><span class="panel-kicker">把这页当作正文页来用</span><p>这页的目标是直接回答当前这个具体问题，而不是只把你推回栏目页。适合已经明确分支、现在需要更清楚处理路径的时候打开。</p></aside></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>先拿同一任务做一次无 MCP 对照</h3><p>隔离 MCP 最快的方法，就是让任务不变，只把 MCP 这一层拿掉。</p><pre><code># 先在无 MCP 情况下跑一次窄任务
 # 再启用单个 MCP server 重跑</code></pre></article><article class="detail-card"><h3>先查 server 声明，再猜客户端问题</h3><p>先确认 server 命令、路径和它承诺暴露的能力，再判断是不是客户端层异常。</p><pre><code># 检查 server 定义
-# 核对启动命令和预期 tool surface</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>基础 app 本身已经不稳</h3><p>那就不要先叫它 MCP bug。先把安装、配置或 provider 基线修稳。</p></article><article class="detail-card"><h3>server 启动了，但预期工具没有出现</h3><p>这可能不是启动失败，而是 server 能力面和你的预期不一致。</p></article></div></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a></div><div class="footer-links"><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
+# 核对启动命令和预期 tool surface</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>基础 app 本身已经不稳</h3><p>那就不要先叫它 MCP bug。先把安装、配置或 provider 基线修稳。</p></article><article class="detail-card"><h3>server 启动了，但预期工具没有出现</h3><p>这可能不是启动失败，而是 server 能力面和你的预期不一致。</p></article></div></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a></div><div class="footer-links"><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

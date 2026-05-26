@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>用 Homebrew 安装 DeepSeek TUI</title><meta name="description" content="当你的 macOS 终端工具本来就大量依赖 Homebrew 时，用 brew 安装 DeepSeek TUI 会更整洁。"><link rel="canonical" href="https://deepseek-tui.app/zh/install/homebrew/index.html"><meta name="robots" content="index, follow">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>用 Homebrew 安装 DeepSeek TUI</title><meta name="description" content="当你的 macOS 终端工具本来就大量依赖 Homebrew 时，用 brew 安装 DeepSeek TUI 会更整洁。"><link rel="canonical" href="https://deepseek-tui.app/zh/install/homebrew/"><meta name="robots" content="index, follow">
   <meta property="og:title" content="用 Homebrew 安装 DeepSeek TUI">
   <meta property="og:description" content="当你的 macOS 终端工具本来就大量依赖 Homebrew 时，用 brew 安装 DeepSeek TUI 会更整洁。">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://deepseek-tui.app/zh/install/homebrew/index.html">
+  <meta property="og:url" content="https://deepseek-tui.app/zh/install/homebrew/">
   <meta property="og:site_name" content="DeepSeek TUI Guide">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="用 Homebrew 安装 DeepSeek TUI">
-  <meta name="twitter:description" content="当你的 macOS 终端工具本来就大量依赖 Homebrew 时，用 brew 安装 DeepSeek TUI 会更整洁。">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/install/homebrew/index.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/install/homebrew/index.html">
+  <meta name="twitter:description" content="当你的 macOS 终端工具本来就大量依赖 Homebrew 时，用 brew 安装 DeepSeek TUI 会更整洁。">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/install/homebrew/">
+  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/install/homebrew/">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -19,7 +19,7 @@
       "headline": "用 Homebrew 安装 DeepSeek TUI",
       "name": "用 Homebrew 安装 DeepSeek TUI",
       "description": "了解什么时候适合用 Homebrew 安装 DeepSeek TUI，以及它和 npm、cargo 路线的差异。",
-      "url": "https://deepseek-tui.app/zh/install/homebrew/index.html",
+      "url": "https://deepseek-tui.app/zh/install/homebrew/",
       "inLanguage": "zh-CN"
     },
     {
@@ -29,19 +29,19 @@
           "@type": "ListItem",
           "position": 1,
           "name": "首页",
-          "item": "https://deepseek-tui.app/zh/index.html"
+          "item": "https://deepseek-tui.app/zh/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "安装",
-          "item": "https://deepseek-tui.app/zh/install/index.html"
+          "item": "https://deepseek-tui.app/zh/install/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "用 Homebrew 安装 DeepSeek TUI",
-          "item": "https://deepseek-tui.app/zh/install/homebrew/index.html"
+          "item": "https://deepseek-tui.app/zh/install/homebrew/"
         }
       ]
     }
@@ -49,12 +49,12 @@
 }
   </script>
 </head>
-<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/install/index.html">安装</a><span>/</span><span>Homebrew</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Homebrew 安装</span><h1>如果你的 macOS CLI 工具大多由 brew 管理，Homebrew 会是更整洁的 DeepSeek TUI 安装路线</h1><p>当 Homebrew 已经是你机器上的主要包管理层时，用它安装 DeepSeek TUI 可以让更新路径和二进制归属更清晰，而不是为了一个工具额外引入别的生态。</p><div class="hero-points"><span>本页是站内详情页</span><span>用 Homebrew 安装 DeepSeek TUI</span><span>安装</span></div></div><aside class="answer-card"><span class="panel-kicker">最快判断</span><h2>如果你更在意 macOS CLI 工具统一归 Homebrew 管理，brew 往往比最短命令更重要。</h2><p>只有在它真的是当前二进制拥有者时，brew 才最有价值；如果它和 npm、cargo 同时竞争 PATH，反而会更乱。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页能直接回答的问题</h2><ul><li>什么时候 Homebrew 真能简化 macOS 上的安装故事？</li><li>怎样避免 brew 和其他安装路径抢同一个二进制？</li><li>哪些检查能说明当前真的走的是 brew 路线？</li></ul><h2>做完后该核对什么</h2><ul><li>重开终端后验证 `deepseek --version`。</li><li>检查 `/opt/homebrew` 或 `/usr/local` 顺序是不是把别的二进制挡住了。</li><li>二进制路径没确认前，不要急着往 provider 和配置层排。</li></ul><h2>最常见的误区</h2><ul><li>只是觉得 brew 方便，就选它，但你机器上真正长期管理 CLI 的其实是别的路径。</li><li>用 brew 更新，但实际生效的二进制还来自 npm 或 cargo。</li><li>没核对路径，就先去排 provider 错误。</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/install/index.html">安装总页</a><a href="/zh/install/update-or-upgrade/index.html">更新与升级</a><a href="/zh/config/file-location/index.html">配置文件位置</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按当前问题走，再决定要不要切去相邻详情页或 hub。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>先确认 brew 自己稳定</h3><p>安装前先保证 `brew --version` 和你平时的 brew 安装流程本来就能正常工作。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>谁安装谁更新</h3><p>如果这次是 brew 安装，后面更新也尽量继续走 brew，不要半路改去 npm 或 cargo。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>核对当前二进制路径</h3><p>安装后马上查 shell 实际调用的是不是 brew 管理的二进制。</p></article></div></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>只通过 brew 安装并验证</h3><p>让包归属保持单一。安装、重开 shell，然后确认当前活跃二进制确实来自 brew。</p><pre><code>brew install deepseek-tui
+<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/">首页</a><a href="/zh/guides/">指南</a><a href="/zh/docs/">文档</a><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a><a href="/zh/comparisons/">对比</a><a href="/zh/troubleshooting/">排错</a><a href="/">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/">首页</a><span>/</span><a href="/zh/install/">安装</a><span>/</span><span>Homebrew</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Homebrew 安装</span><h1>如果你的 macOS CLI 工具大多由 brew 管理，Homebrew 会是更整洁的 DeepSeek TUI 安装路线</h1><p>当 Homebrew 已经是你机器上的主要包管理层时，用它安装 DeepSeek TUI 可以让更新路径和二进制归属更清晰，而不是为了一个工具额外引入别的生态。</p><div class="hero-points"><span>本页是站内详情页</span><span>用 Homebrew 安装 DeepSeek TUI</span><span>安装</span></div></div><aside class="answer-card"><span class="panel-kicker">最快判断</span><h2>如果你更在意 macOS CLI 工具统一归 Homebrew 管理，brew 往往比最短命令更重要。</h2><p>只有在它真的是当前二进制拥有者时，brew 才最有价值；如果它和 npm、cargo 同时竞争 PATH，反而会更乱。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页能直接回答的问题</h2><ul><li>什么时候 Homebrew 真能简化 macOS 上的安装故事？</li><li>怎样避免 brew 和其他安装路径抢同一个二进制？</li><li>哪些检查能说明当前真的走的是 brew 路线？</li></ul><h2>做完后该核对什么</h2><ul><li>重开终端后验证 `deepseek --version`。</li><li>检查 `/opt/homebrew` 或 `/usr/local` 顺序是不是把别的二进制挡住了。</li><li>二进制路径没确认前，不要急着往 provider 和配置层排。</li></ul><h2>最常见的误区</h2><ul><li>只是觉得 brew 方便，就选它，但你机器上真正长期管理 CLI 的其实是别的路径。</li><li>用 brew 更新，但实际生效的二进制还来自 npm 或 cargo。</li><li>没核对路径，就先去排 provider 错误。</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/install/">安装总页</a><a href="/zh/install/update-or-upgrade/">更新与升级</a><a href="/zh/config/file-location/">配置文件位置</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按当前问题走，再决定要不要切去相邻详情页或 hub。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>先确认 brew 自己稳定</h3><p>安装前先保证 `brew --version` 和你平时的 brew 安装流程本来就能正常工作。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>谁安装谁更新</h3><p>如果这次是 brew 安装，后面更新也尽量继续走 brew，不要半路改去 npm 或 cargo。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>核对当前二进制路径</h3><p>安装后马上查 shell 实际调用的是不是 brew 管理的二进制。</p></article></div></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>只通过 brew 安装并验证</h3><p>让包归属保持单一。安装、重开 shell，然后确认当前活跃二进制确实来自 brew。</p><pre><code>brew install deepseek-tui
 deepseek --version
 command -v deepseek || which deepseek</code></pre></article><article class="detail-card"><h3>检查当前生效的是哪条 Homebrew 前缀</h3><p>在 macOS 上，很多混乱都来自 `/opt/homebrew`、`/usr/local` 或别的包路径先赢。</p><pre><code>command -v deepseek || which deepseek
 # 对照解析到的路径是不是你的 brew 前缀</code></pre></article><article class="detail-card"><h3>先确认 brew 自己健康，再怪应用</h3><p>如果 brew 本身就有问题，先修它，不要把包管理器漂移误判成 DeepSeek TUI 安装问题。</p><pre><code>brew --version
 brew doctor
-brew list | rg deepseek-tui || true</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>brew 安装成功了，但命令仍然指向别处</h3><p>这说明 Homebrew 还不是当前拥有者。先修 PATH 顺序，不要先把问题归到 DeepSeek TUI。</p></article><article class="detail-card"><h3>当前已经是 brew 二进制，但请求还是失败</h3><p>那通常就不再是安装层问题了，直接去看 provider 设置或配置层。</p></article><article class="detail-card"><h3>`brew doctor` 在安装前就已经报很多问题</h3><p>先把它当成 Homebrew 环境债务处理。brew 基线不干净，后面的安装验证就不可靠。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/install/index.html">安装总页</a><a href="/zh/install/update-or-upgrade/index.html">更新与升级</a><a href="/zh/config/file-location/index.html">配置文件位置</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a></div><div class="footer-links"><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
+brew list | rg deepseek-tui || true</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>brew 安装成功了，但命令仍然指向别处</h3><p>这说明 Homebrew 还不是当前拥有者。先修 PATH 顺序，不要先把问题归到 DeepSeek TUI。</p></article><article class="detail-card"><h3>当前已经是 brew 二进制，但请求还是失败</h3><p>那通常就不再是安装层问题了，直接去看 provider 设置或配置层。</p></article><article class="detail-card"><h3>`brew doctor` 在安装前就已经报很多问题</h3><p>先把它当成 Homebrew 环境债务处理。brew 基线不干净，后面的安装验证就不可靠。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/install/">安装总页</a><a href="/zh/install/update-or-upgrade/">更新与升级</a><a href="/zh/config/file-location/">配置文件位置</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a></div><div class="footer-links"><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

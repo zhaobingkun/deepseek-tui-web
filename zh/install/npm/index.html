@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>用 npm 安装 DeepSeek TUI</title>
   <meta name="description" content="使用 npm 安装 DeepSeek TUI，并核对全局二进制、PATH 与最常见的 Node 安装问题。">
-  <link rel="canonical" href="https://deepseek-tui.app/zh/install/npm/index.html">
+  <link rel="canonical" href="https://deepseek-tui.app/zh/install/npm/">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="用 npm 安装 DeepSeek TUI">
   <meta property="og:description" content="使用 npm 安装 DeepSeek TUI，并核对全局二进制、PATH 与最常见的 Node 安装问题。">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://deepseek-tui.app/zh/install/npm/index.html">
+  <meta property="og:url" content="https://deepseek-tui.app/zh/install/npm/">
   <meta property="og:site_name" content="DeepSeek TUI 中文指南">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="用 npm 安装 DeepSeek TUI">
   <meta name="twitter:description" content="使用 npm 安装 DeepSeek TUI，并核对全局二进制、PATH 与最常见的 Node 安装问题。">
-  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/install/npm/index.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/install/npm/index.html">
+  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/install/npm/">
+  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/install/npm/">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="stylesheet" href="/assets/css/site.css">
   <script type="application/ld+json">
@@ -28,7 +28,7 @@
       "headline": "用 npm 安装 DeepSeek TUI",
       "name": "用 npm 安装 DeepSeek TUI",
       "description": "了解如何用 npm 安装 DeepSeek TUI，以及什么时候 Node 全局安装是最简单的路径。",
-      "url": "https://deepseek-tui.app/zh/install/npm/index.html",
+      "url": "https://deepseek-tui.app/zh/install/npm/",
       "inLanguage": "zh-CN"
     },
     {
@@ -38,19 +38,19 @@
           "@type": "ListItem",
           "position": 1,
           "name": "首页",
-          "item": "https://deepseek-tui.app/zh/index.html"
+          "item": "https://deepseek-tui.app/zh/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "安装",
-          "item": "https://deepseek-tui.app/zh/install/index.html"
+          "item": "https://deepseek-tui.app/zh/install/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "用 npm 安装 DeepSeek TUI",
-          "item": "https://deepseek-tui.app/zh/install/npm/index.html"
+          "item": "https://deepseek-tui.app/zh/install/npm/"
         }
       ]
     }
@@ -59,15 +59,15 @@
   </script>
 </head>
 <body>
-  <header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header>
-  <div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/install/index.html">安装</a><span>/</span><span>npm</span></div></div>
-  <main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">npm 安装</span><h1>当 Node 已经是你常用 CLI 工具链时，用 npm 安装 DeepSeek TUI 最顺</h1><p>如果你平时就通过 Node 管理终端工具，npm 路线通常最省事。它的问题不在命令本身，而在于你的 shell、全局 bin 路径和 Node 管理方式是否已经稳定。</p><div class="hero-points"><span>本页是站内详情页</span><span>用 npm 安装 DeepSeek TUI</span><span>安装</span></div></div><aside class="answer-card"><span class="panel-kicker">最快判断</span><h2>当你本来就习惯用 npm 管理全局 CLI，并且 PATH 健康时，npm 往往是最快的安装路径。</h2><p>如果 Node 环境本身就混乱，先修 Node，再装 DeepSeek TUI；否则你会把底层问题误判成工具问题。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页能直接回答的问题</h2><ul><li>什么时候该优先选 npm，而不是 cargo 或 Homebrew？</li><li>安装结束后最先该核对什么？</li><li>哪些失败其实是 Node PATH 问题，而不是 DeepSeek TUI 自己坏了？</li></ul><h2>做完后该核对什么</h2><ul><li>在新开的 shell 里跑 `deepseek --version`，不要只在当前安装窗口测试。</li><li>先确认 API Key 和 provider 配置是否准备好了，再判断是不是安装失败。</li><li>如果命令存在但行为异常，下一步应先查配置和环境变量。</li></ul><h2>最常见的误区</h2><ul><li>用一套 Node 管理方式安装，却在另一套 shell 环境里测试。</li><li>把 provider 认证报错误判成安装失败。</li><li>升级了 npm 包，却从来不核对 shell 实际调用的是哪个二进制。</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/config/index.html">配置总页</a><a href="/zh/config/api-key/index.html">API Key 设置</a><a href="/zh/troubleshooting/command-not-found/index.html">command not found 排错</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按当前问题走，再决定要不要切去相邻详情页或 hub。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>先确认运行时</h3><p>安装前先跑 `node --version` 和 `npm --version`。如果这一步就不稳，后面装工具只是把问题往后推。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>只保留一条全局安装路径</h3><p>尽量保持一条明确的全局 npm 安装路线，不要把系统 Node、nvm 和手动拷贝二进制混在一起。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>安装后立即查当前命令</h3><p>安装完成后就核对 `deepseek` 命令到底来自哪里，确保和你认为的 npm 路径一致。</p></article></div></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>最快的 npm 安装路径</h3><p>只保留一条全局 npm 路线，然后在新 shell 里验证，不要只相信安装窗口里的结果。</p><pre><code>npm install -g deepseek-tui
+  <header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/">首页</a><a href="/zh/guides/">指南</a><a href="/zh/docs/">文档</a><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a><a href="/zh/comparisons/">对比</a><a href="/zh/troubleshooting/">排错</a><a href="/">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header>
+  <div class="page-path"><div class="container"><a href="/zh/">首页</a><span>/</span><a href="/zh/install/">安装</a><span>/</span><span>npm</span></div></div>
+  <main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">npm 安装</span><h1>当 Node 已经是你常用 CLI 工具链时，用 npm 安装 DeepSeek TUI 最顺</h1><p>如果你平时就通过 Node 管理终端工具，npm 路线通常最省事。它的问题不在命令本身，而在于你的 shell、全局 bin 路径和 Node 管理方式是否已经稳定。</p><div class="hero-points"><span>本页是站内详情页</span><span>用 npm 安装 DeepSeek TUI</span><span>安装</span></div></div><aside class="answer-card"><span class="panel-kicker">最快判断</span><h2>当你本来就习惯用 npm 管理全局 CLI，并且 PATH 健康时，npm 往往是最快的安装路径。</h2><p>如果 Node 环境本身就混乱，先修 Node，再装 DeepSeek TUI；否则你会把底层问题误判成工具问题。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页能直接回答的问题</h2><ul><li>什么时候该优先选 npm，而不是 cargo 或 Homebrew？</li><li>安装结束后最先该核对什么？</li><li>哪些失败其实是 Node PATH 问题，而不是 DeepSeek TUI 自己坏了？</li></ul><h2>做完后该核对什么</h2><ul><li>在新开的 shell 里跑 `deepseek --version`，不要只在当前安装窗口测试。</li><li>先确认 API Key 和 provider 配置是否准备好了，再判断是不是安装失败。</li><li>如果命令存在但行为异常，下一步应先查配置和环境变量。</li></ul><h2>最常见的误区</h2><ul><li>用一套 Node 管理方式安装，却在另一套 shell 环境里测试。</li><li>把 provider 认证报错误判成安装失败。</li><li>升级了 npm 包，却从来不核对 shell 实际调用的是哪个二进制。</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/config/">配置总页</a><a href="/zh/config/api-key/">API Key 设置</a><a href="/zh/troubleshooting/command-not-found/">command not found 排错</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按当前问题走，再决定要不要切去相邻详情页或 hub。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>先确认运行时</h3><p>安装前先跑 `node --version` 和 `npm --version`。如果这一步就不稳，后面装工具只是把问题往后推。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>只保留一条全局安装路径</h3><p>尽量保持一条明确的全局 npm 安装路线，不要把系统 Node、nvm 和手动拷贝二进制混在一起。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>安装后立即查当前命令</h3><p>安装完成后就核对 `deepseek` 命令到底来自哪里，确保和你认为的 npm 路径一致。</p></article></div></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>最快的 npm 安装路径</h3><p>只保留一条全局 npm 路线，然后在新 shell 里验证，不要只相信安装窗口里的结果。</p><pre><code>npm install -g deepseek-tui
 deepseek --version
 command -v deepseek || which deepseek</code></pre></article><article class="detail-card"><h3>如果你本来就在用 nvm 或 fnm</h3><p>安装和验证都放在同一套 Node 管理器 shell 里完成，避免把不同运行时的包归属混在一起。</p><pre><code>node --version
 npm --version
 npm install -g deepseek-tui
-deepseek --version</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>安装命令成功了，但 `deepseek` 不存在</h3><p>这通常是 PATH 或 shell profile 问题，不是 npm 包本身失败。先去看 command-not-found 排错，不要先重装。</p></article><article class="detail-card"><h3>一个终端里能跑，另一个终端里不能跑</h3><p>说明 Node 管理器或 shell 启动文件在不同 terminal profile 里不一致。先比 shell，再动应用。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/config/index.html">配置总页</a><a href="/zh/config/api-key/index.html">API Key 设置</a><a href="/zh/troubleshooting/command-not-found/index.html">command not found 排错</a></div></aside></div></section></main>
-  <footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a></div><div class="footer-links"><a href="/zh/comparisons/index.html">对比</a><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer>
+deepseek --version</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>安装命令成功了，但 `deepseek` 不存在</h3><p>这通常是 PATH 或 shell profile 问题，不是 npm 包本身失败。先去看 command-not-found 排错，不要先重装。</p></article><article class="detail-card"><h3>一个终端里能跑，另一个终端里不能跑</h3><p>说明 Node 管理器或 shell 启动文件在不同 terminal profile 里不一致。先比 shell，再动应用。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/config/">配置总页</a><a href="/zh/config/api-key/">API Key 设置</a><a href="/zh/troubleshooting/command-not-found/">command not found 排错</a></div></aside></div></section></main>
+  <footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a></div><div class="footer-links"><a href="/zh/comparisons/">对比</a><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a></div></div></footer>
   <script src="/assets/js/site.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>

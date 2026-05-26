@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DeepSeek TUI 的 MCP Servers</title><meta name="description" content="把 DeepSeek TUI 的 MCP servers 看成工作流能力层，而不是只复制进配置的一串名字。"><link rel="canonical" href="https://deepseek-tui.app/zh/mcp/servers/index.html"><meta name="robots" content="index, follow">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DeepSeek TUI 的 MCP Servers</title><meta name="description" content="把 DeepSeek TUI 的 MCP servers 看成工作流能力层，而不是只复制进配置的一串名字。"><link rel="canonical" href="https://deepseek-tui.app/zh/mcp/servers/"><meta name="robots" content="index, follow">
   <meta property="og:title" content="DeepSeek TUI 的 MCP Servers">
   <meta property="og:description" content="把 DeepSeek TUI 的 MCP servers 看成工作流能力层，而不是只复制进配置的一串名字。">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://deepseek-tui.app/zh/mcp/servers/index.html">
+  <meta property="og:url" content="https://deepseek-tui.app/zh/mcp/servers/">
   <meta property="og:site_name" content="DeepSeek TUI Guide">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DeepSeek TUI 的 MCP Servers">
-  <meta name="twitter:description" content="把 DeepSeek TUI 的 MCP servers 看成工作流能力层，而不是只复制进配置的一串名字。">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/mcp/servers/index.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/mcp/servers/index.html">
+  <meta name="twitter:description" content="把 DeepSeek TUI 的 MCP servers 看成工作流能力层，而不是只复制进配置的一串名字。">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/mcp/servers/">
+  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/mcp/servers/">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -19,7 +19,7 @@
       "headline": "DeepSeek TUI MCP Servers",
       "name": "DeepSeek TUI MCP Servers",
       "description": "理解 DeepSeek TUI 里的 MCP servers 为什么值得单独看，以及它和基础 MCP 设置有什么区别。",
-      "url": "https://deepseek-tui.app/zh/mcp/servers/index.html",
+      "url": "https://deepseek-tui.app/zh/mcp/servers/",
       "inLanguage": "zh-CN"
     },
     {
@@ -29,19 +29,19 @@
           "@type": "ListItem",
           "position": 1,
           "name": "首页",
-          "item": "https://deepseek-tui.app/zh/index.html"
+          "item": "https://deepseek-tui.app/zh/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "MCP",
-          "item": "https://deepseek-tui.app/zh/mcp/index.html"
+          "item": "https://deepseek-tui.app/zh/mcp/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "DeepSeek TUI MCP Servers",
-          "item": "https://deepseek-tui.app/zh/mcp/servers/index.html"
+          "item": "https://deepseek-tui.app/zh/mcp/servers/"
         }
       ]
     }
@@ -49,9 +49,9 @@
 }
   </script>
 </head>
-<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/mcp/index.html">MCP</a><span>/</span><span>Servers</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">MCP Servers</span><h1>只有把每个 MCP server 映射回真实工作流缺口，DeepSeek TUI 的 MCP servers 才算真正有用</h1><p>一个 server 列表本身并不值钱。真正的问题是：它补的是哪类上下文、哪类动作能力、哪类流程速度，以及这份收益值不值得额外的信任和维护成本。</p><div class="hero-points"><span>本页是站内详情页</span><span>DeepSeek TUI 的 MCP Servers</span><span>MCP</span></div></div><aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>评估 MCP server 时，先看它补上的工作流能力，而不是先看名字是否新鲜。</h2><p>好的 server 能补真实缺口；不合适的 server 只会给系统加一层复杂度和失败源。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页能直接回答的问题</h2><ul><li>一个 MCP server 到底补上了哪类工作流缺口？</li><li>怎么区分上下文型、动作型和便利型 server？</li><li>什么时候一个 server 值得承担额外的信任和维护成本？</li></ul><h2>做完后该核对什么</h2><ul><li>这个工作流能不能先用普通提示词或内建工具解决？</li><li>这个 server 补的是实质能力，还是只是看起来高级？</li><li>它如果不可用，你是否知道系统应当如何退回？</li></ul><h2>最常见的误区</h2><ul><li>因为示例看起来有趣，就不断堆 server。</li><li>默认所有 server 都同样可信。</li><li>只加能力，不写失败预期和退路。</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/mcp/setup/index.html">MCP 设置</a><a href="/zh/mcp/server-examples/index.html">server examples</a><a href="/zh/docs/tool-surface/index.html">工具边界文档</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按当前问题走，再决定要不要切去相邻详情页或 hub。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>从任务出发选 server</h3><p>先从工作流需求出发，再决定要不要上对应 server。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>按能力分组</h3><p>把 server 分成上下文扩展、动作执行和速度/便利三类来比较。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>把信任边界写出来</h3><p>每多一个 server，就多一层操作边界，这个代价要在一开始就看见。</p></article></div></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>按工作职能分组，不按热度分组</h3><p>先写清楚一个 server 到底是在补上下文、执行动作，还是只是增加便利，再决定要不要接进去。</p><pre><code># 先按工作流收益给每个候选 server 分类
+<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/">首页</a><a href="/zh/guides/">指南</a><a href="/zh/docs/">文档</a><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a><a href="/zh/comparisons/">对比</a><a href="/zh/troubleshooting/">排错</a><a href="/">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/">首页</a><span>/</span><a href="/zh/mcp/">MCP</a><span>/</span><span>Servers</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">MCP Servers</span><h1>只有把每个 MCP server 映射回真实工作流缺口，DeepSeek TUI 的 MCP servers 才算真正有用</h1><p>一个 server 列表本身并不值钱。真正的问题是：它补的是哪类上下文、哪类动作能力、哪类流程速度，以及这份收益值不值得额外的信任和维护成本。</p><div class="hero-points"><span>本页是站内详情页</span><span>DeepSeek TUI 的 MCP Servers</span><span>MCP</span></div></div><aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>评估 MCP server 时，先看它补上的工作流能力，而不是先看名字是否新鲜。</h2><p>好的 server 能补真实缺口；不合适的 server 只会给系统加一层复杂度和失败源。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页能直接回答的问题</h2><ul><li>一个 MCP server 到底补上了哪类工作流缺口？</li><li>怎么区分上下文型、动作型和便利型 server？</li><li>什么时候一个 server 值得承担额外的信任和维护成本？</li></ul><h2>做完后该核对什么</h2><ul><li>这个工作流能不能先用普通提示词或内建工具解决？</li><li>这个 server 补的是实质能力，还是只是看起来高级？</li><li>它如果不可用，你是否知道系统应当如何退回？</li></ul><h2>最常见的误区</h2><ul><li>因为示例看起来有趣，就不断堆 server。</li><li>默认所有 server 都同样可信。</li><li>只加能力，不写失败预期和退路。</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/mcp/setup/">MCP 设置</a><a href="/zh/mcp/server-examples/">server examples</a><a href="/zh/docs/tool-surface/">工具边界文档</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按当前问题走，再决定要不要切去相邻详情页或 hub。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>从任务出发选 server</h3><p>先从工作流需求出发，再决定要不要上对应 server。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>按能力分组</h3><p>把 server 分成上下文扩展、动作执行和速度/便利三类来比较。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>把信任边界写出来</h3><p>每多一个 server，就多一层操作边界，这个代价要在一开始就看见。</p></article></div></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>按工作职能分组，不按热度分组</h3><p>先写清楚一个 server 到底是在补上下文、执行动作，还是只是增加便利，再决定要不要接进去。</p><pre><code># 先按工作流收益给每个候选 server 分类
 # 只留下真正补缺口的</code></pre></article><article class="detail-card"><h3>一个 server 只对照一个真实任务</h3><p>有价值的 server 应该能明确改善一类任务，而不是只让配置看起来更高级。</p><pre><code># 先加一个 server
-# 用一个明确需要该能力的任务做验证</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>server 越加越多，但工作流并没有更顺</h3><p>这通常说明你在收集能力名词，而不是在解决真实任务缺口。先回到工作流本身重判。</p></article><article class="detail-card"><h3>你已经说不清到底是哪个 server 在导致失败</h3><p>说明栈已经太宽了。先退回到单 server，再一层一层加回来。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/mcp/setup/index.html">MCP 设置</a><a href="/zh/mcp/server-examples/index.html">server examples</a><a href="/zh/docs/tool-surface/index.html">工具边界文档</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/mcp/index.html">MCP</a><a href="/zh/skills/index.html">技能</a></div><div class="footer-links"><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
+# 用一个明确需要该能力的任务做验证</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>server 越加越多，但工作流并没有更顺</h3><p>这通常说明你在收集能力名词，而不是在解决真实任务缺口。先回到工作流本身重判。</p></article><article class="detail-card"><h3>你已经说不清到底是哪个 server 在导致失败</h3><p>说明栈已经太宽了。先退回到单 server，再一层一层加回来。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/mcp/setup/">MCP 设置</a><a href="/zh/mcp/server-examples/">server examples</a><a href="/zh/docs/tool-surface/">工具边界文档</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/mcp/">MCP</a><a href="/zh/skills/">技能</a></div><div class="footer-links"><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

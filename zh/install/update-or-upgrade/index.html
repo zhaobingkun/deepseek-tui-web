@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>更新或升级 DeepSeek TUI</title><meta name="description" content="通过当前真正拥有活跃二进制的包路径，安全地更新或升级 DeepSeek TUI。"><link rel="canonical" href="https://deepseek-tui.app/zh/install/update-or-upgrade/index.html"><meta name="robots" content="index, follow">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>更新或升级 DeepSeek TUI</title><meta name="description" content="通过当前真正拥有活跃二进制的包路径，安全地更新或升级 DeepSeek TUI。"><link rel="canonical" href="https://deepseek-tui.app/zh/install/update-or-upgrade/"><meta name="robots" content="index, follow">
   <meta property="og:title" content="更新或升级 DeepSeek TUI">
   <meta property="og:description" content="通过当前真正拥有活跃二进制的包路径，安全地更新或升级 DeepSeek TUI。">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://deepseek-tui.app/zh/install/update-or-upgrade/index.html">
+  <meta property="og:url" content="https://deepseek-tui.app/zh/install/update-or-upgrade/">
   <meta property="og:site_name" content="DeepSeek TUI Guide">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="更新或升级 DeepSeek TUI">
-  <meta name="twitter:description" content="通过当前真正拥有活跃二进制的包路径，安全地更新或升级 DeepSeek TUI。">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/install/update-or-upgrade/index.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/install/update-or-upgrade/index.html">
+  <meta name="twitter:description" content="通过当前真正拥有活跃二进制的包路径，安全地更新或升级 DeepSeek TUI。">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/install/update-or-upgrade/">
+  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/install/update-or-upgrade/">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -19,7 +19,7 @@
       "headline": "如何更新或升级 DeepSeek TUI",
       "name": "如何更新或升级 DeepSeek TUI",
       "description": "根据 npm、cargo、Homebrew 或二进制安装路径，理解 DeepSeek TUI 的更新与升级方式。",
-      "url": "https://deepseek-tui.app/zh/install/update-or-upgrade/index.html",
+      "url": "https://deepseek-tui.app/zh/install/update-or-upgrade/",
       "inLanguage": "zh-CN"
     },
     {
@@ -29,19 +29,19 @@
           "@type": "ListItem",
           "position": 1,
           "name": "首页",
-          "item": "https://deepseek-tui.app/zh/index.html"
+          "item": "https://deepseek-tui.app/zh/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "安装",
-          "item": "https://deepseek-tui.app/zh/install/index.html"
+          "item": "https://deepseek-tui.app/zh/install/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "如何更新或升级 DeepSeek TUI",
-          "item": "https://deepseek-tui.app/zh/install/update-or-upgrade/index.html"
+          "item": "https://deepseek-tui.app/zh/install/update-or-upgrade/"
         }
       ]
     }
@@ -49,9 +49,9 @@
 }
   </script>
 </head>
-<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/install/index.html">安装</a><span>/</span><span>更新与升级</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">更新与升级</span><h1>只有先搞清楚当前活跃二进制到底归谁管，更新 DeepSeek TUI 才会简单</h1><p>大多数升级混乱都来自重复安装和遗留 PATH。正确的升级命令不是放之四海而皆准的，它取决于现在 shell 第一个解析到的 `deepseek` 命令到底来自哪条包管理路径。</p><div class="hero-points"><span>本页是站内详情页</span><span>更新或升级 DeepSeek TUI</span><span>安装</span></div></div><aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>始终通过当前真正拥有活跃二进制的那条安装路径来更新 DeepSeek TUI。</h2><p>如果最初是 npm 安装，就先继续用 npm；如果是 cargo 或 Homebrew，也优先留在原生态，除非你明确在迁移并清理旧路径。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页能直接回答的问题</h2><ul><li>怎么判断当前到底是哪条包路径在拥有这个二进制？</li><li>什么时候升级问题其实是重复安装问题？</li><li>升级完成后第一时间该核对什么？</li></ul><h2>做完后该核对什么</h2><ul><li>在新 shell 中确认 `deepseek --version` 已经变化。</li><li>检查旧安装路径是不是仍然排在 PATH 前面。</li><li>如果升级后行为异常，下一步先看配置兼容，而不是盲目重装。</li></ul><h2>最常见的误区</h2><ul><li>当前生效的是 cargo 或 brew，却跑了 npm 更新。</li><li>几个升级命令一起跑，最后自己都不清楚 PATH 是谁赢了。</li><li>把升级问题都归因于包管理器，而真正坏掉的是配置漂移。</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/install/index.html">安装总页</a><a href="/zh/config/reset/index.html">配置重置</a><a href="/zh/troubleshooting/release-binaries/index.html">Release binaries 排错</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按当前问题走，再决定要不要切去相邻详情页或 hub。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>先找出当前拥有者</h3><p>任何升级命令之前，先确认现在的 `deepseek` 到底来自 npm、cargo、Homebrew 还是手动二进制。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>一次只走一条更新路径</h3><p>先在当前拥有者生态里更新，不要几个包管理器一起乱跑。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>重开 shell 再核对</h3><p>升级后重开终端，再查一次版本，避免把缓存或 PATH 顺序误判成升级成功。</p></article></div></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>谁安装谁更新</h3><p>不要几个包管理器一起跑更新。先确认当前活跃二进制到底归谁管。</p><pre><code>deepseek --version
+<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/">首页</a><a href="/zh/guides/">指南</a><a href="/zh/docs/">文档</a><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a><a href="/zh/comparisons/">对比</a><a href="/zh/troubleshooting/">排错</a><a href="/">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/">首页</a><span>/</span><a href="/zh/install/">安装</a><span>/</span><span>更新与升级</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">更新与升级</span><h1>只有先搞清楚当前活跃二进制到底归谁管，更新 DeepSeek TUI 才会简单</h1><p>大多数升级混乱都来自重复安装和遗留 PATH。正确的升级命令不是放之四海而皆准的，它取决于现在 shell 第一个解析到的 `deepseek` 命令到底来自哪条包管理路径。</p><div class="hero-points"><span>本页是站内详情页</span><span>更新或升级 DeepSeek TUI</span><span>安装</span></div></div><aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>始终通过当前真正拥有活跃二进制的那条安装路径来更新 DeepSeek TUI。</h2><p>如果最初是 npm 安装，就先继续用 npm；如果是 cargo 或 Homebrew，也优先留在原生态，除非你明确在迁移并清理旧路径。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页能直接回答的问题</h2><ul><li>怎么判断当前到底是哪条包路径在拥有这个二进制？</li><li>什么时候升级问题其实是重复安装问题？</li><li>升级完成后第一时间该核对什么？</li></ul><h2>做完后该核对什么</h2><ul><li>在新 shell 中确认 `deepseek --version` 已经变化。</li><li>检查旧安装路径是不是仍然排在 PATH 前面。</li><li>如果升级后行为异常，下一步先看配置兼容，而不是盲目重装。</li></ul><h2>最常见的误区</h2><ul><li>当前生效的是 cargo 或 brew，却跑了 npm 更新。</li><li>几个升级命令一起跑，最后自己都不清楚 PATH 是谁赢了。</li><li>把升级问题都归因于包管理器，而真正坏掉的是配置漂移。</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/install/">安装总页</a><a href="/zh/config/reset/">配置重置</a><a href="/zh/troubleshooting/release-binaries/">Release binaries 排错</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按当前问题走，再决定要不要切去相邻详情页或 hub。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>先找出当前拥有者</h3><p>任何升级命令之前，先确认现在的 `deepseek` 到底来自 npm、cargo、Homebrew 还是手动二进制。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>一次只走一条更新路径</h3><p>先在当前拥有者生态里更新，不要几个包管理器一起乱跑。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>重开 shell 再核对</h3><p>升级后重开终端，再查一次版本，避免把缓存或 PATH 顺序误判成升级成功。</p></article></div></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>谁安装谁更新</h3><p>不要几个包管理器一起跑更新。先确认当前活跃二进制到底归谁管。</p><pre><code>deepseek --version
 command -v deepseek || which deepseek
-# 再走对应的那条更新路径</code></pre></article><article class="detail-card"><h3>重开 shell 以后再核对</h3><p>只有在新终端里解析到的还是同一个二进制、而且版本已经变了，这次升级才算真的完成。</p><pre><code>deepseek --version</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>你更新了，但版本号没变</h3><p>通常说明你更新的是错误的拥有者，或者旧二进制还排在 PATH 前面。</p></article><article class="detail-card"><h3>版本号变了，但行为变怪了</h3><p>这往往不是包管理器坏了，而是升级后配置或 provider 预期漂移。下一步去看配置兼容。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/install/index.html">安装总页</a><a href="/zh/config/reset/index.html">配置重置</a><a href="/zh/troubleshooting/release-binaries/index.html">Release binaries 排错</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a></div><div class="footer-links"><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
+# 再走对应的那条更新路径</code></pre></article><article class="detail-card"><h3>重开 shell 以后再核对</h3><p>只有在新终端里解析到的还是同一个二进制、而且版本已经变了，这次升级才算真的完成。</p><pre><code>deepseek --version</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>你更新了，但版本号没变</h3><p>通常说明你更新的是错误的拥有者，或者旧二进制还排在 PATH 前面。</p></article><article class="detail-card"><h3>版本号变了，但行为变怪了</h3><p>这往往不是包管理器坏了，而是升级后配置或 provider 预期漂移。下一步去看配置兼容。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/install/">安装总页</a><a href="/zh/config/reset/">配置重置</a><a href="/zh/troubleshooting/release-binaries/">Release binaries 排错</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a></div><div class="footer-links"><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

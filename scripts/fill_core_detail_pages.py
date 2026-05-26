@@ -54,9 +54,9 @@ PAGES = {
             "Updating npm packages but never checking which binary your shell actually calls.",
         ],
         "links": [
-            ("Config hub", "/config/index.html"),
-            ("API key setup", "/config/api-key/index.html"),
-            ("Command not found troubleshooting", "/troubleshooting/command-not-found/index.html"),
+            ("Config hub", "/config/"),
+            ("API key setup", "/config/api-key/"),
+            ("Command not found troubleshooting", "/troubleshooting/command-not-found/"),
         ],
         "examples": [
             ("Fastest npm install path", "Use one global npm route, then verify the command from a fresh shell instead of trusting the install window only.", "npm install -g deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
@@ -95,9 +95,9 @@ PAGES = {
             "升级了 npm 包，却从来不核对 shell 实际调用的是哪个二进制。",
         ],
         "zh_links": [
-            ("配置总页", "/zh/config/index.html"),
-            ("API Key 设置", "/zh/config/api-key/index.html"),
-            ("command not found 排错", "/zh/troubleshooting/command-not-found/index.html"),
+            ("配置总页", "/zh/config/"),
+            ("API Key 设置", "/zh/config/api-key/"),
+            ("command not found 排错", "/zh/troubleshooting/command-not-found/"),
         ],
         "zh_examples": [
             ("最快的 npm 安装路径", "只保留一条全局 npm 路线，然后在新 shell 里验证，不要只相信安装窗口里的结果。", "npm install -g deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
@@ -138,9 +138,9 @@ PAGES = {
             "Assuming a successful cargo build means provider configuration is also ready.",
         ],
         "links": [
-            ("Install hub", "/install/index.html"),
-            ("Update or upgrade", "/install/update-or-upgrade/index.html"),
-            ("Provider setup", "/config/provider-setup/index.html"),
+            ("Install hub", "/install/"),
+            ("Update or upgrade", "/install/update-or-upgrade/"),
+            ("Provider setup", "/config/provider-setup/"),
         ],
         "examples": [
             ("Verify cargo owns the binary you are about to trust", "Before you debug the app, prove that the Rust toolchain and the resolved binary path line up in the same shell.", "cargo --version\ncargo install deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
@@ -181,9 +181,9 @@ PAGES = {
             "把 cargo 编译成功误解成整套配置也已经完成。",
         ],
         "zh_links": [
-            ("安装总页", "/zh/install/index.html"),
-            ("更新与升级", "/zh/install/update-or-upgrade/index.html"),
-            ("provider 设置", "/zh/config/provider-setup/index.html"),
+            ("安装总页", "/zh/install/"),
+            ("更新与升级", "/zh/install/update-or-upgrade/"),
+            ("provider 设置", "/zh/config/provider-setup/"),
         ],
         "zh_examples": [
             ("先确认 cargo 真是当前拥有者", "在排 app 之前，先证明 Rust 工具链和当前解析到的二进制路径是在同一个 shell 里对齐的。", "cargo --version\ncargo install deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
@@ -226,9 +226,9 @@ PAGES = {
             "Debugging provider issues before confirming the binary path.",
         ],
         "links": [
-            ("Install hub", "/install/index.html"),
-            ("Update or upgrade", "/install/update-or-upgrade/index.html"),
-            ("Config file location", "/config/file-location/index.html"),
+            ("Install hub", "/install/"),
+            ("Update or upgrade", "/install/update-or-upgrade/"),
+            ("Config file location", "/config/file-location/"),
         ],
         "examples": [
             ("Install and verify through brew only", "Keep package ownership obvious. Install, reopen the shell, then confirm the same brew-managed binary is active.", "brew install deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
@@ -269,9 +269,9 @@ PAGES = {
             "没核对路径，就先去排 provider 错误。",
         ],
         "zh_links": [
-            ("安装总页", "/zh/install/index.html"),
-            ("更新与升级", "/zh/install/update-or-upgrade/index.html"),
-            ("配置文件位置", "/zh/config/file-location/index.html"),
+            ("安装总页", "/zh/install/"),
+            ("更新与升级", "/zh/install/update-or-upgrade/"),
+            ("配置文件位置", "/zh/config/file-location/"),
         ],
         "zh_examples": [
             ("只通过 brew 安装并验证", "让包归属保持单一。安装、重开 shell，然后确认当前活跃二进制确实来自 brew。", "brew install deepseek-tui\ndeepseek --version\ncommand -v deepseek || which deepseek"),
@@ -314,9 +314,9 @@ PAGES = {
             "Assuming one successful run means the PATH is fixed for all terminal profiles.",
         ],
         "links": [
-            ("Install hub", "/install/index.html"),
-            ("npm install guide", "/install/npm/index.html"),
-            ("Command not found troubleshooting", "/troubleshooting/command-not-found/index.html"),
+            ("Install hub", "/install/"),
+            ("npm install guide", "/install/npm/"),
+            ("Command not found troubleshooting", "/troubleshooting/command-not-found/"),
         ],
         "examples": [
             ("Test in the shell you really use for work", "Windows setup only counts in the shell that will own your daily workflow, not just the shell where installation happened to succeed once.", "deepseek --version\nwhere deepseek"),
@@ -357,9 +357,9 @@ PAGES = {
             "只因为某一次运行成功，就以为所有终端 profile 都修好了。",
         ],
         "zh_links": [
-            ("安装总页", "/zh/install/index.html"),
-            ("npm 安装", "/zh/install/npm/index.html"),
-            ("command not found 排错", "/zh/troubleshooting/command-not-found/index.html"),
+            ("安装总页", "/zh/install/"),
+            ("npm 安装", "/zh/install/npm/"),
+            ("command not found 排错", "/zh/troubleshooting/command-not-found/"),
         ],
         "zh_examples": [
             ("一定在你真实工作的 shell 里测试", "Windows 安装是否成功，只在你日常真正工作的 shell 里才算数，不是某个安装窗口里跑通一次就结束。", "deepseek --version\nwhere deepseek"),
@@ -402,9 +402,9 @@ PAGES = {
             "Assuming upgrade problems are package-manager issues when the real break is config drift.",
         ],
         "links": [
-            ("Install hub", "/install/index.html"),
-            ("Config reset", "/config/reset/index.html"),
-            ("Release binaries troubleshooting", "/troubleshooting/release-binaries/index.html"),
+            ("Install hub", "/install/"),
+            ("Config reset", "/config/reset/"),
+            ("Release binaries troubleshooting", "/troubleshooting/release-binaries/"),
         ],
         "examples": [
             ("Upgrade the same owner you installed with", "Do not shotgun-update every package manager. First work out which route actually owns the live binary.", "deepseek --version\ncommand -v deepseek || which deepseek\n# then update through the matching package route"),
@@ -443,9 +443,9 @@ PAGES = {
             "把升级问题都归因于包管理器，而真正坏掉的是配置漂移。",
         ],
         "zh_links": [
-            ("安装总页", "/zh/install/index.html"),
-            ("配置重置", "/zh/config/reset/index.html"),
-            ("Release binaries 排错", "/zh/troubleshooting/release-binaries/index.html"),
+            ("安装总页", "/zh/install/"),
+            ("配置重置", "/zh/config/reset/"),
+            ("Release binaries 排错", "/zh/troubleshooting/release-binaries/"),
         ],
         "zh_examples": [
             ("谁安装谁更新", "不要几个包管理器一起跑更新。先确认当前活跃二进制到底归谁管。", "deepseek --version\ncommand -v deepseek || which deepseek\n# 再走对应的那条更新路径"),
@@ -486,9 +486,9 @@ PAGES = {
             "Assuming an auth error means the binary install is broken.",
         ],
         "links": [
-            ("Provider setup", "/config/provider-setup/index.html"),
-            ("Environment variables", "/config/environment-variables/index.html"),
-            ("Provider troubleshooting", "/troubleshooting/provider-troubleshooting/index.html"),
+            ("Provider setup", "/config/provider-setup/"),
+            ("Environment variables", "/config/environment-variables/"),
+            ("Provider troubleshooting", "/troubleshooting/provider-troubleshooting/"),
         ],
         "examples": [
             ("Environment-first auth check", "Keep the first pass simple: one credential source, one shell, one live request path.", "export DEEPSEEK_API_KEY=\"your-key-here\"\ndeepseek"),
@@ -527,9 +527,9 @@ PAGES = {
             "把认证错误误判成二进制安装坏了。",
         ],
         "zh_links": [
-            ("provider 设置", "/zh/config/provider-setup/index.html"),
-            ("环境变量", "/zh/config/environment-variables/index.html"),
-            ("provider 排错", "/zh/troubleshooting/provider-troubleshooting/index.html"),
+            ("provider 设置", "/zh/config/provider-setup/"),
+            ("环境变量", "/zh/config/environment-variables/"),
+            ("provider 排错", "/zh/troubleshooting/provider-troubleshooting/"),
         ],
         "zh_examples": [
             ("先走环境变量认证验证", "第一轮先只保留一个清楚的凭据来源，这样最容易判断失败是不是卡在认证层。", "export DEEPSEEK_API_KEY=\"your-key-here\"\ndeepseek"),
@@ -570,9 +570,9 @@ PAGES = {
             "Using env overrides permanently when a stable config file would be easier to reason about.",
         ],
         "links": [
-            ("API key setup", "/config/api-key/index.html"),
-            ("Config file location", "/config/file-location/index.html"),
-            ("Config reset", "/config/reset/index.html"),
+            ("API key setup", "/config/api-key/"),
+            ("Config file location", "/config/file-location/"),
+            ("Config reset", "/config/reset/"),
         ],
         "examples": [
             ("Check what the current shell really exports", "List the relevant values before you edit config files, especially if different terminals behave differently.", "echo \"$DEEPSEEK_API_KEY\"\n# inspect any provider-related exports in the current shell"),
@@ -611,9 +611,9 @@ PAGES = {
             "长期用环境变量顶着，明明写进稳定配置文件会更好理解。",
         ],
         "zh_links": [
-            ("API Key 设置", "/zh/config/api-key/index.html"),
-            ("配置文件位置", "/zh/config/file-location/index.html"),
-            ("配置重置", "/zh/config/reset/index.html"),
+            ("API Key 设置", "/zh/config/api-key/"),
+            ("配置文件位置", "/zh/config/file-location/"),
+            ("配置重置", "/zh/config/reset/"),
         ],
         "zh_examples": [
             ("先看当前 shell 到底导出了什么", "尤其当不同终端行为不一致时，先把相关值列出来，再动配置文件。", "echo \"$DEEPSEEK_API_KEY\"\n# 再检查当前 shell 里的 provider 相关导出"),
@@ -654,9 +654,9 @@ PAGES = {
             "Changing many values before confirming the correct file path.",
         ],
         "links": [
-            ("Environment variables", "/config/environment-variables/index.html"),
-            ("Config reset", "/config/reset/index.html"),
-            ("Provider setup", "/config/provider-setup/index.html"),
+            ("Environment variables", "/config/environment-variables/"),
+            ("Config reset", "/config/reset/"),
+            ("Provider setup", "/config/provider-setup/"),
         ],
         "examples": [
             ("Locate the file before you edit values", "The safest first move is to prove which config file exists and which path you are about to change.", "find ~ -name '*deepseek*' 2>/dev/null | head\n# compare candidates before editing anything"),
@@ -697,9 +697,9 @@ PAGES = {
             "在没确认路径前，一次改太多值。",
         ],
         "zh_links": [
-            ("环境变量", "/zh/config/environment-variables/index.html"),
-            ("配置重置", "/zh/config/reset/index.html"),
-            ("provider 设置", "/zh/config/provider-setup/index.html"),
+            ("环境变量", "/zh/config/environment-variables/"),
+            ("配置重置", "/zh/config/reset/"),
+            ("provider 设置", "/zh/config/provider-setup/"),
         ],
         "zh_examples": [
             ("先找文件，再改值", "最稳的第一步不是调参数，而是先证明机器上到底有哪些配置文件候选，以及你准备改的是哪一份。", "find ~ -name '*deepseek*' 2>/dev/null | head\n# 改任何值前先对照候选路径"),
@@ -742,9 +742,9 @@ PAGES = {
             "Assuming the fastest mode and the cheapest usage pattern are always the same thing.",
         ],
         "links": [
-            ("Provider setup", "/config/provider-setup/index.html"),
-            ("Plan vs yolo", "/modes/plan-vs-yolo/index.html"),
-            ("Pricing and cost guide", "/guides/pricing-and-cost/index.html"),
+            ("Provider setup", "/config/provider-setup/"),
+            ("Plan vs yolo", "/modes/plan-vs-yolo/"),
+            ("Pricing and cost guide", "/guides/pricing-and-cost/"),
         ],
         "examples": [
             ("Compare cost under the same workflow shape", "If you want a useful comparison, keep the task shape stable while you compare provider choice or mode choice.", "# run the same style of task\n# compare provider and mode decisions, not two unrelated workflows"),
@@ -783,9 +783,9 @@ PAGES = {
             "以为最快的模式一定也最省钱。",
         ],
         "zh_links": [
-            ("provider 设置", "/zh/config/provider-setup/index.html"),
-            ("plan vs yolo", "/zh/modes/plan-vs-yolo/index.html"),
-            ("pricing / cost 指南", "/zh/guides/pricing-and-cost/index.html"),
+            ("provider 设置", "/zh/config/provider-setup/"),
+            ("plan vs yolo", "/zh/modes/plan-vs-yolo/"),
+            ("pricing / cost 指南", "/zh/guides/pricing-and-cost/"),
         ],
         "zh_examples": [
             ("在同一种工作流形状下比较成本", "想做出有意义的成本对比，前提是任务风格不变，只比较 provider 或 mode 变化。", "# 用同一种任务类型做对照\n# 比 provider 和模式，不要比两种完全不同的工作流"),
@@ -826,9 +826,9 @@ PAGES = {
             "Changing several provider-related defaults at once and losing a clean baseline.",
         ],
         "links": [
-            ("API key setup", "/config/api-key/index.html"),
-            ("Environment variables", "/config/environment-variables/index.html"),
-            ("Provider troubleshooting", "/troubleshooting/provider-troubleshooting/index.html"),
+            ("API key setup", "/config/api-key/"),
+            ("Environment variables", "/config/environment-variables/"),
+            ("Provider troubleshooting", "/troubleshooting/provider-troubleshooting/"),
         ],
         "examples": [
             ("Provider-first setup order", "Do not configure auth, model defaults, and advanced features all at once. Lock the provider path first, then verify one minimal request.", "deepseek --version\n# then start one minimal session after auth is set"),
@@ -869,9 +869,9 @@ PAGES = {
             "一次性改太多 provider 相关默认值，失去干净基线。",
         ],
         "zh_links": [
-            ("API Key 设置", "/zh/config/api-key/index.html"),
-            ("环境变量", "/zh/config/environment-variables/index.html"),
-            ("provider 排错", "/zh/troubleshooting/provider-troubleshooting/index.html"),
+            ("API Key 设置", "/zh/config/api-key/"),
+            ("环境变量", "/zh/config/environment-variables/"),
+            ("provider 排错", "/zh/troubleshooting/provider-troubleshooting/"),
         ],
         "zh_examples": [
             ("先锁 provider，再测最小请求", "不要一上来同时配认证、模型默认值和高级功能。先把 provider 路线锁定，再验证最小请求。", "deepseek --version\n# 在认证完成后再开最小会话验证"),
@@ -914,9 +914,9 @@ PAGES = {
             "Using reset as a substitute for finding the active config file path.",
         ],
         "links": [
-            ("Config file location", "/config/file-location/index.html"),
-            ("Environment variables", "/config/environment-variables/index.html"),
-            ("Provider setup", "/config/provider-setup/index.html"),
+            ("Config file location", "/config/file-location/"),
+            ("Environment variables", "/config/environment-variables/"),
+            ("Provider setup", "/config/provider-setup/"),
         ],
         "examples": [
             ("Back up before you wipe ambiguity", "A reset is cleaner when you preserve the old state once, then rebuild from a narrower baseline instead of half-resetting repeatedly.", "cp path/to/current-config path/to/current-config.backup\n# then clear or replace the active file on purpose"),
@@ -957,9 +957,9 @@ PAGES = {
             "把重置当成替代“找活跃配置路径”的万能招。",
         ],
         "zh_links": [
-            ("配置文件位置", "/zh/config/file-location/index.html"),
-            ("环境变量", "/zh/config/environment-variables/index.html"),
-            ("provider 设置", "/zh/config/provider-setup/index.html"),
+            ("配置文件位置", "/zh/config/file-location/"),
+            ("环境变量", "/zh/config/environment-variables/"),
+            ("provider 设置", "/zh/config/provider-setup/"),
         ],
         "zh_examples": [
             ("先备份，再一次性清掉歧义", "重置最怕半清半留。先保留旧状态一份备份，再从更窄的基线重新搭。", "cp path/to/current-config path/to/current-config.backup\n# 然后有意识地清掉或替换当前活跃文件"),
@@ -1002,9 +1002,9 @@ PAGES = {
             "Debugging servers before ruling out base config issues.",
         ],
         "links": [
-            ("MCP docs", "/docs/mcp/index.html"),
-            ("MCP servers", "/mcp/servers/index.html"),
-            ("MCP troubleshooting", "/troubleshooting/mcp-troubleshooting/index.html"),
+            ("MCP docs", "/docs/mcp/"),
+            ("MCP servers", "/mcp/servers/"),
+            ("MCP troubleshooting", "/troubleshooting/mcp-troubleshooting/"),
         ],
         "examples": [
             ("Minimal MCP bootstrap", "Start from one simple MCP config path and validate it before you add multiple servers or trust boundaries.", "deepseek-tui mcp init\ndeepseek-tui mcp list\ndeepseek-tui mcp validate"),
@@ -1045,9 +1045,9 @@ PAGES = {
             "没排掉基础配置错误，就先去深挖 server 本身。",
         ],
         "zh_links": [
-            ("MCP 文档", "/zh/docs/mcp/index.html"),
-            ("MCP servers", "/zh/mcp/servers/index.html"),
-            ("MCP 排错", "/zh/troubleshooting/mcp-troubleshooting/index.html"),
+            ("MCP 文档", "/zh/docs/mcp/"),
+            ("MCP servers", "/zh/mcp/servers/"),
+            ("MCP 排错", "/zh/troubleshooting/mcp-troubleshooting/"),
         ],
         "zh_examples": [
             ("最小 MCP 启动路径", "先只用一条简单 MCP 配置路径验证，不要一开始就同时上多个 server 和复杂信任边界。", "deepseek-tui mcp init\ndeepseek-tui mcp list\ndeepseek-tui mcp validate"),
@@ -1090,9 +1090,9 @@ PAGES = {
             "Adding more capability without documenting failure expectations.",
         ],
         "links": [
-            ("MCP setup", "/mcp/setup/index.html"),
-            ("Server examples", "/mcp/server-examples/index.html"),
-            ("Tool surface docs", "/docs/tool-surface/index.html"),
+            ("MCP setup", "/mcp/setup/"),
+            ("Server examples", "/mcp/server-examples/"),
+            ("Tool surface docs", "/docs/tool-surface/"),
         ],
         "examples": [
             ("Group servers by job, not by hype", "Write down whether a server expands context, executes actions, or only adds convenience before you add it to the stack.", "# classify each candidate server by workflow benefit\n# keep only the ones that close a real gap"),
@@ -1131,9 +1131,9 @@ PAGES = {
             "只加能力，不写失败预期和退路。",
         ],
         "zh_links": [
-            ("MCP 设置", "/zh/mcp/setup/index.html"),
-            ("server examples", "/zh/mcp/server-examples/index.html"),
-            ("工具边界文档", "/zh/docs/tool-surface/index.html"),
+            ("MCP 设置", "/zh/mcp/setup/"),
+            ("server examples", "/zh/mcp/server-examples/"),
+            ("工具边界文档", "/zh/docs/tool-surface/"),
         ],
         "zh_examples": [
             ("按工作职能分组，不按热度分组", "先写清楚一个 server 到底是在补上下文、执行动作，还是只是增加便利，再决定要不要接进去。", "# 先按工作流收益给每个候选 server 分类\n# 只留下真正补缺口的"),
@@ -1174,9 +1174,9 @@ PAGES = {
             "Expanding the MCP stack faster than you can verify it.",
         ],
         "links": [
-            ("MCP servers", "/mcp/servers/index.html"),
-            ("MCP setup", "/mcp/setup/index.html"),
-            ("Skills examples", "/skills/examples/index.html"),
+            ("MCP servers", "/mcp/servers/"),
+            ("MCP setup", "/mcp/setup/"),
+            ("Skills examples", "/skills/examples/"),
         ],
         "examples": [
             ("Translate the example into a workflow sentence first", "Before you copy any config, say what the example changes in plain workflow terms: more context, more action, or less manual repetition.", "# write the workflow sentence first\n# only then compare it with the example server block"),
@@ -1215,9 +1215,9 @@ PAGES = {
             "MCP 栈扩张速度比验证速度还快。",
         ],
         "zh_links": [
-            ("MCP servers", "/zh/mcp/servers/index.html"),
-            ("MCP 设置", "/zh/mcp/setup/index.html"),
-            ("Skills examples", "/zh/skills/examples/index.html"),
+            ("MCP servers", "/zh/mcp/servers/"),
+            ("MCP 设置", "/zh/mcp/setup/"),
+            ("Skills examples", "/zh/skills/examples/"),
         ],
         "zh_examples": [
             ("先把示例翻译成一句工作流描述", "复制任何配置前，先用一句人话说清楚这个示例到底改变了什么：更多上下文、更多动作，还是减少手工重复。", "# 先写出这条工作流说明\n# 再回头对照示例 server 配置"),
@@ -1258,9 +1258,9 @@ PAGES = {
             "Never re-evaluating whether the task still deserves the slower mode.",
         ],
         "links": [
-            ("Modes hub", "/modes/index.html"),
-            ("Plan vs yolo", "/modes/plan-vs-yolo/index.html"),
-            ("Yolo mode", "/modes/yolo-mode/index.html"),
+            ("Modes hub", "/modes/"),
+            ("Plan vs yolo", "/modes/plan-vs-yolo/"),
+            ("Yolo mode", "/modes/yolo-mode/"),
         ],
         "examples": [
             ("Good fit example", "Use plan mode when you are entering an unfamiliar repo, making broader edits, or touching commands whose downside is more expensive than extra review time.", ""),
@@ -1301,9 +1301,9 @@ PAGES = {
             "任务都已经稳定了，却从不重新判断模式是否应该切换。",
         ],
         "zh_links": [
-            ("模式总页", "/zh/modes/index.html"),
-            ("plan vs yolo", "/zh/modes/plan-vs-yolo/index.html"),
-            ("Yolo mode", "/zh/modes/yolo-mode/index.html"),
+            ("模式总页", "/zh/modes/"),
+            ("plan vs yolo", "/zh/modes/plan-vs-yolo/"),
+            ("Yolo mode", "/zh/modes/yolo-mode/"),
         ],
         "zh_examples": [
             ("适合 plan mode 的场景", "进入陌生仓库、要做范围更大的修改，或者命令一旦错了代价更高时，plan mode 才是在替你省风险。", ""),
@@ -1346,9 +1346,9 @@ PAGES = {
             "Treating recoverability as an afterthought.",
         ],
         "links": [
-            ("Modes hub", "/modes/index.html"),
-            ("Plan vs yolo", "/modes/plan-vs-yolo/index.html"),
-            ("Plan mode", "/modes/plan-mode/index.html"),
+            ("Modes hub", "/modes/"),
+            ("Plan vs yolo", "/modes/plan-vs-yolo/"),
+            ("Plan mode", "/modes/plan-mode/"),
         ],
         "examples": [
             ("Good fit example", "Use yolo mode on tasks that are already bounded, recoverable, and cheap to correct, such as narrow repetitive edits or known-safe verification loops.", ""),
@@ -1387,9 +1387,9 @@ PAGES = {
             "把可恢复性放到最后才想。",
         ],
         "zh_links": [
-            ("模式总页", "/zh/modes/index.html"),
-            ("plan vs yolo", "/zh/modes/plan-vs-yolo/index.html"),
-            ("Plan mode", "/zh/modes/plan-mode/index.html"),
+            ("模式总页", "/zh/modes/"),
+            ("plan vs yolo", "/zh/modes/plan-vs-yolo/"),
+            ("Plan mode", "/zh/modes/plan-mode/"),
         ],
         "zh_examples": [
             ("适合 yolo mode 的场景", "边界已经清楚、可恢复成本低、修正代价也低的任务，更适合 yolo mode，比如窄范围重复修改或已知安全的验证循环。", ""),
@@ -1430,9 +1430,9 @@ PAGES = {
             "Staying in plan mode long after the task stopped deserving it.",
         ],
         "links": [
-            ("Plan mode", "/modes/plan-mode/index.html"),
-            ("Yolo mode", "/modes/yolo-mode/index.html"),
-            ("Modes hub", "/modes/index.html"),
+            ("Plan mode", "/modes/plan-mode/"),
+            ("Yolo mode", "/modes/yolo-mode/"),
+            ("Modes hub", "/modes/"),
         ],
         "examples": [
             ("Switch to yolo only after plan has collapsed the uncertainty", "A common good path is starting in plan mode for repo discovery, then moving to yolo once file scope and recovery paths are obvious.", "# start in plan mode for unknown scope\n# switch to yolo only after the task is narrow and recoverable"),
@@ -1471,9 +1471,9 @@ PAGES = {
             "任务早就清楚了，却还在 plan mode 里机械停留。",
         ],
         "zh_links": [
-            ("Plan mode", "/zh/modes/plan-mode/index.html"),
-            ("Yolo mode", "/zh/modes/yolo-mode/index.html"),
-            ("模式总页", "/zh/modes/index.html"),
+            ("Plan mode", "/zh/modes/plan-mode/"),
+            ("Yolo mode", "/zh/modes/yolo-mode/"),
+            ("模式总页", "/zh/modes/"),
         ],
         "zh_examples": [
             ("先用 plan 压缩不确定性，再切 yolo", "最常见的好路径不是二选一，而是先用 plan 看清仓库和文件范围，等边界清楚后再切 yolo 收尾。", "# 先用 plan mode 处理未知范围\n# 只有任务够窄、可恢复时再切 yolo"),

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DeepSeek TUI skills vs prompts</title><meta name="description" content="对比 DeepSeek TUI 的 skills 和 prompts，理解什么时候更该用可复用工作流，而不是一次性提示词。"><link rel="canonical" href="https://deepseek-tui.app/zh/skills/vs-prompts/index.html"><meta name="robots" content="index, follow">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DeepSeek TUI skills vs prompts</title><meta name="description" content="对比 DeepSeek TUI 的 skills 和 prompts，理解什么时候更该用可复用工作流，而不是一次性提示词。"><link rel="canonical" href="https://deepseek-tui.app/zh/skills/vs-prompts/"><meta name="robots" content="index, follow">
   <meta property="og:title" content="DeepSeek TUI skills vs prompts">
   <meta property="og:description" content="对比 DeepSeek TUI 的 skills 和 prompts，理解什么时候更该用可复用工作流，而不是一次性提示词。">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://deepseek-tui.app/zh/skills/vs-prompts/index.html">
+  <meta property="og:url" content="https://deepseek-tui.app/zh/skills/vs-prompts/">
   <meta property="og:site_name" content="DeepSeek TUI Guide">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DeepSeek TUI skills vs prompts">
-  <meta name="twitter:description" content="对比 DeepSeek TUI 的 skills 和 prompts，理解什么时候更该用可复用工作流，而不是一次性提示词。"><link rel="alternate" hreflang="en" href="https://deepseek-tui.app/skills/vs-prompts/index.html"><link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/skills/vs-prompts/index.html"><link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">  <script type="application/ld+json">
+  <meta name="twitter:description" content="对比 DeepSeek TUI 的 skills 和 prompts，理解什么时候更该用可复用工作流，而不是一次性提示词。"><link rel="alternate" hreflang="en" href="https://deepseek-tui.app/skills/vs-prompts/"><link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/skills/vs-prompts/"><link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -17,7 +17,7 @@
       "headline": "DeepSeek TUI skills vs prompts",
       "name": "DeepSeek TUI skills vs prompts",
       "description": "对比 DeepSeek TUI 的 skills 和 prompts，理解什么时候更该用可复用工作流，而不是一次性提示词。",
-      "url": "https://deepseek-tui.app/zh/skills/vs-prompts/index.html",
+      "url": "https://deepseek-tui.app/zh/skills/vs-prompts/",
       "inLanguage": "zh-CN"
     },
     {
@@ -27,19 +27,19 @@
           "@type": "ListItem",
           "position": 1,
           "name": "首页",
-          "item": "https://deepseek-tui.app/zh/index.html"
+          "item": "https://deepseek-tui.app/zh/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Skills",
-          "item": "https://deepseek-tui.app/zh/skills/index.html"
+          "item": "https://deepseek-tui.app/zh/skills/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "DeepSeek TUI skills vs prompts",
-          "item": "https://deepseek-tui.app/zh/skills/vs-prompts/index.html"
+          "item": "https://deepseek-tui.app/zh/skills/vs-prompts/"
         }
       ]
     }
@@ -47,9 +47,9 @@
 }
   </script>
 </head>
-<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/index.html"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/index.html">首页</a><a href="/zh/guides/index.html">指南</a><a href="/zh/docs/index.html">文档</a><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a><a href="/zh/modes/index.html">模式</a><a href="/zh/comparisons/index.html">对比</a><a href="/zh/troubleshooting/index.html">排错</a><a href="/index.html">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/index.html">首页</a><span>/</span><a href="/zh/skills/index.html">技能</a><span>/</span><span>skills vs prompts</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Skills vs Prompts</span><h1>只有把“可复用工作流边界”和“一次性指令文本”拆开看，skills 和 prompts 的区别才会清楚</h1><p>很多人把 skills 和 prompts 当成两种写法来比较，这样会错过真正重要的区别。prompt 通常是为一次请求优化的；skill 是为会反复出现的工作流模式优化的。</p><div class="hero-points"><span>本页是站内详情页</span><span>DeepSeek TUI skills vs prompts</span><span>技能</span></div></div><aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>一次性问题用 prompt，反复出现且边界稳定的工作流用 skill。</h2><p>重点不在于谁写得更“聪明”，而在于你是否需要跨很多次会话复用同一套流程、约束和检查项。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页应该先回答的问题</h2><ul><li>什么时候 prompt 依然是最合适的工具？</li><li>什么时候一个反复使用的 prompt，其实已经是伪装成 prompt 的 skill？</li><li>把工作流从 prompt 提升到 skill 以后，到底能获得什么？</li></ul><h2>这页应该帮你判断什么</h2><p>这页要帮助用户比较一次性 prompting 和可复用 workflow packaging，理解什么时候“重复、边界控制、一致性”会比文案本身更重要。</p><h2>快速定位</h2><h3>一次性请求</h3><p>如果任务只会出现一次，或者以后很少以同样形式回来，prompt 往往就够了。</p><h3>重复工作流</h3><p>如果同一套流程反复出现，你其实已经在持续支付“没有 skill”的成本。</p><h3>是否需要护栏</h3><p>当工作真的依赖稳定范围、固定顺序、文件边界或检查步骤时，skill 会更有价值。</p></article><aside class="panel-card"><span class="panel-kicker">下一步最该去的页面</span><div class="link-stack"><a href="/zh/skills/examples/index.html">技能示例</a><a href="/zh/skills/index.html">技能总页</a><a href="/zh/guides/index.html">Guides 总页</a></div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose"><h2>逐步处理流程</h2><ol><li><strong>先看重复性</strong><br>不要先问文本是不是够复杂，要先问这个流程本身是不是会反复出现。</li><li><strong>再看一致性需求</strong><br>如果未来每次都需要同样顺序、同样限制、同样核对项，prompt 会比 skill 更难维护。</li><li><strong>保留该灵活的部分</strong><br>skill 只应该固定住稳定部分，剩下的判断仍然可以交给普通对话。</li><li><strong>只有在结构真正回本时才升级</strong><br>从 prompt 升级成 skill 的前提，是它真的减少摩擦，而不是为了形式感增加负担。</li></ol><h2>常见误区</h2><ul><li>因为两者都包含指令文本，就把 prompt 和 skill 当成同一件事。</li><li>工作流还没真正重复起来，就过早抽成 skill。</li><li>把 skill 做得太宽，最后失去原本最有价值的稳定边界。</li></ul><h2>什么时候可以离开这页</h2><p>当你已经能判断自己面对的是一次性指令问题，还是一个值得沉淀成 skill 的重复工作流时，就可以离开这页了。</p></article><aside class="panel-card"><span class="panel-kicker">把这页当作正文页来用</span><p>这页的目标是直接回答当前这个具体问题，而不是只把你推回栏目页。适合已经明确分支、现在需要更清楚处理路径的时候打开。</p></aside></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>一次性请求就继续用 prompt</h3><p>如果任务很难以同样形状回来，就先把它留在 prompt，不要过早加结构。</p><pre><code># 先当一次性请求处理
+<body><header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/">首页</a><a href="/zh/guides/">指南</a><a href="/zh/docs/">文档</a><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a><a href="/zh/comparisons/">对比</a><a href="/zh/troubleshooting/">排错</a><a href="/">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header><div class="page-path"><div class="container"><a href="/zh/">首页</a><span>/</span><a href="/zh/skills/">技能</a><span>/</span><span>skills vs prompts</span></div></div><main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Skills vs Prompts</span><h1>只有把“可复用工作流边界”和“一次性指令文本”拆开看，skills 和 prompts 的区别才会清楚</h1><p>很多人把 skills 和 prompts 当成两种写法来比较，这样会错过真正重要的区别。prompt 通常是为一次请求优化的；skill 是为会反复出现的工作流模式优化的。</p><div class="hero-points"><span>本页是站内详情页</span><span>DeepSeek TUI skills vs prompts</span><span>技能</span></div></div><aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>一次性问题用 prompt，反复出现且边界稳定的工作流用 skill。</h2><p>重点不在于谁写得更“聪明”，而在于你是否需要跨很多次会话复用同一套流程、约束和检查项。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页应该先回答的问题</h2><ul><li>什么时候 prompt 依然是最合适的工具？</li><li>什么时候一个反复使用的 prompt，其实已经是伪装成 prompt 的 skill？</li><li>把工作流从 prompt 提升到 skill 以后，到底能获得什么？</li></ul><h2>这页应该帮你判断什么</h2><p>这页要帮助用户比较一次性 prompting 和可复用 workflow packaging，理解什么时候“重复、边界控制、一致性”会比文案本身更重要。</p><h2>快速定位</h2><h3>一次性请求</h3><p>如果任务只会出现一次，或者以后很少以同样形式回来，prompt 往往就够了。</p><h3>重复工作流</h3><p>如果同一套流程反复出现，你其实已经在持续支付“没有 skill”的成本。</p><h3>是否需要护栏</h3><p>当工作真的依赖稳定范围、固定顺序、文件边界或检查步骤时，skill 会更有价值。</p></article><aside class="panel-card"><span class="panel-kicker">下一步最该去的页面</span><div class="link-stack"><a href="/zh/skills/examples/">技能示例</a><a href="/zh/skills/">技能总页</a><a href="/zh/guides/">Guides 总页</a></div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose"><h2>逐步处理流程</h2><ol><li><strong>先看重复性</strong><br>不要先问文本是不是够复杂，要先问这个流程本身是不是会反复出现。</li><li><strong>再看一致性需求</strong><br>如果未来每次都需要同样顺序、同样限制、同样核对项，prompt 会比 skill 更难维护。</li><li><strong>保留该灵活的部分</strong><br>skill 只应该固定住稳定部分，剩下的判断仍然可以交给普通对话。</li><li><strong>只有在结构真正回本时才升级</strong><br>从 prompt 升级成 skill 的前提，是它真的减少摩擦，而不是为了形式感增加负担。</li></ol><h2>常见误区</h2><ul><li>因为两者都包含指令文本，就把 prompt 和 skill 当成同一件事。</li><li>工作流还没真正重复起来，就过早抽成 skill。</li><li>把 skill 做得太宽，最后失去原本最有价值的稳定边界。</li></ul><h2>什么时候可以离开这页</h2><p>当你已经能判断自己面对的是一次性指令问题，还是一个值得沉淀成 skill 的重复工作流时，就可以离开这页了。</p></article><aside class="panel-card"><span class="panel-kicker">把这页当作正文页来用</span><p>这页的目标是直接回答当前这个具体问题，而不是只把你推回栏目页。适合已经明确分支、现在需要更清楚处理路径的时候打开。</p></aside></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>一次性请求就继续用 prompt</h3><p>如果任务很难以同样形状回来，就先把它留在 prompt，不要过早加结构。</p><pre><code># 先当一次性请求处理
 # 没有重复之前不要维护额外资产</code></pre></article><article class="detail-card"><h3>当同样的核对步骤反复出现时，就该升级成 skill</h3><p>如果你每次都在重写同样的范围、顺序和护栏，说明它其实已经是 skill 形状了。</p><pre><code># 列出每次都重复的检查项
-# 如果一直重复，就抽出稳定边界</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>工作流还没重复，你就太早抽成了 skill</h3><p>那只会增加维护成本。先退回 prompt，等它真的反复出现再升级。</p></article><article class="detail-card"><h3>你的 skill 宽到什么都能做</h3><p>这说明边界已经消失了。要么拆成几个小 skill，要么退回普通 prompt。</p></article></div></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/index.html">安装</a><a href="/zh/config/index.html">配置</a></div><div class="footer-links"><a href="/zh/about/index.html">关于</a><a href="/zh/contact/index.html">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
+# 如果一直重复，就抽出稳定边界</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>工作流还没重复，你就太早抽成了 skill</h3><p>那只会增加维护成本。先退回 prompt，等它真的反复出现再升级。</p></article><article class="detail-card"><h3>你的 skill 宽到什么都能做</h3><p>这说明边界已经消失了。要么拆成几个小 skill，要么退回普通 prompt。</p></article></div></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a></div><div class="footer-links"><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
