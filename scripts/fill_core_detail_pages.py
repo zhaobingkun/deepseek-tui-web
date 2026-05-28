@@ -8,6 +8,17 @@ from pathlib import Path
 ROOT = Path("/Users/zhaobingkun/dev/DeepSeek-TUI")
 DOMAIN = "https://deepseek-tui.app"
 
+CLI_HTML_REPLACEMENTS = (
+    ("npm install -g deepseek-tui", "npm install -g codewhale"),
+    ("deepseek --model auto", "codewhale --model auto"),
+    ("cargo install deepseek-tui", "cargo install codewhale-cli --locked"),
+    ("deepseek-tui-cli", "codewhale-cli"),
+    ("deepseek --version", "codewhale --version"),
+    ("command -v deepseek || which deepseek", "command -v codewhale || which codewhale"),
+    ("where deepseek", "where codewhale"),
+    ("`deepseek`", "`codewhale`"),
+)
+
 SECTION_LABELS_EN = {
     "install": "Install",
     "config": "Config",
@@ -407,8 +418,8 @@ PAGES = {
             ("Release binaries troubleshooting", "/troubleshooting/release-binaries/"),
         ],
         "examples": [
-            ("Upgrade the same owner you installed with", "Do not shotgun-update every package manager. First work out which route actually owns the live binary.", "deepseek --version\ncommand -v deepseek || which deepseek\n# then update through the matching package route"),
-            ("Verify after a fresh shell", "An upgrade only counts once a new terminal session resolves the same binary at the newer version.", "deepseek --version"),
+            ("Upgrade the same owner you installed with", "Do not shotgun-update every package manager. First work out which route actually owns the live binary.", "codewhale --version\ncommand -v codewhale || which codewhale\nnpm install -g codewhale@latest\ncargo install codewhale-cli --locked --force\nbrew upgrade deepseek-tui\ncodewhale update"),
+            ("Verify after a fresh shell", "An upgrade only counts once a new terminal session resolves the same binary at the newer version.", "codewhale --version"),
         ],
         "failure_routes": [
             ("You upgraded but the version did not change", "That usually means you updated the wrong package owner or an older binary still resolves earlier in PATH."),
@@ -448,8 +459,8 @@ PAGES = {
             ("Release binaries 排错", "/zh/troubleshooting/release-binaries/"),
         ],
         "zh_examples": [
-            ("谁安装谁更新", "不要几个包管理器一起跑更新。先确认当前活跃二进制到底归谁管。", "deepseek --version\ncommand -v deepseek || which deepseek\n# 再走对应的那条更新路径"),
-            ("重开 shell 以后再核对", "只有在新终端里解析到的还是同一个二进制、而且版本已经变了，这次升级才算真的完成。", "deepseek --version"),
+            ("谁安装谁更新", "不要几个包管理器一起跑更新。先确认当前活跃二进制到底归谁管。", "codewhale --version\ncommand -v codewhale || which codewhale\nnpm install -g codewhale@latest\ncargo install codewhale-cli --locked --force\nbrew upgrade deepseek-tui\ncodewhale update"),
+            ("重开 shell 以后再核对", "只有在新终端里解析到的还是同一个二进制、而且版本已经变了，这次升级才算真的完成。", "codewhale --version"),
         ],
         "zh_failure_routes": [
             ("你更新了，但版本号没变", "通常说明你更新的是错误的拥有者，或者旧二进制还排在 PATH 前面。"),
@@ -1524,6 +1535,18 @@ def route_blocks_html(items: list[tuple[str, str]]) -> str:
     )
 
 
+def modernize_cli_html(text: str) -> str:
+    for old, new in CLI_HTML_REPLACEMENTS:
+        text = text.replace(old, new)
+    return text
+
+
+def rename_notice_html(zh: bool) -> str:
+    if zh:
+        return """<section class="section"><div class="container two-col"><article class="prose"><h2>DeepSeek TUI 已改名为 CodeWhale</h2><p>这个项目上游已经改名。现在的新安装命令应优先使用 <code>npm install -g codewhale</code>，启动命令也应优先使用 <code>codewhale</code>。</p><p>旧的 <code>deepseek</code> / <code>deepseek-tui</code> 目前仍作为兼容 shim 存在，但上游已经说明它们只是过渡方案，并计划在 <code>v0.9.0</code> 移除。</p></article><aside class="panel-card"><span class="panel-kicker">迁移提示</span><div class="link-stack"><a href="/install/npm/">看 npm 安装</a><a href="/install/update-or-upgrade/">看更新方式</a><a href="/docs/install/">看上游安装文档</a></div></aside></div></section>"""
+    return """<section class="section"><div class="container two-col"><article class="prose"><h2>DeepSeek TUI has been renamed to CodeWhale</h2><p>Upstream now ships the project under the new name. For fresh installs, use <code>npm install -g codewhale</code> and launch it with <code>codewhale</code>.</p><p>The older <code>deepseek</code> and <code>deepseek-tui</code> names still exist as compatibility shims for now, but upstream documents them as transitional and scheduled for removal in <code>v0.9.0</code>.</p></article><aside class="panel-card"><span class="panel-kicker">Migration note</span><div class="link-stack"><a href="/install/npm/">npm install guide</a><a href="/install/update-or-upgrade/">Update guide</a><a href="/docs/install/">Upstream install docs</a></div></aside></div></section>"""
+
+
 def build_main(section: str, slug: str, zh: bool) -> str:
     data = PAGES[(section, slug)]
     title = data["zh_title"] if zh else data["title"]
@@ -1562,7 +1585,9 @@ def build_main(section: str, slug: str, zh: bool) -> str:
     routes_section = ""
     if failure_routes:
         routes_section = f"""<section class="section section-alt"><div class="container"><div class="section-head"><h2>{routes_head}</h2><p>{'先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。' if zh else 'Work out which layer failed first instead of treating every problem as the same.'}</p></div><div class="detail-grid">{route_blocks_html(failure_routes)}</div></div></section>"""
-    return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">{html.escape(eyebrow)}</span><h1>{html.escape(h1)}</h1><p>{html.escape(intro)}</p><div class="hero-points"><span>{html.escape(source_label)}</span><span>{html.escape(title)}</span><span>{html.escape(section_label)}</span></div></div><aside class="answer-card"><span class="panel-kicker">{html.escape(answer_kicker)}</span><h2>{html.escape(answer_h2)}</h2><p>{html.escape(answer_p)}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>{question_head}</h2><ul>{list_html(questions)}</ul><h2>{checks_head}</h2><ul>{list_html(checks)}</ul><h2>{mistakes_head}</h2><ul>{list_html(mistakes)}</ul></article><aside class="panel-card"><span class="panel-kicker">{'下一步' if zh else 'Next pages'}</span><div class="link-stack">{links_block}</div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>{section_head}</h2><p>{html.escape(section_desc)}</p></div><div class="card-grid card-grid-3">{cards_html(steps, zh)}</div></div></section>{examples_section}{routes_section}<section class="section"><div class="container two-col"><article class="prose"><h2>{where_head}</h2><p>{html.escape(where_text)}</p></article><aside class="panel-card"><span class="panel-kicker">{'继续看' if zh else 'Continue with'}</span><div class="link-stack">{links_block}</div></aside></div></section></main>"""
+    migration_section = rename_notice_html(zh) if section == "install" else ""
+    html_output = f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">{html.escape(eyebrow)}</span><h1>{html.escape(h1)}</h1><p>{html.escape(intro)}</p><div class="hero-points"><span>{html.escape(source_label)}</span><span>{html.escape(title)}</span><span>{html.escape(section_label)}</span></div></div><aside class="answer-card"><span class="panel-kicker">{html.escape(answer_kicker)}</span><h2>{html.escape(answer_h2)}</h2><p>{html.escape(answer_p)}</p></aside></div></section>{migration_section}<section class="section"><div class="container two-col"><article class="prose"><h2>{question_head}</h2><ul>{list_html(questions)}</ul><h2>{checks_head}</h2><ul>{list_html(checks)}</ul><h2>{mistakes_head}</h2><ul>{list_html(mistakes)}</ul></article><aside class="panel-card"><span class="panel-kicker">{'下一步' if zh else 'Next pages'}</span><div class="link-stack">{links_block}</div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>{section_head}</h2><p>{html.escape(section_desc)}</p></div><div class="card-grid card-grid-3">{cards_html(steps, zh)}</div></div></section>{examples_section}{routes_section}<section class="section"><div class="container two-col"><article class="prose"><h2>{where_head}</h2><p>{html.escape(where_text)}</p></article><aside class="panel-card"><span class="panel-kicker">{'继续看' if zh else 'Continue with'}</span><div class="link-stack">{links_block}</div></aside></div></section></main>"""
+    return modernize_cli_html(html_output)
 
 
 def process(path: Path) -> None:
@@ -1585,6 +1610,7 @@ def process(path: Path) -> None:
     text = replace_once(text, r'<meta name="twitter:title" content=".*?">', f'<meta name="twitter:title" content="{html.escape(title)}">')
     text = replace_once(text, r'<meta name="twitter:description" content=".*?">', f'<meta name="twitter:description" content="{html.escape(desc)}">')
     text = replace_once(text, r"<main>.*?</main>", build_main(section, slug, zh))
+    text = modernize_cli_html(text)
     path.write_text(text, encoding="utf-8")
 
 

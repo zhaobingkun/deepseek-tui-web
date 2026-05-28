@@ -1,6 +1,6 @@
 # DeepSeek TUI Guide
 
-Static micro-site focused on the search intent around `DeepSeek TUI`.
+Static micro-site focused on the search intent around `DeepSeek TUI`, now maintained as a rename-transition guide for `CodeWhale`.
 
 Current structure:
 
@@ -50,7 +50,7 @@ If you deploy to another domain, replace canonical URLs, sitemap URLs, and `robo
 Docs sync workflow:
 
 - Upstream GitHub docs are mirrored into local cache under `upstream-docs/`
-- Run `python3 scripts/sync_upstream_docs_fulltext.py` to fetch the latest `docs/*.md` from the upstream repo and rebuild `docs/*` plus `zh/docs/*`
+- Run `python3 scripts/sync_upstream_docs_fulltext.py` to fetch the latest `docs/*.md` from the upstream `Hmbown/CodeWhale` repo and rebuild `docs/*` plus `zh/docs/*`
 - The English docs pages now include the full upstream article body directly
 - The Chinese docs pages keep the Chinese site shell and embed the upstream English article body under `上游文档原文（英文）`
 - Detailed Chinese update order is documented in [DOCS-UPDATE-WORKFLOW.md](DOCS-UPDATE-WORKFLOW.md)

@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DeepSeek TUI Guide: Install, Configure, and Use DeepSeek TUI</title>
-  <meta name="description" content="DeepSeek TUI Guide covers install, config, MCP, skills, modes, comparisons, and troubleshooting for DeepSeek TUI in the terminal.">
+  <title>DeepSeek TUI Guide: CodeWhale Rename, Install, Configure, and Use</title>
+  <meta name="description" content="DeepSeek TUI Guide tracks the CodeWhale rename and covers install, config, MCP, skills, modes, comparisons, and troubleshooting for the terminal CLI.">
   <link rel="canonical" href="https://deepseek-tui.app/">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="DeepSeek TUI Guide: Install, Configure, and Use DeepSeek TUI">
-  <meta property="og:description" content="DeepSeek TUI Guide covers install, config, MCP, skills, modes, comparisons, and troubleshooting for DeepSeek TUI in the terminal.">
+  <meta property="og:title" content="DeepSeek TUI Guide: CodeWhale Rename, Install, Configure, and Use">
+  <meta property="og:description" content="DeepSeek TUI Guide tracks the CodeWhale rename and covers install, config, MCP, skills, modes, comparisons, and troubleshooting for the terminal CLI.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://deepseek-tui.app/">
   <meta property="og:site_name" content="DeepSeek TUI Guide">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DeepSeek TUI Guide: Install, Configure, and Use DeepSeek TUI">
-  <meta name="twitter:description" content="DeepSeek TUI Guide covers install, config, MCP, skills, modes, comparisons, and troubleshooting for DeepSeek TUI in the terminal.">
+  <meta name="twitter:title" content="DeepSeek TUI Guide: CodeWhale Rename, Install, Configure, and Use">
+  <meta name="twitter:description" content="DeepSeek TUI Guide tracks the CodeWhale rename and covers install, config, MCP, skills, modes, comparisons, and troubleshooting for the terminal CLI.">
     <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/">
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
@@ -65,9 +65,9 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Micro-Site Launch</span>
-          <h1>DeepSeek TUI guide site built around one simple path: main menu, section list, then article detail</h1>
-          <p>Use the top navigation to choose the topic family first. Then use the left section menu to open the list page or article you actually need, instead of bouncing between unrelated setup and docs pages.</p>
+          <span class="eyebrow">Rename Transition</span>
+          <h1>DeepSeek TUI has been renamed to CodeWhale, and this guide now treats the old name as the migration entry point</h1>
+          <p>Use the top navigation to choose the topic family first. If you searched for DeepSeek TUI, the most important update is that new installs should use the CodeWhale command names while this site keeps the old keyword as a discoverability bridge.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="/install/">Start With Install</a>
             <a class="btn btn-secondary" href="/docs/">Browse Docs</a>
@@ -77,13 +77,13 @@
               <span class="tag">Quickstart</span>
               <a href="/install/">Full install docs</a>
             </div>
-            <pre class="quickstart-code"><code>npm install -g deepseek-tui
-deepseek --version
-deepseek --model auto</code></pre>
+            <pre class="quickstart-code"><code>npm install -g codewhale
+codewhale --version
+codewhale --model auto</code></pre>
           </div>
           <div class="hero-points">
+            <span>CodeWhale rename tracked</span>
             <span>Main menu first</span>
-            <span>Left menu per section</span>
             <span>List page before detail</span><span>Docs and guides together</span>
           </div>
         </div>
@@ -95,12 +95,29 @@ deepseek --model auto</code></pre>
           </div>
           <div class="terminal-body">
             <div>$ <strong>Quickstart</strong></div>
-            <div>$ npm install -g deepseek-tui</div>
-            <div>$ deepseek --version</div>
-            <div>$ deepseek --model auto</div>
-            <div class="terminal-note">Install first, verify the binary, then launch with automatic model selection.</div>
+            <div>$ npm install -g codewhale</div>
+            <div>$ codewhale --version</div>
+            <div>$ codewhale --model auto</div>
+            <div class="terminal-note">Install with the new package name, verify the current binary, then launch with automatic model selection.</div>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container two-col">
+        <article class="prose">
+          <h2>Rename note: DeepSeek TUI is now CodeWhale</h2>
+          <p>The upstream project has been renamed. For fresh installs, use <code>npm install -g codewhale</code> and launch with <code>codewhale</code>.</p>
+          <p>Older <code>deepseek</code> and <code>deepseek-tui</code> commands still exist as compatibility shims for now, but upstream documents them as temporary and scheduled for removal in <code>v0.9.0</code>.</p>
+        </article>
+        <aside class="panel-card">
+          <span class="panel-kicker">Start here</span>
+          <div class="link-stack">
+            <a href="/install/">Install hub</a>
+            <a href="/install/update-or-upgrade/">Update guide</a>
+            <a href="/docs/install/">Upstream install docs</a>
+          </div>
+        </aside>
       </div>
     </section>
 

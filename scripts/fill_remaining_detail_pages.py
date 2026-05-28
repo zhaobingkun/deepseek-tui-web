@@ -7,6 +7,17 @@ from pathlib import Path
 
 ROOT = Path("/Users/zhaobingkun/dev/DeepSeek-TUI")
 
+CLI_HTML_REPLACEMENTS = (
+    ("npm install -g deepseek-tui", "npm install -g codewhale"),
+    ("deepseek --model auto", "codewhale --model auto"),
+    ("cargo install deepseek-tui", "cargo install codewhale-cli --locked"),
+    ("deepseek-tui-cli", "codewhale-cli"),
+    ("deepseek --version", "codewhale --version"),
+    ("command -v deepseek || which deepseek", "command -v codewhale || which codewhale"),
+    ("where deepseek", "where codewhale"),
+    ("`deepseek`", "`codewhale`"),
+)
+
 SECTION_LABELS_EN = {
     "guides": "Guides",
     "skills": "Skills",
@@ -1059,6 +1070,12 @@ def render_routes(rows: list[tuple[str, str]]) -> str:
     )
 
 
+def modernize_cli_html(text: str) -> str:
+    for old, new in CLI_HTML_REPLACEMENTS:
+        text = text.replace(old, new)
+    return text
+
+
 def build_main(copy: dict[str, object], zh: bool, section: str, title: str) -> str:
     questions = render_list(copy["questions"])  # type: ignore[index]
     mistakes = render_list(copy["mistakes"])  # type: ignore[index]
@@ -1092,7 +1109,8 @@ def build_main(copy: dict[str, object], zh: bool, section: str, title: str) -> s
     routes_section = ""
     if failure_routes:
         routes_section = f"""<section class="section section-alt"><div class="container"><div class="section-head"><h2>{labels['routes']}</h2><p>{'先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。' if zh else 'Work out which layer failed first instead of treating every problem as the same.'}</p></div><div class="detail-grid">{failure_routes}</div></div></section>"""
-    return f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">{html.escape(copy['eyebrow'])}</span><h1>{html.escape(copy['h1'])}</h1><p>{html.escape(copy['intro'])}</p><div class="hero-points"><span>{html.escape(source_label)}</span><span>{html.escape(title)}</span><span>{html.escape(section_label)}</span></div></div><aside class="answer-card"><span class="panel-kicker">{html.escape(copy['answer_kicker'])}</span><h2>{html.escape(copy['answer_h2'])}</h2><p>{html.escape(copy['answer_p'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>{labels['questions']}</h2><ul>{questions}</ul><h2>{labels['coverage']}</h2><p>{html.escape(copy['coverage'])}</p><h2>{labels['diagnosis']}</h2>{diagnosis}</article><aside class="panel-card"><span class="panel-kicker">{labels['next']}</span><div class="link-stack">{links}</div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose"><h2>{labels['workflow']}</h2><ol>{workflow}</ol><h2>{labels['mistakes']}</h2><ul>{mistakes}</ul><h2>{labels['leave']}</h2><p>{html.escape(copy['leave'])}</p></article><aside class="panel-card"><span class="panel-kicker">{labels['detail_kicker']}</span><p>{html.escape(labels['detail_body'])}</p></aside></div></section>{examples_section}{routes_section}</main>"""
+    html_output = f"""<main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">{html.escape(copy['eyebrow'])}</span><h1>{html.escape(copy['h1'])}</h1><p>{html.escape(copy['intro'])}</p><div class="hero-points"><span>{html.escape(source_label)}</span><span>{html.escape(title)}</span><span>{html.escape(section_label)}</span></div></div><aside class="answer-card"><span class="panel-kicker">{html.escape(copy['answer_kicker'])}</span><h2>{html.escape(copy['answer_h2'])}</h2><p>{html.escape(copy['answer_p'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>{labels['questions']}</h2><ul>{questions}</ul><h2>{labels['coverage']}</h2><p>{html.escape(copy['coverage'])}</p><h2>{labels['diagnosis']}</h2>{diagnosis}</article><aside class="panel-card"><span class="panel-kicker">{labels['next']}</span><div class="link-stack">{links}</div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose"><h2>{labels['workflow']}</h2><ol>{workflow}</ol><h2>{labels['mistakes']}</h2><ul>{mistakes}</ul><h2>{labels['leave']}</h2><p>{html.escape(copy['leave'])}</p></article><aside class="panel-card"><span class="panel-kicker">{labels['detail_kicker']}</span><p>{html.escape(labels['detail_body'])}</p></aside></div></section>{examples_section}{routes_section}</main>"""
+    return modernize_cli_html(html_output)
 
 
 def process_page(path: Path, copy: dict[str, object], zh: bool) -> None:
@@ -1105,6 +1123,7 @@ def process_page(path: Path, copy: dict[str, object], zh: bool) -> None:
     title_match = re.search(r"<title>(.*?)</title>", text, flags=re.S)
     title = html.unescape(title_match.group(1)) if title_match else str(parts[-2])
     updated = re.sub(r"<main>.*?</main>", build_main(copy, zh, section, title), text, flags=re.S, count=1)
+    updated = modernize_cli_html(updated)
     path.write_text(updated, encoding="utf-8")
 
 

@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>如何安装 DeepSeek TUI：npm、Cargo、Homebrew 与二进制</title>
-  <meta name="description" content="用 npm、cargo、Homebrew 或预编译二进制安装 DeepSeek TUI，并判断哪条路径更适合你的终端环境。">
+  <title>如何在 CodeWhale 改名后安装 DeepSeek TUI</title>
+  <meta name="description" content="这页先说明 DeepSeek TUI 已改名为 CodeWhale，再帮你选择 npm、cargo、Homebrew 或其他安装路径。">
   <link rel="canonical" href="https://deepseek-tui.app/zh/install/">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="如何安装 DeepSeek TUI：npm、Cargo、Homebrew 与二进制">
-  <meta property="og:description" content="用 npm、cargo、Homebrew 或预编译二进制安装 DeepSeek TUI，并判断哪条路径更适合你的终端环境。">
+  <meta property="og:title" content="如何在 CodeWhale 改名后安装 DeepSeek TUI">
+  <meta property="og:description" content="这页先说明 DeepSeek TUI 已改名为 CodeWhale，再帮你选择 npm、cargo、Homebrew 或其他安装路径。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://deepseek-tui.app/zh/install/">
   <meta property="og:site_name" content="DeepSeek TUI 中文指南">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="如何安装 DeepSeek TUI：npm、Cargo、Homebrew 与二进制">
-  <meta name="twitter:description" content="用 npm、cargo、Homebrew 或预编译二进制安装 DeepSeek TUI，并判断哪条路径更适合你的终端环境。">
+  <meta name="twitter:title" content="如何在 CodeWhale 改名后安装 DeepSeek TUI">
+  <meta name="twitter:description" content="这页先说明 DeepSeek TUI 已改名为 CodeWhale，再帮你选择 npm、cargo、Homebrew 或其他安装路径。">
   <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/install/">
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/install/">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
@@ -60,24 +60,25 @@
       <div class="container two-col">
         <div>
           <span class="eyebrow">安装总览</span>
-          <h1>安装 DeepSeek TUI 时，先选对包管理路径，再考虑具体命令</h1>
-          <p>DeepSeek TUI 有不止一种安装方式。真正要先想清楚的，不只是命令本身，而是你当前的 CLI 环境更适合哪条更新和维护路径。</p>
+          <h1>安装 DeepSeek TUI 前，先知道它已经改名为 CodeWhale，再选包管理路径</h1>
+          <p>这个安装总页保留旧搜索词，但新的安装与启动命令应优先使用 CodeWhale。真正要先想清楚的，不只是命令本身，而是你当前 CLI 环境更适合哪条更新和维护路径。</p>
         </div>
-        <aside class="answer-card"><span class="panel-kicker">快速结论</span><h2>已经长期用 Node 全局装 CLI，就先走 npm。想要更贴近 Rust 生态，就先看 cargo。</h2><p>如果你更偏系统级安装，Homebrew 和预编译二进制也值得考虑。</p></aside>
+        <aside class="answer-card"><span class="panel-kicker">快速结论</span><h2>新的 npm 安装应优先使用 <code>npm install -g codewhale</code>。如果你长期在 Rust 或 Homebrew 生态里，再看对应路线。</h2><p>系统级安装、Homebrew 和预编译二进制仍然有价值，但不要把旧命令和新命令混在一起。</p></aside>
       </div>
     </section>
+    <section class="section"><div class="container two-col"><article class="prose"><h2>改名说明：产品名现在是 CodeWhale</h2><p>上游已经把 DeepSeek TUI 改名为 CodeWhale。新的安装命令应优先使用 <code>codewhale</code> 相关名称，尤其是 <code>npm install -g codewhale</code>。</p><p>旧的 <code>deepseek</code> / <code>deepseek-tui</code> 目前还作为兼容 shim 存在，但上游已明确这只是过渡方案，并计划在 <code>v0.9.0</code> 移除。</p></article><aside class="panel-card"><span class="panel-kicker">当前命令</span><div class="link-stack"><a href="/zh/install/npm/">npm：`npm install -g codewhale`</a><a href="/zh/install/update-or-upgrade/">更新：`codewhale update`</a><a href="/zh/docs/install/">官方安装文档</a></div></aside></div></section>
     <section class="section section-alt"><div class="container">
 <div class="section-head"><h2>按问题类型选择安装路径</h2><p>先把这页当成安装列表。先判断你更适合哪种包管理方式，再打开对应文章。</p></div>
 <div class="card-grid card-grid-3">
 <article class="topic-card"><span class="tag">最快</span><h3>我想走最常见的安装路线</h3><p>如果你本来就用 Node 管理 CLI，全局 npm 往往是最快进入可用状态的路线。</p><a href="/zh/install/npm/">去 npm 安装</a></article>
 <article class="topic-card"><span class="tag">系统</span><h3>我更想要系统级安装路径</h3><p>如果你长期用 Homebrew 或二进制管理系统工具，先看这两条路线会更自然。</p><a href="/zh/install/homebrew/">去 Homebrew 安装</a></article>
-<article class="topic-card"><span class="tag">Rust</span><h3>我更想走 Rust 工具链路线</h3><p>如果你的终端工具习惯本来就在 Rust 生态，cargo 会更顺手。</p><a href="/zh/install/cargo/">去 cargo 安装</a></article>
+	<article class="topic-card"><span class="tag">Rust</span><h3>我更想走 Rust 工具链路线</h3><p>如果你的终端工具习惯本来就在 Rust 生态，cargo 会更顺手，也更适合当前的 CodeWhale 路线。</p><a href="/zh/install/cargo/">去 cargo 安装</a></article>
 </div></div></section>
     <section class="section"><div class="container">
 <div class="section-head"><h2>安装文章列表</h2><p>先选好包管理路径，再打开具体详情页，不要把多条安装路线混在一次排查里。</p></div>
 <div class="card-grid card-grid-3">
 <article class="content-card"><span class="tag">npm</span><h3>用 npm 安装 DeepSeek TUI</h3><p>很多 CLI 用户最容易上手的路径，尤其是你已经在用 Node 管理全局工具时。</p><a href="/zh/install/npm/">打开 npm 安装</a></article>
-<article class="content-card"><span class="tag">Cargo</span><h3>用 cargo 安装 DeepSeek TUI</h3><p>如果你更习惯 Rust 工具链，cargo 路线会更自然，也更容易理解 `deepseek-tui-cli` 包名。</p><a href="/zh/install/cargo/">打开 cargo 安装</a></article>
+	<article class="content-card"><span class="tag">Cargo</span><h3>用 cargo 安装 DeepSeek TUI</h3><p>如果你更习惯 Rust 工具链，cargo 路线会更自然，也更容易理解当前的 <code>codewhale-cli --locked</code> 安装命令。</p><a href="/zh/install/cargo/">打开 cargo 安装</a></article>
 <article class="content-card"><span class="tag">Homebrew</span><h3>用 Homebrew 安装 DeepSeek TUI</h3><p>如果你的开发机一直用 brew 管理系统级 CLI，这条路径会更统一。</p><a href="/zh/install/homebrew/">打开 Homebrew 安装</a></article>
 <article class="content-card"><span class="tag">Windows</span><h3>在 Windows 上安装 DeepSeek TUI</h3><p>如果 PowerShell、Git Bash 或 WSL 让安装路线不那么直观，这页更适合先看。</p><a href="/zh/install/windows/">打开 Windows 安装</a></article>
 <article class="content-card"><span class="tag">更新</span><h3>更新或升级 DeepSeek TUI</h3><p>如果你想确认当前命令到底该通过哪条路径更新，这页更直接。</p><a href="/zh/install/update-or-upgrade/">打开更新页</a></article>

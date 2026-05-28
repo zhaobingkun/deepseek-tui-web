@@ -4,7 +4,7 @@
 
 - Path: `/Users/zhaobingkun/dev/DeepSeek-TUI`
 - Type: static SEO micro-site
-- Topic: `DeepSeek TUI`
+- Topic: `DeepSeek TUI` rename transition to `CodeWhale`
 - Current domain placeholder: `https://deepseek-tui.app/`
 
 ## Positioning

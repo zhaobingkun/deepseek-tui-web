@@ -24,7 +24,7 @@ from fill_docs_detail_pages import (  # type: ignore
 )
 
 
-API_URL = "https://api.github.com/repos/zhaobingkun/DeepSeek-TUI/contents/docs"
+API_URL = "https://api.github.com/repos/Hmbown/CodeWhale/contents/docs"
 SYNC_DIR = ROOT / "upstream-docs"
 DOMAIN = "https://deepseek-tui.app"
 
@@ -83,8 +83,8 @@ def fetch_blob_text(item: dict) -> str:
 
 def source_urls(filename: str) -> tuple[str, str]:
     return (
-        f"https://github.com/zhaobingkun/DeepSeek-TUI/blob/main/docs/{filename}",
-        f"https://raw.githubusercontent.com/zhaobingkun/DeepSeek-TUI/main/docs/{filename}",
+        f"https://github.com/Hmbown/CodeWhale/blob/main/docs/{filename}",
+        f"https://raw.githubusercontent.com/Hmbown/CodeWhale/main/docs/{filename}",
     )
 
 
@@ -283,14 +283,23 @@ def toc_html(headings: Iterable[tuple[int, str, str]]) -> str:
     ) + "</ul>"
 
 
+def editorial_note_html(slug: str, zh: bool) -> str:
+    if slug != "install":
+        return ""
+    if zh:
+        return """<section class="section"><div class="container two-col"><article class="prose"><h2>编辑说明：安装品牌已切到 CodeWhale</h2><p>这页下方承载的是上游仓库里的安装文档镜像。即使上游正文某些段落仍保留历史命令名，这个站点当前建议的新安装方式仍应优先使用 <code>npm install -g codewhale</code> 与 <code>codewhale</code>。</p><p>如果你只是来装最新版，请先看本站安装总页和更新页，再决定要不要继续阅读下面这份上游原文。</p></article><aside class="panel-card"><span class="panel-kicker">先看这些</span><div class="link-stack"><a href="/zh/install/">安装总页</a><a href="/zh/install/update-or-upgrade/">更新与升级</a><a href="https://codewhale.net/install">官方安装页</a></div></aside></div></section>"""
+    return """<section class="section"><div class="container two-col"><article class="prose"><h2>Editorial note: current installs use the CodeWhale name</h2><p>The article below mirrors the upstream install doc. Even if some upstream paragraphs still mention historical command names, this site's current recommendation for fresh installs is <code>npm install -g codewhale</code> and the <code>codewhale</code> command.</p><p>If you only need the latest install path, use this site's install hub and update guide first, then return to the mirrored upstream doc if you need historical detail.</p></article><aside class="panel-card"><span class="panel-kicker">Start here</span><div class="link-stack"><a href="/install/">Install hub</a><a href="/install/update-or-upgrade/">Update guide</a><a href="https://codewhale.net/install">Official install page</a></div></aside></div></section>"""
+
+
 def build_main(slug: str, zh: bool, doc_html: str, toc: str, source_html_url: str, source_raw_url: str) -> str:
     topic = TOPIC_DATA[slug]
     label = DOC_LABELS_ZH[slug] if zh else DOC_LABELS_EN[slug]
     title, _ = build_title_desc(slug, zh)
     links_html = render_links(topic["related"], zh)
+    note_html = editorial_note_html(slug, zh)
     if zh:
-        return f"""<main id="top"><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">文档全文</span><h1>{html.escape(title)}</h1><p>{html.escape(topic['summary_zh'])}</p><div class="hero-points"><span>上游源文件：{html.escape(topic['upstream'])}</span><span>站内直接可读</span><span>原文保留在下方</span></div></div><aside class="answer-card"><span class="panel-kicker">本页用途</span><h2>这页现在直接承载上游文档正文，不再只是导读。</h2><p>{html.escape(topic['when_zh'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这份文档真正覆盖什么</h2><p>{html.escape(topic['summary_zh'])}</p><h2>怎么用这页</h2><ul><li>先看右侧目录，直接跳到你当前最关心的小节。</li><li>如果你只是来解决具体问题，优先读正文里的相关标题，再回站内对应 hub。</li><li>如果你要核对原始来源，可以直接打开 GitHub 原文链接。</li></ul></article><aside class="panel-card"><span class="panel-kicker">快速入口</span><div class="link-stack"><a href="{html.escape(source_html_url, quote=True)}">GitHub 文档页</a><a href="{html.escape(source_raw_url, quote=True)}">Raw Markdown</a>{links_html}</div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose doc-article"><h2>上游文档原文（英文）</h2>{doc_html}<p class="back-to-top-wrap"><a class="back-to-top" href="#top">回到顶部</a></p></article><aside class="panel-card toc-card"><span class="panel-kicker">目录</span>{toc}</aside></div></section></main>"""
-    return f"""<main id="top"><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Full Docs Article</span><h1>{html.escape(title)}</h1><p>{html.escape(topic['summary_en'])}</p><div class="hero-points"><span>Upstream source: {html.escape(topic['upstream'])}</span><span>Readable on-site</span><span>Full article embedded below</span></div></div><aside class="answer-card"><span class="panel-kicker">What changed</span><h2>This page now carries the upstream doc body directly instead of acting as a lightweight reading map only.</h2><p>{html.escape(topic['when_en'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>What this document actually covers</h2><p>{html.escape(topic['summary_en'])}</p><h2>How to use this page</h2><ul><li>Use the section list on the right to jump into the exact upstream section you need.</li><li>If you came here for one problem only, read the relevant heading first and return to the matching hub afterward.</li><li>If you need source verification, open the GitHub page or raw Markdown directly.</li></ul></article><aside class="panel-card"><span class="panel-kicker">Quick links</span><div class="link-stack"><a href="{html.escape(source_html_url, quote=True)}">GitHub doc page</a><a href="{html.escape(source_raw_url, quote=True)}">Raw Markdown</a>{links_html}</div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose doc-article"><h2>Full upstream document</h2>{doc_html}<p class="back-to-top-wrap"><a class="back-to-top" href="#top">Back to top</a></p></article><aside class="panel-card toc-card"><span class="panel-kicker">Contents</span>{toc}</aside></div></section></main>"""
+        return f"""<main id="top"><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">文档全文</span><h1>{html.escape(title)}</h1><p>{html.escape(topic['summary_zh'])}</p><div class="hero-points"><span>上游源文件：{html.escape(topic['upstream'])}</span><span>站内直接可读</span><span>原文保留在下方</span></div></div><aside class="answer-card"><span class="panel-kicker">本页用途</span><h2>这页现在直接承载上游文档正文，不再只是导读。</h2><p>{html.escape(topic['when_zh'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这份文档真正覆盖什么</h2><p>{html.escape(topic['summary_zh'])}</p><h2>怎么用这页</h2><ul><li>先看右侧目录，直接跳到你当前最关心的小节。</li><li>如果你只是来解决具体问题，优先读正文里的相关标题，再回站内对应 hub。</li><li>如果你要核对原始来源，可以直接打开 GitHub 原文链接。</li></ul></article><aside class="panel-card"><span class="panel-kicker">快速入口</span><div class="link-stack"><a href="{html.escape(source_html_url, quote=True)}">GitHub 文档页</a><a href="{html.escape(source_raw_url, quote=True)}">Raw Markdown</a>{links_html}</div></aside></div></section>{note_html}<section class="section section-alt"><div class="container two-col"><article class="prose doc-article"><h2>上游文档原文（英文）</h2>{doc_html}<p class="back-to-top-wrap"><a class="back-to-top" href="#top">回到顶部</a></p></article><aside class="panel-card toc-card"><span class="panel-kicker">目录</span>{toc}</aside></div></section></main>"""
+    return f"""<main id="top"><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Full Docs Article</span><h1>{html.escape(title)}</h1><p>{html.escape(topic['summary_en'])}</p><div class="hero-points"><span>Upstream source: {html.escape(topic['upstream'])}</span><span>Readable on-site</span><span>Full article embedded below</span></div></div><aside class="answer-card"><span class="panel-kicker">What changed</span><h2>This page now carries the upstream doc body directly instead of acting as a lightweight reading map only.</h2><p>{html.escape(topic['when_en'])}</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>What this document actually covers</h2><p>{html.escape(topic['summary_en'])}</p><h2>How to use this page</h2><ul><li>Use the section list on the right to jump into the exact upstream section you need.</li><li>If you came here for one problem only, read the relevant heading first and return to the matching hub afterward.</li><li>If you need source verification, open the GitHub page or raw Markdown directly.</li></ul></article><aside class="panel-card"><span class="panel-kicker">Quick links</span><div class="link-stack"><a href="{html.escape(source_html_url, quote=True)}">GitHub doc page</a><a href="{html.escape(source_raw_url, quote=True)}">Raw Markdown</a>{links_html}</div></aside></div></section>{note_html}<section class="section section-alt"><div class="container two-col"><article class="prose doc-article"><h2>Full upstream document</h2>{doc_html}<p class="back-to-top-wrap"><a class="back-to-top" href="#top">Back to top</a></p></article><aside class="panel-card toc-card"><span class="panel-kicker">Contents</span>{toc}</aside></div></section></main>"""
 
 
 def process_page(path: Path, slug: str, zh: bool, doc_html: str, toc: str, source_html_url: str, source_raw_url: str) -> None:
@@ -330,8 +339,6 @@ def main() -> None:
             try:
                 markdown_text = fetch_blob_text(item)
                 (SYNC_DIR / filename).write_text(markdown_text, encoding="utf-8")
-                source_html_url = item["html_url"]
-                source_raw_url = item["download_url"]
             except Exception:
                 cache_path = SYNC_DIR / filename
                 if not cache_path.exists():

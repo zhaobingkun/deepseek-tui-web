@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DeepSeek TUI 中文指南：安装、配置与使用说明</title>
-  <meta name="description" content="DeepSeek TUI 中文指南覆盖安装、配置、MCP、技能、模式、对比和排错，帮助你更快上手终端里的 DeepSeek TUI。">
+  <title>DeepSeek TUI 中文指南：CodeWhale 改名说明、安装、配置与使用</title>
+  <meta name="description" content="DeepSeek TUI 中文指南会先说明它已改名为 CodeWhale，再覆盖安装、配置、MCP、技能、模式、对比和排错。">
   <link rel="canonical" href="https://deepseek-tui.app/zh/">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="DeepSeek TUI 中文指南：安装、配置与使用说明">
-  <meta property="og:description" content="DeepSeek TUI 中文指南覆盖安装、配置、MCP、技能、模式、对比和排错，帮助你更快上手终端里的 DeepSeek TUI。">
+  <meta property="og:title" content="DeepSeek TUI 中文指南：CodeWhale 改名说明、安装、配置与使用">
+  <meta property="og:description" content="DeepSeek TUI 中文指南会先说明它已改名为 CodeWhale，再覆盖安装、配置、MCP、技能、模式、对比和排错。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://deepseek-tui.app/zh/">
   <meta property="og:site_name" content="DeepSeek TUI 中文指南">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DeepSeek TUI 中文指南：安装、配置与使用说明">
-  <meta name="twitter:description" content="DeepSeek TUI 中文指南覆盖安装、配置、MCP、技能、模式、对比和排错，帮助你更快上手终端里的 DeepSeek TUI。">
+  <meta name="twitter:title" content="DeepSeek TUI 中文指南：CodeWhale 改名说明、安装、配置与使用">
+  <meta name="twitter:description" content="DeepSeek TUI 中文指南会先说明它已改名为 CodeWhale，再覆盖安装、配置、MCP、技能、模式、对比和排错。">
   <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/">
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
@@ -43,24 +43,25 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">中文版本</span>
-          <h1>DeepSeek TUI 中文站也改成同一条路径：先看主菜单，再看栏目列表，最后再进详情页</h1>
-          <p>先用顶部主菜单选大栏目，再用左侧副菜单和栏目页里的文章列表缩小范围。这样不用在安装、配置、模式和 MCP 之间来回跳。</p>
+          <span class="eyebrow">改名过渡</span>
+          <h1>DeepSeek TUI 已改名为 CodeWhale，这个中文站现在把旧名字当成迁移入口来处理</h1>
+          <p>如果你是搜 DeepSeek TUI 进来的，先记住最关键的一点：新的安装和启动命令应该优先使用 CodeWhale。然后再按顶部主菜单进入安装、配置、文档或排错栏目。</p>
           <div class="hero-actions"><a class="btn btn-primary" href="/zh/install/">先看安装</a><a class="btn btn-secondary" href="/zh/docs/">先看文档</a></div>
           <div class="quickstart-card">
             <div class="quickstart-head">
               <span class="tag">Quickstart</span>
               <a href="/zh/install/">查看完整安装页</a>
             </div>
-            <pre class="quickstart-code"><code>npm install -g deepseek-tui
-deepseek --version
-deepseek --model auto</code></pre>
+            <pre class="quickstart-code"><code>npm install -g codewhale
+codewhale --version
+codewhale --model auto</code></pre>
           </div>
-          <div class="hero-points"><span>主菜单先选栏目</span><span>左侧副菜单再缩小范围</span><span>先列表后详情</span><span>中文英文结构一致</span></div>
+          <div class="hero-points"><span>先看改名说明</span><span>主菜单先选栏目</span><span>先列表后详情</span><span>中文英文结构一致</span></div>
         </div>
-        <div class="terminal-frame"><div class="terminal-top"><span class="dot"></span><span class="dot gold"></span><span class="dot green"></span></div><div class="terminal-body"><div>$ <strong>Quickstart</strong></div><div>$ npm install -g deepseek-tui</div><div>$ deepseek --version</div><div>$ deepseek --model auto</div><div class="terminal-note">先确认安装成功，再检查版本，最后用自动模型选择直接进入终端工作流。</div></div></div>
+        <div class="terminal-frame"><div class="terminal-top"><span class="dot"></span><span class="dot gold"></span><span class="dot green"></span></div><div class="terminal-body"><div>$ <strong>Quickstart</strong></div><div>$ npm install -g codewhale</div><div>$ codewhale --version</div><div>$ codewhale --model auto</div><div class="terminal-note">先用新包名安装，再确认当前二进制，最后进入自动模型选择。</div></div></div>
       </div>
     </section>
+    <section class="section"><div class="container two-col"><article class="prose"><h2>改名说明：DeepSeek TUI 现在叫 CodeWhale</h2><p>上游项目已经正式改名。新安装应优先使用 <code>npm install -g codewhale</code>，启动命令也应优先使用 <code>codewhale</code>。</p><p>旧的 <code>deepseek</code> / <code>deepseek-tui</code> 目前还作为兼容 shim 保留，但上游已说明这只是过渡方案，并计划在 <code>v0.9.0</code> 移除。</p></article><aside class="panel-card"><span class="panel-kicker">先看这些</span><div class="link-stack"><a href="/zh/install/">安装总页</a><a href="/zh/install/update-or-upgrade/">更新与升级</a><a href="/zh/docs/install/">上游安装文档</a></div></aside></div></section>
     <section class="section"><div class="container">
 <div class="section-head"><h2>先选一个主栏目</h2><p>这些就是顶部主菜单里的主要分支。先决定你现在是安装、配置、文档、模式还是排错问题，再进入对应栏目页。</p></div>
 <div class="card-grid card-grid-3">
