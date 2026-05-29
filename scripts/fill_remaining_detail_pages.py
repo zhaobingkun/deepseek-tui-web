@@ -6,6 +6,7 @@ from pathlib import Path
 
 
 ROOT = Path("/Users/zhaobingkun/dev/DeepSeek-TUI")
+DOMAIN = "https://deepseek-tui.app"
 
 CLI_HTML_REPLACEMENTS = (
     ("npm install -g deepseek-tui", "npm install -g codewhale"),
@@ -19,6 +20,20 @@ CLI_HTML_REPLACEMENTS = (
     ("deepseek --version", "codewhale --version"),
     ("command -v deepseek || which deepseek", "command -v codewhale || which codewhale"),
     ("where deepseek", "where codewhale"),
+    ("the `deepseek` command", "the `codewhale` command"),
+    ("`deepseek` command", "`codewhale` command"),
+    ("`deepseek` is missing", "`codewhale` is missing"),
+    ("`deepseek` 不存在", "`codewhale` 不存在"),
+    ("当前 `deepseek` 命令", "当前 `codewhale` 命令"),
+    ("再装 DeepSeek TUI", "再装 CodeWhale"),
+    ("而不是 DeepSeek TUI 自己坏了", "而不是 CodeWhale 自己坏了"),
+    ("configured in DeepSeek TUI", "configured in CodeWhale"),
+    ("不要先怪 DeepSeek TUI", "不要先怪 CodeWhale"),
+    ("DeepSeek TUI itself", "CodeWhale itself"),
+    ("DeepSeek TUI 本身", "CodeWhale 本身"),
+    ("你在 DeepSeek TUI 里配置的那个 provider", "你在 CodeWhale 里配置的那个 provider"),
+    ("DeepSeek TUI problems", "CodeWhale problems"),
+    ("DeepSeek TUI binary", "CodeWhale binary"),
     ("`deepseek`", "`codewhale`"),
 )
 
@@ -327,7 +342,7 @@ PAGES = {
             ],
             "coverage": "This page should help the reader compare setup posture, execution style, and everyday fit rather than stop at superficial similarity between two terminal coding tools.",
             "diagnosis": [
-                ("Ecosystem fit", "Decide whether you are optimizing around a DeepSeek-centered workflow, a Claude-centered workflow, or a broader multi-tool environment."),
+                ("Ecosystem fit", "Decide whether you are optimizing around a CodeWhale-centered workflow, a Claude-centered workflow, or a broader multi-tool environment."),
                 ("Execution posture", "Compare how much direct execution freedom you want versus how much structured guidance you expect around planning and approval."),
                 ("Daily session feel", "Look at which workflow feels more natural for repeated terminal use, not just for the first five minutes after install."),
             ],
@@ -373,7 +388,7 @@ PAGES = {
             ],
             "coverage": "这页应该帮助用户比较 setup 姿态、执行风格和长期日常适配度，而不是停留在两个终端编码工具表面上都能做什么。",
             "diagnosis": [
-                ("生态位匹配", "先判断你是更想围绕 DeepSeek 工作流、Claude 工作流，还是更广义的多工具环境来优化。"),
+                ("生态位匹配", "先判断你是更想围绕 CodeWhale 工作流、Claude 工作流，还是更广义的多工具环境来优化。"),
                 ("执行姿态", "比较你更想要多少直接执行自由度，以及是否更依赖明确的计划和审批护栏。"),
                 ("长期会话体验", "看哪一边更适合重复使用，而不是只看首次启动是不是成功。"),
             ],
@@ -1256,6 +1271,8 @@ def process_page(path: Path, copy: dict[str, object], zh: bool) -> None:
     title = copy.get("title") if not zh else copy.get("title")
     description = copy.get("description") if not zh else copy.get("description")
     page_title = str(title) if title else current_title
+    if title and current_title != page_title:
+        text = text.replace(current_title, page_title)
     if title:
         text = replace_once(text, r"<title>.*?</title>", f"<title>{html.escape(page_title)}</title>")
         text = replace_once(text, r'<meta property="og:title" content=".*?">', f'<meta property="og:title" content="{html.escape(page_title)}">')
@@ -1268,6 +1285,14 @@ def process_page(path: Path, copy: dict[str, object], zh: bool) -> None:
         text = replace_once(text, r'<meta property="og:description" content=".*?">', f'<meta property="og:description" content="{html.escape(page_desc)}">')
         text = replace_once(text, r'<meta name="twitter:description" content=".*?">', f'<meta name="twitter:description" content="{html.escape(page_desc)}">')
         text = replace_once(text, r'"description": ".*?"', f'"description": "{html.escape(page_desc)}"')
+    page_url = f"{DOMAIN}/{'zh/' if zh else ''}{'/'.join(parts[:-1])}/"
+    text = re.sub(
+        rf'("position": \d+,\s*"name": ")[^"]*(",\s*"item": "{re.escape(page_url)}")',
+        rf'\1{html.escape(page_title)}\2',
+        text,
+        count=1,
+        flags=re.S,
+    )
     updated = re.sub(r"<main>.*?</main>", build_main(copy, zh, section, page_title), text, flags=re.S, count=1)
     updated = modernize_cli_html(updated)
     path.write_text(updated, encoding="utf-8")

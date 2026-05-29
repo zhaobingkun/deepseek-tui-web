@@ -20,6 +20,20 @@ CLI_HTML_REPLACEMENTS = (
     ("deepseek --version", "codewhale --version"),
     ("command -v deepseek || which deepseek", "command -v codewhale || which codewhale"),
     ("where deepseek", "where codewhale"),
+    ("the `deepseek` command", "the `codewhale` command"),
+    ("`deepseek` command", "`codewhale` command"),
+    ("`deepseek` is missing", "`codewhale` is missing"),
+    ("`deepseek` 不存在", "`codewhale` 不存在"),
+    ("当前 `deepseek` 命令", "当前 `codewhale` 命令"),
+    ("再装 DeepSeek TUI", "再装 CodeWhale"),
+    ("而不是 DeepSeek TUI 自己坏了", "而不是 CodeWhale 自己坏了"),
+    ("configured in DeepSeek TUI", "configured in CodeWhale"),
+    ("不要先怪 DeepSeek TUI", "不要先怪 CodeWhale"),
+    ("DeepSeek TUI itself", "CodeWhale itself"),
+    ("DeepSeek TUI 本身", "CodeWhale 本身"),
+    ("你在 DeepSeek TUI 里配置的那个 provider", "你在 CodeWhale 里配置的那个 provider"),
+    ("DeepSeek TUI problems", "CodeWhale problems"),
+    ("DeepSeek TUI binary", "CodeWhale binary"),
     ("`deepseek`", "`codewhale`"),
 )
 
@@ -46,15 +60,15 @@ PAGES = {
         "h1": "Install CodeWhale with npm if you searched for DeepSeek TUI and need the current package name",
         "intro": "The project name has changed upstream, but the install question is still mostly about your Node workflow. The npm route is strongest when your machine already manages terminal tools through Node and you want the current CodeWhale package path instead of the older transitional names.",
         "answer_kicker": "Best Use",
-        "answer_h2": "Choose npm when you already trust global Node CLI installs and want the fastest path to a working DeepSeek TUI binary.",
+        "answer_h2": "Choose npm when you already trust global Node CLI installs and want the fastest path to a working CodeWhale binary.",
         "answer_p": "If your shell is already using npm-based tools cleanly, this is usually the lowest-friction route. If your Node environment is messy, fix that first or use a different install path.",
         "questions": [
             "When is npm the right route instead of cargo or Homebrew?",
             "What should you verify right after the install finishes?",
-            "Which failures are actually Node PATH problems rather than DeepSeek TUI problems?",
+            "Which failures are actually Node PATH problems rather than CodeWhale problems?",
         ],
         "steps": [
-            ("Confirm the runtime first", "Run `node --version` and `npm --version` before you install. If those basics are unstable, the DeepSeek TUI install will not be your real problem."),
+            ("Confirm the runtime first", "Run `node --version` and `npm --version` before you install. If those basics are unstable, the CodeWhale install will not be your real problem."),
             ("Install globally once", "Use a single global npm install path, not a mix of system Node, nvm shells, and copied binaries."),
             ("Check the active binary", "After install, verify that the `deepseek` command resolves to the same global route you think npm owns."),
         ],
@@ -130,7 +144,7 @@ PAGES = {
         "h1": "Install CodeWhale with cargo when Rust is already part of your normal terminal workflow",
         "intro": "If you searched for DeepSeek TUI but your real CLI habits already live in Rust, the current upstream route is CodeWhale through cargo. That path makes the most sense when you already trust cargo for updates and want one toolchain to own the binary.",
         "answer_kicker": "Best Use",
-        "answer_h2": "Choose cargo when Rust tooling is already normal on your machine and you want one package ecosystem to own the DeepSeek TUI binary.",
+        "answer_h2": "Choose cargo when Rust tooling is already normal on your machine and you want one package ecosystem to own the CodeWhale binary.",
         "answer_p": "Cargo is not automatically better than npm; it is better when it matches the way you already maintain terminal software.",
         "questions": [
             "When does cargo reduce complexity instead of adding it?",
@@ -992,7 +1006,7 @@ PAGES = {
         "description": "Set up MCP for CodeWhale in the right order if you searched for DeepSeek TUI, so install and provider config are stable before server troubleshooting begins.",
         "eyebrow": "MCP Setup",
         "h1": "CodeWhale MCP setup only feels clear when you treat it as an advanced layer on top of a stable base install",
-        "intro": "MCP setup becomes confusing when users jump into servers before the underlying DeepSeek TUI install, provider auth, and config path are already reliable. The clean setup path starts lower and only climbs into MCP once the base tool is stable.",
+        "intro": "MCP setup becomes confusing when users jump into servers before the underlying CodeWhale install, provider auth, and config path are already reliable. The clean setup path starts lower and only climbs into MCP once the base tool is stable.",
         "answer_kicker": "Best Use",
         "answer_h2": "Set up MCP only after the base app, provider auth, and normal request flow already work without it.",
         "answer_p": "That order matters because MCP failures are much easier to isolate when the lower layers are already known-good.",
@@ -1547,7 +1561,7 @@ def modernize_cli_html(text: str) -> str:
 
 def rename_notice_html(zh: bool) -> str:
     if zh:
-        return """<section class="section"><div class="container two-col"><article class="prose"><h2>DeepSeek TUI 已改名为 CodeWhale</h2><p>这个项目上游已经改名。现在的新安装命令应优先使用 <code>npm install -g codewhale</code>，启动命令也应优先使用 <code>codewhale</code>。</p><p>旧的 <code>deepseek</code> / <code>deepseek-tui</code> 目前仍作为兼容 shim 存在，但上游已经说明它们只是过渡方案，并计划在 <code>v0.9.0</code> 移除。</p></article><aside class="panel-card"><span class="panel-kicker">迁移提示</span><div class="link-stack"><a href="/install/npm/">看 npm 安装</a><a href="/install/update-or-upgrade/">看更新方式</a><a href="/docs/install/">看上游安装文档</a></div></aside></div></section>"""
+        return """<section class="section"><div class="container two-col"><article class="prose"><h2>DeepSeek TUI 已改名为 CodeWhale</h2><p>这个项目上游已经改名。现在的新安装命令应优先使用 <code>npm install -g codewhale</code>，启动命令也应优先使用 <code>codewhale</code>。</p><p>旧的 <code>deepseek</code> / <code>deepseek-tui</code> 目前仍作为兼容 shim 存在，但上游已经说明它们只是过渡方案，并计划在 <code>v0.9.0</code> 移除。</p></article><aside class="panel-card"><span class="panel-kicker">迁移提示</span><div class="link-stack"><a href="/zh/install/npm/">看 npm 安装</a><a href="/zh/install/update-or-upgrade/">看更新方式</a><a href="/zh/docs/install/">看上游安装文档</a></div></aside></div></section>"""
     return """<section class="section"><div class="container two-col"><article class="prose"><h2>DeepSeek TUI has been renamed to CodeWhale</h2><p>Upstream now ships the project under the new name. For fresh installs, use <code>npm install -g codewhale</code> and launch it with <code>codewhale</code>.</p><p>The older <code>deepseek</code> and <code>deepseek-tui</code> names still exist as compatibility shims for now, but upstream documents them as transitional and scheduled for removal in <code>v0.9.0</code>.</p></article><aside class="panel-card"><span class="panel-kicker">Migration note</span><div class="link-stack"><a href="/install/npm/">npm install guide</a><a href="/install/update-or-upgrade/">Update guide</a><a href="/docs/install/">Upstream install docs</a></div></aside></div></section>"""
 
 
@@ -1607,6 +1621,10 @@ def process(path: Path) -> None:
     title = data["zh_title"] if zh else data["title"]
     desc = data["zh_description"] if zh else data["description"]
     text = path.read_text(encoding="utf-8")
+    current_title_match = re.search(r"<title>(.*?)</title>", text, flags=re.S)
+    current_title = html.unescape(current_title_match.group(1)) if current_title_match else ""
+    if current_title and current_title != title:
+        text = text.replace(current_title, title)
     text = replace_once(text, r"<title>.*?</title>", f"<title>{html.escape(title)}</title>")
     text = replace_once(text, r'<meta name="description" content=".*?">', f'<meta name="description" content="{html.escape(desc)}">')
     text = replace_once(text, r'<meta property="og:title" content=".*?">', f'<meta property="og:title" content="{html.escape(title)}">')
@@ -1616,6 +1634,14 @@ def process(path: Path) -> None:
     text = replace_once(text, r'"headline": ".*?"', f'"headline": "{html.escape(title)}"')
     text = replace_once(text, r'"name": ".*?"', f'"name": "{html.escape(title)}"')
     text = replace_once(text, r'"description": ".*?"', f'"description": "{html.escape(desc)}"')
+    page_url = f"{DOMAIN}/{'zh/' if zh else ''}{'/'.join(parts[:-1])}/"
+    text = re.sub(
+        rf'("position": \d+,\s*"name": ")[^"]*(",\s*"item": "{re.escape(page_url)}")',
+        rf'\1{html.escape(title)}\2',
+        text,
+        count=1,
+        flags=re.S,
+    )
     text = replace_once(text, r"<main>.*?</main>", build_main(section, slug, zh))
     text = modernize_cli_html(text)
     path.write_text(text, encoding="utf-8")

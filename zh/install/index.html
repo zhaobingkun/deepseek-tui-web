@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>如何在 CodeWhale 改名后安装 DeepSeek TUI</title>
-  <meta name="description" content="这页先说明 DeepSeek TUI 已改名为 CodeWhale，再帮你选择 npm、cargo、Homebrew 或其他安装路径。">
+  <title>如何在 DeepSeek TUI 改名后安装 CodeWhale</title>
+  <meta name="description" content="如果你还在搜索 DeepSeek TUI，这页会先说明它已改名为 CodeWhale，再帮你选择 npm、cargo、Homebrew 或其他安装路径。">
   <link rel="canonical" href="https://deepseek-tui.app/zh/install/">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="如何在 CodeWhale 改名后安装 DeepSeek TUI">
-  <meta property="og:description" content="这页先说明 DeepSeek TUI 已改名为 CodeWhale，再帮你选择 npm、cargo、Homebrew 或其他安装路径。">
+  <meta property="og:title" content="如何在 DeepSeek TUI 改名后安装 CodeWhale">
+  <meta property="og:description" content="如果你还在搜索 DeepSeek TUI，这页会先说明它已改名为 CodeWhale，再帮你选择 npm、cargo、Homebrew 或其他安装路径。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://deepseek-tui.app/zh/install/">
   <meta property="og:site_name" content="DeepSeek TUI 中文指南">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="如何在 CodeWhale 改名后安装 DeepSeek TUI">
-  <meta name="twitter:description" content="这页先说明 DeepSeek TUI 已改名为 CodeWhale，再帮你选择 npm、cargo、Homebrew 或其他安装路径。">
+  <meta name="twitter:title" content="如何在 DeepSeek TUI 改名后安装 CodeWhale">
+  <meta name="twitter:description" content="如果你还在搜索 DeepSeek TUI，这页会先说明它已改名为 CodeWhale，再帮你选择 npm、cargo、Homebrew 或其他安装路径。">
   <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/install/">
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/install/">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
@@ -25,9 +25,9 @@
   "@graph": [
     {
       "@type": "Article",
-      "headline": "如何安装 DeepSeek TUI：npm、Cargo、Homebrew 与二进制",
-      "name": "如何安装 DeepSeek TUI：npm、Cargo、Homebrew 与二进制",
-      "description": "用 npm、cargo、Homebrew 或预编译二进制安装 DeepSeek TUI，并判断哪条路径更适合你的终端环境。",
+      "headline": "如何安装 CodeWhale（DeepSeek TUI 旧词入口）",
+      "name": "如何安装 CodeWhale（DeepSeek TUI 旧词入口）",
+      "description": "如果你还在搜索 DeepSeek TUI，这页会用 CodeWhale 现名解释 npm、cargo、Homebrew 和二进制安装路径。",
       "url": "https://deepseek-tui.app/zh/install/",
       "inLanguage": "zh-CN"
     },
@@ -43,7 +43,7 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "如何安装 DeepSeek TUI：npm、Cargo、Homebrew 与二进制",
+          "name": "如何安装 CodeWhale（DeepSeek TUI 旧词入口）",
           "item": "https://deepseek-tui.app/zh/install/"
         }
       ]
@@ -60,7 +60,7 @@
       <div class="container two-col">
         <div>
           <span class="eyebrow">安装总览</span>
-          <h1>安装 DeepSeek TUI 前，先知道它已经改名为 CodeWhale，再选包管理路径</h1>
+          <h1>安装 CodeWhale 前，先知道 DeepSeek TUI 只是旧名字，再选包管理路径</h1>
           <p>这个安装总页保留旧搜索词，但新的安装与启动命令应优先使用 CodeWhale。真正要先想清楚的，不只是命令本身，而是你当前 CLI 环境更适合哪条更新和维护路径。</p>
         </div>
         <aside class="answer-card"><span class="panel-kicker">快速结论</span><h2>新的 npm 安装应优先使用 <code>npm install -g codewhale</code>。如果你长期在 Rust 或 Homebrew 生态里，再看对应路线。</h2><p>系统级安装、Homebrew 和预编译二进制仍然有价值，但不要把旧命令和新命令混在一起。</p></aside>
@@ -77,13 +77,13 @@
     <section class="section"><div class="container">
 <div class="section-head"><h2>安装文章列表</h2><p>先选好包管理路径，再打开具体详情页，不要把多条安装路线混在一次排查里。</p></div>
 <div class="card-grid card-grid-3">
-<article class="content-card"><span class="tag">npm</span><h3>用 npm 安装 DeepSeek TUI</h3><p>很多 CLI 用户最容易上手的路径，尤其是你已经在用 Node 管理全局工具时。</p><a href="/zh/install/npm/">打开 npm 安装</a></article>
-	<article class="content-card"><span class="tag">Cargo</span><h3>用 cargo 安装 DeepSeek TUI</h3><p>如果你更习惯 Rust 工具链，cargo 路线会更自然，也更容易理解当前的 <code>codewhale-cli --locked</code> 安装命令。</p><a href="/zh/install/cargo/">打开 cargo 安装</a></article>
-<article class="content-card"><span class="tag">Homebrew</span><h3>用 Homebrew 安装 DeepSeek TUI</h3><p>如果你的开发机一直用 brew 管理系统级 CLI，这条路径会更统一。</p><a href="/zh/install/homebrew/">打开 Homebrew 安装</a></article>
-<article class="content-card"><span class="tag">Windows</span><h3>在 Windows 上安装 DeepSeek TUI</h3><p>如果 PowerShell、Git Bash 或 WSL 让安装路线不那么直观，这页更适合先看。</p><a href="/zh/install/windows/">打开 Windows 安装</a></article>
-<article class="content-card"><span class="tag">更新</span><h3>更新或升级 DeepSeek TUI</h3><p>如果你想确认当前命令到底该通过哪条路径更新，这页更直接。</p><a href="/zh/install/update-or-upgrade/">打开更新页</a></article>
+<article class="content-card"><span class="tag">npm</span><h3>用 npm 安装 CodeWhale</h3><p>很多 CLI 用户最容易上手的路径，尤其是你已经在用 Node 管理全局工具时。</p><a href="/zh/install/npm/">打开 npm 安装</a></article>
+	<article class="content-card"><span class="tag">Cargo</span><h3>用 cargo 安装 CodeWhale</h3><p>如果你更习惯 Rust 工具链，cargo 路线会更自然，也更容易理解当前的 <code>codewhale-cli --locked</code> 安装命令。</p><a href="/zh/install/cargo/">打开 cargo 安装</a></article>
+<article class="content-card"><span class="tag">Homebrew</span><h3>用 Homebrew 安装 CodeWhale</h3><p>如果你的开发机一直用 brew 管理系统级 CLI，这条路径会更统一。</p><a href="/zh/install/homebrew/">打开 Homebrew 安装</a></article>
+<article class="content-card"><span class="tag">Windows</span><h3>在 Windows 上安装 CodeWhale</h3><p>如果 PowerShell、Git Bash 或 WSL 让安装路线不那么直观，这页更适合先看。</p><a href="/zh/install/windows/">打开 Windows 安装</a></article>
+<article class="content-card"><span class="tag">更新</span><h3>更新或升级 CodeWhale</h3><p>如果你想确认当前命令到底该通过哪条路径更新，这页更直接。</p><a href="/zh/install/update-or-upgrade/">打开更新页</a></article>
 </div></div></section>
-  <footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a></div><div class="footer-links"><a href="/zh/comparisons/">对比</a><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a></div></div></footer>
+  <footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦 CodeWhale 安装与命令迁移。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a></div><div class="footer-links"><a href="/zh/comparisons/">对比</a><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a></div></div></footer>
   <script src="/assets/js/site.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
