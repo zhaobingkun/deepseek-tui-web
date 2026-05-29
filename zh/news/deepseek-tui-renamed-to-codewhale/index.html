@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeepSeek TUI 改名为 CodeWhale：安装、命令与迁移</title>
+  <meta name="description" content="理解 DeepSeek TUI 为什么改名为 CodeWhale、新旧命令怎么对应、哪些地方还兼容，以及在 v0.9.0 之前该更新什么。">
+  <link rel="canonical" href="https://deepseek-tui.app/zh/news/deepseek-tui-renamed-to-codewhale/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="DeepSeek TUI 改名为 CodeWhale：安装、命令与迁移">
+  <meta property="og:description" content="理解 DeepSeek TUI 为什么改名为 CodeWhale、新旧命令怎么对应、哪些地方还兼容，以及在 v0.9.0 之前该更新什么。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://deepseek-tui.app/zh/news/deepseek-tui-renamed-to-codewhale/">
+  <meta property="og:site_name" content="DeepSeek TUI 中文指南">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DeepSeek TUI 改名为 CodeWhale：安装、命令与迁移">
+  <meta name="twitter:description" content="理解 DeepSeek TUI 为什么改名为 CodeWhale、新旧命令怎么对应、哪些地方还兼容，以及在 v0.9.0 之前该更新什么。">
+  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/news/deepseek-tui-renamed-to-codewhale/">
+  <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/news/deepseek-tui-renamed-to-codewhale/">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "DeepSeek TUI 改名为 CodeWhale：安装、命令与迁移",
+      "name": "DeepSeek TUI 改名为 CodeWhale：安装、命令与迁移",
+      "description": "理解 DeepSeek TUI 为什么改名为 CodeWhale、新旧命令怎么对应、哪些地方还兼容，以及在 v0.9.0 之前该更新什么。",
+      "url": "https://deepseek-tui.app/zh/news/deepseek-tui-renamed-to-codewhale/",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://deepseek-tui.app/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "新闻",
+          "item": "https://deepseek-tui.app/zh/news/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DeepSeek TUI 改名为 CodeWhale",
+          "item": "https://deepseek-tui.app/zh/news/deepseek-tui-renamed-to-codewhale/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/">首页</a><a href="/zh/guides/">指南</a><a href="/zh/docs/">文档</a><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a><a href="/zh/comparisons/">对比</a><a href="/zh/troubleshooting/">排错</a><a href="/">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header>
+  <div class="page-path"><div class="container"><a href="/zh/">首页</a><span>/</span><a href="/zh/news/">新闻</a><span>/</span><span>DeepSeek TUI 改名为 CodeWhale</span></div></div>
+  <main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">改名指南</span><h1>DeepSeek TUI 已改名为 CodeWhale，真正需要迁移的是命令名、包名和你的更新习惯</h1><p>大多数搜这个问题的人，不只是想知道品牌怎么变了。他们真正想问的是：安装命令是不是变了、旧命令现在还能不能用、哪些文档和自动化需要提前更新，避免等兼容窗口关闭以后再集中踩坑。</p><div class="hero-points"><span>本页是站内详情页</span><span>DeepSeek TUI 改名为 CodeWhale：安装、命令与迁移</span><span>资讯</span></div></div><aside class="answer-card"><span class="panel-kicker">直接答案</span><h2>DeepSeek TUI 是旧搜索词；CodeWhale 是当前上游正式名称，也是新安装应优先使用的命令路径。</h2><p>实际迁移并不复杂：新安装优先使用 `codewhale` 和新的包名；旧命令只把它当成暂时兼容 shim；并提前为 `v0.9.0` 之后的移除做准备。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页应该先回答的问题</h2><ul><li>变的是产品本身，还是只是名字？</li><li>现在新安装到底应该用哪些命令和包名？</li><li>在旧 shim 被移除前，哪些脚本、文档和 shell 习惯应该先改？</li></ul><h2>这页应该帮你判断什么</h2><p>这页要帮助用户理解改名本身，把旧名字和新名字对应起来，并找出自己环境里哪些部分需要显式迁移。</p><h2>快速定位</h2><h3>品牌混淆</h3><p>很多人还会在搜索结果里先看到 DeepSeek TUI，但上游文档、releases 和安装命令已经改成 CodeWhale。</p><h3>命令混淆</h3><p>真正的影响点在安装命令、二进制名和包名是否还和官方当前路线一致。</p><h3>自动化混淆</h3><p>shell alias、内部文档、CI 说明或 runbook 可能还依赖旧名字，即使 app 本身暂时还能启动。</p></article><aside class="panel-card"><span class="panel-kicker">下一步最该去的页面</span><div class="link-stack"><a href="/zh/install/">安装总页</a><a href="/zh/install/update-or-upgrade/">更新与升级</a><a href="/zh/troubleshooting/command-not-found/">command not found 排错</a><a href="/zh/news/what-is-deepseek-tui/">DeepSeek TUI 是什么？</a></div></aside></div></section><section class="section section-alt"><div class="container two-col"><article class="prose"><h2>逐步处理流程</h2><ol><li><strong>先确认当前正式名称</strong><br>把 CodeWhale 当成当前产品名，把 DeepSeek TUI 当成旧搜索入口。</li><li><strong>把新安装切到新命令</strong><br>新用户教学优先使用当前安装路径和当前二进制名，不要再把过渡 shim 当成主路线。</li><li><strong>盘点本地旧引用</strong><br>检查 shell alias、脚本、README 片段、CI 说明和内部文档里是否还保留旧命令名。</li><li><strong>把兼容 shim 当成临时桥梁</strong><br>如果短期还在用旧命令，也要明确它只是过渡方案，并在 `v0.9.0` 之前主动清掉。</li></ol><h2>常见误区</h2><ul><li>把 DeepSeek TUI 和 CodeWhale 当成两个不同产品来看。</li><li>因为旧命令今天还能跑，就继续用旧命令教新安装。</li><li>忘了上游已经把旧命令标成临时兼容方案，并计划在 `v0.9.0` 移除。</li></ul><h2>什么时候可以离开这页</h2><p>当你已经知道哪些名字是旧的、哪些是当前正式名字，以及下一步该去安装、更新、排错还是对比栏目时，就可以离开这页了。</p></article><aside class="panel-card"><span class="panel-kicker">把这页当作正文页来用</span><p>这页的目标是直接回答当前这个具体问题，而不是只把你推回栏目页。适合已经明确分支、现在需要更清楚处理路径的时候打开。</p></aside></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>先把共享安装片段改成新名字</h3><p>迁移里最稳的一步，是先把团队共用的安装片段改掉，避免新用户继续学临时 shim 路线。</p><pre><code>npm install -g codewhale
+codewhale --version
+codewhale --model auto</code></pre></article><article class="detail-card"><h3>抽一条本地工作流做旧名审计</h3><p>随便挑一个 shell alias、一份内部文档和一条自动化说明，查它们是不是还写着 `codewhale` 或 `deepseek-tui`。</p><pre><code># 搜索文档和 shell alias
+# 在新安装教学里替换旧命令名</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>旧命令现在还能跑，所以团队什么都不改</h3><p>这会把迁移债务往后拖。兼容 shim 应该被当成桥梁，而不是继续冻结旧文档的理由。</p></article><article class="detail-card"><h3>你改了安装命令，却没改周边文档</h3><p>这样站内会继续看起来互相矛盾。安装、更新、排错和对比页都应该围绕同一条改名叙事对齐。</p></article></div></div></section></main>
+  <footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a></div><div class="footer-links"><a href="/zh/comparisons/">对比</a><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a></div></div></footer>
+  <script src="/assets/js/site.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CLJNJ2GEVB');
+</script>
+</body></html>

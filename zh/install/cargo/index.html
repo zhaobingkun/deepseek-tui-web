@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>用 cargo 安装 DeepSeek TUI</title>
-  <meta name="description" content="当你的终端工具链本来就以 Rust 为主时，用 cargo 安装 DeepSeek TUI 会更合适。">
+  <title>用 cargo 安装 CodeWhale（DeepSeek TUI 改名指南）</title>
+  <meta name="description" content="如果你是搜 DeepSeek TUI 进来的，而你的终端工具链本来就以 Rust 为主，这页会解释当前 CodeWhale 的 cargo 安装路线。">
   <link rel="canonical" href="https://deepseek-tui.app/zh/install/cargo/">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="用 cargo 安装 DeepSeek TUI">
-  <meta property="og:description" content="当你的终端工具链本来就以 Rust 为主时，用 cargo 安装 DeepSeek TUI 会更合适。">
+  <meta property="og:title" content="用 cargo 安装 CodeWhale（DeepSeek TUI 改名指南）">
+  <meta property="og:description" content="如果你是搜 DeepSeek TUI 进来的，而你的终端工具链本来就以 Rust 为主，这页会解释当前 CodeWhale 的 cargo 安装路线。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://deepseek-tui.app/zh/install/cargo/">
   <meta property="og:site_name" content="DeepSeek TUI 中文指南">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="用 cargo 安装 DeepSeek TUI">
-  <meta name="twitter:description" content="当你的终端工具链本来就以 Rust 为主时，用 cargo 安装 DeepSeek TUI 会更合适。">
+  <meta name="twitter:title" content="用 cargo 安装 CodeWhale（DeepSeek TUI 改名指南）">
+  <meta name="twitter:description" content="如果你是搜 DeepSeek TUI 进来的，而你的终端工具链本来就以 Rust 为主，这页会解释当前 CodeWhale 的 cargo 安装路线。">
   <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/install/cargo/">
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/install/cargo/">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
@@ -25,9 +25,9 @@
   "@graph": [
     {
       "@type": "Article",
-      "headline": "用 Cargo 安装 DeepSeek TUI",
-      "name": "用 Cargo 安装 DeepSeek TUI",
-      "description": "了解如何用 cargo 安装 DeepSeek TUI，以及 codewhale-cli 这个包名为什么重要。",
+      "headline": "用 cargo 安装 CodeWhale（DeepSeek TUI 改名指南）",
+      "name": "用 cargo 安装 CodeWhale（DeepSeek TUI 改名指南）",
+      "description": "如果你是搜 DeepSeek TUI 进来的，而你的终端工具链本来就以 Rust 为主，这页会解释当前 CodeWhale 的 cargo 安装路线。",
       "url": "https://deepseek-tui.app/zh/install/cargo/",
       "inLanguage": "zh-CN"
     },
@@ -61,7 +61,7 @@
 <body>
   <header class="site-header"><div class="container nav-bar"><a class="brand" href="/zh/"><span class="brand-mark">DT</span><span class="brand-text"><strong>DeepSeek TUI 中文指南</strong><small>终端安装与使用中文站</small></span></a><nav class="nav-links" data-nav-links><a href="/zh/">首页</a><a href="/zh/guides/">指南</a><a href="/zh/docs/">文档</a><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a><a href="/zh/comparisons/">对比</a><a href="/zh/troubleshooting/">排错</a><a href="/">English</a></nav><button class="nav-toggle" type="button" data-nav-toggle>菜单</button></div></header>
   <div class="page-path"><div class="container"><a href="/zh/">首页</a><span>/</span><a href="/zh/install/">安装</a><span>/</span><span>Cargo</span></div></div>
-  <main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Cargo 安装</span><h1>如果 Rust 已经是你平时的终端工具链，用 cargo 安装 DeepSeek TUI 会更自然</h1><p>cargo 路线最适合本来就长期使用 Rust CLI、也习惯通过 cargo 更新工具的人。如果只是为了这一款工具去装整套 Rust，它就未必是最低摩擦路径。</p><div class="hero-points"><span>本页是站内详情页</span><span>用 cargo 安装 DeepSeek TUI</span><span>安装</span></div></div><aside class="answer-card"><span class="panel-kicker">最快判断</span><h2>当 Rust 工具链本来就在你的机器上长期稳定使用时，cargo 才是更合理的拥有者。</h2><p>cargo 并不天然优于 npm；它只是在更符合你现有维护习惯时，才更好。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>DeepSeek TUI 已改名为 CodeWhale</h2><p>这个项目上游已经改名。现在的新安装命令应优先使用 <code>npm install -g codewhale</code>，启动命令也应优先使用 <code>codewhale</code>。</p><p>旧的 <code>deepseek</code> / <code>deepseek-tui</code> 目前仍作为兼容 shim 存在，但上游已经说明它们只是过渡方案，并计划在 <code>v0.9.0</code> 移除。</p></article><aside class="panel-card"><span class="panel-kicker">迁移提示</span><div class="link-stack"><a href="/install/npm/">看 npm 安装</a><a href="/install/update-or-upgrade/">看更新方式</a><a href="/docs/install/">看上游安装文档</a></div></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页能直接回答的问题</h2><ul><li>什么时候 cargo 会降低复杂度，而不是增加复杂度？</li><li>cargo 安装或升级后，最先要核对什么？</li><li>哪些问题属于 Rust 工具链，而不是 DeepSeek TUI 本身？</li></ul><h2>做完后该核对什么</h2><ul><li>在新 shell 中验证 `codewhale --version`。</li><li>检查是不是旧的 npm 或手动二进制挡在 cargo 前面。</li><li>确认二进制没问题后，立刻进入 provider 和配置设置。</li></ul><h2>最常见的误区</h2><ul><li>只为了这一款工具装 Rust，却不理解 cargo 二进制路径。</li><li>PATH 里还残留旧的 npm 全局安装。</li><li>把 cargo 编译成功误解成整套配置也已经完成。</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/install/">安装总页</a><a href="/zh/install/update-or-upgrade/">更新与升级</a><a href="/zh/config/provider-setup/">provider 设置</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按当前问题走，再决定要不要切去相邻详情页或 hub。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>先确认 cargo 自己没问题</h3><p>在进入安装之前先跑 `cargo --version`。如果工具链本身就不完整，后面所有问题都会被放大。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>只通过当前活跃工具链安装</h3><p>尤其在多 toolchain 机器上，安装时要确保 cargo 对应的是你平时真正使用的那套 Rust 环境。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>确认最终二进制路径</h3><p>安装后和重启 shell 后，都确认一下当前 `codewhale` 命令是不是 cargo 那一路。</p></article></div></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>先确认 cargo 真是当前拥有者</h3><p>在排 app 之前，先证明 Rust 工具链和当前解析到的二进制路径是在同一个 shell 里对齐的。</p><pre><code>cargo --version
+  <main><section class="page-hero"><div class="container two-col"><div><span class="eyebrow">Cargo 安装</span><h1>如果 Rust 已经是你平时的终端工具链，现在更自然的路线是用 cargo 安装 CodeWhale</h1><p>如果你是搜 DeepSeek TUI 进来的，先记住当前上游包名已经切到 CodeWhale。cargo 路线最适合本来就长期使用 Rust CLI、也习惯通过 cargo 更新工具的人。</p><div class="hero-points"><span>本页是站内详情页</span><span>用 cargo 安装 CodeWhale（DeepSeek TUI 改名指南）</span><span>安装</span></div></div><aside class="answer-card"><span class="panel-kicker">最快判断</span><h2>当 Rust 工具链本来就在你的机器上长期稳定使用时，cargo 才是更合理的拥有者。</h2><p>cargo 并不天然优于 npm；它只是在更符合你现有维护习惯时，才更好。</p></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>DeepSeek TUI 已改名为 CodeWhale</h2><p>这个项目上游已经改名。现在的新安装命令应优先使用 <code>npm install -g codewhale</code>，启动命令也应优先使用 <code>codewhale</code>。</p><p>旧的 <code>deepseek</code> / <code>deepseek-tui</code> 目前仍作为兼容 shim 存在，但上游已经说明它们只是过渡方案，并计划在 <code>v0.9.0</code> 移除。</p></article><aside class="panel-card"><span class="panel-kicker">迁移提示</span><div class="link-stack"><a href="/install/npm/">看 npm 安装</a><a href="/install/update-or-upgrade/">看更新方式</a><a href="/docs/install/">看上游安装文档</a></div></aside></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>这页能直接回答的问题</h2><ul><li>什么时候 cargo 会降低复杂度，而不是增加复杂度？</li><li>cargo 安装或升级后，最先要核对什么？</li><li>哪些问题属于 Rust 工具链，而不是 DeepSeek TUI 本身？</li></ul><h2>做完后该核对什么</h2><ul><li>在新 shell 中验证 `codewhale --version`。</li><li>检查是不是旧的 npm 或手动二进制挡在 cargo 前面。</li><li>确认二进制没问题后，立刻进入 provider 和配置设置。</li></ul><h2>最常见的误区</h2><ul><li>只为了这一款工具装 Rust，却不理解 cargo 二进制路径。</li><li>PATH 里还残留旧的 npm 全局安装。</li><li>把 cargo 编译成功误解成整套配置也已经完成。</li></ul></article><aside class="panel-card"><span class="panel-kicker">下一步</span><div class="link-stack"><a href="/zh/install/">安装总页</a><a href="/zh/install/update-or-upgrade/">更新与升级</a><a href="/zh/config/provider-setup/">provider 设置</a></div></aside></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>推荐阅读顺序</h2><p>先按当前问题走，再决定要不要切去相邻详情页或 hub。</p></div><div class="card-grid card-grid-3"><article class="content-card"><span class="tag">步骤 1</span><h3>先确认 cargo 自己没问题</h3><p>在进入安装之前先跑 `cargo --version`。如果工具链本身就不完整，后面所有问题都会被放大。</p></article><article class="content-card"><span class="tag">步骤 2</span><h3>只通过当前活跃工具链安装</h3><p>尤其在多 toolchain 机器上，安装时要确保 cargo 对应的是你平时真正使用的那套 Rust 环境。</p></article><article class="content-card"><span class="tag">步骤 3</span><h3>确认最终二进制路径</h3><p>安装后和重启 shell 后，都确认一下当前 `codewhale` 命令是不是 cargo 那一路。</p></article></div></div></section><section class="section"><div class="container"><div class="section-head"><h2>直接可用的示例</h2><p>先拿可执行例子，再回头做更细的调整。</p></div><div class="detail-grid"><article class="detail-card"><h3>先确认 cargo 真是当前拥有者</h3><p>在排 app 之前，先证明 Rust 工具链和当前解析到的二进制路径是在同一个 shell 里对齐的。</p><pre><code>cargo --version
 cargo install codewhale-cli --locked
 codewhale --version
 command -v codewhale || which codewhale</code></pre></article><article class="detail-card"><h3>检查是不是被旧安装挡住了</h3><p>如果 cargo 安装成功但行为没变，先看是不是 npm 或手动二进制还在 PATH 前面。</p><pre><code>command -v codewhale || which codewhale

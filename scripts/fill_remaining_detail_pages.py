@@ -11,6 +11,10 @@ CLI_HTML_REPLACEMENTS = (
     ("npm install -g deepseek-tui", "npm install -g codewhale"),
     ("deepseek --model auto", "codewhale --model auto"),
     ("cargo install deepseek-tui", "cargo install codewhale-cli --locked"),
+    ("deepseek-tui mcp init", "codewhale mcp init"),
+    ("deepseek-tui mcp list", "codewhale mcp list"),
+    ("deepseek-tui mcp validate", "codewhale mcp validate"),
+    ("deepseek-tui mcp add", "codewhale mcp add"),
     ("deepseek-tui-cli", "codewhale-cli"),
     ("deepseek --version", "codewhale --version"),
     ("command -v deepseek || which deepseek", "command -v codewhale || which codewhale"),
@@ -308,9 +312,11 @@ PAGES = {
     },
     ("comparisons", "vs-claude-code"): {
         "en": {
+            "title": "CodeWhale vs Claude Code (DeepSeek TUI Rename Guide)",
+            "description": "Compare CodeWhale vs Claude Code if you searched for DeepSeek TUI: workflow style, guardrails, install friction, and ecosystem fit.",
             "eyebrow": "Comparison",
-            "h1": "DeepSeek TUI vs Claude Code is mainly a workflow and ecosystem comparison, not just a feature checklist",
-            "intro": "People search this comparison because both tools live near the same terminal-agent category, but they do not feel identical in setup assumptions, model alignment, and how they structure day-to-day work. A useful comparison should help the reader understand fit, not just count features.",
+            "h1": "CodeWhale vs Claude Code is mainly a workflow and ecosystem comparison, not just a feature checklist",
+            "intro": "If you searched for DeepSeek TUI vs Claude Code, the first thing to know is that upstream now calls the project CodeWhale. The comparison still matters because both tools live near the same terminal-agent category, but they do not feel identical in setup assumptions, model alignment, and how they structure day-to-day work.",
             "answer_kicker": "Short Version",
             "answer_h2": "Choose based on workflow posture: model ecosystem, guardrails, session style, and the kind of terminal agent experience you actually want.",
             "answer_p": "A better comparison starts with how you work, not with who has the longest feature list. If the tool's assumptions match your environment, setup and daily use usually feel easier even before you compare every command.",
@@ -352,9 +358,11 @@ PAGES = {
             ],
         },
         "zh": {
+            "title": "CodeWhale vs Claude Code（DeepSeek TUI 改名对比）",
+            "description": "如果你是搜 DeepSeek TUI vs Claude Code 进来的，这页会按 CodeWhale 的现名比较工作流、护栏、安装摩擦和生态位。",
             "eyebrow": "对比",
-            "h1": "DeepSeek TUI vs Claude Code，本质上更像工作流和生态位的比较，而不是纯功能表对比",
-            "intro": "用户会搜这组对比，是因为两者都属于终端代理这一类工具，但它们在安装假设、模型生态、以及日常工作组织方式上并不完全一样。真正有用的比较，应该帮助用户判断适配度，而不是只数功能点。",
+            "h1": "CodeWhale vs Claude Code，本质上更像工作流和生态位的比较，而不是纯功能表对比",
+            "intro": "如果你是搜 DeepSeek TUI vs Claude Code 进来的，先记住一点：上游现在已经把项目改名为 CodeWhale。用户会搜这组对比，是因为两者都属于终端代理这一类工具，但它们在安装假设、模型生态、以及日常工作组织方式上并不完全一样。",
             "answer_kicker": "短答案",
             "answer_h2": "按工作流姿态来选：模型生态、护栏强度、会话风格，以及你真正想要的终端代理体验。",
             "answer_p": "更好的比较方式不是先看谁功能多，而是先看你的工作方式和环境更贴近哪一边。如果工具的默认假设本来就更接近你的环境，后面的安装和日常使用通常都会更顺。",
@@ -398,9 +406,11 @@ PAGES = {
     },
     ("comparisons", "vs-codex-cli"): {
         "en": {
+            "title": "CodeWhale vs Codex CLI (DeepSeek TUI Rename Guide)",
+            "description": "Compare CodeWhale vs Codex CLI if you searched for DeepSeek TUI: workflow fit, guardrails, MCP posture, and terminal operating style.",
             "eyebrow": "Comparison",
-            "h1": "DeepSeek TUI vs Codex CLI should be judged by workflow fit, guardrails, and terminal operating style",
-            "intro": "This comparison matters because both tools can live in a serious terminal workflow, but they do not guide planning, execution, and model alignment in exactly the same way. A useful page here should help the reader compare operating posture, not just command inventory.",
+            "h1": "CodeWhale vs Codex CLI should be judged by workflow fit, guardrails, and terminal operating style",
+            "intro": "If you searched for DeepSeek TUI vs Codex CLI, the current upstream name is CodeWhale. This comparison matters because both tools can live in a serious terminal workflow, but they do not guide planning, execution, and model alignment in exactly the same way.",
             "answer_kicker": "Direct Answer",
             "answer_h2": "Pick the tool whose session model, guardrails, and ecosystem assumptions better match the way you already work.",
             "answer_p": "If you ignore those workflow differences, the comparison becomes shallow very quickly. The better fit often shows up in repeated terminal use long before it shows up in a spreadsheet of features.",
@@ -442,9 +452,11 @@ PAGES = {
             ],
         },
         "zh": {
+            "title": "CodeWhale vs Codex CLI（DeepSeek TUI 改名对比）",
+            "description": "如果你是搜 DeepSeek TUI vs Codex CLI 进来的，这页会按 CodeWhale 的现名比较工作流适配度、护栏和终端操作风格。",
             "eyebrow": "对比",
-            "h1": "DeepSeek TUI vs Codex CLI，更该按工作流适配度、护栏和终端操作风格来判断",
-            "intro": "这组对比有价值，是因为两者都能进入严肃的终端工作流，但它们在 planning、execution 和 model alignment 上并不完全一样。真正有用的页面，应该帮助用户比较操作姿态，而不是只列命令数量。",
+            "h1": "CodeWhale vs Codex CLI，更该按工作流适配度、护栏和终端操作风格来判断",
+            "intro": "如果你是搜 DeepSeek TUI vs Codex CLI 进来的，先记住项目现在的正式名字是 CodeWhale。这组对比有价值，是因为两者都能进入严肃的终端工作流，但它们在 planning、execution 和 model alignment 上并不完全一样。",
             "answer_kicker": "直接答案",
             "answer_h2": "选那个会话模型、护栏强度和生态假设更贴近你现有工作方式的工具。",
             "answer_p": "如果忽略这些工作流差异，这组对比很快就会变得很浅。真正的适配度，往往在很多次终端会话里比在功能表里更早暴露出来。",
@@ -488,9 +500,11 @@ PAGES = {
     },
     ("troubleshooting", "command-not-found"): {
         "en": {
+            "title": "CodeWhale or DeepSeek Command Not Found",
+            "description": "Fix a codewhale or deepseek command-not-found error after the DeepSeek TUI rename by checking binary ownership, PATH, and old command shims.",
             "eyebrow": "Path Troubleshooting",
-            "h1": "A DeepSeek TUI command not found error usually means install ownership and shell path do not agree yet",
-            "intro": "The generic command-not-found failure almost never means the app logic is broken. It usually means the install completed in one ecosystem, while your current shell still resolves commands through another path or an older terminal profile.",
+            "h1": "A codewhale or deepseek command-not-found error usually means install ownership and shell path do not agree yet",
+            "intro": "After the DeepSeek TUI rename, many users search for either the new `codewhale` command or the older deepseek shim when command-not-found errors appear. The generic failure almost never means the app logic is broken. It usually means the install completed in one ecosystem, while your current shell still resolves commands through another path or an older terminal profile.",
             "answer_kicker": "Direct Answer",
             "answer_h2": "Do not reinstall first. Confirm which package path owns the binary and whether your active shell actually exports that location.",
             "answer_p": "Reinstalling can sometimes hide the problem for one session, but it rarely fixes the underlying path mismatch. The important question is where the binary landed and what your shell sees first.",
@@ -532,9 +546,11 @@ PAGES = {
             ],
         },
         "zh": {
+            "title": "CodeWhale / DeepSeek command not found",
+            "description": "修复 CodeWhale 或 DeepSeek command-not-found：先确认 DeepSeek TUI 改名后的新旧命令、二进制归属和 PATH 是否对齐。",
             "eyebrow": "路径排错",
-            "h1": "DeepSeek TUI 的 command not found，通常不是工具坏了，而是安装归属和 shell 路径还没对齐",
-            "intro": "通用的 command-not-found 错误，几乎不意味着应用逻辑本身坏掉。更常见的情况是：安装发生在一个包管理生态里，但你当前 shell 解析命令时走的还是另一条路径，或者还是旧终端配置。",
+            "h1": "CodeWhale / DeepSeek 的 command not found，通常不是工具坏了，而是安装归属和 shell 路径还没对齐",
+            "intro": "DeepSeek TUI 改名以后，很多人会在新的 `codewhale` 命令和旧的 deepseek shim 之间来回试。通用的 command-not-found 错误，几乎不意味着应用逻辑本身坏掉。更常见的情况是：安装发生在一个包管理生态里，但你当前 shell 解析命令时走的还是另一条路径，或者还是旧终端配置。",
             "answer_kicker": "直接答案",
             "answer_h2": "先别重装，先确认到底是谁安装了这个二进制，以及当前 shell 是否真的导出了那条路径。",
             "answer_p": "重装有时会暂时掩盖问题，但很少真正解决底层路径不匹配。关键在于：二进制落在了哪里，以及 shell 先看到了哪条路径。",
@@ -942,38 +958,44 @@ PAGES = {
     },
     ("news", "what-is-deepseek-tui"): {
         "en": {
+            "title": "What Is DeepSeek TUI? CodeWhale Rename Explained",
+            "description": "Understand what DeepSeek TUI is, why the project was renamed to CodeWhale, and which install or comparison pages matter next.",
             "eyebrow": "Product Context",
-            "h1": "What DeepSeek TUI is becomes much clearer once you treat it as a terminal coding-agent workflow instead of a simple chat wrapper",
-            "intro": "People who search for this phrase usually are not looking for a marketing slogan. They are trying to understand what category the tool belongs to, what it can actually do in a terminal session, and which pages matter next if they want to install or evaluate it seriously.",
+            "h1": "What DeepSeek TUI is becomes much clearer once you know the project has been renamed to CodeWhale",
+            "intro": "People who search for this phrase usually are not looking for a marketing slogan. They are trying to understand what category the tool belongs to, what it can actually do in a terminal session, and whether DeepSeek TUI and CodeWhale are the same project.",
             "answer_kicker": "Direct Answer",
-            "answer_h2": "DeepSeek TUI is best understood as a terminal coding-agent product with files, shell, config, modes, and extension workflows around it.",
-            "answer_p": "If you frame it only as terminal chat, the rest of the site feels fragmented. Once you frame it as a coding-agent workflow, the install, config, docs, MCP, and mode branches all make sense as parts of one operating shape.",
+            "answer_h2": "DeepSeek TUI is the old project name; upstream now calls the same terminal coding-agent product CodeWhale.",
+            "answer_p": "Once you frame it as a coding-agent workflow with files, shell, config, modes, MCP, and extension paths, the rename and the rest of the site structure make more sense.",
             "questions": [
                 "What kind of product category does DeepSeek TUI really belong to?",
-                "Why do users keep searching for install, config, modes, and comparisons right after they discover the name?",
+                "Why do users keep searching for install, config, modes, comparisons, and rename explainers right after they discover the name?",
                 "Which branch should a new reader open first after understanding the product at a high level?",
             ],
-            "coverage": "This page should help the reader classify DeepSeek TUI correctly, understand why the surrounding site is split into setup, docs, modes, and troubleshooting branches, and choose the right next branch without guessing.",
+            "coverage": "This page should help the reader classify DeepSeek TUI correctly, understand that the current upstream name is CodeWhale, and choose the right next branch without guessing.",
             "diagnosis": [
+                ("Rename confusion", "If someone does not realize DeepSeek TUI and CodeWhale are the same project lineage, the rest of the install and command guidance will feel contradictory."),
                 ("Category confusion", "If someone still thinks the product is only a terminal chat shell, they will miss why files, shell actions, approval flows, and config pages matter so much."),
                 ("Workflow confusion", "If the user understands it as a coding-agent workflow, the surrounding branches become easier to navigate because each branch answers a different operational question."),
                 ("Next-step confusion", "A new reader usually does not need every branch at once. They need the one that matches their current question: install, config, docs, modes, or comparison."),
             ],
             "workflow": [
-                ("Start from the operating shape", "Explain the tool as a terminal agent that works across prompts, files, shell commands, config, and structured workflows rather than as a thin chat layer."),
+                ("Start from the rename first", "Explain that DeepSeek TUI is the old search term while CodeWhale is the current upstream product name."),
+                ("Then explain the operating shape", "Describe the tool as a terminal agent that works across prompts, files, shell commands, config, and structured workflows rather than as a thin chat layer."),
                 ("Map the core branches to real questions", "Install answers how to get started, Config answers how to connect and tune it, Docs answer what the upstream project formally says, and Modes answer how the work style changes."),
                 ("Choose the next page by actual need", "A new user who cannot run the binary should go to Install. A user who installed it but cannot connect should go to Config. A user comparing tools should go to Comparisons."),
                 ("Leave once the category is clear", "This page should narrow the product definition and send the reader into the correct operational branch, not keep them at the overview layer forever."),
             ],
             "mistakes": [
+                "Treating DeepSeek TUI and CodeWhale as different products instead of a rename transition.",
                 "Treating DeepSeek TUI as just another terminal chatbot and missing the coding-agent workflow around it.",
                 "Opening docs, modes, or MCP pages before basic install and config questions are settled.",
                 "Reading this page as if it should replace the deeper branches instead of choosing the right one.",
             ],
-            "leave": "Leave this page once you can explain what DeepSeek TUI is in one sentence and know whether your next stop should be install, config, docs, modes, or comparisons.",
+            "leave": "Leave this page once you can explain what DeepSeek TUI is, why the current upstream name is CodeWhale, and whether your next stop should be install, config, docs, modes, or comparisons.",
             "links": [
-                ("Install DeepSeek TUI", "/install/"),
-                ("Configure DeepSeek TUI", "/config/"),
+                ("Rename explainer", "/news/deepseek-tui-renamed-to-codewhale/"),
+                ("Install CodeWhale", "/install/"),
+                ("Configure CodeWhale", "/config/"),
                 ("Docs hub", "/docs/"),
             ],
             "examples": [
@@ -986,38 +1008,44 @@ PAGES = {
             ],
         },
         "zh": {
+            "title": "DeepSeek TUI 是什么？CodeWhale 改名说明",
+            "description": "理解 DeepSeek TUI 是什么、为什么项目改名为 CodeWhale，以及下一步该看安装、对比还是配置。",
             "eyebrow": "产品背景",
-            "h1": "只有把 DeepSeek TUI 当成终端编码代理工作流来看，它到底是什么这件事才会真正讲清楚",
-            "intro": "搜索这个词的人，通常不是在找一句营销口号，而是在试图判断：它到底属于什么产品类别、在终端里究竟能做什么，以及如果要认真安装或评估，下一步最该看哪一组页面。",
+            "h1": "理解 DeepSeek TUI 是什么，最好先知道这个项目现在已经改名为 CodeWhale",
+            "intro": "搜索这个词的人，通常不是在找一句营销口号，而是在试图判断：它到底属于什么产品类别、在终端里究竟能做什么，以及 DeepSeek TUI 和 CodeWhale 到底是不是同一个项目。",
             "answer_kicker": "直接答案",
-            "answer_h2": "DeepSeek TUI 更适合被理解成一个终端里的编码代理产品，而不是普通聊天壳。",
-            "answer_p": "如果只把它理解成终端聊天，你会觉得站里的 install、config、docs、modes、MCP 都像散页。只有把它看成一条编码代理工作流，这些分支才会连成一套完整结构。",
+            "answer_h2": "DeepSeek TUI 是旧名字；这个终端 coding-agent 项目的当前上游名字已经是 CodeWhale。",
+            "answer_p": "只把它理解成终端聊天壳，会让后面的结构看起来很碎。把它理解成带文件、shell、配置、模式、MCP 和扩展路径的 coding-agent 工作流，改名和栏目结构才会一起变清楚。",
             "questions": [
                 "DeepSeek TUI 到底属于什么产品类别？",
-                "为什么用户认识这个名字以后，很快就会继续搜索安装、配置、模式和对比？",
+                "为什么很多人在认识这个名字之后，又会继续搜安装、配置、对比和改名说明？",
                 "当你先知道它是什么之后，下一页应该优先开哪一条分支？",
             ],
-            "coverage": "这页应该帮助用户正确给 DeepSeek TUI 分类，理解为什么整站会拆成 setup、docs、modes、troubleshooting 等分支，并且不用靠猜就能判断下一步该去哪一页。",
+            "coverage": "这页要帮助用户正确理解 DeepSeek TUI 属于什么工具类型，知道它现在的上游名字是 CodeWhale，并在不猜的前提下选对下一步分支。",
             "diagnosis": [
+                ("改名混淆", "如果你不知道 DeepSeek TUI 和 CodeWhale 是同一条项目线，后面的安装命令和站内文案会看起来互相矛盾。"),
                 ("类别误解", "如果还把它当成普通终端聊天壳，就会很难理解为什么文件、shell、审批、配置和模式页面都这么重要。"),
                 ("工作流误解", "一旦把它理解成终端编码代理工作流，周围这些栏目就会变得好懂，因为每条分支都在回答不同的操作问题。"),
                 ("下一步误解", "第一次来的读者并不需要同时打开所有栏目，而是应该先按自己当前的问题，去 install、config、docs、modes 或 comparisons。"),
             ],
             "workflow": [
-                ("先从操作形态解释它", "把它解释成能跨提示词、文件、shell 命令、配置和结构化工作流工作的终端代理，而不是单薄的聊天界面。"),
+                ("先把改名关系说清楚", "先说明 DeepSeek TUI 是旧搜索词，而 CodeWhale 是当前上游名称。"),
+                ("再解释它的操作形态", "把它解释成能跨提示词、文件、shell 命令、配置和结构化工作流工作的终端代理，而不是单薄的聊天界面。"),
                 ("把主要分支映射到真实问题", "Install 负责解决怎么开始，Config 负责解决怎么连通和调优，Docs 负责解释上游正式文档，Modes 负责解释工作方式怎么切换。"),
                 ("按当前问题选下一页", "如果用户连二进制都还没跑起来，就先去 Install；如果已经装好但连不上 provider，就去 Config；如果是在比较工具，就去 Comparisons。"),
                 ("一旦类别清楚就离开这页", "这页的作用是把产品定义压清楚，再把用户送进正确分支，而不是把人长期留在概览层。"),
             ],
             "mistakes": [
+                "把 DeepSeek TUI 和 CodeWhale 当成两个不同项目来看。",
                 "把 DeepSeek TUI 当成普通终端聊天工具，忽略了它周围整套编码代理工作流。",
                 "安装和配置都还没解决，就过早去读 modes、MCP 或更深的 docs 页面。",
                 "把这页当成替代所有后续分支的总说明，而不是分流入口。",
             ],
-            "leave": "当你已经能用一句话解释 DeepSeek TUI 是什么，并且知道下一步该去 install、config、docs、modes 还是 comparisons 时，就可以离开这页了。",
+            "leave": "当你已经能用一句话说明 DeepSeek TUI 是什么、为什么它现在叫 CodeWhale，以及下一步该去安装、配置、文档、模式还是对比时，就可以离开这页了。",
             "links": [
-                ("安装总页", "/zh/install/"),
-                ("配置总页", "/zh/config/"),
+                ("改名说明", "/zh/news/deepseek-tui-renamed-to-codewhale/"),
+                ("安装 CodeWhale", "/zh/install/"),
+                ("配置 CodeWhale", "/zh/config/"),
                 ("Docs 总页", "/zh/docs/"),
             ],
             "examples": [
@@ -1027,6 +1055,102 @@ PAGES = {
             "failure_routes": [
                 ("看完这页，整站还是像很多散页", "那通常说明你还在把它当成终端聊天，而不是终端编码代理工作流。"),
                 ("新读者一上来就进深 docs，然后迷路", "他大概率其实先该看 install 或 config。应该按阻塞点分流，而不是按好奇心乱跳。"),
+            ],
+        },
+    },
+    ("news", "deepseek-tui-renamed-to-codewhale"): {
+        "en": {
+            "title": "DeepSeek TUI Renamed to CodeWhale: Install, Commands, and Migration",
+            "description": "Understand why DeepSeek TUI was renamed to CodeWhale, which commands changed, what still works, and what to update before v0.9.0 removes old shims.",
+            "eyebrow": "Rename Guide",
+            "h1": "DeepSeek TUI has been renamed to CodeWhale, so the real migration work is command names, package names, and update habits",
+            "intro": "Most users who land on this question are not confused about branding alone. They want to know whether the install command changed, whether old shell aliases still work, and which docs or automation need to be updated before the compatibility window closes.",
+            "answer_kicker": "Direct Answer",
+            "answer_h2": "DeepSeek TUI is the old search term; CodeWhale is the current upstream product name and the preferred command path for fresh installs.",
+            "answer_p": "The practical migration is simple: use `codewhale` and the new package names for fresh installs, keep old command names only as temporary compatibility shims, and plan for those old names to disappear in `v0.9.0`.",
+            "questions": [
+                "Did the product change or only the name?",
+                "Which commands and packages should new installs use now?",
+                "What should you update in scripts, docs, and shell habits before the old shims disappear?",
+            ],
+            "coverage": "This page should help the reader understand the rename, map old names to current ones, and identify which parts of their setup need an explicit migration.",
+            "diagnosis": [
+                ("Branding confusion", "Many users still see DeepSeek TUI in search results while upstream docs, releases, and install commands now say CodeWhale."),
+                ("Command confusion", "The rename matters most when the install command, binary name, or package name in your shell no longer matches the official path."),
+                ("Automation confusion", "Shell aliases, docs, CI notes, or local runbooks may still depend on the older names even if the app itself still launches."),
+            ],
+            "workflow": [
+                ("Confirm the current upstream name first", "Treat CodeWhale as the current product name and DeepSeek TUI as the old discovery term."),
+                ("Switch fresh installs to the new commands", "Use the current install path and current binary name instead of teaching new users the transitional shims."),
+                ("Audit your local references", "Check shell aliases, scripts, README snippets, CI notes, and internal docs for old command names that should be updated."),
+                ("Keep compatibility shims temporary", "If you still use old command names in the short term, treat them as transitional and remove them before `v0.9.0` becomes your blocker."),
+            ],
+            "mistakes": [
+                "Assuming DeepSeek TUI and CodeWhale are different products instead of a rename transition.",
+                "Teaching fresh installs with the old command names just because the shims still work today.",
+                "Forgetting that old command names are documented as temporary and scheduled for removal in `v0.9.0`.",
+            ],
+            "leave": "Leave this page once you know which names are old, which names are current, and whether your next stop should be install, update, troubleshooting, or comparisons.",
+            "links": [
+                ("Install hub", "/install/"),
+                ("Update guide", "/install/update-or-upgrade/"),
+                ("Command not found troubleshooting", "/troubleshooting/command-not-found/"),
+                ("What is DeepSeek TUI?", "/news/what-is-deepseek-tui/"),
+            ],
+            "examples": [
+                ("Switch the install snippet to the new name", "The safest migration move is to update the shared install snippet first so new users do not learn the temporary shim path.", "npm install -g codewhale\ncodewhale --version\ncodewhale --model auto"),
+                ("Audit one local workflow for old names", "Pick one shell alias, one internal doc, and one automation note to verify whether they still mention `deepseek` or `deepseek-tui`.", "# search docs and shell aliases\n# replace old command names where fresh installs are taught"),
+            ],
+            "failure_routes": [
+                ("The old command still works, so your team never updates anything", "That creates delayed migration debt. Use the working shim as a bridge, not as a reason to freeze old documentation."),
+                ("You updated the install command but not the surrounding docs", "That leaves the site feeling contradictory. Align install, update, troubleshooting, and comparison pages around the same rename story."),
+            ],
+        },
+        "zh": {
+            "title": "DeepSeek TUI 改名为 CodeWhale：安装、命令与迁移",
+            "description": "理解 DeepSeek TUI 为什么改名为 CodeWhale、新旧命令怎么对应、哪些地方还兼容，以及在 v0.9.0 之前该更新什么。",
+            "eyebrow": "改名指南",
+            "h1": "DeepSeek TUI 已改名为 CodeWhale，真正需要迁移的是命令名、包名和你的更新习惯",
+            "intro": "大多数搜这个问题的人，不只是想知道品牌怎么变了。他们真正想问的是：安装命令是不是变了、旧命令现在还能不能用、哪些文档和自动化需要提前更新，避免等兼容窗口关闭以后再集中踩坑。",
+            "answer_kicker": "直接答案",
+            "answer_h2": "DeepSeek TUI 是旧搜索词；CodeWhale 是当前上游正式名称，也是新安装应优先使用的命令路径。",
+            "answer_p": "实际迁移并不复杂：新安装优先使用 `codewhale` 和新的包名；旧命令只把它当成暂时兼容 shim；并提前为 `v0.9.0` 之后的移除做准备。",
+            "questions": [
+                "变的是产品本身，还是只是名字？",
+                "现在新安装到底应该用哪些命令和包名？",
+                "在旧 shim 被移除前，哪些脚本、文档和 shell 习惯应该先改？",
+            ],
+            "coverage": "这页要帮助用户理解改名本身，把旧名字和新名字对应起来，并找出自己环境里哪些部分需要显式迁移。",
+            "diagnosis": [
+                ("品牌混淆", "很多人还会在搜索结果里先看到 DeepSeek TUI，但上游文档、releases 和安装命令已经改成 CodeWhale。"),
+                ("命令混淆", "真正的影响点在安装命令、二进制名和包名是否还和官方当前路线一致。"),
+                ("自动化混淆", "shell alias、内部文档、CI 说明或 runbook 可能还依赖旧名字，即使 app 本身暂时还能启动。"),
+            ],
+            "workflow": [
+                ("先确认当前正式名称", "把 CodeWhale 当成当前产品名，把 DeepSeek TUI 当成旧搜索入口。"),
+                ("把新安装切到新命令", "新用户教学优先使用当前安装路径和当前二进制名，不要再把过渡 shim 当成主路线。"),
+                ("盘点本地旧引用", "检查 shell alias、脚本、README 片段、CI 说明和内部文档里是否还保留旧命令名。"),
+                ("把兼容 shim 当成临时桥梁", "如果短期还在用旧命令，也要明确它只是过渡方案，并在 `v0.9.0` 之前主动清掉。"),
+            ],
+            "mistakes": [
+                "把 DeepSeek TUI 和 CodeWhale 当成两个不同产品来看。",
+                "因为旧命令今天还能跑，就继续用旧命令教新安装。",
+                "忘了上游已经把旧命令标成临时兼容方案，并计划在 `v0.9.0` 移除。",
+            ],
+            "leave": "当你已经知道哪些名字是旧的、哪些是当前正式名字，以及下一步该去安装、更新、排错还是对比栏目时，就可以离开这页了。",
+            "links": [
+                ("安装总页", "/zh/install/"),
+                ("更新与升级", "/zh/install/update-or-upgrade/"),
+                ("command not found 排错", "/zh/troubleshooting/command-not-found/"),
+                ("DeepSeek TUI 是什么？", "/zh/news/what-is-deepseek-tui/"),
+            ],
+            "examples": [
+                ("先把共享安装片段改成新名字", "迁移里最稳的一步，是先把团队共用的安装片段改掉，避免新用户继续学临时 shim 路线。", "npm install -g codewhale\ncodewhale --version\ncodewhale --model auto"),
+                ("抽一条本地工作流做旧名审计", "随便挑一个 shell alias、一份内部文档和一条自动化说明，查它们是不是还写着 `deepseek` 或 `deepseek-tui`。", "# 搜索文档和 shell alias\n# 在新安装教学里替换旧命令名"),
+            ],
+            "failure_routes": [
+                ("旧命令现在还能跑，所以团队什么都不改", "这会把迁移债务往后拖。兼容 shim 应该被当成桥梁，而不是继续冻结旧文档的理由。"),
+                ("你改了安装命令，却没改周边文档", "这样站内会继续看起来互相矛盾。安装、更新、排错和对比页都应该围绕同一条改名叙事对齐。"),
             ],
         },
     },
@@ -1076,6 +1200,13 @@ def modernize_cli_html(text: str) -> str:
     return text
 
 
+def replace_once(text: str, pattern: str, repl: str) -> str:
+    updated, count = re.subn(pattern, repl, text, count=1, flags=re.S)
+    if count != 1:
+        raise RuntimeError(f"Pattern not found for replacement: {pattern}")
+    return updated
+
+
 def build_main(copy: dict[str, object], zh: bool, section: str, title: str) -> str:
     questions = render_list(copy["questions"])  # type: ignore[index]
     mistakes = render_list(copy["mistakes"])  # type: ignore[index]
@@ -1121,8 +1252,23 @@ def process_page(path: Path, copy: dict[str, object], zh: bool) -> None:
     if not re.search(r"<main>.*?</main>", text, flags=re.S):
         raise RuntimeError(f"Failed to replace <main> block in {path}")
     title_match = re.search(r"<title>(.*?)</title>", text, flags=re.S)
-    title = html.unescape(title_match.group(1)) if title_match else str(parts[-2])
-    updated = re.sub(r"<main>.*?</main>", build_main(copy, zh, section, title), text, flags=re.S, count=1)
+    current_title = html.unescape(title_match.group(1)) if title_match else str(parts[-2])
+    title = copy.get("title") if not zh else copy.get("title")
+    description = copy.get("description") if not zh else copy.get("description")
+    page_title = str(title) if title else current_title
+    if title:
+        text = replace_once(text, r"<title>.*?</title>", f"<title>{html.escape(page_title)}</title>")
+        text = replace_once(text, r'<meta property="og:title" content=".*?">', f'<meta property="og:title" content="{html.escape(page_title)}">')
+        text = replace_once(text, r'<meta name="twitter:title" content=".*?">', f'<meta name="twitter:title" content="{html.escape(page_title)}">')
+        text = replace_once(text, r'"headline": ".*?"', f'"headline": "{html.escape(page_title)}"')
+        text = replace_once(text, r'"name": ".*?"', f'"name": "{html.escape(page_title)}"')
+    if description:
+        page_desc = str(description)
+        text = replace_once(text, r'<meta name="description" content=".*?">', f'<meta name="description" content="{html.escape(page_desc)}">')
+        text = replace_once(text, r'<meta property="og:description" content=".*?">', f'<meta property="og:description" content="{html.escape(page_desc)}">')
+        text = replace_once(text, r'<meta name="twitter:description" content=".*?">', f'<meta name="twitter:description" content="{html.escape(page_desc)}">')
+        text = replace_once(text, r'"description": ".*?"', f'"description": "{html.escape(page_desc)}"')
+    updated = re.sub(r"<main>.*?</main>", build_main(copy, zh, section, page_title), text, flags=re.S, count=1)
     updated = modernize_cli_html(updated)
     path.write_text(updated, encoding="utf-8")
 
