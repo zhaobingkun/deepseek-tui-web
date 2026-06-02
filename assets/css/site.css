@@ -14,6 +14,7 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
+html { text-size-adjust: 100%; }
 body {
   font-family: "Avenir Next", "Segoe UI", sans-serif;
   background:
@@ -302,6 +303,7 @@ img { display: block; max-width: 100%; }
 
 .terminal-frame {
   overflow: hidden;
+  min-height: 252px;
 }
 
 .terminal-top {
@@ -328,6 +330,7 @@ img { display: block; max-width: 100%; }
   font-family: "SFMono-Regular", "Consolas", monospace;
   font-size: 14px;
   color: #d6f1dc;
+  min-height: 178px;
 }
 
 .terminal-body strong { color: #ffffff; }
@@ -367,6 +370,12 @@ img { display: block; max-width: 100%; }
 
 .section {
   padding: 20px 0 56px;
+}
+
+.section,
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 620px;
 }
 
 .section-alt {

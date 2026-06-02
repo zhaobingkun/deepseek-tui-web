@@ -19,7 +19,6 @@
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/config/api-key/">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="stylesheet" href="/assets/css/site.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6428701926694635" crossorigin="anonymous"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -43,14 +42,5 @@
 deepseek</code></pre></article><article class="detail-card"><h3>先别急着怪 key</h3><p>动更多配置文件之前，先确认当前 shell 里真的有你以为的那个值。</p><pre><code>echo &quot;$DEEPSEEK_API_KEY&quot;
 codewhale --version</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>程序能打开，但第一条请求失败</h3><p>通常不是安装坏了，而是凭据缺失、空值，或者 provider 路线不匹配。先去核对 provider 设置。</p></article><article class="detail-card"><h3>一个 shell 里能用，另一个 shell 里失败</h3><p>大概率是不同 shell 的导出值不一致，或者旧 profile 还在生效。先比环境变量。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/config/provider-setup/">provider 设置</a><a href="/zh/config/environment-variables/">环境变量</a><a href="/zh/troubleshooting/provider-troubleshooting/">provider 排错</a></div></aside></div></section></main>
   <footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a></div><div class="footer-links"><a href="/zh/comparisons/">对比</a><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a><a href="/zh/privacy/">隐私</a></div></div></footer>
-  <script src="/assets/js/site.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CLJNJ2GEVB');
-</script>
+  <script src="/assets/js/site.js" defer></script><script src="/assets/js/third-party-loader.js" defer></script>
 </body></html>

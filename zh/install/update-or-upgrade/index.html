@@ -10,7 +10,7 @@
   <meta name="twitter:title" content="更新或升级 CodeWhale（DeepSeek TUI 改名后）">
   <meta name="twitter:description" content="在 DeepSeek TUI 改名为 CodeWhale 之后，按当前真正拥有活跃二进制的包路径安全更新。">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/install/update-or-upgrade/">
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/install/update-or-upgrade/">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6428701926694635" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -32,13 +32,5 @@ command -v codewhale || which codewhale
 npm install -g codewhale@latest
 cargo install codewhale-cli --locked --force
 brew upgrade deepseek-tui
-codewhale update</code></pre></article><article class="detail-card"><h3>重开 shell 以后再核对</h3><p>只有在新终端里解析到的还是同一个二进制、而且版本已经变了，这次升级才算真的完成。</p><pre><code>codewhale --version</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>你更新了，但版本号没变</h3><p>通常说明你更新的是错误的拥有者，或者旧二进制还排在 PATH 前面。</p></article><article class="detail-card"><h3>版本号变了，但行为变怪了</h3><p>这往往不是包管理器坏了，而是升级后配置或 provider 预期漂移。下一步去看配置兼容。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/install/">安装总页</a><a href="/zh/config/reset/">配置重置</a><a href="/zh/troubleshooting/release-binaries/">Release binaries 排错</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a></div><div class="footer-links"><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a><a href="/zh/privacy/">隐私</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CLJNJ2GEVB');
-</script>
+codewhale update</code></pre></article><article class="detail-card"><h3>重开 shell 以后再核对</h3><p>只有在新终端里解析到的还是同一个二进制、而且版本已经变了，这次升级才算真的完成。</p><pre><code>codewhale --version</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>你更新了，但版本号没变</h3><p>通常说明你更新的是错误的拥有者，或者旧二进制还排在 PATH 前面。</p></article><article class="detail-card"><h3>版本号变了，但行为变怪了</h3><p>这往往不是包管理器坏了，而是升级后配置或 provider 预期漂移。下一步去看配置兼容。</p></article></div></div></section><section class="section"><div class="container two-col"><article class="prose"><h2>什么时候该离开这页</h2><p>当你已经确认当前路线没问题，就不要继续停留在这页。安装线应转去配置，配置线应转去 provider 或排错，MCP 和模式线则应该转回真实工作流页。详情页的价值是把问题缩窄，而不是长期停留在解释层。</p></article><aside class="panel-card"><span class="panel-kicker">继续看</span><div class="link-stack"><a href="/zh/install/">安装总页</a><a href="/zh/config/reset/">配置重置</a><a href="/zh/troubleshooting/release-binaries/">Release binaries 排错</a></div></aside></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a><a href="/zh/modes/">模式</a></div><div class="footer-links"><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a><a href="/zh/privacy/">隐私</a></div></div></footer><script src="/assets/js/site.js" defer></script><script src="/assets/js/third-party-loader.js" defer></script>
 </body></html>

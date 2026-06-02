@@ -10,7 +10,7 @@
   <meta name="twitter:title" content="DeepSeek TUI Provider 排错">
   <meta name="twitter:description" content="排查 DeepSeek TUI 的 provider 问题，把 API Key、endpoint 和后端路径错误分开看。">  <link rel="alternate" hreflang="en" href="https://deepseek-tui.app/troubleshooting/provider-troubleshooting/">
   <link rel="alternate" hreflang="zh-CN" href="https://deepseek-tui.app/zh/troubleshooting/provider-troubleshooting/">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6428701926694635" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,13 +53,5 @@
 # 再看当前 env 覆盖
 # 最后才去测凭证</code></pre></article><article class="detail-card"><h3>一次只改 provider 的一层</h3><p>更稳的 provider 排错，是把 auth、endpoint、provider 选择分层测试，而不是一次全改。</p><pre><code># 先测当前 key
 # 再测 endpoint
-# 最后再测 provider 选择</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>你换了 key，但一点改善都没有</h3><p>那通常不是 key 本身的问题，而是 provider 或 endpoint 层本来就错了。</p></article><article class="detail-card"><h3>配置看起来对，但行为还是像继承了旧状态</h3><p>先回去看环境变量和旧 shell export，不要立刻重写配置。</p></article></div></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a></div><div class="footer-links"><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a><a href="/zh/privacy/">隐私</a></div></div></footer><script src="/assets/js/site.js"></script><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJNJ2GEVB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CLJNJ2GEVB');
-</script>
+# 最后再测 provider 选择</code></pre></article></div></div></section><section class="section section-alt"><div class="container"><div class="section-head"><h2>常见失败分支</h2><p>先判断你卡在哪一层，再去对应分支，不要把所有问题都混成一个。</p></div><div class="detail-grid"><article class="detail-card"><h3>你换了 key，但一点改善都没有</h3><p>那通常不是 key 本身的问题，而是 provider 或 endpoint 层本来就错了。</p></article><article class="detail-card"><h3>配置看起来对，但行为还是像继承了旧状态</h3><p>先回去看环境变量和旧 shell export，不要立刻重写配置。</p></article></div></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h3>DeepSeek TUI 中文指南</h3><p>独立中文指南站，聚焦安装、配置、模式、MCP 与排错。</p><p>&copy; <span data-year></span> DeepSeek TUI 中文指南</p></div><div class="footer-links"><a href="/zh/install/">安装</a><a href="/zh/config/">配置</a></div><div class="footer-links"><a href="/zh/about/">关于</a><a href="/zh/contact/">联系</a><a href="/zh/privacy/">隐私</a></div></div></footer><script src="/assets/js/site.js" defer></script><script src="/assets/js/third-party-loader.js" defer></script>
 </body></html>

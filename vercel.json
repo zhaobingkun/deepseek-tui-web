@@ -1,4 +1,17 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.deepseek-tui.app"
+        }
+      ],
+      "destination": "https://deepseek-tui.app/:path*",
+      "permanent": true
+    }
+  ]
 }
