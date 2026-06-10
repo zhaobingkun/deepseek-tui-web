@@ -1,5 +1,4 @@
 (function () {
-  const adsClient = "ca-pub-6428701926694635";
   const analyticsId = "G-CLJNJ2GEVB";
   const loadDelayMs = 3000;
   let loaded = false;
@@ -20,11 +19,6 @@
     if (loaded) return;
     loaded = true;
     if (timer) window.clearTimeout(timer);
-
-    loadScript(
-      `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsClient}`,
-      { crossOrigin: "anonymous" }
-    );
 
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () {

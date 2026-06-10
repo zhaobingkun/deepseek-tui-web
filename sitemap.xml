@@ -32,8 +32,8 @@
   <url><loc>https://deepseek-tui.app/guides/pricing-and-cost/</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://deepseek-tui.app/mcp/servers/</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://deepseek-tui.app/skills/examples/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/about/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/contact/</loc><lastmod>2026-05-06</lastmod></url>
+  <url><loc>https://deepseek-tui.app/about/</loc><lastmod>2026-06-10</lastmod></url>
+  <url><loc>https://deepseek-tui.app/contact/</loc><lastmod>2026-06-10</lastmod></url>
   <url><loc>https://deepseek-tui.app/privacy/</loc><lastmod>2026-05-30</lastmod></url>
   <url><loc>https://deepseek-tui.app/zh/</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://deepseek-tui.app/zh/guides/</loc><lastmod>2026-05-06</lastmod></url>
@@ -67,8 +67,8 @@
   <url><loc>https://deepseek-tui.app/zh/guides/pricing-and-cost/</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://deepseek-tui.app/zh/mcp/servers/</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://deepseek-tui.app/zh/skills/examples/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/about/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/contact/</loc><lastmod>2026-05-06</lastmod></url>
+  <url><loc>https://deepseek-tui.app/zh/about/</loc><lastmod>2026-06-10</lastmod></url>
+  <url><loc>https://deepseek-tui.app/zh/contact/</loc><lastmod>2026-06-10</lastmod></url>
   <url><loc>https://deepseek-tui.app/zh/privacy/</loc><lastmod>2026-05-30</lastmod></url>
   <url><loc>https://deepseek-tui.app/troubleshooting/release-binaries/</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://deepseek-tui.app/troubleshooting/provider-troubleshooting/</loc><lastmod>2026-05-06</lastmod></url>
@@ -76,47 +76,6 @@
   <url><loc>https://deepseek-tui.app/zh/troubleshooting/release-binaries/</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://deepseek-tui.app/zh/troubleshooting/provider-troubleshooting/</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://deepseek-tui.app/zh/modes/plan-vs-yolo/</loc><lastmod>2026-05-06</lastmod></url>
-
-  <url><loc>https://deepseek-tui.app/docs/accessibility/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/architecture/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/competitive-analysis/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/configuration/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/docker/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/install/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/keybindings/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/legacy-rust-audit-0-7-6/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/localization/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/mcp/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/memory/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/modes/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/operations-runbook/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/release-runbook/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/runtime-api/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/subagents/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/tool-surface/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/v0-7-5-implementation-plan/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/capacity-controller/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/docs/v0-8-8-coordinator-prompt/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/accessibility/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/architecture/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/competitive-analysis/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/configuration/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/docker/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/install/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/keybindings/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/legacy-rust-audit-0-7-6/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/localization/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/mcp/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/memory/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/modes/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/operations-runbook/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/release-runbook/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/runtime-api/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/subagents/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/tool-surface/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/v0-7-5-implementation-plan/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/capacity-controller/</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://deepseek-tui.app/zh/docs/v0-8-8-coordinator-prompt/</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://deepseek-tui.app/install/windows/</loc><lastmod>2026-05-07</lastmod></url>
   <url><loc>https://deepseek-tui.app/zh/install/windows/</loc><lastmod>2026-05-07</lastmod></url>
   <url><loc>https://deepseek-tui.app/install/update-or-upgrade/</loc><lastmod>2026-05-07</lastmod></url>
